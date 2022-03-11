@@ -16,7 +16,6 @@ export default function Header() {
         {/* <LangSwitch/> */}
         <SocialLinks />
       </header>
-
       <MenuButton initialState={buttonState} onClick={handleButtonState} />
       <MenuModal initialState={buttonState}>
         {buttonState && <Backdrop onClick={handleButtonState} />}

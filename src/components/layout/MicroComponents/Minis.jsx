@@ -31,15 +31,15 @@ export function MenuModal({ initialState, children }) {
   const isOpen = !initialState ? offScreen : onScreen;
   return (
     <section
-      className={`fixed inset-0 flex px-10 sm:pr-0 md:px-20 ${
+      className={`fixed inset-0 flex px-5 sm:pr-0 md:px-24 ${
         !initialState ? "-z-50" : "z-10"
       }`}
     >
       {children}
       <div
-        className={`${isOpen} flex h-2/3 min-w-[5rem] max-w-3xl flex-grow
+        className={`${isOpen} flex h-2/3 min-w-[5rem] max-w-2xl flex-grow
             items-end justify-center rounded-b-full bg-orange-500
-            px-10 pb-20 transition-transform mxsm:mx-auto`}
+            px-2 pb-24 transition-transform mxsm:mx-auto`}
       >
         <nav className="text-xl">
           <ul className="flex flex-col gap-4">
