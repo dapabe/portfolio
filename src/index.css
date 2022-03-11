@@ -1,13 +1,33 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply relative min-w-[280px] bg-gray-800 font-Comfortaa text-white;
+  }
+  header {
+    @apply fixed z-20 w-full bg-indigo-700 lowercase tracking-wider mxsm:p-3;
+  }
+  main {
+    @apply max-h-max min-h-screen;
+  }
+  footer {
+    @apply flex h-24 w-full items-center justify-center bg-gray-800;
+  }
+
+  /* header > * */
+}
+@layer components {
+  .skipNav {
+    @apply absolute top-0 left-28 -translate-y-[80px] rounded-b-3xl border-2 border-white border-t-transparent px-3 py-1 outline-none transition focus:translate-y-0;
+  }
+  .brandLogo {
+    @apply top-0 left-0 text-[1.875rem] tracking-wider sm:absolute sm:ml-2;
+  }
+  .backdrop {
+    @apply absolute inset-0 z-10 bg-black/70;
+  }
 }
