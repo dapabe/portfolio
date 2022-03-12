@@ -1,7 +1,12 @@
 import { useState } from "react";
-import { Backdrop, Brand, MenuModal, SkipNav } from "./MicroComponents/Minis";
-import SocialLinks from "./MicroComponents/SocialLinks";
-import MenuButton from "./MicroComponents/MenuButton";
+import {
+  Backdrop,
+  BrandLogo,
+  MenuModal,
+  SkipNav,
+  SocialLinks,
+  MenuButton,
+} from "./Minis/exports";
 
 export default function Header() {
   const [buttonState, setButtonState] = useState(false);
@@ -12,7 +17,7 @@ export default function Header() {
     <>
       <header>
         <SkipNav />
-        <Brand />
+        <BrandLogo />
         {/* <LangSwitch/> */}
         <SocialLinks />
       </header>

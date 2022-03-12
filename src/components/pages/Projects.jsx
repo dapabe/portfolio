@@ -1,6 +1,3 @@
-import React from "react";
-import PageSwitchAnim from "../PageSwitchAnim";
-
 export default function Projects() {
   // return (
   //     <PageSwitchAnim id={3}>

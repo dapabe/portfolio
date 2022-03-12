@@ -5,7 +5,7 @@ import AppLayout from "./components/AppLayout";
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppLayout></AppLayout>
+    <AppLayout />
   </React.StrictMode>,
   document.getElementById("root")
 );

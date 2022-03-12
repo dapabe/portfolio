@@ -1,12 +1,12 @@
-import Header from "./layout/Header";
-import Footer from "./layout/Footer";
+import { Header, Footer } from "./AppLayout/exports";
+import { Home } from "./pages/exports";
 
-export default function AppLayout({ children }) {
+export default function AppLayout() {
   return (
     <>
       <Header />
-      <main className="relative max-h-max min-h-screen space-y-8 scroll-smooth xl:max-w-full">
-        {children}
+      <main className="relative max-h-max min-h-screen space-y-8 xl:max-w-full">
+        <Home />
       </main>
       <Footer />
     </>

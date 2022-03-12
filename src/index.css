@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply relative min-w-[280px] bg-gray-800 font-Comfortaa text-white;
+    @apply relative min-w-[280px] bg-gradient-to-r from-strongOrange to-strongRed font-Comfortaa text-white;
   }
   header {
     @apply fixed z-20 w-full bg-indigo-700 lowercase tracking-wider mxsm:p-3;
@@ -28,6 +28,6 @@
     @apply top-0 left-0 text-[1.875rem] tracking-wider sm:absolute sm:ml-2;
   }
   .backdrop {
-    @apply absolute inset-0 z-10 bg-black/70;
+    @apply absolute inset-0 z-10 bg-black/90;
   }
 }
