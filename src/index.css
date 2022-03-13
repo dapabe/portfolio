@@ -9,7 +9,7 @@
     @apply relative min-w-[280px] bg-gradient-to-r from-strongOrange to-strongRed font-Comfortaa text-white;
   }
   header {
-    @apply fixed z-20 w-full bg-indigo-700 lowercase tracking-wider mxsm:p-3;
+    @apply fixed z-30 w-full bg-indigo-700 lowercase tracking-wider mxsm:p-3;
   }
   main {
     @apply max-h-max min-h-screen;
@@ -17,8 +17,6 @@
   footer {
     @apply flex h-24 w-full items-center justify-center bg-gray-800;
   }
-
-  /* header > * */
 }
 @layer components {
   .skipNav {
@@ -27,7 +25,37 @@
   .brandLogo {
     @apply top-0 left-0 text-[1.875rem] tracking-wider sm:absolute sm:ml-2;
   }
+  .menuButton {
+    @apply fixed z-30 h-12 w-12 -rotate-90 rounded-full bg-white sm:top-1/2 sm:left-2 sm:transition-colors mxsm:right-2 mxsm:top-2.5 mxsm:transition-[colors_transform];
+  }
+  .active {
+    @apply mxsm:top-1/3 mxsm:-translate-y-1/2;
+  }
+  .closed {
+    @apply sm:bg-transparent;
+  }
+  .social_links {
+    @apply fixed top-1/2 right-2 -translate-y-1/2 space-y-3;
+  }
   .backdrop {
-    @apply absolute inset-0 z-10 bg-black/90;
+    @apply absolute inset-0 z-20 bg-black/90;
+  }
+  .projectSection {
+    @apply flex h-[90vh] items-center justify-center;
+  }
+  .projectCard {
+    @apply relative flex max-h-max min-h-[15rem] min-w-[16rem] max-w-xs flex-col bg-teal-700 p-4 text-center before:absolute before:-top-7 before:left-2 before:z-10 before:h-24 before:w-7 before:rotate-45 before:border-b-4 before:border-r-4 before:border-black/50 before:bg-white/80 after:absolute after:-top-7 after:right-2 after:z-10 after:h-24 after:w-7 after:-rotate-45 after:border-b-4 after:border-l-4 after:border-black/50 after:bg-white/80;
+  }
+  .projectCard_desc {
+    @apply mt-2 rounded-t-md rounded-bl-md bg-vaporViolet py-1.5 text-sm;
+  }
+  .projectCard_links {
+    @apply flex items-center justify-end;
+  }
+  .projectCard_links > * {
+    @apply bg-vaporViolet first:rounded-bl-md first:p-1 last:rounded-br-md last:p-1;
+  }
+  .projectCard_anchor-logo {
+    @apply h-8 hover:scale-105;
   }
 }

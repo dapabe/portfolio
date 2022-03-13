@@ -1,12 +1,12 @@
 export default function MenuModal({ initialState, children }) {
   // sm:peer-hover:translate-x-[calc(-100vw+180px)]
-  const offScreen = "-z-50  -translate-y-full";
-  const onScreen = "z-10 delay-500";
+  const offScreen = "-z-50 -translate-y-full";
+  const onScreen = "z-20 delay-500";
   const isOpen = !initialState ? offScreen : onScreen;
   return (
     <section
       className={`fixed inset-0 flex px-5 sm:pr-0 md:px-24 ${
-        !initialState ? "-z-50" : "z-10"
+        !initialState ? "-z-50" : "z-20"
       }`}
     >
       {children}

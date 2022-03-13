@@ -57,11 +57,7 @@ export default function MenuButton({ initialState, ...props }) {
   };
   return (
     <button
-      className={`peer group fixed z-20 h-12 w-12 -rotate-90 rounded-full sm:top-1/2 sm:ml-2 mxsm:right-2   ${
-        !initialState
-          ? "bg-white sm:bg-transparent mxsm:top-2.5"
-          : "top-1/2 bg-white"
-      } transition-colors`}
+      className={`menuButton peer group ${!initialState ? "closed" : "active"}`}
       {...props}
     >
       <MenuBars />

@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       colors: {
         vaporBlue: "#111122",
+        vaporViolet: "#2c2c54",
         pastelBlue: "#43457f",
         pastelViolet: "#685489",
         pastelMagenta: "#976393",

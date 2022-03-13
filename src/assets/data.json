@@ -1,0 +1,12 @@
+{
+  "projects_data": [
+    {
+      "title": "TakeALook",
+      "image": "placeholder.jpg",
+      "alt": "Miniatura de la pagina web",
+      "description": "Servicio para ver peliculas y series",
+      "repo": "https://github.com/dapabe/api-moviedb",
+      "link": "https://moviedb-clone-dapabe.vercel.app/"
+    }
+  ]
+}

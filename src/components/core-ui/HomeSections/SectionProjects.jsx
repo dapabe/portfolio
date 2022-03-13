@@ -1,23 +1,20 @@
-// import placeholder from "/images/placeholder.jpg";
-import ProjectsObjects from "../../../assets/ProjectsObjects";
-
+import data from "../../../assets/data.json";
 import { CustomCard } from "../Minis/exports";
 
 export default function SectionProjects() {
-  const mappedProjects = () => {
-    return ProjectsObjects.map((val) => {
-      return (
+  return (
+    <section className="projectSection">
+      {data.projects_data.map((item) => (
         <CustomCard
-          key={val.link}
-          // image={val.image}
-          alt={val.alt}
-          title={val.title}
-          description={val.description}
-          linkRepo={val.repo}
-          linkUrl={val.link}
+          key={item.link}
+          title={item.title}
+          image={item.image}
+          alt={item.alt}
+          description={item.description}
+          linkRepo={item.repo}
+          linkUrl={item.link}
         />
-      );
-    });
-  };
-  return <section className="mosaicBg h-[90vh]">{mappedProjects()}</section>;
+      ))}
+    </section>
+  );
 }

@@ -1,3 +1,5 @@
+import { LinkIcon } from "@heroicons/react/solid";
+import { LogoGithub } from "../../../assets/images/exports";
 export default function CustomCard({
   image,
   alt,
@@ -7,15 +9,19 @@ export default function CustomCard({
   linkUrl,
 }) {
   return (
-    <article className="cardBg flex max-h-max min-h-[15rem] min-w-[16rem] max-w-xs flex-col rounded text-center transition-transform hover:scale-105 ">
+    <article className="projectCard">
       <figure className="relative min-w-[5rem] bg-red-500">
-        <img src={image} alt={alt} className="max-w-full rounded" />
+        <img
+          src={`/images/${image}`}
+          alt={alt}
+          className="max-w-full rounded"
+        />
         <figcaption className="absolute bottom-0  w-full bg-slate-600 indent-2 text-sm">
           {title}
         </figcaption>
       </figure>
-      <p className="mt-2 rounded bg-[#2c2c54] py-1.5 text-sm">{description}</p>
-      <ol className="flex justify-center">
+      <p className="projectCard_desc">{description}</p>
+      <ol className="projectCard_links">
         <li>
           <a
             href={linkRepo}
@@ -23,7 +29,11 @@ export default function CustomCard({
             rel="noopener noreferrer"
             title="Ir al repositorio de Github"
           >
-            <img src="" alt="" />
+            <LogoGithub
+              fill="currentColor"
+              aria-label="Link hacia le repositorio"
+              className="projectCard_anchor-logo"
+            />
           </a>
         </li>
         <li>
@@ -33,7 +43,10 @@ export default function CustomCard({
             rel="noopener noreferrer"
             title="Ir a la pagina web"
           >
-            <img src="" alt="" />
+            <LinkIcon
+              aria-label="Link hacia la pagina web"
+              className="projectCard_anchor-logo"
+            />
           </a>
         </li>
       </ol>
