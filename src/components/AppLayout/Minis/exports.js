@@ -5,8 +5,9 @@ import MenuButton from "./MenuButton";
 import MenuModal from "./MenuModal";
 import SkipNav from "./SkipNav";
 import SocialLinks from "./SocialLinks";
-
+import BackToTop from "./BackToTop";
 export {
+  BackToTop,
   Backdrop,
   BrandLogo,
   LangSwitch,

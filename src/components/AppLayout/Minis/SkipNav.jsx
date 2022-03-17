@@ -1,6 +1,6 @@
-export default function SkipNav() {
+export default function SkipNav(props) {
   return (
-    <a href="#index" className="skipNav" tabIndex={1}>
+    <a href="#main" className="skipNav" {...props}>
       Ir al contenido
     </a>
   );

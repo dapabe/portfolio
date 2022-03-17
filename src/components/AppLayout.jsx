@@ -1,13 +1,14 @@
 import { Header, Footer } from "./AppLayout/exports";
-import useOnResize from "./hooks/useOnResize";
+import useWindowSize from "./hooks/useWindowSize";
 import { Home } from "./pages/exports";
 
 export default function AppLayout() {
-  console.log(useOnResize());
+  const { width } = useWindowSize();
+  console.log(width);
   return (
     <>
       <Header />
-      <main>
+      <main id="main">
         <Home />
       </main>
       <Footer />

@@ -5,17 +5,20 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   body {
     @apply relative min-w-[280px] bg-gradient-to-r from-strongOrange to-strongRed font-Comfortaa text-white;
   }
   header {
-    @apply fixed z-30 w-full lowercase;
+    @apply absolute z-30 w-full;
   }
   main {
     @apply mx-auto max-h-max min-h-screen max-w-xs space-y-8 sm:max-w-sm md:max-w-xl md:transition-[max-width] lg:max-w-4xl xl:max-w-6xl;
   }
   footer {
-    @apply flex min-h-max w-full  items-center  justify-between bg-sutilBlack p-4 text-sm text-slate-300 shadow-inner shadow-slate-700 sm:flex mxsm:space-y-3;
+    @apply flex min-h-[13rem] w-full items-center justify-between bg-sutilBlack p-4 text-sm text-slate-300 shadow-inner shadow-slate-700 sm:flex mxsm:space-y-3;
   }
   main > section {
     @apply max-h-[90vh] min-h-max;
@@ -23,10 +26,10 @@
 }
 @layer components {
   .skipNav {
-    @apply absolute top-0 left-28 -translate-y-[80px] rounded-b-3xl border-2 border-white border-t-transparent px-3 py-1 outline-none transition focus:translate-y-0;
+    @apply fixed top-0 left-28 -translate-y-[80px] rounded-b-3xl border-2 border-white border-t-transparent bg-strongOrange px-3 py-1 outline-none transition focus:translate-y-0;
   }
   .brandLogo {
-    @apply absolute top-0 left-0 ml-2 text-[1.875rem] tracking-wider;
+    @apply fixed top-0 left-0 ml-2 text-[1.875rem] tracking-wider;
   }
   .menuContent {
     @apply grid h-2/3 min-w-[200px] max-w-lg
