@@ -1,11 +1,11 @@
 import useOnModal from "../../hooks/useOnModal";
+import SocialLinks from "./SocialLinks";
 
 export default function MenuModal({ initialState, children }) {
-  // sm:peer-hover:translate-x-[calc(-100vw+180px)]
-  const offScreen = "-z-50 -translate-y-full";
-  const onScreen = "z-20 delay-500";
-  const isOpen = !initialState ? offScreen : onScreen;
-  // useOnModal(initialState);
+  const isOpen = initialState
+    ? "z-20 delay-500 opacity-100"
+    : "-z-50 opacity-0 -translate-y-full";
+  useOnModal(initialState);
   return (
     <section
       className={`fixed inset-0 flex sm:px-24 ${
@@ -21,6 +21,9 @@ export default function MenuModal({ initialState, children }) {
             <li>Proyectos</li>
           </ul>
         </nav>
+        <div className="flex flex-row sm:hidden">
+          <SocialLinks />
+        </div>
       </div>
     </section>
   );

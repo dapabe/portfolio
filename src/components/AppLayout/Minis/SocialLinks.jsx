@@ -6,8 +6,8 @@ import {
 } from "../../../assets/images/exports";
 export default function SocialLinks() {
   return (
-    <ul>
-      <li>
+    <>
+      <i className="social-icon">
         <a
           href="https://www.linkedin.com/in/daniel-patricio-becerra-5042681b5/"
           target="_blank"
@@ -15,8 +15,8 @@ export default function SocialLinks() {
         >
           <LogoLinkedIn fill="currentColor" />
         </a>
-      </li>
-      <li>
+      </i>
+      <i className="social-icon">
         <a
           href="https://github.com/dapabe"
           target="_blank"
@@ -24,8 +24,8 @@ export default function SocialLinks() {
         >
           <LogoGithub fill="currentColor" />
         </a>
-      </li>
-      <li>
+      </i>
+      <i className="social-icon">
         <a
           href="https://twitter.com/dDenzere1999"
           target="_blank"
@@ -33,8 +33,8 @@ export default function SocialLinks() {
         >
           <LogoTwitter fill="currentColor" />
         </a>
-      </li>
-      <li>
+      </i>
+      <i className="social-icon">
         <a
           href="https://www.instagram.com/_danzen"
           target="_blank"
@@ -42,7 +42,7 @@ export default function SocialLinks() {
         >
           <LogoInstagram fill="currentColor" />
         </a>
-      </li>
-    </ul>
+      </i>
+    </>
   );
 }

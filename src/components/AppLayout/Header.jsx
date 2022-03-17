@@ -19,7 +19,7 @@ export default function Header() {
         <SkipNav />
         <BrandLogo />
         {/* <LangSwitch/> */}
-        <aside className="sidebar-social">
+        <aside className="sidebar">
           <SocialLinks />
         </aside>
       </header>

@@ -9,10 +9,10 @@
     @apply relative min-w-[280px] bg-gradient-to-r from-strongOrange to-strongRed font-Comfortaa text-white;
   }
   header {
-    @apply fixed z-30 w-full bg-indigo-700 lowercase tracking-wider mxsm:p-3;
+    @apply fixed z-30 w-full lowercase;
   }
   main {
-    @apply max-h-max min-h-screen;
+    @apply mx-auto max-h-max min-h-screen max-w-xs space-y-8 sm:max-w-sm md:max-w-xl md:transition-[max-width] lg:max-w-4xl xl:max-w-6xl;
   }
   footer {
     @apply flex min-h-max w-full  items-center  justify-between bg-sutilBlack p-4 text-sm text-slate-300 shadow-inner shadow-slate-700 sm:flex mxsm:space-y-3;
@@ -26,10 +26,10 @@
     @apply absolute top-0 left-28 -translate-y-[80px] rounded-b-3xl border-2 border-white border-t-transparent px-3 py-1 outline-none transition focus:translate-y-0;
   }
   .brandLogo {
-    @apply top-0 left-0 text-[1.875rem] tracking-wider sm:absolute sm:ml-2;
+    @apply absolute top-0 left-0 ml-2 text-[1.875rem] tracking-wider;
   }
   .menuContent {
-    @apply grid h-2/3 max-w-md
+    @apply grid h-2/3 min-w-[200px] max-w-lg
     place-items-center bg-orange-500 px-10
     transition-transform mxsm:mx-auto;
   }
@@ -45,13 +45,10 @@
   .closed {
     @apply sm:bg-transparent;
   }
-  .sidebar-social {
-    @apply fixed top-1/2 right-2 -translate-y-1/2;
+  .sidebar {
+    @apply fixed top-1/2 right-2 hidden -translate-y-1/2 flex-col space-y-3 sm:flex;
   }
-  .sidebar-social > ul {
-    @apply space-y-3;
-  }
-  .sidebar-social li {
+  .social-icon {
     @apply h-8 w-8 hover:scale-110;
   }
   .backdrop {
