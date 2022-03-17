@@ -36,7 +36,7 @@ export default function MenuButton({ initialState, ...props }) {
   const MenuText = () => {
     return (
       <span
-        className={`absolute -bottom-5 gap-x-1 text-[.7rem] ${
+        className={`mt-3 gap-x-1 text-[.7rem] ${
           !initialState ? "hidden sm:flex" : "hidden"
         }`}
       >
@@ -56,11 +56,10 @@ export default function MenuButton({ initialState, ...props }) {
     );
   };
   return (
-    <button
-      className={`menuButton peer group ${!initialState ? "closed" : "active"}`}
-      {...props}
-    >
-      <MenuBars />
+    <button className="menuButton-container group" {...props}>
+      <div className={`menuButton group ${initialState ? "active" : "closed"}`}>
+        <MenuBars />
+      </div>
       <MenuText />
     </button>
   );

@@ -4,11 +4,10 @@ import {
   LogoLinkedIn,
   LogoTwitter,
 } from "../../../assets/images/exports";
-export default function SocialLinks(desktop) {
-  const social_anchor = "h-8 w-8 hover:scale-110";
+export default function SocialLinks() {
   return (
-    <ul className="space-y-3">
-      <li className={social_anchor}>
+    <ul>
+      <li>
         <a
           href="https://www.linkedin.com/in/daniel-patricio-becerra-5042681b5/"
           target="_blank"
@@ -17,7 +16,7 @@ export default function SocialLinks(desktop) {
           <LogoLinkedIn fill="currentColor" />
         </a>
       </li>
-      <li className={social_anchor}>
+      <li>
         <a
           href="https://github.com/dapabe"
           target="_blank"
@@ -26,7 +25,7 @@ export default function SocialLinks(desktop) {
           <LogoGithub fill="currentColor" />
         </a>
       </li>
-      <li className={social_anchor}>
+      <li>
         <a
           href="https://twitter.com/dDenzere1999"
           target="_blank"
@@ -35,7 +34,7 @@ export default function SocialLinks(desktop) {
           <LogoTwitter fill="currentColor" />
         </a>
       </li>
-      <li className={social_anchor}>
+      <li>
         <a
           href="https://www.instagram.com/_danzen"
           target="_blank"

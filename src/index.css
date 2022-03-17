@@ -28,17 +28,31 @@
   .brandLogo {
     @apply top-0 left-0 text-[1.875rem] tracking-wider sm:absolute sm:ml-2;
   }
+  .menuContent {
+    @apply grid h-2/3 max-w-md
+    place-items-center bg-orange-500 px-10
+    transition-transform mxsm:mx-auto;
+  }
+  .menuButton-container {
+    @apply fixed left-4 z-30 flex -rotate-90 flex-col items-center sm:top-1/2 sm:-translate-y-1/2 mxsm:bottom-2;
+  }
   .menuButton {
-    @apply fixed z-30 h-12 w-12 -rotate-90 rounded-full bg-white sm:top-1/2 sm:left-2 sm:transition-colors mxsm:right-2 mxsm:top-2.5 mxsm:transition-[colors_transform];
+    @apply min-h-max min-w-max rounded-full bg-white py-4 px-5 sm:p-0 sm:transition-colors;
   }
   .active {
-    @apply mxsm:top-1/3 mxsm:-translate-y-1/2;
+    @apply p-1;
   }
   .closed {
     @apply sm:bg-transparent;
   }
   .sidebar-social {
     @apply fixed top-1/2 right-2 -translate-y-1/2;
+  }
+  .sidebar-social > ul {
+    @apply space-y-3;
+  }
+  .sidebar-social li {
+    @apply h-8 w-8 hover:scale-110;
   }
   .backdrop {
     @apply absolute inset-0 z-20 bg-black/90;

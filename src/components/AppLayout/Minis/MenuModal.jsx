@@ -5,7 +5,7 @@ export default function MenuModal({ initialState, children }) {
   const offScreen = "-z-50 -translate-y-full";
   const onScreen = "z-20 delay-500";
   const isOpen = !initialState ? offScreen : onScreen;
-  useOnModal(initialState);
+  // useOnModal(initialState);
   return (
     <section
       className={`fixed inset-0 flex sm:px-24 ${
@@ -13,11 +13,7 @@ export default function MenuModal({ initialState, children }) {
       }`}
     >
       {children}
-      <div
-        className={`${isOpen} grid h-2/3 max-w-md
-          place-items-center bg-orange-500 px-10
-          transition-transform mxsm:mx-auto`}
-      >
+      <div className={`${isOpen} menuContent`}>
         <nav className="text-xl">
           <ul className="flex flex-col gap-4">
             <li>Inicio</li>
