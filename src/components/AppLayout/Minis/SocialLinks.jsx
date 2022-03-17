@@ -1,14 +1,13 @@
-import data from "../../../assets/data.json";
 import {
   LogoGithub,
   LogoInstagram,
   LogoLinkedIn,
   LogoTwitter,
 } from "../../../assets/images/exports";
-export default function SocialLinks() {
+export default function SocialLinks(desktop) {
   const social_anchor = "h-8 w-8 hover:scale-110";
   return (
-    <ul className="social_links">
+    <ul className="space-y-3">
       <li className={social_anchor}>
         <a
           href="https://www.linkedin.com/in/daniel-patricio-becerra-5042681b5/"

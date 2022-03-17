@@ -19,7 +19,9 @@ export default function Header() {
         <SkipNav />
         <BrandLogo />
         {/* <LangSwitch/> */}
-        <SocialLinks />
+        <aside className="sidebar-social">
+          <SocialLinks />
+        </aside>
       </header>
       <MenuButton initialState={buttonState} onClick={handleButtonState} />
       <MenuModal initialState={buttonState}>

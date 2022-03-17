@@ -1,7 +1,7 @@
 // import { ReactComponent as ArrowUp } from "../../assets/images/ion_arrow-up.svg";
 export default function Footer() {
   return (
-    <footer className="bg-sutilBlack mxsm:space-y-3 relative z-[1] h-56 w-full justify-between p-4 text-sm text-slate-300 shadow-inner shadow-slate-700 sm:flex">
+    <footer>
       <div>
         <h1 className="mb-2 underline underline-offset-2">
           ¿Quieres contactarme?
@@ -30,7 +30,7 @@ export default function Footer() {
         <h1 className="mb-2 underline underline-offset-2">
           Mis redes sociales
         </h1>
-        <ul className="mxsm:ml-2 sm:flex sm:flex-col sm:items-end">
+        <ul className="sm:flex sm:flex-col sm:items-end mxsm:ml-2">
           <li className="w-max hover:underline">
             <a href="http://" target="_blank" rel="noopener noreferrer">
               Instagram

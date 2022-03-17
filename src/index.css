@@ -15,7 +15,10 @@
     @apply max-h-max min-h-screen;
   }
   footer {
-    @apply flex h-24 w-full items-center justify-center bg-gray-800;
+    @apply flex min-h-max w-full  items-center  justify-between bg-sutilBlack p-4 text-sm text-slate-300 shadow-inner shadow-slate-700 sm:flex mxsm:space-y-3;
+  }
+  main > section {
+    @apply max-h-[90vh] min-h-max;
   }
 }
 @layer components {
@@ -34,14 +37,19 @@
   .closed {
     @apply sm:bg-transparent;
   }
-  .social_links {
-    @apply fixed top-1/2 right-2 -translate-y-1/2 space-y-3;
+  .sidebar-social {
+    @apply fixed top-1/2 right-2 -translate-y-1/2;
   }
   .backdrop {
     @apply absolute inset-0 z-20 bg-black/90;
   }
+  .heroSection {
+    @apply grid h-screen place-items-center;
+  }
+  .heroSection > h1 {
+    @apply relative text-7xl transition-[font-size] sm:text-8xl md:text-9xl md:tracking-wide;
+  }
   .projectSection {
-    @apply flex h-[90vh] items-center justify-center;
   }
   .projectCard {
     @apply relative flex max-h-max min-h-[15rem] min-w-[16rem] max-w-xs flex-col bg-teal-700 p-4 text-center before:absolute before:-top-7 before:left-2 before:z-10 before:h-24 before:w-7 before:rotate-45 before:border-b-4 before:border-r-4 before:border-black/50 before:bg-white/80 after:absolute after:-top-7 after:right-2 after:z-10 after:h-24 after:w-7 after:-rotate-45 after:border-b-4 after:border-l-4 after:border-black/50 after:bg-white/80;

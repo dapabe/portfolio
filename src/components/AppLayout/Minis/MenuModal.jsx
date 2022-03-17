@@ -1,19 +1,22 @@
+import useOnModal from "../../hooks/useOnModal";
+
 export default function MenuModal({ initialState, children }) {
   // sm:peer-hover:translate-x-[calc(-100vw+180px)]
   const offScreen = "-z-50 -translate-y-full";
   const onScreen = "z-20 delay-500";
   const isOpen = !initialState ? offScreen : onScreen;
+  useOnModal(initialState);
   return (
     <section
-      className={`fixed inset-0 flex px-5 sm:pr-0 md:px-24 ${
+      className={`fixed inset-0 flex sm:px-24 ${
         !initialState ? "-z-50" : "z-20"
       }`}
     >
       {children}
       <div
-        className={`${isOpen} flex h-2/3 min-w-[5rem] max-w-sm flex-grow
-            items-end justify-center rounded-b-full bg-orange-500
-            px-2 pb-24 transition-transform mxsm:mx-auto`}
+        className={`${isOpen} grid h-2/3 max-w-md
+          place-items-center bg-orange-500 px-10
+          transition-transform mxsm:mx-auto`}
       >
         <nav className="text-xl">
           <ul className="flex flex-col gap-4">
