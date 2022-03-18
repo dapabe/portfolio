@@ -1,19 +1,15 @@
-import useOnModal from "../../hooks/useOnModal";
+import useStopScroll from "../../hooks/useStopScroll";
 import SocialLinks from "./SocialLinks";
 
 export default function MenuModal({ initialState, children }) {
   const isOpen = initialState
     ? "z-20 delay-500 opacity-100"
     : "-z-50 opacity-0 -translate-y-full";
-  useOnModal(initialState);
+  useStopScroll(initialState);
   return (
-    <section
-      className={`fixed inset-0 flex sm:px-24 ${
-        !initialState ? "-z-50" : "z-20"
-      }`}
-    >
+    <section className={`menu-container ${!initialState ? "-z-50" : "z-20"}`}>
       {children}
-      <div className={`${isOpen} menuContent`}>
+      <div className={`menu ${isOpen}`}>
         <nav className="text-xl">
           <ul className="flex flex-col gap-4">
             <li>Inicio</li>

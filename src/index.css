@@ -31,10 +31,12 @@
   .brandLogo {
     @apply fixed top-0 left-0 ml-2 text-[1.875rem] tracking-wider;
   }
-  .menuContent {
-    @apply grid h-2/3 min-w-[200px] max-w-lg
-    place-items-center bg-orange-500 px-10
-    transition-transform mxsm:mx-auto;
+  .menu-container {
+    @apply fixed inset-0 flex sm:px-24 mxsm:justify-center;
+  }
+  .menu {
+    @apply before:btriangle-tl after:btriangle-tr relative grid h-2/3 max-w-xs
+   flex-grow place-items-center bg-orange-500 transition-transform before:absolute before:top-[95%] before:left-0 after:absolute after:top-[95%] after:right-0 sm:max-w-lg;
   }
   .menuButton-container {
     @apply fixed left-4 z-30 flex -rotate-90 flex-col items-center sm:top-1/2 sm:-translate-y-1/2 mxsm:bottom-2;
@@ -79,5 +81,19 @@
   }
   .projectCard_anchor-logo {
     @apply h-8 hover:scale-105;
+  }
+}
+@layer utilities {
+  .btriangle-tl {
+    border-width: 6rem;
+    border-color: rgb(249 115 22);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+  }
+  .btriangle-tr {
+    border-width: 6rem;
+    border-color: rgb(249 115 22);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
   }
 }

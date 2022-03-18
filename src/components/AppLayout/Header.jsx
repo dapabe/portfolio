@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-  BackToTop,
   Backdrop,
   BrandLogo,
   MenuModal,
@@ -26,7 +25,6 @@ export default function Header() {
       <MenuModal initialState={buttonState}>
         {buttonState && <Backdrop onClick={handleButtonState} />}
       </MenuModal>
-      <BackToTop />
     </>
   );
 }
