@@ -1,13 +1,16 @@
-import IconArrowUp from "../../../assets/icons/IconArrowUp";
+import { ChevronDoubleUpIcon } from "@heroicons/react/solid";
+import useScrollTop from "../../hooks/useScrollTop";
 
-export default function BackToTop(props) {
+export default function BackToTop() {
   return (
     <a
       href="#main"
-      className="fixed right-4 bottom-2 z-20 w-12 rounded-md bg-white"
-      {...props}
+      className={`fixed right-4 bottom-2  w-12 rounded-md bg-white transition-opacity ${
+        useScrollTop() ? "z-[15] opacity-100" : "-z-50 opacity-0"
+      }`}
+      tabIndex={-1}
     >
-      <IconArrowUp fill="black" />
+      <ChevronDoubleUpIcon fill="black" className="hover:scale-105" />
     </a>
   );
 }

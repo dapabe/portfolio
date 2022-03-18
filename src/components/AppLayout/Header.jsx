@@ -20,15 +20,13 @@ export default function Header() {
         <SkipNav />
         <BrandLogo />
         {/* <LangSwitch/> */}
-        <aside className="sidebar">
-          <SocialLinks />
-        </aside>
+        <aside className="sidebar">{!buttonState && <SocialLinks />}</aside>
       </header>
       <MenuButton initialState={buttonState} onClick={handleButtonState} />
       <MenuModal initialState={buttonState}>
         {buttonState && <Backdrop onClick={handleButtonState} />}
       </MenuModal>
-      <BackToTop tabIndex={-1} />
+      <BackToTop />
     </>
   );
 }

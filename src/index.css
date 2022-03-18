@@ -9,13 +9,13 @@
     @apply scroll-smooth;
   }
   body {
-    @apply relative min-w-[280px] bg-gradient-to-r from-strongOrange to-strongRed font-Comfortaa text-white;
+    @apply relative  bg-gradient-to-r from-strongOrange to-strongRed font-Comfortaa text-white;
   }
   header {
     @apply absolute z-30 w-full;
   }
   main {
-    @apply mx-auto max-h-max min-h-screen max-w-xs space-y-8 sm:max-w-sm md:max-w-xl md:transition-[max-width] lg:max-w-4xl xl:max-w-6xl;
+    @apply mx-auto max-h-max min-h-screen  max-w-xs space-y-8 sm:max-w-sm md:max-w-xl md:transition-[max-width] lg:max-w-4xl xl:max-w-6xl;
   }
   footer {
     @apply flex min-h-[13rem] w-full items-center justify-between bg-sutilBlack p-4 text-sm text-slate-300 shadow-inner shadow-slate-700 sm:flex mxsm:space-y-3;
