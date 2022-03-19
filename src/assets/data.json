@@ -4,9 +4,11 @@
       "title": "TakeALook",
       "image": "placeholder.jpg",
       "alt": "Miniatura de la pagina web",
-      "description": "Servicio para ver peliculas y series",
+      "short_desc": "Servicio para ver información de peliculas y series",
+      "long_desc": "Servicio para ver información de peliculas y series, pensado como clon de Netflix",
       "repo": "https://github.com/dapabe/api-moviedb",
-      "link": "https://moviedb-clone-dapabe.vercel.app/"
+      "link": "https://moviedb-clone-dapabe.vercel.app/",
+      "made_with": []
     }
   ]
 }

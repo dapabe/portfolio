@@ -9,13 +9,13 @@
     @apply scroll-smooth;
   }
   body {
-    @apply relative  bg-gradient-to-r from-strongOrange to-strongRed font-Comfortaa text-white;
+    @apply relative bg-gradient-to-r from-strongOrange to-strongRed font-Comfortaa text-white scrollbar-hide;
   }
   header {
     @apply absolute z-30 w-full;
   }
   main {
-    @apply mx-auto max-h-max min-h-screen  max-w-xs space-y-8 sm:max-w-sm md:max-w-xl md:transition-[max-width] lg:max-w-4xl xl:max-w-6xl;
+    @apply mx-auto max-h-max min-h-screen max-w-xs space-y-8 overflow-x-hidden sm:max-w-sm md:max-w-xl md:transition-[max-width] lg:max-w-4xl xl:max-w-6xl;
   }
   footer {
     @apply flex min-h-[13rem] w-full items-center justify-between bg-sutilBlack p-4 text-sm text-slate-300 shadow-inner shadow-slate-700 sm:flex mxsm:space-y-3;
@@ -31,12 +31,12 @@
   .brandLogo {
     @apply fixed top-0 left-0 ml-2 text-[1.875rem] tracking-wider;
   }
-  .menu-container {
+  .menuContainer {
     @apply fixed inset-0 flex sm:px-24 mxsm:justify-center;
   }
   .menu {
-    @apply before:btriangle-tl after:btriangle-tr relative grid h-2/3 max-w-xs
-   flex-grow place-items-center bg-orange-500 transition-transform before:absolute before:top-[95%] before:left-0 after:absolute after:top-[95%] after:right-0 sm:max-w-lg;
+    @apply before:btriangle-tl after:btriangle-tr relative flex h-2/3 max-w-xs
+   flex-grow flex-wrap justify-center space-y-20 bg-orange-500 px-6 text-3xl transition-transform before:absolute before:top-[95%] before:left-0 after:absolute after:top-[95%] after:right-0 sm:justify-between mxsm:flex-col mxsm:p-10;
   }
   .menuButton-container {
     @apply fixed left-4 z-30 flex -rotate-90 flex-col items-center sm:top-1/2 sm:-translate-y-1/2 mxsm:bottom-2;
@@ -63,15 +63,18 @@
     @apply grid h-screen place-items-center;
   }
   .heroSection > h1 {
-    @apply relative text-7xl transition-[font-size] sm:text-8xl md:text-9xl md:tracking-wide;
+    @apply relative text-6xl transition-[font-size] sm:text-7xl md:text-9xl md:tracking-wide;
   }
   .projectSection {
+    @apply flex flex-wrap justify-evenly mxsm:justify-center;
   }
   .projectCard {
-    @apply relative flex max-h-max min-h-[15rem] min-w-[16rem] max-w-xs flex-col bg-teal-700 p-4 text-center before:absolute before:-top-7 before:left-2 before:z-10 before:h-24 before:w-7 before:rotate-45 before:border-b-4 before:border-r-4 before:border-black/50 before:bg-white/80 after:absolute after:-top-7 after:right-2 after:z-10 after:h-24 after:w-7 after:-rotate-45 after:border-b-4 after:border-l-4 after:border-black/50 after:bg-white/80;
+    @apply relative flex max-h-max max-w-xs flex-col rounded-md bg-vaporBlue p-4 text-center before:absolute before:-top-7
+    before:left-2 before:z-10 before:h-24 before:w-7 before:rotate-45 before:border-b-4 before:border-r-4 before:border-black/50 before:bg-white/90 after:absolute after:-top-7 after:right-2 after:z-10 after:h-24 after:w-7 after:-rotate-45 after:border-b-4 after:border-l-4 after:border-black/50 after:bg-white/90 mxsm:p-3;
   }
+
   .projectCard_desc {
-    @apply mt-2 rounded-t-md rounded-bl-md bg-vaporViolet py-1.5 text-sm;
+    @apply mt-2 rounded-t-md rounded-bl-md bg-vaporViolet px-1 py-1.5 text-sm;
   }
   .projectCard_links {
     @apply flex items-center justify-end;
@@ -85,12 +88,14 @@
 }
 @layer utilities {
   .btriangle-tl {
+    z-index: -1;
     border-width: 6rem;
     border-color: rgb(249 115 22);
     border-right-color: transparent;
     border-bottom-color: transparent;
   }
   .btriangle-tr {
+    z-index: -1;
     border-width: 6rem;
     border-color: rgb(249 115 22);
     border-left-color: transparent;

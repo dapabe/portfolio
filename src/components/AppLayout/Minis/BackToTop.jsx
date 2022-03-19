@@ -8,8 +8,9 @@ export default function BackToTop() {
       className={`fixed right-4 bottom-2  w-12 rounded-md bg-white  transition-opacity ${
         useScrollTop() ? "z-[15] opacity-100" : "-z-50 opacity-0"
       }`}
+      title="Volver arriba"
     >
-      <ChevronDoubleUpIcon fill="#1e293b" className="hover:scale-105" />
+      <ChevronDoubleUpIcon fill="#334155" className="hover:scale-105" />
     </a>
   );
 }

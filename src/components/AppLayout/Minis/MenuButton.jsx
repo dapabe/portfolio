@@ -14,21 +14,21 @@ export default function MenuButton({ initialState, ...props }) {
             !initialState
               ? "h-3 w-[3px] group-hover:h-6"
               : "absolute h-2/3 w-[2px] rotate-45 group-hover:scale-110 sm:bg-slate-700"
-          } transition-all`}
+          } transition-[scale_rotate]`}
         />
         <div
           className={`${
             !initialState
-              ? "mx-1 h-6 w-[3px] group-hover:h-3" + initial
+              ? "mx-1 h-6 w-[3px] opacity-100 group-hover:h-3" + initial
               : "opacity-0"
-          } transition-all`}
+          } transition-[scale_opacity]`}
         />
         <div
           className={`${initial} ${
             !initialState
               ? " h-3 w-[3px] group-hover:h-6"
               : "absolute h-2/3 w-[2px] -rotate-45 group-hover:scale-110 sm:bg-slate-700"
-          } transition-all`}
+          } transition-[scale_rotate]`}
         />
       </span>
     );
