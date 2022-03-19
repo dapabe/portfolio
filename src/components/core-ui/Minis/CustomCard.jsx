@@ -12,15 +12,9 @@ export default function CustomCard({
   return (
     <article className="projectCard">
       {!isMobile ? (
-        <figure className="relative min-w-[5rem] bg-red-500">
-          <img
-            src={`/images/${image}`}
-            alt={alt}
-            className="max-w-full rounded"
-          />
-          <figcaption className="absolute bottom-0 w-full bg-slate-600 indent-2 text-sm">
-            {title}
-          </figcaption>
+        <figure className="relative min-w-[5rem] rounded-md bg-vaporViolet p-2 lg:rounded-none">
+          <img src={`/images/${image}`} alt={alt} className="max-w-full" />
+          <figcaption className="text-md bg-slate-700 py-1">{title}</figcaption>
         </figure>
       ) : (
         <h1 className="text-xl underline underline-offset-4">{title}</h1>
@@ -36,7 +30,7 @@ export default function CustomCard({
           >
             <LogoGithub
               fill="currentColor"
-              aria-label="Link hacia le repositorio"
+              // aria-label="Link hacia le repositorio"
               className="projectCard_anchor-logo"
             />
           </a>
@@ -49,7 +43,7 @@ export default function CustomCard({
             title="Ir a la pagina web"
           >
             <LinkIcon
-              aria-label="Link hacia la pagina web"
+              // aria-label="Link hacia la pagina web"
               className="projectCard_anchor-logo"
             />
           </a>

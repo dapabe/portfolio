@@ -1,12 +1,14 @@
 import data from "../../../assets/data.json";
 import useWindowSize from "../../hooks/useWindowSize";
 import { CustomCard } from "../Minis/exports";
+import HoverInfo from "../Minis/HoverInfo";
 
 export default function SectionProjects() {
   const { width } = useWindowSize();
+  data.projects_data.length = 1;
   return (
     <section className="projectSection">
-      <div>
+      <div className="flex gap-7 mxsm:flex-col">
         {data.projects_data.map((item) => {
           if (width <= 640) {
             return (
@@ -46,12 +48,7 @@ export default function SectionProjects() {
           }
         })}
       </div>
-      {width >= 1000 && (
-        <div className="max-h-full max-w-xs flex-grow self-center bg-vaporBlue p-3">
-          <h1 className="bg-vaporViolet text-center">Title</h1>
-          <p className="bg-vaporViolet">{/* {item.long_desc} */}</p>
-        </div>
-      )}
+      {width >= 1000 && <HoverInfo />}
     </section>
   );
 }

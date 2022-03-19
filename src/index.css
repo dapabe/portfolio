@@ -15,7 +15,7 @@
     @apply absolute z-30 w-full;
   }
   main {
-    @apply mx-auto max-h-max min-h-screen max-w-xs space-y-8 overflow-x-hidden sm:max-w-sm md:max-w-xl md:transition-[max-width] lg:max-w-4xl xl:max-w-6xl;
+    @apply mx-auto max-h-max min-h-screen max-w-xs space-y-8 sm:max-w-sm md:max-w-xl md:transition-[max-width] lg:max-w-4xl xl:max-w-6xl mxsm:overflow-x-visible;
   }
   footer {
     @apply flex min-h-[13rem] w-full items-center justify-between bg-sutilBlack p-4 text-sm text-slate-300 shadow-inner shadow-slate-700 sm:flex mxsm:space-y-3;
@@ -69,12 +69,12 @@
     @apply flex flex-wrap justify-evenly mxsm:justify-center;
   }
   .projectCard {
-    @apply relative flex max-h-max max-w-xs flex-col rounded-md bg-vaporBlue p-4 text-center before:absolute before:-top-7
+    @apply relative flex max-h-max min-w-[200px] max-w-xs flex-col rounded-md bg-vaporBlue p-4 text-center before:absolute before:-top-7
     before:left-2 before:z-10 before:h-24 before:w-7 before:rotate-45 before:border-b-4 before:border-r-4 before:border-black/50 before:bg-white/90 after:absolute after:-top-7 after:right-2 after:z-10 after:h-24 after:w-7 after:-rotate-45 after:border-b-4 after:border-l-4 after:border-black/50 after:bg-white/90 mxsm:p-3;
   }
 
   .projectCard_desc {
-    @apply mt-2 rounded-t-md rounded-bl-md bg-vaporViolet px-1 py-1.5 text-sm;
+    @apply mt-2 rounded-t-md rounded-bl-md bg-vaporViolet py-1.5 text-sm mxsm:px-1;
   }
   .projectCard_links {
     @apply flex items-center justify-end;

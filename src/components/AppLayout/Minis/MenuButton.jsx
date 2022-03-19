@@ -36,6 +36,7 @@ export default function MenuButton({ initialState, ...props }) {
   const MenuText = () => {
     return (
       <span
+        translate="no"
         className={`mt-3 gap-x-1 text-[.7rem] ${
           !initialState ? "hidden sm:flex" : "hidden"
         }`}
