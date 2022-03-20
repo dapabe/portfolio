@@ -1,9 +1,9 @@
 import {
-  LogoGithub,
-  LogoInstagram,
-  LogoLinkedIn,
-  LogoTwitter,
-} from "../../../assets/images/exports";
+  LinkGithub,
+  LinkInstagram,
+  LinkLinkedIn,
+  LinkTwitter,
+} from "../../../assets/icons/exports";
 export default function SocialLinks() {
   return (
     <>
@@ -13,7 +13,7 @@ export default function SocialLinks() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LogoLinkedIn fill="currentColor" />
+          <LinkLinkedIn fill="currentColor" />
         </a>
       </i>
       <i className="social-icon">
@@ -22,7 +22,7 @@ export default function SocialLinks() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LogoGithub fill="currentColor" />
+          <LinkGithub fill="currentColor" />
         </a>
       </i>
       <i className="social-icon">
@@ -31,7 +31,7 @@ export default function SocialLinks() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LogoTwitter fill="currentColor" />
+          <LinkTwitter fill="currentColor" />
         </a>
       </i>
       <i className="social-icon">
@@ -40,7 +40,7 @@ export default function SocialLinks() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LogoInstagram fill="currentColor" />
+          <LinkInstagram fill="currentColor" />
         </a>
       </i>
     </>

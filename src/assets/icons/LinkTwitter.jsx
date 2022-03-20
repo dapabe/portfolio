@@ -1,4 +1,4 @@
-export default function LogoTwitter(props) {
+export default function LinkTwitter(props) {
   return (
     <svg viewBox="0 0 512 512" {...props}>
       <title>Ir al perfil de Twitter</title>

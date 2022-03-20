@@ -1,4 +1,4 @@
-export default function LogoInstagram(props) {
+export default function LinkInstagram(props) {
   return (
     <svg viewBox="0 0 512 512" {...props}>
       <title>Ir al perfil Instagram</title>

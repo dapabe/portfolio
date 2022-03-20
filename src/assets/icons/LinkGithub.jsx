@@ -1,4 +1,4 @@
-export default function (props) {
+export default function LinkGithub(props) {
   return (
     <svg viewBox="0 0 512 512" {...props}>
       <title>Ir al repositorio de Github</title>

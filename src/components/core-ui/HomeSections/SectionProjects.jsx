@@ -1,13 +1,18 @@
 import data from "../../../assets/data.json";
+import { useState } from "react";
 import useWindowSize from "../../hooks/useWindowSize";
-import { CustomCard } from "../Minis/exports";
-import HoverInfo from "../Minis/HoverInfo";
+import { CustomCard, HoverInfo, Slider } from "../Minis/exports";
+import { displayLogos } from "../../../utilities";
 
 export default function SectionProjects() {
+  const [desktopDesc, setDesktopDesc] = useState();
   const { width } = useWindowSize();
-  data.projects_data.length = 1;
+  const everyProject = data.projects_data.map((elem) => elem.made_with);
+  // console.log(everyProject);
+  displayLogos(everyProject);
   return (
     <section className="projectSection">
+      {/* <Slider /> */}
       <div className="flex gap-7 mxsm:flex-col">
         {data.projects_data.map((item) => {
           if (width <= 640) {
@@ -20,7 +25,9 @@ export default function SectionProjects() {
                 description={item.short_desc}
                 linkRepo={item.repo}
                 linkUrl={item.link}
-              />
+              >
+                {displayLogos(item.made_with)}
+              </CustomCard>
             );
           } else if (width <= 1000) {
             return (
@@ -32,7 +39,7 @@ export default function SectionProjects() {
                 description={item.short_desc}
                 linkRepo={item.repo}
                 linkUrl={item.link}
-              />
+              ></CustomCard>
             );
           } else {
             return (
@@ -43,12 +50,20 @@ export default function SectionProjects() {
                 alt={item.alt}
                 linkRepo={item.repo}
                 linkUrl={item.link}
-              />
+                onMouseEnter={() => setDesktopDesc(item.long_desc)}
+                onMouseLeave={() => setDesktopDesc(this)}
+              ></CustomCard>
             );
           }
         })}
+        {width >= 900 && (
+          <HoverInfo>
+            {desktopDesc
+              ? desktopDesc
+              : "Pasa el mouse encima de algun proyecto para ver su información"}
+          </HoverInfo>
+        )}
       </div>
-      {width >= 1000 && <HoverInfo />}
     </section>
   );
 }

@@ -1,4 +1,4 @@
-export default function LogoLinkedIn(props) {
+export default function LinkLinkedIn(props) {
   return (
     <svg viewBox="0 0 512 512" {...props}>
       <title>Ir al perfil de LinkedIn</title>
