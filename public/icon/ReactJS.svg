@@ -1,15 +1,11 @@
-export default function LogoReact(props) {
-  return (
+
     <svg
       style="
       fill-rule: evenodd;
       clip-rule: evenodd;
       stroke-linejoin: round;
       stroke-miterlimit: 2;"
-      viewBox="0 0 128 128"
-      {...props}
-    >
-      <title>Logo de React</title>
+      viewBox="0 0 128 128">
       <g transform="matrix(1.25305,0,0,1.25305,-16.3076,4.57191)">
         <circle cx="64" cy="47.5" r="9.3" style="fill: rgb(97, 218, 251)" />
         <path
@@ -18,5 +14,3 @@ export default function LogoReact(props) {
         />
       </g>
     </svg>
-  );
-}

@@ -1,48 +1,10 @@
-import {
-  LinkGithub,
-  LinkInstagram,
-  LinkLinkedIn,
-  LinkTwitter,
-} from "../../../assets/icons/exports";
+import data from "../../../assets/data.json";
 export default function SocialLinks() {
-  return (
-    <>
-      <i className="social-icon">
-        <a
-          href="https://www.linkedin.com/in/daniel-patricio-becerra-5042681b5/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <LinkLinkedIn fill="currentColor" />
-        </a>
-      </i>
-      <i className="social-icon">
-        <a
-          href="https://github.com/dapabe"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <LinkGithub fill="currentColor" />
-        </a>
-      </i>
-      <i className="social-icon">
-        <a
-          href="https://twitter.com/dDenzere1999"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <LinkTwitter fill="currentColor" />
-        </a>
-      </i>
-      <i className="social-icon">
-        <a
-          href="https://www.instagram.com/_danzen"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <LinkInstagram fill="currentColor" />
-        </a>
-      </i>
-    </>
-  );
+  return data.social_data.map((link) => (
+    <i className="social-icon" key={link.name}>
+      <a href={link.url} target="_blank" rel="noopener noreferrer">
+        <img src={link.img} alt="a" />
+      </a>
+    </i>
+  ));
 }

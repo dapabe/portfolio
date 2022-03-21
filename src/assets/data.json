@@ -1,4 +1,46 @@
 {
+  "icons_data": [
+    { "name": "HTML5", "file": "HTML5.svg" },
+    { "name": "CSS3", "file": "CSS3.svg" },
+    { "name": "JavaScript", "file": "JavaScript.svg" },
+
+    { "name": "TailwindCSS", "file": "TailwindCSS.svg" },
+
+    { "name": "NodeJS", "file": "NodeJS.svg" },
+    { "name": "ReactJS", "file": "ReactJS.svg" },
+    { "name": "NextJS", "file": "NextJS.svg" },
+
+    { "name": "API", "file": "API.png" },
+    { "name": "MySQL", "file": "MySQL.svg" },
+    { "name": "MongoDB", "file": "MongoDB.svg" },
+
+    { "name": "LinkedIn", "file": "LinkedIn.svg" },
+    { "name": "Github", "file": "Github.svg" },
+    { "name": "Instagram", "file": "Instagram.svg" },
+    { "name": "Twitter", "file": "Twitter.svg" }
+  ],
+  "social_data": [
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/daniel-patricio-becerra-5042681b5/",
+      "img": "LinkedIn.svg"
+    },
+    {
+      "name": "Github",
+      "url": "https://github.com/dapabe",
+      "img": "Github.svg"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/dDenzere1999",
+      "img": "Twitter.svg"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/_danzen",
+      "img": "Instagram.svg"
+    }
+  ],
   "projects_data": [
     {
       "title": "TakeALook",
@@ -8,7 +50,7 @@
       "long_desc": "Servicio para ver información de peliculas y series, pensado como clon de Netflix",
       "repo": "https://github.com/dapabe/api-moviedb",
       "link": "https://moviedb-clone-dapabe.vercel.app/",
-      "made_with": ["Tailwind", "NextJs", "API"]
+      "made_with": ["TailwindCSS", "NextJS", "API"]
     },
     {
       "title": "TakeALook",

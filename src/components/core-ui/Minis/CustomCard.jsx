@@ -1,5 +1,5 @@
 import { LinkIcon } from "@heroicons/react/solid";
-import { LinkGithub } from "../../../assets/icons/exports";
+import data from "../../../assets/data.json";
 export default function CustomCard({
   isMobile = false,
   image,
@@ -11,6 +11,7 @@ export default function CustomCard({
   children,
   ...props
 }) {
+  console.log(Object.keys(data.icons_data.map((icon) => icon)));
   return (
     <article className="projectCard" {...props}>
       {!isMobile ? (
@@ -23,9 +24,9 @@ export default function CustomCard({
       )}
       {description && <p className="projectCard_desc">{description}</p>}
       <section>
-        <ol>
-          {children &&
-            children.map((logo, index) => <li key={index}>{logo}</li>)}
+        <ol className="flex flex-col text-left">
+          {children}
+          {/* {children && children.map((item) => <li key={item}>{item}</li>)} */}
         </ol>
         <ol>
           <li>
@@ -36,10 +37,15 @@ export default function CustomCard({
               title="Ir al repositorio de Github"
               aria-label="Link hacia le repositorio"
             >
-              <LinkGithub
-                fill="currentColor"
+              <img
+                src="/icons/Github.svg"
+                alt="Logo de Github"
                 className="projectCard_anchor-logo"
               />
+              {/* <LinkGithub
+                fill="currentColor"
+                className="projectCard_anchor-logo"
+              /> */}
             </a>
           </li>
           <li>
