@@ -1,5 +1,4 @@
 import { LinkIcon } from "@heroicons/react/solid";
-import data from "../../../assets/data.json";
 export default function CustomCard({
   isMobile = false,
   image,
@@ -8,10 +7,9 @@ export default function CustomCard({
   description,
   linkRepo,
   linkUrl,
-  children,
+  tools,
   ...props
 }) {
-  console.log(Object.keys(data.icons_data.map((icon) => icon)));
   return (
     <article className="projectCard" {...props}>
       {!isMobile ? (
@@ -24,42 +22,48 @@ export default function CustomCard({
       )}
       {description && <p className="projectCard_desc">{description}</p>}
       <section>
-        <ol className="flex flex-col text-left">
-          {children}
-          {/* {children && children.map((item) => <li key={item}>{item}</li>)} */}
-        </ol>
-        <ol>
-          <li>
-            <a
-              href={linkRepo}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Ir al repositorio de Github"
-              aria-label="Link hacia le repositorio"
-            >
-              <img
-                src="/icons/Github.svg"
-                alt="Logo de Github"
-                className="projectCard_anchor-logo"
-              />
-              {/* <LinkGithub
-                fill="currentColor"
-                className="projectCard_anchor-logo"
-              /> */}
-            </a>
-          </li>
-          <li>
-            <a
-              href={linkUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Ir a la pagina web"
-              aria-label="Link hacia la pagina web"
-            >
-              <LinkIcon className="projectCard_anchor-logo" />
-            </a>
-          </li>
-        </ol>
+        <div>
+          <h1>Hecho con :</h1>
+          <ol>
+            {tools.map((tool) => (
+              <li key={tool}>
+                <img src={`/icons/logos/${tool}`} alt={tool} />
+              </li>
+            ))}
+            {/* {children && children.map((item) => <li key={item}>{item}</li>)} */}
+          </ol>
+        </div>
+        <div>
+          <h1>Links :</h1>
+          <ol>
+            <li>
+              <a
+                href={linkRepo}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Ir al repositorio de Github"
+                aria-label="Link hacia le repositorio"
+              >
+                <img
+                  src={`/icons/social/${"Github-mono.svg" || "Github.svg"}`}
+                  alt="Logo de Github"
+                  className="projectCard_anchor-logo"
+                />
+              </a>
+            </li>
+            <li>
+              <a
+                href={linkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Ir a la pagina web"
+                aria-label="Link hacia la pagina web"
+              >
+                <LinkIcon className="projectCard_anchor-logo" />
+              </a>
+            </li>
+          </ol>
+        </div>
       </section>
     </article>
   );

@@ -1,7 +1,7 @@
 {
   "icons_data": [
-    { "name": "HTML5", "file": "HTML5.svg" },
-    { "name": "CSS3", "file": "CSS3.svg" },
+    { "name": "HTML", "file": "HTML.svg" },
+    { "name": "CSS", "file": "CSS.svg" },
     { "name": "JavaScript", "file": "JavaScript.svg" },
 
     { "name": "TailwindCSS", "file": "TailwindCSS.svg" },
@@ -12,7 +12,6 @@
 
     { "name": "API", "file": "API.png" },
     { "name": "MySQL", "file": "MySQL.svg" },
-    { "name": "MongoDB", "file": "MongoDB.svg" },
 
     { "name": "LinkedIn", "file": "LinkedIn.svg" },
     { "name": "Github", "file": "Github.svg" },
@@ -23,22 +22,30 @@
     {
       "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/daniel-patricio-becerra-5042681b5/",
-      "img": "LinkedIn.svg"
+      "img": "LinkedIn-mono.svg",
+      "fallback_img": "LinkedIn.svg",
+      "img_desc": "Ir al perfil de LinkedIn"
     },
     {
       "name": "Github",
       "url": "https://github.com/dapabe",
-      "img": "Github.svg"
+      "img": "Github-mono.svg",
+      "fallback_img": "Github.svg",
+      "img_desc": "Ir al perfil de Github"
     },
     {
       "name": "Twitter",
       "url": "https://twitter.com/dDenzere1999",
-      "img": "Twitter.svg"
+      "img": "Twitter-mono.svg",
+      "fallback_img": "Twitter.svg",
+      "img_desc": "Ir al perfil de Twitter"
     },
     {
       "name": "Instagram",
       "url": "https://www.instagram.com/_danzen",
-      "img": "Instagram.svg"
+      "img": "Instagram-mono.svg",
+      "fallback_img": "Instagram.svg",
+      "img_desc": "Ir al perfil de Instagram"
     }
   ],
   "projects_data": [
@@ -46,21 +53,21 @@
       "title": "TakeALook",
       "image": "placeholder.jpg",
       "alt": "Miniatura de la pagina web",
-      "short_desc": "Servicio para ver información de peliculas y series",
-      "long_desc": "Servicio para ver información de peliculas y series, pensado como clon de Netflix",
+      "short_desc": "Servicio para ver información de peliculas y series.",
+      "long_desc": "Servicio para ver información de peliculas y series, pensado como clon de Netflix.",
       "repo": "https://github.com/dapabe/api-moviedb",
       "link": "https://moviedb-clone-dapabe.vercel.app/",
-      "made_with": ["TailwindCSS", "NextJS", "API"]
+      "made_with": ["TailwindCSS.svg", "NextJS-mono.svg", "API.png"]
     },
     {
-      "title": "TakeALook",
+      "title": "Chat2You",
       "image": "placeholder.jpg",
       "alt": "Miniatura de la pagina web",
-      "short_desc": "Servicio para ver información de peliculas y series",
-      "long_desc": "Servicio para ver información de peliculas y series, pensado como clon de Netflix",
+      "short_desc": "Servicio para chatear con otras personas.",
+      "long_desc": "Servicio para chatear con otras personas, pensado como clon de Whatsapp",
       "repo": "https://github.com/dapabe/api-moviedb",
       "link": "ha",
-      "made_with": []
+      "made_with": [""]
     }
   ]
 }

@@ -21,7 +21,11 @@
     @apply flex min-h-[13rem] w-full items-center justify-between bg-sutilBlack p-4 text-sm text-slate-300 shadow-inner shadow-slate-700 sm:flex mxsm:space-y-3;
   }
   main > section {
-    @apply max-h-max min-h-screen;
+    @apply max-h-max min-h-[80vh];
+  }
+
+  img {
+    @apply text-xs;
   }
 }
 @layer components {
@@ -60,7 +64,7 @@
     @apply absolute inset-0 z-20 bg-black/90;
   }
   .heroSection {
-    @apply grid h-screen place-items-center;
+    @apply grid place-items-center;
   }
   .heroSection > h1 {
     @apply relative text-6xl transition-[font-size] sm:text-7xl md:text-9xl md:tracking-wide;
@@ -69,20 +73,30 @@
     @apply flex flex-wrap;
   }
   .projectCard {
-    @apply relative flex max-h-max min-w-[200px] max-w-xs flex-col rounded-md bg-vaporBlue p-4 text-center before:absolute before:-top-7 before:left-11 before:z-10
-    before:h-16 before:w-7 before:border-b-4 before:border-r-4 before:border-black/50 before:bg-white/90 before:transition-transform after:absolute after:-top-7 after:right-11 after:z-10 after:h-16 after:w-7 after:border-b-4 after:border-l-4 after:border-black/50 after:bg-white/90 after:transition-transform sm:before:left-2 sm:before:h-24 sm:before:rotate-45 sm:after:right-2 sm:after:h-24 sm:after:-rotate-45 lg:rounded-none mxsm:p-3;
+    @apply relative flex h-max min-w-[200px] max-w-xs flex-col rounded-md bg-vaporBlue p-4 text-center before:absolute before:-top-7 before:left-11 before:z-10 before:h-16
+    before:w-7 before:border-b-4 before:border-r-4 before:border-black/50 before:bg-white/90 before:transition-transform after:absolute after:-top-7 after:right-11 after:z-10 after:h-16 after:w-7 after:border-b-4 after:border-l-4 after:border-black/50 after:bg-white/90 after:transition-transform sm:before:left-2 sm:before:h-24 sm:before:rotate-45 sm:after:right-2 sm:after:h-24 sm:after:-rotate-45 lg:rounded-none  mxsm:p-3;
   }
   .projectCard section {
-    @apply flex justify-between;
+    @apply flex flex-row justify-between text-xs;
+  }
+  .projectCard div {
+    @apply relative h-max rounded-b-md bg-vaporViolet px-1.5 pb-1;
+  }
+  .projectCard section h1 {
+    @apply mb-1;
   }
   .projectCard ol {
-    @apply flex max-h-max max-w-max gap-2 rounded-b-md bg-vaporViolet p-1;
+    @apply flex min-w-min flex-wrap items-center justify-center gap-x-2;
   }
   .projectCard_desc {
     @apply mt-2 rounded-t-md bg-vaporViolet py-1.5 text-sm mxsm:px-1;
   }
+  .projectCard section img,
+  .projectCard svg {
+    @apply w-8;
+  }
   .projectCard_anchor-logo {
-    @apply h-8 hover:scale-105;
+    @apply hover:scale-105;
   }
 }
 @layer utilities {

@@ -7,10 +7,8 @@ import { ReactSVG } from "react-svg";
 export default function SectionProjects() {
   const [desktopDesc, setDesktopDesc] = useState();
   const { width } = useWindowSize();
-  const everyProject = data.projects_data.map((elem) => elem.made_with);
-  data.projects_data.length = 1;
-  // console.log(everyProject);
-  // displayLogos(everyProject);
+  // data.projects_data.length = 2;
+
   return (
     <section className="projectSection">
       {/* <Slider /> */}
@@ -26,40 +24,39 @@ export default function SectionProjects() {
               description={item.short_desc}
               linkRepo={item.repo}
               linkUrl={item.link}
-            ></CustomCard>
+              tools={item.made_with}
+            />
           );
-        } else if (width <= 1000) {
+        } else if (width < 1024) {
           return (
             <CustomCard
               key={item.link}
-              title={item.title}
               image={item.image}
+              title={item.title}
               alt={item.alt}
               description={item.short_desc}
               linkRepo={item.repo}
               linkUrl={item.link}
-            >
-              <ReactSVG src="/HTML5.svg" className="max-h-[30px] w-10" />
-            </CustomCard>
+              tools={item.made_with}
+            />
           );
         } else {
           return (
             <CustomCard
               key={item.link}
-              title={item.title}
               image={item.image}
+              title={item.title}
               alt={item.alt}
               linkRepo={item.repo}
               linkUrl={item.link}
+              tools={item.made_with}
               onMouseEnter={() => setDesktopDesc(item.long_desc)}
               onMouseLeave={() => setDesktopDesc(this)}
-            >
-              {/* <img src="/HTML5.svg" alt="a" className="h-10 w-10" /> */}
-            </CustomCard>
+            />
           );
         }
       })}
-      {width >= 900 && (
+      {width >= 1024 && (
         <HoverInfo>
           {desktopDesc
             ? desktopDesc
