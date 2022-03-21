@@ -1,4 +1,4 @@
-import Slider from "../Minis/Slider";
+import Slider from "../Content/SliderUI/Slider";
 
 export default function SectionContact() {
   return (

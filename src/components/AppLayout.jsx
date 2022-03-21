@@ -1,5 +1,5 @@
 import { Header, Footer } from "./AppLayout/exports";
-import { BackToTop } from "./AppLayout/Minis/exports";
+import { BackToTop } from "./AppLayout/Content/exports";
 import { Home } from "./pages/exports";
 
 export default function AppLayout() {

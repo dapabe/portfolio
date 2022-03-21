@@ -7,7 +7,7 @@
 // import { ReactComponent as NODEJS } from "/icons/icon_nodejs.svg";
 // import { ReactComponent as REACTJS } from "/icons/icon_react.svg";
 // import { ReactComponent as TAILWINDCSS } from "/icons/icon_tailwindcss.svg";
-import Carousel from "../Minis/Carousel";
+import Carousel from "../Content/Carousel";
 
 export default function SectionTechs() {
   const [pause, setPause] = useState(false);

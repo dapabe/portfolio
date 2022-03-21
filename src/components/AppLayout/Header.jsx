@@ -6,7 +6,7 @@ import {
   SkipNav,
   SocialLinks,
   MenuButton,
-} from "./Minis/exports";
+} from "./Content/exports";
 
 export default function Header() {
   const [buttonState, setButtonState] = useState(false);
