@@ -10,18 +10,14 @@ export default function SectionProjects() {
   return (
     <section className="projectSection">
       <Slider>
-        <ProjectCards
-          displayCondition={width}
-          mouseEnter={setDesktopDesc}
-          mouseLeave={setDesktopDesc}
-        />
+        <ProjectCards displayCondition={width} mouseEvent={setDesktopDesc} />
       </Slider>
 
       {width >= 1024 && (
         <HoverInfo>
           {desktopDesc
             ? desktopDesc
-            : "Pasa el mouse encima de algun proyecto para ver su información"}
+            : "Pasa el cursor encima de algun proyecto para ver su información"}
         </HoverInfo>
       )}
     </section>

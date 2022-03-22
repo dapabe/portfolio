@@ -1,13 +1,11 @@
 import data from "@assets/data.json";
 import CustomCard from "../../Content/CustomCard";
 
-export default function ProjectCards({
-  displayCondtion,
-  mouseEnter,
-  mouseLeave,
-}) {
-  return data.projects_data.map((item) => {
-    if (displayCondtion <= 640) {
+export default function ProjectCards({ displayCondition, mouseEvent }) {
+  const projectData = data.projects_data;
+  projectData.length = 1;
+  return projectData.map((item) => {
+    if (displayCondition <= 640) {
       return (
         <CustomCard
           isMobile={true}
@@ -20,7 +18,7 @@ export default function ProjectCards({
           tools={item.made_with}
         />
       );
-    } else if (displayCondtion < 1024) {
+    } else if (displayCondition < 1024) {
       return (
         <CustomCard
           key={item.link}
@@ -43,8 +41,8 @@ export default function ProjectCards({
           linkRepo={item.repo}
           linkUrl={item.link}
           tools={item.made_with}
-          onMouseEnter={() => mouseEnter(item.long_desc)}
-          onMouseLeave={() => mouseLeave(this)}
+          onMouseEnter={() => mouseEvent(item.long_desc)}
+          onMouseLeave={() => mouseEvent(this)}
         />
       );
     }
