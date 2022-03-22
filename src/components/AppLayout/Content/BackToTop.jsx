@@ -1,5 +1,5 @@
 import { ChevronDoubleUpIcon } from "@heroicons/react/solid";
-import useScrollTop from "../../hooks/useScrollTop";
+import useScrollTop from "@hooks/useScrollTop";
 
 export default function BackToTop() {
   return (

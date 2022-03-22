@@ -4,7 +4,7 @@ import useWindowSize from "@hooks/useWindowSize";
 import { HoverInfo, Slider } from "../Content/exports";
 import ProjectCards from "./Content/ProjectCards";
 export default function SectionProjects() {
-  const [desktopDesc, setDesktopDesc] = useState();
+  const [desktopDesc, setDesktopDesc] = useState("");
   const { width } = useWindowSize();
 
   return (

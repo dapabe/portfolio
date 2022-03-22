@@ -22,17 +22,18 @@ export default function CustomCard({
       )}
       {description && <p className="projectCard_desc">{description}</p>}
       <section>
-        <div>
-          <h1>Hecho con :</h1>
-          <ol>
-            {tools.map((tool) => (
-              <li key={tool}>
-                <img src={`/icons/logos/${tool}`} alt={tool} />
-              </li>
-            ))}
-            {/* {children && children.map((item) => <li key={item}>{item}</li>)} */}
-          </ol>
-        </div>
+        {tools != 0 && (
+          <div>
+            <h1>Hecho con :</h1>
+            <ol>
+              {tools.map((tool) => (
+                <li key={tool}>
+                  <img src={`/icons/logos/${tool}`} alt={tool} />
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
         <div>
           <h1>Links :</h1>
           <ol>

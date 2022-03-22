@@ -3,8 +3,8 @@ import CustomCard from "../../Content/CustomCard";
 
 export default function ProjectCards({ displayCondition, mouseEvent }) {
   const projectData = data.projects_data;
-  projectData.length = 1;
-  return projectData.map((item) => {
+  // projectData.length = 1;
+  function ConditionalRenders(item) {
     if (displayCondition <= 640) {
       return (
         <CustomCard
@@ -46,5 +46,10 @@ export default function ProjectCards({ displayCondition, mouseEvent }) {
         />
       );
     }
-  });
+  }
+  return projectData.map((item) => (
+    <li key={item.link} className="flex min-h-full items-center">
+      {ConditionalRenders(item)}
+    </li>
+  ));
 }

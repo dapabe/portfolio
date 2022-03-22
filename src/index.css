@@ -12,18 +12,20 @@
     @apply relative bg-gradient-to-r from-strongOrange to-strongRed font-Comfortaa text-white scrollbar-hide;
   }
   header {
-    @apply absolute z-30 w-full;
+    @apply absolute z-10 w-full;
   }
   main {
-    @apply mx-auto max-h-max min-h-screen max-w-xs space-y-9 sm:max-w-sm md:max-w-xl md:transition-[max-width] lg:max-w-4xl xl:max-w-6xl;
+    @apply max-h-max min-h-screen space-y-9;
   }
   footer {
     @apply flex min-h-[13rem] w-full items-center justify-between bg-sutilBlack p-4 text-sm text-slate-300 shadow-inner shadow-slate-700 sm:flex mxsm:space-y-3;
   }
   main > section {
-    @apply max-h-max min-h-[80vh];
+    @apply min-h-[80vh];
   }
-
+  main > section:not(.projectSection, .techSection) {
+    @apply mx-auto max-w-xs transition-[max-width] sm:max-w-sm md:max-w-xl lg:max-w-4xl xl:max-w-6xl;
+  }
   img {
     @apply text-xs;
   }
@@ -70,7 +72,10 @@
     @apply relative text-6xl transition-[font-size] sm:text-7xl md:text-9xl md:tracking-wide;
   }
   .projectSection {
-    @apply flex flex-wrap;
+    @apply left-0 flex h-[30vh] flex-wrap justify-center overflow-hidden border-2 bg-emerald-900 transition-[min-height] lg:justify-evenly mxsm:min-h-[50vh];
+  }
+  .projectSlider {
+    @apply relative flex max-h-full flex-col overflow-x-hidden border-4 border-blue-800 from-sutilBlack via-sutilBlack/80 to-transparent px-5 before:absolute before:top-0 before:left-0 before:z-20 before:h-[15%] before:w-full before:bg-gradient-to-b;
   }
   .projectCard {
     @apply relative flex h-max min-w-[200px] max-w-xs flex-col rounded-md bg-vaporBlue p-4 text-center before:absolute before:-top-7 before:left-11 before:z-10 before:h-16
