@@ -1,9 +1,6 @@
-import data from "@assets/data.json";
 import CustomCard from "../../Content/CustomCard";
 
-export default function ProjectCards({ displayCondition, mouseEvent }) {
-  const projectData = data.projects_data;
-  // projectData.length = 1;
+export default function ProjectCards({ data, displayCondition, mouseEvent }) {
   function ConditionalRenders(item) {
     if (displayCondition <= 640) {
       return (
@@ -11,7 +8,6 @@ export default function ProjectCards({ displayCondition, mouseEvent }) {
           isMobile={true}
           key={item.link}
           title={item.title}
-          alt={item.alt}
           description={item.short_desc}
           linkRepo={item.repo}
           linkUrl={item.link}
@@ -24,7 +20,6 @@ export default function ProjectCards({ displayCondition, mouseEvent }) {
           key={item.link}
           image={item.image}
           title={item.title}
-          alt={item.alt}
           description={item.short_desc}
           linkRepo={item.repo}
           linkUrl={item.link}
@@ -37,7 +32,6 @@ export default function ProjectCards({ displayCondition, mouseEvent }) {
           key={item.link}
           image={item.image}
           title={item.title}
-          alt={item.alt}
           linkRepo={item.repo}
           linkUrl={item.link}
           tools={item.made_with}
@@ -47,8 +41,8 @@ export default function ProjectCards({ displayCondition, mouseEvent }) {
       );
     }
   }
-  return projectData.map((item) => (
-    <li key={item.link} className="flex min-h-full items-center">
+  return data.map((item) => (
+    <li key={item.link} className="flex h-full items-center">
       {ConditionalRenders(item)}
     </li>
   ));

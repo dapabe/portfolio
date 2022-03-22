@@ -14,7 +14,11 @@ export default function CustomCard({
     <article className="projectCard" {...props}>
       {!isMobile ? (
         <figure className="relative min-w-[5rem] rounded-md bg-vaporViolet p-2 lg:rounded-none">
-          <img src={`/images/${image}`} alt={alt} className="max-w-full" />
+          <img
+            src={`/images/${image}`}
+            alt="Miniatura de la pagina web"
+            className="max-w-full"
+          />
           <figcaption className="text-md bg-slate-700 py-1">{title}</figcaption>
         </figure>
       ) : (

@@ -74,8 +74,11 @@
   .projectSection {
     @apply left-0 flex h-[30vh] flex-wrap justify-center overflow-hidden border-2 bg-emerald-900 transition-[min-height] lg:justify-evenly mxsm:min-h-[50vh];
   }
+  .projectSlider-Container {
+    @apply relative h-full;
+  }
   .projectSlider {
-    @apply relative flex max-h-full flex-col overflow-x-hidden border-4 border-blue-800 from-sutilBlack via-sutilBlack/80 to-transparent px-5 before:absolute before:top-0 before:left-0 before:z-20 before:h-[15%] before:w-full before:bg-gradient-to-b;
+    @apply h-full max-h-max overflow-x-hidden border-4 border-blue-800 px-5;
   }
   .projectCard {
     @apply relative flex h-max min-w-[200px] max-w-xs flex-col rounded-md bg-vaporBlue p-4 text-center before:absolute before:-top-7 before:left-11 before:z-10 before:h-16

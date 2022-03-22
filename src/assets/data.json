@@ -52,7 +52,6 @@
     {
       "title": "TakeALook",
       "image": "placeholder.jpg",
-      "alt": "Miniatura de la pagina web",
       "short_desc": "Servicio para ver información de peliculas y series.",
       "long_desc": "Servicio para ver información de peliculas y series, pensado como clon de Netflix.",
       "repo": "https://github.com/dapabe/api-moviedb",
@@ -62,11 +61,19 @@
     {
       "title": "Chat2You",
       "image": "placeholder.jpg",
-      "alt": "Miniatura de la pagina web",
       "short_desc": "Servicio para chatear con otras personas.",
       "long_desc": "Servicio para chatear con otras personas, pensado como clon de Whatsapp",
       "repo": "https://github.com/dapabe/api-moviedb",
       "link": "ha",
+      "made_with": [""]
+    },
+    {
+      "title": "Chat2You",
+      "image": "placeholder.jpg",
+      "short_desc": "Servicio para chatear con otras personas.",
+      "long_desc": "Servicio para chatear con otras personas, pensado como clon de Whatsapp",
+      "repo": "https://github.com/dapabe/api-moviedb",
+      "link": "has",
       "made_with": [""]
     }
   ]
