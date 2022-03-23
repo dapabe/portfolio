@@ -1,6 +1,11 @@
 import CustomCard from "../../Content/CustomCard";
 
-export default function ProjectCards({ data, displayCondition, mouseEvent }) {
+export default function ProjectCards({
+  data,
+  indexState,
+  displayCondition,
+  mouseEvent,
+}) {
   function ConditionalRenders(item) {
     if (displayCondition <= 640) {
       return (
@@ -41,9 +46,14 @@ export default function ProjectCards({ data, displayCondition, mouseEvent }) {
       );
     }
   }
-  return data.map((item) => (
-    <li key={item.link} className="flex h-full items-center">
-      {ConditionalRenders(item)}
+  return data.map((item, index) => (
+    <li
+      key={item.link}
+      className={`${
+        index === indexState ? "activeSlide" : "inactiveSlide"
+      } absolute inset-0 mx-auto flex max-w-xs items-center transition-opacity`}
+    >
+      <div className="h-max min-w-max">{ConditionalRenders(item)}</div>
     </li>
   ));
 }
