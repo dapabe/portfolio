@@ -18,6 +18,15 @@
     { "name": "Instagram", "file": "Instagram.svg" },
     { "name": "Twitter", "file": "Twitter.svg" }
   ],
+  "tech_data": [
+    { "name": "HTML", "img_desc": "Logo de HTML5" },
+    { "name": "CSS", "img_desc": "Logo de CSS" },
+    { "name": "JavaScript", "img_desc": "Logo de JavaScript" },
+    { "name": "TailwindCSS", "img_desc": "Logo de TailwindCSS" },
+    { "name": "NodeJS", "img_desc": "Logo de NodeJS" },
+    { "name": "ReactJS", "img_desc": "Logo de ReactJS" },
+    { "name": "NextJS", "img_desc": "Logo de MySQL" }
+  ],
   "social_data": [
     {
       "name": "LinkedIn",

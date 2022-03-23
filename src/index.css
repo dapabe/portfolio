@@ -74,8 +74,11 @@
   .heroSection > h1 {
     @apply relative text-6xl transition-[font-size] sm:text-7xl md:text-9xl md:tracking-wide;
   }
+  .techSection {
+    @apply min-h-max space-y-10 bg-sutilBlack py-10;
+  }
   .projectSection {
-    @apply relative flex h-[30vh] flex-wrap justify-center transition-[min-height] lg:justify-around mxsm:min-h-[50vh];
+    @apply relative flex h-[30vh] flex-wrap justify-center transition-[min-height] lg:justify-evenly mxsm:min-h-[50vh];
   }
   .projectSlider-Container {
     @apply relative h-full overflow-hidden rounded-lg shadow-xl shadow-sutilBlack;

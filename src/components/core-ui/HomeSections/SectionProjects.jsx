@@ -22,7 +22,8 @@ export default function SectionProjects() {
     setActiveIndex(activeIndex === ProjectINFO.amount ? 0 : activeIndex + 1);
 
   return (
-    <section className="projectSection noMaxWidth relative">
+    <section className="projectSection noMaxWidth">
+      <div className="decorative-1" />
       <div className="projectSlider-Container">
         <Arrows prevSlide={btnPrev} nextSlide={btnNext}>
           <ul className="projectSlider">
@@ -42,7 +43,6 @@ export default function SectionProjects() {
             : "Pasa el cursor encima de algun proyecto para ver su información"}
         </HoverInfo>
       )}
-      <div className="decorative-1" />
     </section>
   );
 }
