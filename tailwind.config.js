@@ -5,22 +5,13 @@ module.exports = {
       colors: {
         vaporBlue: "#111122",
         vaporViolet: "#2c2c54",
-        pastelBlue: "#43457f",
         pastelViolet: "#685489",
-        pastelMagenta: "#976393",
         strongOrange: "#f4583a",
-        pastelOrange: "#ff9b83",
-        pastelYellow: "#f3da84",
         strongRed: "#cd1e38",
-        pastelRed: "#ab3428",
-        lightRed: "#ff5851",
         sutilBlack: "#1C1B20",
       },
       fontFamily: {
         Comfortaa: ["Comfortaa", "serif"],
-      },
-      transitionTimingFunction: {
-        abrupt: "cubic-bezier(1, 0, 0, 1)",
       },
       animation: {
         colorRotation: "hueRotate 60s ease-in-out infinite 5s",
@@ -48,7 +39,7 @@ module.exports = {
             transform: "translateX(0)",
           },
           "100%": {
-            transform: "translateX(calc(-200px * 9))",
+            transform: "translateX(calc(-200px * 7))",
           },
         },
       },
