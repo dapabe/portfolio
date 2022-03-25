@@ -1,12 +1,12 @@
 import { ChevronDoubleUpIcon } from "@heroicons/react/solid";
-import useScrollTop from "@hooks/useScrollTop";
+import usePageScrolled from "@hooks/usePageScrolled";
 
 export default function BackToTop() {
   return (
     <a
       href="#main"
       className={`fixed right-4 bottom-2  w-12 rounded-md bg-white  transition-opacity hover:scale-105 ${
-        useScrollTop() ? "z-[15] opacity-100" : "-z-50 opacity-0"
+        usePageScrolled() ? "z-[15] opacity-100" : "-z-50 opacity-0"
       }`}
       title="Volver arriba"
     >

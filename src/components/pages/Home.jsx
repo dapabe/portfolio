@@ -4,7 +4,7 @@ import {
   Intro,
   Projects,
   Techs,
-} from "../core-ui/HomeSections/exports";
+} from "@ui/HomeSections/exports";
 
 export default function Home() {
   return (

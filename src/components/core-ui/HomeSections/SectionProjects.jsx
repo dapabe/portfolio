@@ -1,10 +1,9 @@
 import { useState } from "react";
 import useWindowSize from "@hooks/useWindowSize";
+import data from "@src/assets/data.json";
 
-import { HoverInfo } from "../Content/exports";
-import Arrows from "../Content/SliderUI/Arrows";
+import { HoverInfo, Arrows } from "@ui/Content/exports";
 import ProjectCards from "./Content/ProjectCards";
-import data from "@assets/data.json";
 
 const ProjectINFO = {
   data: data.projects_data,

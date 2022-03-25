@@ -1,9 +1,9 @@
-import CustomCard from "../../Content/CustomCard";
+import { CustomCard } from "@ui/Content/exports";
 
 export default function ProjectCards({ displayData, indexState, mouseEvent }) {
   return displayData.map((item, index) => (
     <li
-      key={item.link}
+      key={item.title}
       className={`${
         index === indexState ? "activeSlide" : "inactiveSlide"
       } absolute inset-0 mx-auto flex max-w-xs items-center transition-opacity`}
@@ -15,8 +15,7 @@ export default function ProjectCards({ displayData, indexState, mouseEvent }) {
             image={item.image}
             title={item.title}
             description={item.short_desc}
-            linkRepo={item.repo}
-            linkUrl={item.link}
+            links={item.links}
             tools={item.made_with}
             onMouseEnter={() => mouseEvent(item.long_desc)}
             onMouseLeave={() => mouseEvent(this)}

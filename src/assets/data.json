@@ -84,26 +84,19 @@
       "image": "placeholder.jpg",
       "short_desc": "Servicio para ver información de peliculas y series.",
       "long_desc": "Servicio para ver información de peliculas y series, pensado como clon de Netflix.",
-      "repo": "https://github.com/dapabe/api-moviedb",
-      "link": "https://moviedb-clone-dapabe.vercel.app/",
+      "links": {
+        "repository": "https://github.com/dapabe/api-moviedb",
+        "webpage": "https://moviedb-clone-dapabe.vercel.app/"
+      },
       "made_with": ["TailwindCSS.svg", "NextJS-mono.svg", "API.png"]
     },
     {
       "title": "Chat2You",
-      "image": "placeholder.jpg",
+
       "short_desc": "Servicio para chatear con otras personas.",
       "long_desc": "Servicio para chatear con otras personas, pensado como clon de Whatsapp",
       "repo": "https://github.com/dapabe/api-moviedb",
-      "link": "ha",
-      "made_with": [""]
-    },
-    {
-      "title": "Chat2You",
-      "image": "placeholder.jpg",
-      "short_desc": "Servicio para chatear con otras personas.",
-      "long_desc": "Servicio para chatear con otras personas, pensado como clon de Whatsapp",
-      "repo": "https://github.com/dapabe/api-moviedb",
-      "link": "has",
+      "links": {},
       "made_with": [""]
     }
   ]

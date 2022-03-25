@@ -1,6 +1,9 @@
-import data from "../../../assets/data.json";
+import data from "@src/assets/data.json";
+
+const SOCIAL = data.social_data;
+
 export default function SocialLinks() {
-  return data.social_data.map((link) => (
+  return SOCIAL.map((link) => (
     <i className="social-icon" key={link.name}>
       <a
         href={link.url}

@@ -1,5 +1,6 @@
 import Carousel from "./CarouselUI/Carousel";
-import CustomCard from "./CustomCard";
-import HoverInfo from "./HoverInfo";
+import CustomCard from "./CustomCardUI/CustomCard";
+import HoverInfo from "./SliderUI/HoverInfo";
+import Arrows from "./SliderUI/Arrows";
 
-export { HoverInfo, Carousel, CustomCard };
+export { HoverInfo, Carousel, CustomCard, Arrows };

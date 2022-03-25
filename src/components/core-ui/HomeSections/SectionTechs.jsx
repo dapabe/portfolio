@@ -1,7 +1,7 @@
-import data from "@assets/data.json";
 import { useState } from "react";
-import { CompareAndRetrieve } from "@utilities/utilities.js";
-import Carousel from "../Content/CarouselUI/Carousel";
+import { CompareAndRetrieve } from "@src/utilities.js";
+import data from "@src/assets/data.json";
+import { Carousel } from "@ui/Content/exports";
 
 const TECHS = data.tech_data;
 const ICONS = data.icons_data;

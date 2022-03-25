@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useScrollTop() {
+export default function usePageScrolled() {
   const [showScroll, setShowScroll] = useState(false);
   function checkTopScroll() {
     if (!showScroll && window.pageYOffset > 400) return setShowScroll(true);

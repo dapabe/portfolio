@@ -1,4 +1,4 @@
-import useStopScroll from "../../hooks/useStopScroll";
+import useStopScroll from "@hooks/useStopScroll";
 import SocialLinks from "./SocialLinks";
 
 export default function MenuModal({ initialState, children }) {

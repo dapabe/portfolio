@@ -87,8 +87,8 @@
     @apply relative h-full max-h-max w-[350px] overflow-hidden bg-gray-800/80 transition-[width_height] sm:w-[380px];
   }
   .projectCard {
-    @apply relative flex h-max min-w-[200px] max-w-xs flex-col rounded-md bg-vaporBlue p-4 text-center before:absolute before:-top-7 before:left-11 before:z-10 before:h-16
-    before:w-7 before:border-b-4 before:border-r-4 before:border-black/50 before:bg-white/90 before:transition-transform after:absolute after:-top-7 after:right-11 after:z-10 after:h-16 after:w-7 after:border-b-4 after:border-l-4 after:border-black/50 after:bg-white/90 after:transition-transform sm:before:left-2 sm:before:h-24 sm:before:rotate-45 sm:after:right-2 sm:after:h-24 sm:after:-rotate-45 mxsm:p-3;
+    @apply relative flex h-max max-w-xs flex-col rounded-md bg-vaporBlue p-4 text-center before:absolute before:-top-7 before:left-11 before:z-10 before:h-16 before:w-7
+    before:border-b-4 before:border-r-4 before:border-black/50 before:bg-white/90 before:transition-transform after:absolute after:-top-7 after:right-11 after:z-10 after:h-16 after:w-7 after:border-b-4 after:border-l-4 after:border-black/50 after:bg-white/90 after:transition-transform sm:before:left-2 sm:before:h-24 sm:before:rotate-45 sm:after:right-2 sm:after:h-24 sm:after:-rotate-45 lg:min-w-[320px] mxsm:p-3;
   }
   .projectCard section {
     @apply flex flex-row justify-between text-xs;
@@ -110,7 +110,7 @@
     @apply w-8;
   }
   .projectCard_anchor-logo {
-    @apply hover:scale-105;
+    @apply transition-[scale] hover:scale-105;
   }
 }
 @layer utilities {
