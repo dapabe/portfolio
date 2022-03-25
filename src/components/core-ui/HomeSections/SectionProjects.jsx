@@ -30,7 +30,6 @@ export default function SectionProjects() {
             <ProjectCards
               displayData={ProjectINFO.data}
               indexState={activeIndex}
-              displayCondition={width}
               mouseEvent={setDesktopDesc}
             />
           </ul>
