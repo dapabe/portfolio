@@ -28,7 +28,7 @@ export default function SectionProjects() {
         <Arrows prevSlide={btnPrev} nextSlide={btnNext}>
           <ul className="projectSlider">
             <ProjectCards
-              data={ProjectINFO.data}
+              displayData={ProjectINFO.data}
               indexState={activeIndex}
               displayCondition={width}
               mouseEvent={setDesktopDesc}

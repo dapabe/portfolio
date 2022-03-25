@@ -1,7 +1,7 @@
 import CustomCard from "../../Content/CustomCard";
 
 export default function ProjectCards({
-  data,
+  displayData,
   indexState,
   displayCondition,
   mouseEvent,
@@ -46,7 +46,7 @@ export default function ProjectCards({
       );
     }
   }
-  return data.map((item, index) => (
+  return displayData.map((item, index) => (
     <li
       key={item.link}
       className={`${

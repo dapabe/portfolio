@@ -1,31 +1,52 @@
 {
   "icons_data": [
-    { "name": "HTML", "file": "HTML.svg" },
-    { "name": "CSS", "file": "CSS.svg" },
-    { "name": "JavaScript", "file": "JavaScript.svg" },
+    { "name": "HTML", "file": "HTML.svg", "img_desc": "Logo de HTML5" },
+    { "name": "CSS", "file": "CSS.svg", "img_desc": "Logo de CSS" },
+    {
+      "name": "JavaScript",
+      "file": "JavaScript.svg",
+      "img_desc": "Logo de JavaScript"
+    },
 
-    { "name": "TailwindCSS", "file": "TailwindCSS.svg" },
+    {
+      "name": "TailwindCSS",
+      "file": "TailwindCSS.svg",
+      "img_desc": "Logo de TailwindCSS"
+    },
 
-    { "name": "NodeJS", "file": "NodeJS.svg" },
-    { "name": "ReactJS", "file": "ReactJS.svg" },
-    { "name": "NextJS", "file": "NextJS.svg" },
+    { "name": "NodeJS", "file": "NodeJS.svg", "img_desc": "Logo de NodeJS" },
+    { "name": "ReactJS", "file": "ReactJS.svg", "img_desc": "Logo de ReactJS" },
+    { "name": "NextJS", "file": "NextJS.svg", "img_desc": "Logo de NextJS" },
+    {
+      "name": "NextJS-mono",
+      "file": "NextJS-mono.svg",
+      "img_desc": "Logo de NextJS"
+    },
 
-    { "name": "API", "file": "API.png" },
-    { "name": "MySQL", "file": "MySQL.svg" },
+    {
+      "name": "API",
+      "file": "API.png",
+      "img_desc": "Imagen con las siglas de API"
+    },
+    { "name": "MySQL", "file": "MySQL.svg", "img_desc": "Logo de MySQL" },
 
-    { "name": "LinkedIn", "file": "LinkedIn.svg" },
-    { "name": "Github", "file": "Github.svg" },
-    { "name": "Instagram", "file": "Instagram.svg" },
-    { "name": "Twitter", "file": "Twitter.svg" }
+    { "name": "LinkedIn", "file": "LinkedIn.svg", "img_desc": "Logo de MySQL" },
+    { "name": "Github", "file": "Github.svg", "img_desc": "Logo de Github" },
+    {
+      "name": "Instagram",
+      "file": "Instagram.svg",
+      "img_desc": "Logo de Instagram"
+    },
+    { "name": "Twitter", "file": "Twitter.svg", "img_desc": "Logo de Twitter" }
   ],
   "tech_data": [
-    { "name": "HTML", "img_desc": "Logo de HTML5" },
-    { "name": "CSS", "img_desc": "Logo de CSS" },
-    { "name": "JavaScript", "img_desc": "Logo de JavaScript" },
-    { "name": "TailwindCSS", "img_desc": "Logo de TailwindCSS" },
-    { "name": "NodeJS", "img_desc": "Logo de NodeJS" },
-    { "name": "ReactJS", "img_desc": "Logo de ReactJS" },
-    { "name": "NextJS", "img_desc": "Logo de MySQL" }
+    { "name": "HTML" },
+    { "name": "CSS" },
+    { "name": "JavaScript" },
+    { "name": "TailwindCSS" },
+    { "name": "NodeJS" },
+    { "name": "ReactJS" },
+    { "name": "NextJS" }
   ],
   "social_data": [
     {
