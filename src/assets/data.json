@@ -46,7 +46,16 @@
     { "name": "TailwindCSS" },
     { "name": "NodeJS" },
     { "name": "ReactJS" },
-    { "name": "NextJS" }
+    { "name": "NextJS" },
+    { "name": "MySQL" },
+    { "name": "HTML" },
+    { "name": "CSS" },
+    { "name": "JavaScript" },
+    { "name": "TailwindCSS" },
+    { "name": "NodeJS" },
+    { "name": "ReactJS" },
+    { "name": "NextJS" },
+    { "name": "MySQL" }
   ],
   "social_data": [
     {

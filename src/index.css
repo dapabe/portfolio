@@ -12,7 +12,7 @@
     @apply relative bg-gradient-to-r from-strongOrange to-strongRed font-Comfortaa text-white scrollbar-hide;
   }
   header {
-    @apply absolute z-10 w-full;
+    @apply absolute w-full;
   }
   main {
     @apply max-h-max min-h-screen space-y-14 overflow-hidden;
@@ -29,6 +29,9 @@
   img {
     @apply text-xs;
   }
+  input {
+    @apply p-1 font-sans text-black;
+  }
 }
 @layer components {
   .decorative-1 {
@@ -38,7 +41,7 @@
     @apply fixed top-0 left-28 -translate-y-[80px] rounded-b-3xl border-2 border-white border-t-transparent bg-strongOrange px-3 py-1 outline-none transition focus:translate-y-0;
   }
   .brandLogo {
-    @apply fixed top-0 left-0 ml-2 text-[1.875rem] tracking-wider;
+    @apply fixed top-0 left-0 z-30 ml-2 text-[1.875rem] tracking-wider;
   }
   .menuContainer {
     @apply fixed inset-0 flex sm:px-24 mxsm:justify-center;
@@ -81,7 +84,7 @@
     @apply relative flex h-[30vh] flex-wrap justify-center transition-[min-height] lg:justify-evenly mxsm:min-h-[50vh];
   }
   .projectSlider-Container {
-    @apply relative h-full overflow-hidden rounded-lg shadow-xl shadow-sutilBlack;
+    @apply relative h-full overflow-hidden rounded-lg shadow-lg shadow-sutilBlack;
   }
   .projectSlider {
     @apply relative h-full max-h-max w-[350px] overflow-hidden bg-gray-800/80 transition-[width_height] sm:w-[380px];

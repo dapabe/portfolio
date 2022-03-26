@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-  Backdrop,
   BrandLogo,
   MenuModal,
   SkipNav,
@@ -14,17 +13,17 @@ export default function Header() {
     setButtonState(!buttonState);
   };
   return (
-    <>
-      <header>
-        <SkipNav />
-        <BrandLogo />
-        {/* <LangSwitch/> */}
-        <aside className="sidebar">{!buttonState && <SocialLinks />}</aside>
-      </header>
+    <header>
+      <SkipNav />
+      <BrandLogo />
+      {/* <LangSwitch/> */}
       <MenuButton initialState={buttonState} onClick={handleButtonState} />
-      <MenuModal initialState={buttonState}>
-        {buttonState && <Backdrop onClick={handleButtonState} />}
-      </MenuModal>
-    </>
+      {!buttonState && (
+        <aside className="sidebar">
+          <SocialLinks />
+        </aside>
+      )}
+      <MenuModal initialState={buttonState} onClick={handleButtonState} />
+    </header>
   );
 }

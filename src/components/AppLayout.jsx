@@ -5,10 +5,10 @@ import { Home } from "./pages/exports";
 export default function AppLayout() {
   return (
     <>
+      <Header />
       <main id="main">
         <Home />
       </main>
-      <Header />
       <Footer />
       <BackToTop />
     </>
