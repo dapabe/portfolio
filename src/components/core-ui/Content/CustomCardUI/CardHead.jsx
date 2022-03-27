@@ -14,7 +14,9 @@ export default function CardHead({ displayCondition, image, title }) {
           ) : (
             <h2 className="my-2 text-sm">Error al cargar imagen</h2>
           )}
-          <figcaption className="text-md bg-slate-700 py-1">{title}</figcaption>
+          <figcaption className="text-md rounded-md bg-slate-700 py-1">
+            {title}
+          </figcaption>
         </figure>
       )}
     </>

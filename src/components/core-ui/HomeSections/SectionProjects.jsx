@@ -7,6 +7,7 @@ import ProjectCards from "./Content/ProjectCards";
 
 const ProjectINFO = {
   data: data.projects_data,
+  length: data.projects_data.length,
   amount: data.projects_data.length - 1,
 };
 
@@ -24,7 +25,11 @@ export default function SectionProjects() {
     <section className="projectSection noMaxWidth">
       <div className="decorative-1" />
       <div className="projectSlider-Container">
-        <Arrows prevSlide={btnPrev} nextSlide={btnNext}>
+        <Arrows
+          prevSlide={btnPrev}
+          nextSlide={btnNext}
+          {...(ProjectINFO.length <= 1 && { disabled: true })}
+        >
           <ul className="projectSlider">
             <ProjectCards
               displayData={ProjectINFO.data}

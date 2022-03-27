@@ -41,7 +41,7 @@
     @apply fixed top-0 left-28 -translate-y-[80px] rounded-b-3xl border-2 border-white border-t-transparent bg-strongOrange px-3 py-1 outline-none transition focus:translate-y-0;
   }
   .brandLogo {
-    @apply fixed top-0 left-0 z-30 ml-2 text-[1.875rem] tracking-wider;
+    @apply fixed top-0 left-0 z-30 ml-2 text-3xl tracking-wider;
   }
   .menuContainer {
     @apply fixed inset-0 flex sm:px-24 mxsm:justify-center;
@@ -81,7 +81,7 @@
     @apply flex min-h-max flex-col gap-10 bg-sutilBlack py-10;
   }
   .projectSection {
-    @apply relative flex h-[30vh] flex-wrap justify-center transition-[min-height] lg:justify-evenly mxsm:min-h-[50vh];
+    @apply relative flex h-[30vh] flex-wrap justify-center transition-[min-height] lg:justify-around mxsm:min-h-[50vh];
   }
   .projectSlider-Container {
     @apply relative h-full overflow-hidden rounded-lg shadow-lg shadow-sutilBlack;
