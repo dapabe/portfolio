@@ -1,0 +1,34 @@
+{
+  "contact_form": [
+    {
+      "node": "input",
+      "_id": "EMAIL",
+      "name": "email",
+      "type": "email",
+      "placeholder": "Email",
+      "required": true,
+      "className": "peer ml-2 rounded-md placeholder:text-sm placeholder:text-sutilBlack",
+
+      "label": {
+        "text": "De :"
+      },
+      "errorMessage": "Tiene que ser un correo valido."
+    },
+    {
+      "node": "textarea",
+      "_id": "MESSAGE",
+      "name": "message",
+      "type": "message",
+      "placeholder": "Hola Patricio, he visto tu pagina web y me ha parecido...",
+      "required": true,
+      "rows": 3,
+      "className": "w-full resize-none rounded-md p-1 placeholder:text-sm placeholder:text-sutilBlack",
+
+      "label": {
+        "className": "block text-black",
+        "text": "Tu mensaje :"
+      },
+      "errorMessage": "Debe de haber almenos 1 caracter."
+    }
+  ]
+}

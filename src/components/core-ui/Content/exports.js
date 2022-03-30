@@ -2,6 +2,6 @@ import Carousel from "./CarouselUI/Carousel";
 import CustomCard from "./CustomCardUI/CustomCard";
 import HoverInfo from "./SliderUI/HoverInfo";
 import Arrows from "./SliderUI/Arrows";
-import FormContact from "./ContactUI/FormContact";
+import FeedbackForm from "./ContactUI/FeedbackForm";
 
-export { HoverInfo, Carousel, CustomCard, Arrows, FormContact };
+export { HoverInfo, Carousel, CustomCard, Arrows, FeedbackForm };

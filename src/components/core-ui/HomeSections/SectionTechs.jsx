@@ -5,7 +5,12 @@ import { Carousel } from "@ui/Content/exports";
 
 const TECHS = data.tech_data;
 const ICONS = data.icons_data;
-const ICONS_DATA = CompareAndRetrieve(TECHS, ICONS, "name", "file");
+const ICONS_DATA = CompareAndRetrieve({
+  arrToLook: TECHS,
+  arrToSearch: ICONS,
+  keyToSearch: "name",
+  keyToReturn: "file",
+});
 
 export default function SectionTechs() {
   const [pause, setPause] = useState(false);
