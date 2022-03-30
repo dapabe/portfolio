@@ -3,8 +3,8 @@ import { CompareAndRetrieve } from "@src/utilities.js";
 import data from "@src/assets/data.json";
 import { Carousel } from "@ui/Content/exports";
 
-const TECHS = data.tech_data;
-const ICONS = data.icons_data;
+const TECHS = Object.freeze(data.tech_data);
+const ICONS = Object.freeze(data.icons_data);
 const ICONS_DATA = CompareAndRetrieve({
   arrToLook: TECHS,
   arrToSearch: ICONS,

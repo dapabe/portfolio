@@ -1,5 +1,5 @@
 const Formspark_FORM_ID = import.meta.env.VITE_FORMSPARK_FORM_ID;
-const Formspark_URL = `https://submit-form.com/${Formspark_FORM_ID}`;
+const FORM_ENDPOINT = `https://submit-form.com/${Formspark_FORM_ID}`;
 
 export const initialFormValues = Object.seal({
   email: "",
@@ -11,8 +11,9 @@ export const serviceMessage = Object.seal({
 });
 
 export async function formSubmission(serviceResponse, POST_OBJ) {
+  console.log(POST_OBJ);
   try {
-    // const result = await fetch(Formspark_URL, {
+    // const result = await fetch(FORM_ENDPOINT, {
     //   method: "POST",
     //   // mode: "no-cors",
     //   body: JSON.stringify(POST_OBJ),
@@ -22,22 +23,16 @@ export async function formSubmission(serviceResponse, POST_OBJ) {
     //   },
     // });
     // throw new Error("Forzado");
-    setTimeout(() => {
-      serviceResponse({
-        text: "¡Gracias, leeré tu mensaje lo antes posible!",
-      });
-    }, 3000);
+
+    serviceResponse({
+      class:
+        "absolute inset-0 text-black bg-white flex justify-center items-center font-bold text-lg",
+      text: "¡Gracias, leeré tu mensaje lo antes posible!",
+    });
   } catch (error) {
     serviceResponse({
-      class: "text-red-600 font-semibold inline",
+      class: "text-red-600 font-semibold inline max-w-[50%] text-sm",
       text: "Ha habido un error, por favor intentalo de nuevo.",
     });
   }
-}
-
-async function submitForm(event, submitState, serviceResponse, ...POST_OBJ) {
-  event.preventDefault();
-  submitState(true);
-  await formSubmission(serviceResponse, ...POST_OBJ);
-  submitState(false);
 }

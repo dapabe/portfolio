@@ -13,12 +13,13 @@ export default function FeedbackForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serviceMsg, setServiceMsg] = useState(serviceMessage);
 
+  // Search how does [e.target.name] works
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
+    console.log({ ...values });
   };
   const formSubmit = async (event) => {
     event.preventDefault();
-    console.log(values);
     setIsSubmitting(true);
     await formSubmission(setServiceMsg, values);
     setIsSubmitting(false);

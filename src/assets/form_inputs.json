@@ -25,7 +25,6 @@
       "className": "w-full resize-none rounded-md p-1 placeholder:text-sm placeholder:text-sutilBlack",
 
       "label": {
-        "className": "block text-black",
         "text": "Tu mensaje :"
       },
       "errorMessage": "Debe de haber almenos 1 caracter."

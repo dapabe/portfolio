@@ -12,11 +12,12 @@ export default function FORM_UI({
   submitState,
   serviceResponse,
 }) {
+  const responseCondition = serviceResponse.text.length !== 0;
   return (
-    <fieldset className="space-y-2 rounded-md border-2 bg-vaporViolet px-4 pb-4">
+    <fieldset className="relative space-y-2 rounded-md border-2 bg-vaporViolet px-4 pb-4">
       <legend className="flex w-max items-center text-lg tracking-widest">
         <PaperAirplaneIcon className="ml-2 w-8 rotate-45" />
-        <h1 className="mr-2">Contactame</h1>
+        <h1 className="mr-2">Contactame o deja tu feedback</h1>
       </legend>
       {EveryInput.map((elm) => (
         <CreateInput
@@ -26,12 +27,18 @@ export default function FORM_UI({
           onChange={onChange}
         />
       ))}
-      <SubmitButton displayCondition={submitState} />
-      {serviceResponse.text.length !== 0 && (
-        <span className={`text-sm ${serviceResponse.class}`}>
-          {serviceResponse.text}
-        </span>
-      )}
+      <section className="flex">
+        {responseCondition && (
+          <span
+            className={
+              !responseCondition ? "bg-transparent " : serviceResponse.class
+            }
+          >
+            <p>{serviceResponse.text}</p>
+          </span>
+        )}
+        <SubmitButton displayCondition={submitState} />
+      </section>
     </fieldset>
   );
 }

@@ -6,7 +6,7 @@ import { HoverInfo, Arrows } from "@ui/Content/exports";
 import ProjectCards from "./Content/ProjectCards";
 
 const ProjectINFO = {
-  data: data.projects_data,
+  data: Object.freeze(data.projects_data),
   length: data.projects_data.length,
   amount: data.projects_data.length - 1,
 };
