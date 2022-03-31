@@ -5,7 +5,7 @@
       "_id": "EMAIL",
       "name": "email",
       "type": "email",
-      "placeholder": "Email",
+      "placeholder": "nombre@dominio.com",
       "required": true,
       "className": "peer text-black rounded-md placeholder:text-sm p-1",
 
@@ -19,7 +19,7 @@
       "_id": "MESSAGE",
       "name": "message",
       "type": "message",
-      "placeholder": "Hola Patricio, he visto tu pagina web y me ha parecido...",
+      "placeholder": "Hola Patricio, he visto tu pagina web y...",
       "required": true,
       "rows": 3,
       "className": "w-full text-black bg-red resize-none rounded-md p-1 placeholder:text-sm p-2",

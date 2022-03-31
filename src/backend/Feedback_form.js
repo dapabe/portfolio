@@ -12,7 +12,8 @@ export const serviceMessage = Object.seal({
 });
 
 export async function formSubmission(serviceResponse, POST_OBJ) {
-  console.log(!POST_OBJ.email.includes("@" || "."));
+  console.log(POST_OBJ);
+  console.log(!POST_OBJ.email);
   try {
     // const result = await fetch(FORM_ENDPOINT, {
     //   method: "POST",
@@ -23,7 +24,7 @@ export async function formSubmission(serviceResponse, POST_OBJ) {
     //     "Access-Control-Allow-Origin": "https://formspark.io",
     //   },
     // });
-    // throw new Error("Forzado");
+    throw new Error("Error", "Forzado");
 
     serviceResponse({
       class:

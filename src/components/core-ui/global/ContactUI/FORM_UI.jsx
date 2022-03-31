@@ -1,20 +1,12 @@
-import { ChatAlt2Icon, PaperAirplaneIcon } from "@heroicons/react/solid";
-import form_inputs from "@src/assets/form_inputs.json";
+import { ChatAlt2Icon } from "@heroicons/react/solid";
 
-import CreateInput from "./CreateInput";
 import SubmitButton from "./SubmitButton";
 
-const EveryInput = Object.freeze(form_inputs.contact_form);
-
-export default function FORM_UI({
-  formValue,
-  onChange,
-  submitState,
-  serviceResponse,
-}) {
-  //  REFACTOR: formValue-onChange
-
+export default function FORM_UI({ children, submitState, serviceResponse }) {
   const responseCondition = serviceResponse.text.length !== 0;
+  const responseMessage = responseCondition
+    ? serviceResponse.class
+    : "bg-transparent ";
 
   return (
     <fieldset className="relative space-y-2 rounded-md border-2 bg-zinc-800 px-4 pb-4">
@@ -22,21 +14,10 @@ export default function FORM_UI({
         <h1 className="mr-2 uppercase">CONTACTAME</h1>
         <ChatAlt2Icon className=" w-8" />
       </legend>
-      {EveryInput.map((elm) => (
-        <CreateInput
-          key={elm._id}
-          {...elm}
-          value={formValue[elm.name]}
-          onChange={onChange}
-        />
-      ))}
+      {children}
       <section className="flex">
         {responseCondition && (
-          <span
-            className={
-              !responseCondition ? "bg-transparent " : serviceResponse.class
-            }
-          >
+          <span className={responseMessage}>
             <p>{serviceResponse.text}</p>
           </span>
         )}
