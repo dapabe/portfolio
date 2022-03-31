@@ -1,5 +1,6 @@
-const Formspark_FORM_ID = import.meta.env.VITE_FORMSPARK_FORM_ID;
-const FORM_ENDPOINT = `https://submit-form.com/${Formspark_FORM_ID}`;
+const ENV = import.meta.env;
+
+const FORM_ENDPOINT = `${ENV.VITE_ENDPOINT_URL}`;
 
 export const initialFormValues = Object.seal({
   email: "",
@@ -11,7 +12,7 @@ export const serviceMessage = Object.seal({
 });
 
 export async function formSubmission(serviceResponse, POST_OBJ) {
-  console.log(POST_OBJ);
+  console.log(!POST_OBJ.email.includes("@" || "."));
   try {
     // const result = await fetch(FORM_ENDPOINT, {
     //   method: "POST",

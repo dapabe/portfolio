@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CompareAndRetrieve } from "@src/utilities.js";
 import data from "@src/assets/data.json";
-import { Carousel } from "@ui/Content/exports";
+import { Carousel } from "@ui/global/exports";
 
 const TECHS = Object.freeze(data.tech_data);
 const ICONS = Object.freeze(data.icons_data);

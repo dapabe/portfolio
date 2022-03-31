@@ -18,7 +18,7 @@
     @apply max-h-max min-h-screen space-y-14 overflow-hidden;
   }
   footer {
-    @apply flex min-h-[13rem] w-full items-center justify-between bg-sutilBlack p-4 text-sm text-slate-300 shadow-inner shadow-slate-700 sm:flex mxsm:space-y-3;
+    @apply flex min-h-[13rem] w-full items-center justify-between bg-sutilBlack p-4 text-sm sm:flex mxsm:space-y-3;
   }
   main > section {
     @apply min-h-[80vh];
@@ -29,17 +29,13 @@
   img {
     @apply text-xs;
   }
-  input,
-  textarea {
-    @apply p-1 text-black;
-  }
   input:invalid[focused="true"],
   textarea:invalid[focused="true"] {
     border: 2px solid red;
   }
   input:invalid[focused="true"] ~ span,
   textarea:invalid[focused="true"] ~ span {
-    display: block;
+    display: inline-block;
   }
 }
 @layer components {
@@ -72,7 +68,7 @@
     @apply sm:bg-transparent;
   }
   .sidebar {
-    @apply fixed top-1/2 right-2 hidden -translate-y-1/2 flex-col space-y-3 sm:flex;
+    @apply fixed top-1/2 right-2 z-10 hidden -translate-y-1/2 flex-col space-y-3 sm:flex;
   }
   .social-icon {
     @apply h-8 w-8 hover:scale-110;
@@ -123,6 +119,15 @@
   }
   .projectCard_anchor-logo {
     @apply transition-[scale] hover:scale-105;
+  }
+  .contactSection {
+    @apply relative min-h-[60vh] bg-sutilBlack text-white;
+  }
+  /* .feedbackTxt {
+    @apply w-full resize-none rounded-md bg-sutilBlack p-1 tracking-wide text-white placeholder:text-sm;
+  } */
+  .feedbackBtn {
+    @apply relative z-0 mx-auto flex max-w-xs translate-y-[200%] flex-col items-center transition-opacity before:absolute before:-z-10 before:h-[300px] before:w-[300px] before:-translate-y-1/3 before:rotate-45 before:rounded-lg before:bg-gradient-to-br before:from-vaporBlue before:to-strongRed;
   }
   .inputError {
     @apply hidden text-strongRed;

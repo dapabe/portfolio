@@ -4,19 +4,26 @@ import {
   initialFormValues,
   serviceMessage,
   formSubmission,
-} from "@src/logic/Feedback_form";
+} from "@src/backend/Feedback_form";
 
-import FORM_UI from "./FORM_UI";
+import FORM_UI from "@ui/global/ContactUI/FORM_UI";
 
-export default function FeedbackForm() {
+const showFeedback = displayCondition ? "translate-y-0" : "translate-y-[150%]";
+
+export default function FeedbackForm({ displayCondition }) {
   const [values, setValues] = useState(initialFormValues);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serviceMsg, setServiceMsg] = useState(serviceMessage);
 
-  // Search how does [e.target.name] works
+  //  [NOTE] Computed Properties in React:
+  //  ------------------------------
+  //  the setValues func is applying to the initial values the same
+  //  properties, to a sealed object. In this case it's overwriting
+  //  the initial values with the values of the EVENT, which have
+  //  the same property NAME.
+
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
-    console.log({ ...values });
   };
   const formSubmit = async (event) => {
     event.preventDefault();
@@ -24,13 +31,10 @@ export default function FeedbackForm() {
     await formSubmission(setServiceMsg, values);
     setIsSubmitting(false);
   };
-
-  console.log("Rerender");
-
   return (
     <form
       onSubmit={formSubmit}
-      className="m-auto max-w-2xl flex-grow rounded-md bg-vaporBlue  p-4 md:p-6"
+      className={`${showFeedback} mx-auto h-max max-w-sm rounded-md transition-transform delay-300 sm:max-w-md md:max-w-lg lg:max-w-xl`}
     >
       <FORM_UI
         formValue={values}

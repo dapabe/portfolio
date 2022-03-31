@@ -1,4 +1,4 @@
-import { CustomCard } from "@ui/Content/exports";
+import { CustomCard } from "@ui/global/exports";
 
 export default function ProjectCards({ displayData, indexState, mouseEvent }) {
   return displayData.map((item, index) => (

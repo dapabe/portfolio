@@ -2,8 +2,8 @@ import { useState } from "react";
 import useWindowSize from "@hooks/useWindowSize";
 import data from "@src/assets/data.json";
 
-import { HoverInfo, Arrows } from "@ui/Content/exports";
-import ProjectCards from "./Content/ProjectCards";
+import { HoverInfo, Arrows } from "@ui/global/exports";
+import ProjectCards from "./specificUI/ProjectCards";
 
 const ProjectINFO = {
   data: Object.freeze(data.projects_data),

@@ -7,10 +7,10 @@
       "type": "email",
       "placeholder": "Email",
       "required": true,
-      "className": "peer ml-2 rounded-md placeholder:text-sm placeholder:text-sutilBlack",
+      "className": "peer text-black rounded-md placeholder:text-sm p-1",
 
       "label": {
-        "text": "De :"
+        "text": "De : "
       },
       "errorMessage": "Tiene que ser un correo valido."
     },
@@ -22,12 +22,12 @@
       "placeholder": "Hola Patricio, he visto tu pagina web y me ha parecido...",
       "required": true,
       "rows": 3,
-      "className": "w-full resize-none rounded-md p-1 placeholder:text-sm placeholder:text-sutilBlack",
+      "className": "w-full text-black bg-red resize-none rounded-md p-1 placeholder:text-sm p-2",
 
       "label": {
         "text": "Tu mensaje :"
       },
-      "errorMessage": "Debe de haber almenos 1 caracter."
+      "errorMessage": "Por favor, rellena este campo."
     }
   ]
 }
