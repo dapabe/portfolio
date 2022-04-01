@@ -5,7 +5,7 @@ import {
   SkipNav,
   SocialLinks,
   MenuButton,
-} from "./Content/exports";
+} from "./common/exports";
 
 export default function Header() {
   const [buttonState, setButtonState] = useState(false);

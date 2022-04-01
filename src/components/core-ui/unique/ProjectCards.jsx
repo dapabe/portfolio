@@ -1,17 +1,21 @@
-import { CustomCard } from "@ui/global/exports";
+import { CustomCard } from "@ui/common/exports";
 
-export default function ProjectCards({ displayData, indexState, mouseEvent }) {
-  return displayData.map((item, index) => (
+export default function ProjectCards({
+  displayedData,
+  indexState,
+  mouseEvent,
+}) {
+  return displayedData.map((item, index) => (
     <li
       key={item.title}
       className={`${
         index === indexState ? "activeSlide" : "inactiveSlide"
       } absolute inset-0 mx-auto flex max-w-xs items-center transition-opacity`}
     >
-      <div className="h-max min-w-max">
+      <div className="inline-block">
         {
           <CustomCard
-            key={item.link}
+            key={item.links[0]}
             image={item.image}
             title={item.title}
             description={item.short_desc}

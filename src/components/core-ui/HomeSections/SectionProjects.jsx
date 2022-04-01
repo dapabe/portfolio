@@ -2,13 +2,15 @@ import { useState } from "react";
 import useWindowSize from "@hooks/useWindowSize";
 import data from "@src/assets/data.json";
 
-import { HoverInfo, Arrows } from "@ui/global/exports";
-import ProjectCards from "./specificUI/ProjectCards";
+import { HoverInfo, Arrows } from "@ui/common/exports";
+import ProjectCards from "@ui/unique/ProjectCards";
+
+const freezedInfo = Object.freeze(data.projects_data);
 
 const ProjectINFO = {
-  data: Object.freeze(data.projects_data),
-  length: data.projects_data.length,
-  amount: data.projects_data.length - 1,
+  data: freezedInfo,
+  length: freezedInfo.length,
+  amount: freezedInfo.length - 1,
 };
 
 export default function SectionProjects() {
@@ -32,7 +34,7 @@ export default function SectionProjects() {
         >
           <ul className="projectSlider">
             <ProjectCards
-              displayData={ProjectINFO.data}
+              displayedData={ProjectINFO.data}
               indexState={activeIndex}
               mouseEvent={setDesktopDesc}
             />

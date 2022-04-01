@@ -8,8 +8,8 @@ import {
 } from "@src/backend/Feedback_form";
 import form_inputs from "@src/assets/form_inputs.json";
 
-import FORM_UI from "@ui/global/ContactUI/FORM_UI";
-import CreateInput from "@ui/global/ContactUI/CreateInput";
+import FORM_UI from "@ui/common/ContactUI/FORM_UI";
+import CreateInput from "@ui/common/ContactUI/CreateInput";
 
 const EveryInput = Object.freeze(form_inputs.contact_form);
 export default function FeedbackForm({ displayCondition }) {
@@ -44,11 +44,11 @@ export default function FeedbackForm({ displayCondition }) {
       className={`${showFeedback} mx-auto h-max max-w-sm rounded-md transition-transform delay-300 sm:max-w-md md:max-w-lg lg:max-w-xl`}
     >
       <FORM_UI submitState={isSubmitting} serviceResponse={serviceMsg}>
-        {EveryInput.map((elm) => (
+        {EveryInput.map((element) => (
           <CreateInput
-            key={elm._id}
-            {...elm}
-            value={values[elm.name]}
+            key={element._id}
+            {...element}
+            value={values[element.name]}
             onChange={handleChange}
           />
         ))}

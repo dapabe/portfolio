@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { PaperAirplaneIcon } from "@heroicons/react/solid";
-import FeedbackForm from "./specificUI/FeedbackForm";
+import FeedbackForm from "@ui/unique/FeedbackForm";
 
 export default function SectionContact() {
   const [show, setShow] = useState(false);

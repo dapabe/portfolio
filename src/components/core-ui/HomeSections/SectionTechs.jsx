@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { CompareAndRetrieve } from "@src/utilities.js";
+import { Carousel } from "@ui/common/exports";
 import data from "@src/assets/data.json";
-import { Carousel } from "@ui/global/exports";
 
 const TECHS = Object.freeze(data.tech_data);
 const ICONS = Object.freeze(data.icons_data);
@@ -13,14 +12,10 @@ const ICONS_DATA = CompareAndRetrieve({
 });
 
 export default function SectionTechs() {
-  const [pause, setPause] = useState(false);
-  const handlePause = () => {
-    setPause(!pause);
-  };
   return (
     <section className="techSection noMaxWidth">
-      <h1 className="sm:indent-16 mxsm:text-center">Tecnologias que uso</h1>
-      <Carousel initialState={pause} handler={handlePause}>
+      <h1 className="sm:indent-[5rem] mxsm:text-center">Tecnologias que uso</h1>
+      <Carousel>
         {ICONS_DATA.map((icon) => (
           <li key={icon.name}>
             <img
