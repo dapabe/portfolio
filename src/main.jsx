@@ -2,11 +2,17 @@ import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom";
 
-//  Route Composition
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppLayout from "./components/AppLayout";
-import { Home, About, Projects, E404 } from "./components/pages/exports";
+import {
+  Home,
+  About,
+  E404,
+  Projects,
+  ProjectID,
+} from "./components/pages/exports";
 
+// Route Composition
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -14,7 +20,9 @@ ReactDOM.render(
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="projects" element={<Projects />} />
+          <Route path="projects" element={<Projects />}>
+            <Route path=":projectId" element={<ProjectID />} />
+          </Route>
           <Route path="*" element={<E404 />} />
         </Route>
       </Routes>

@@ -10,22 +10,18 @@ export default function ProjectCards({
       key={item.title}
       className={`${
         index === indexState ? "activeSlide" : "inactiveSlide"
-      } absolute inset-0 mx-auto flex max-w-xs items-center transition-opacity`}
+      } absolute flex h-full w-full items-center justify-center transition-opacity`}
     >
-      <div className="inline-block">
-        {
-          <CustomCard
-            key={item.links[0]}
-            image={item.image}
-            title={item.title}
-            description={item.short_desc}
-            links={item.links}
-            tools={item.made_with}
-            onMouseEnter={() => mouseEvent(item.long_desc)}
-            onMouseLeave={() => mouseEvent(this)}
-          />
-        }
-      </div>
+      <CustomCard
+        key={item.links[0]}
+        image={item.image}
+        title={item.title}
+        description={item.description.short}
+        links={item.links}
+        tools={item.made_with}
+        onMouseEnter={() => mouseEvent(item.description.short)}
+        onMouseLeave={() => mouseEvent(this)}
+      />
     </li>
   ));
 }

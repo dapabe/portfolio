@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 
-export default function useStopScroll(conditionToCheck) {
+export default function useStopScroll(conditionToCheck = false) {
+  const ScrollFlow = (value) => {
+    document.body.style.overflowY = value;
+  };
   useEffect(() => {
-    conditionToCheck && (document.body.style.overflowY = "hidden");
-    !conditionToCheck && (document.body.style.overflowY = "unset");
+    conditionToCheck && ScrollFlow("hidden");
+    return () => ScrollFlow("unset");
   }, [conditionToCheck]);
 }

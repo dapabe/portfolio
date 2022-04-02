@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useStopScroll from "@hooks/useStopScroll";
+import usePageOffset from "@hooks/usePageOffset";
 
 import ROUTES from "@src/assets/routes.json";
 import Backdrop from "./Backdrop";
@@ -8,8 +9,14 @@ import SocialLinks from "./SocialLinks";
 
 export default function MenuModal({ initialState, ...props }) {
   useStopScroll(initialState);
+  const scrollTime = usePageOffset() ? 0 : 500;
   const closeModal = props.onClick;
-  const CloseAndResetPage = () => [closeModal(), window.scroll(0, 0)];
+  const CloseAndResetPage = () => {
+    closeModal();
+    setTimeout(() => {
+      window.scroll(0, 0);
+    }, scrollTime);
+  };
   const isOpen = initialState
     ? "z-20 delay-500 opacity-100"
     : "-z-50 opacity-0 -translate-y-[200%]";
