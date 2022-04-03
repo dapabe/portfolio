@@ -4,6 +4,7 @@ import {
   Intro,
   Projects,
   Techs,
+  Inspirations,
 } from "@ui/HomeSections/exports";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Intro />
       <Techs />
       <Projects />
+      <Inspirations />
       <Contact />
     </>
   );

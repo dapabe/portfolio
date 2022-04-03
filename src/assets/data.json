@@ -115,5 +115,21 @@
       "links": {},
       "made_with": [""]
     }
+  ],
+  "inspirations": [
+    {
+      "nickname": "Kevin Powell",
+      "image": "kevin_powell.jpeg",
+      "image_desc": "Hombre",
+      "cite": "cite",
+      "quote": "Frase"
+    },
+    {
+      "nickname": "Miguel Ángel Durán",
+      "image": "miguel_angel_duran.png",
+      "image_desc": "Hombre",
+      "cite": "cite",
+      "quote": "Frase"
+    }
   ]
 }
