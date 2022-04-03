@@ -3,8 +3,9 @@ import { useState } from "react";
 //  Takes a mandatory object as a parameter.
 
 export default function useForm(initialValues) {
-  const [values, setValues] = useState(initialValues);
-  const [error, setError] = useState({});
+  const [formData, setFormData] = useState(initialValues);
+
+  //  REFACTOR
 
   //  Name and value are in brackets due to being
   //  computed properties.
@@ -12,12 +13,9 @@ export default function useForm(initialValues) {
   //  and setting the new ones from the same KEY prop.
 
   const handleChange = (event) => {
-    const [name, value] = event.target;
-    setValues({
-      ...values,
-      [name]: value,
-    });
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  return { values, handleChange };
+  return { formData, handleChange };
 }

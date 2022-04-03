@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 
-const CreateEL = React.createElement;
-
 export default function CreateInput(props) {
   const [focused, setFocused] = useState(false);
   const { node, _id, label, onChange, errorMessage, ...attr } = props;
 
-  const handleFocus = (e) => {
+  const handleFocus = () => {
     setFocused(true);
   };
   // const lastInput = () => attrs.name === "message" && setFocused(true);  <-  good UX?
@@ -14,7 +12,6 @@ export default function CreateInput(props) {
   //  Considering refactoring this.
   //  [NOTE] Input attributes/events:
   //  --------------------------------
-  //  value: TODO                                   PROP DRILLING ISSUE
   //  onChange: is being setted 2 lvls up.          PROP DRILLING ISSUE
   //  onBlur: checks if the user Clicks
   //    and leaves the INPUT, if so, then
@@ -29,12 +26,11 @@ export default function CreateInput(props) {
       >
         {label.text}
       </label>
-      {CreateEL(
+      {React.createElement(
         node,
         {
           ...attr,
           id: _id,
-          //  value: formValue[attr.name]
           onChange: onChange,
           onBlur: handleFocus,
           // onFocus: lastInput,
