@@ -7,13 +7,17 @@ export default function SectionInspire() {
   return (
     <section>
       <h1 className="uppsercase">Inspiraciones</h1>
-      <ul>
+      <ul className="flex flex-wrap justify-evenly">
         {INSPIRATIONS.map((person) => (
-          <li key={person.nickname}>
+          <li key={person.nickname} className="inline-flex">
             <QuoteCard {...person} />
           </li>
         ))}
       </ul>
+      <p>
+        Con la correcta forma de pensar tienes las bases para un camino bien
+        hecho y ello te acompaña hasta el final.
+      </p>
     </section>
   );
 }

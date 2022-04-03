@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from "@heroicons/react/solid";
 import React from "react";
 
 export default function QuoteCard({
@@ -9,17 +10,22 @@ export default function QuoteCard({
 }) {
   return (
     <blockquote
-      className="relative flex min-h-[132px] max-w-sm rounded-r-full rounded-l-md bg-white py-3 text-sutilBlack"
+      className="relative flex min-h-[132px] max-w-md rounded-full bg-white py-3 text-sutilBlack sm:rounded-l-none sm:pr-16 mxsm:rounded-md mxsm:px-14"
       cite={cite}
     >
       <img
         src={`/images/inspirations/${image}`}
         alt={image_desc}
-        className="absolute top-0 h-full  max-w-[132px] -translate-x-1/2 overflow-hidden rounded-full object-cover "
+        className="absolute top-0 h-full min-w-[132px] -translate-x-1/2 overflow-hidden rounded-full object-cover mxsm:hidden "
       />
-      <div className="mx-auto max-w-[180px]">
-        <p>{quote}</p>
-        <h1 className="mt-3 text-right">{nickname}</h1>
+      <div className="sm:ml-20">
+        <p className="text-sm">
+          <q>{quote}</q>
+          <a href={cite} target="_blank" rel="noopener noreferrer">
+            <ExternalLinkIcon className="inline-block w-4" />
+          </a>
+        </p>
+        <h1 className="mt-3 text-right font-semibold">{nickname}</h1>
       </div>
       <img
         src="/images/quote.png"
