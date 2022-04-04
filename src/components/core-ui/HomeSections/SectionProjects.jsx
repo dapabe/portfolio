@@ -25,6 +25,7 @@ export default function SectionProjects() {
 
   return (
     <section className="projectSection noMaxWidth">
+      <h1 className="sectionTitle">Proyectos</h1>
       <div className="decorative-1" />
       <div className="projectSlider-Container">
         <Arrows

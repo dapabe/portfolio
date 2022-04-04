@@ -5,18 +5,18 @@ const INSPIRATIONS = Object.freeze(data.inspirations);
 
 export default function SectionInspire() {
   return (
-    <section>
-      <h1 className="uppsercase">Inspiraciones</h1>
-      <ul className="flex flex-wrap justify-evenly">
+    <section className="inspirationSection">
+      <h1 className="sectionTitle text-center">Inspiraciones</h1>
+      <ul className="flex flex-wrap justify-around gap-4">
         {INSPIRATIONS.map((person) => (
           <li key={person.nickname} className="inline-flex">
             <QuoteCard {...person} />
           </li>
         ))}
       </ul>
-      <p>
+      <p className="mx-auto max-w-sm">
         Con la correcta forma de pensar tienes las bases para un camino bien
-        hecho y ello te acompaña hasta el final.
+        pavimentado que te guiara al final..
       </p>
     </section>
   );

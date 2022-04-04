@@ -120,6 +120,9 @@
   .projectCard_anchor-logo {
     @apply transition-[scale] hover:scale-105;
   }
+  .inspirationSection {
+    @apply space-y-6;
+  }
   .contactSection {
     @apply relative min-h-[60vh] bg-sutilBlack text-white;
   }
@@ -134,6 +137,9 @@
   }
 }
 @layer utilities {
+  .sectionTitle {
+    @apply text-xl uppercase tracking-widest;
+  }
   .btriangle-tl {
     z-index: -1;
     border-right-color: transparent;

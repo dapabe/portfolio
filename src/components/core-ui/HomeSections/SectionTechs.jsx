@@ -14,7 +14,9 @@ const ICONS_DATA = CompareAndRetrieve({
 export default function SectionTechs() {
   return (
     <section className="techSection noMaxWidth">
-      <h1 className="sm:indent-[5rem] mxsm:text-center">Tecnologias que uso</h1>
+      <h1 className="sectionTitle sm:indent-[5rem] mxsm:text-center">
+        Tecnologias
+      </h1>
       <Carousel>
         {ICONS_DATA.map((icon) => (
           <li key={icon.name}>

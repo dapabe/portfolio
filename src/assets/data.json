@@ -119,6 +119,7 @@
   "inspirations": [
     {
       "nickname": "Kevin Powell",
+      "webpage": "https://www.kevinpowell.co/",
       "image": "kevin_powell.jpeg",
       "image_desc": "Hombre",
       "cite": "https://youtube.com/clip/UgkxeaxPrHxUDWi-Xu9rkoOGsoTonWsYYRmc",
@@ -126,6 +127,7 @@
     },
     {
       "nickname": "Miguel Ángel Durán",
+      "webpage": "https://midu.dev/",
       "image": "miguel_angel_duran.png",
       "image_desc": "Hombre",
       "cite": "https://youtube.com/shorts/w8Csu_uh-Qg?feature=share",
