@@ -1,6 +1,7 @@
-import { ExternalLinkIcon } from "@heroicons/react/solid";
+import { ExternalLinkIcon, RefreshIcon } from "@heroicons/react/solid";
 import React from "react";
 import useIntersectionObserver from "@react-hook/intersection-observer";
+import useObserver from "@hooks/useObserver";
 
 export default function QuoteCard({
   cite,
@@ -11,21 +12,33 @@ export default function QuoteCard({
   quote,
 }) {
   const targetRef = React.createRef(null);
-  const { isIntersecting } = useIntersectionObserver(targetRef, {
-    rootMargin: "0px 0px 400px 0px",
+  const [isVisible] = useObserver(targetRef, {
+    threshold: 0.75,
+    rootMargin: "300px",
   });
-  console.count(isIntersecting);
+  // console.count(isVisible);
+
   return (
     <blockquote
       className="relative flex min-h-[132px] max-w-md rounded-full bg-white py-3 text-sutilBlack sm:rounded-l-none sm:pr-14 mxsm:rounded-md mxsm:pl-10 mxsm:pr-14"
       cite={cite}
     >
-      <img
+      <div
         ref={targetRef}
-        src={`/images/inspirations/${image}` || "/images/placeholder.jpg"}
-        alt={image_desc}
-        className="absolute top-0 h-full min-w-[132px] -translate-x-1/2 overflow-hidden rounded-full object-cover mxsm:hidden "
-      />
+        className="absolute top-0 h-full min-w-[132px] -translate-x-1/2 overflow-hidden rounded-full bg-white"
+      >
+        {isVisible ? (
+          <img
+            src={`/images/inspirations/${image}` || "/images/placeholder.jpg"}
+            alt={image_desc}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <span className="absolute inset-0 flex place-content-center ">
+            <RefreshIcon className="w-20" />
+          </span>
+        )}
+      </div>
 
       <div className="sm:ml-24">
         <p>
