@@ -86,7 +86,7 @@
     @apply flex min-h-max flex-col gap-10 bg-sutilBlack py-10;
   }
   .projectSection {
-    @apply relative flex h-[30vh] flex-wrap justify-center transition-[min-height] lg:justify-around mxsm:min-h-[50vh];
+    @apply relative h-[30vh] transition-[min-height] lg:justify-around mxsm:min-h-[50vh];
   }
   .projectSlider-Container {
     @apply relative h-full overflow-hidden rounded-lg shadow-lg shadow-sutilBlack;
@@ -121,7 +121,7 @@
     @apply transition-[scale] hover:scale-105;
   }
   .inspirationSection {
-    @apply space-y-6;
+    @apply flex flex-col gap-y-6;
   }
   .contactSection {
     @apply relative min-h-[60vh] bg-sutilBlack text-white;

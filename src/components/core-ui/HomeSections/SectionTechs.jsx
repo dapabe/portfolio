@@ -1,3 +1,5 @@
+import { createRef } from "react";
+import useObserver from "@hooks/useObserver";
 import { CompareAndRetrieve } from "@src/utilities.js";
 import { Carousel } from "@ui/common/exports";
 import data from "@src/assets/data.json";
@@ -12,19 +14,26 @@ const ICONS_DATA = CompareAndRetrieve({
 });
 
 export default function SectionTechs() {
+  const targetRef = createRef(null);
+  const [isVisible] = useObserver(targetRef, {
+    rootMargin: "300px",
+  });
+
   return (
-    <section className="techSection noMaxWidth">
+    <section className="techSection noMaxWidth" ref={targetRef}>
       <h1 className="sectionTitle sm:indent-[5rem] mxsm:text-center">
         Tecnologias
       </h1>
       <Carousel>
         {ICONS_DATA.map((icon) => (
-          <li key={icon.name}>
-            <img
-              src={`/icons/logos/${icon.file}`}
-              alt={icon.img_desc}
-              className="h-20 w-[200px]"
-            />
+          <li key={icon.name + 1}>
+            {isVisible && (
+              <img
+                src={`/icons/logos/${icon.file}`}
+                alt={icon.img_desc}
+                className="h-20 w-[200px]"
+              />
+            )}
           </li>
         ))}
       </Carousel>

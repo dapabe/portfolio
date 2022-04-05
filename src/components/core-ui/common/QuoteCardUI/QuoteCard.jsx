@@ -1,22 +1,13 @@
-import { ExternalLinkIcon, RefreshIcon } from "@heroicons/react/solid";
-import React from "react";
-import useIntersectionObserver from "@react-hook/intersection-observer";
+import { ExternalLinkIcon } from "@heroicons/react/solid";
+import { createRef } from "react";
 import useObserver from "@hooks/useObserver";
 
-export default function QuoteCard({
-  cite,
-  image,
-  image_desc,
-  nickname,
-  webpage,
-  quote,
-}) {
-  const targetRef = React.createRef(null);
+export default function QuoteCard({ cite, image, nickname, webpage, quote }) {
+  const targetRef = createRef(null);
+
   const [isVisible] = useObserver(targetRef, {
-    threshold: 0.75,
     rootMargin: "300px",
   });
-  // console.count(isVisible);
 
   return (
     <blockquote
@@ -25,41 +16,48 @@ export default function QuoteCard({
     >
       <div
         ref={targetRef}
-        className="absolute top-0 h-full min-w-[132px] -translate-x-1/2 overflow-hidden rounded-full bg-white"
+        className="absolute top-0 h-full min-w-[132px] -translate-x-1/2 overflow-hidden rounded-full bg-white mxsm:hidden"
       >
-        {isVisible ? (
+        {isVisible && (
           <img
             src={`/images/inspirations/${image}` || "/images/placeholder.jpg"}
-            alt={image_desc}
+            alt={nickname}
             className="h-full w-full object-cover"
           />
-        ) : (
-          <span className="absolute inset-0 flex place-content-center ">
-            <RefreshIcon className="w-20" />
-          </span>
         )}
       </div>
 
       <div className="sm:ml-24">
         <p>
-          <q>{quote}</q>
+          <q>
+            <a
+              href={cite}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Ir al origen de esta cita."
+            >
+              {quote}
+            </a>
+          </q>
           <a
             href={cite}
             target="_blank"
             rel="noopener noreferrer"
             title="Ir al origen de esta cita."
           >
-            <ExternalLinkIcon className="inline-block w-5" />
+            <ExternalLinkIcon className="ml-1 inline-block w-5" />
           </a>
         </p>
-        <a
-          href={webpage}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 ml-auto block w-max font-semibold"
-        >
-          {nickname}
-        </a>
+        <h1>
+          <a
+            href={webpage}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative mt-3 ml-auto block w-max font-semibold after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-right after:scale-x-0 after:bg-sutilBlack after:transition-transform after:ease-in after:hover:origin-left after:hover:scale-x-100"
+          >
+            {nickname}
+          </a>
+        </h1>
       </div>
       <img
         src="/images/quote.png"

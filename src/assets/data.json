@@ -121,7 +121,6 @@
       "nickname": "Kevin Powell",
       "webpage": "https://www.kevinpowell.co/",
       "image": "kevin_powell.jpeg",
-      "image_desc": "Hombre",
       "cite": "https://youtube.com/clip/UgkxeaxPrHxUDWi-Xu9rkoOGsoTonWsYYRmc",
       "quote": "Antes de escribir una sola línea de CSS, tu sitio web debe ser responsivo y con eso marcaras diferencia."
     },
@@ -129,9 +128,8 @@
       "nickname": "Miguel Ángel Durán",
       "webpage": "https://midu.dev/",
       "image": "miguel_angel_duran.png",
-      "image_desc": "Hombre",
       "cite": "https://youtube.com/shorts/w8Csu_uh-Qg?feature=share",
-      "quote": "Hay que tener la paciencia para que pase de forma natural, lo importante no es el objetivo sino el camino hasta llegar ahí."
+      "quote": "...hay que tener la paciencia para que pase de forma natural, lo importante no es el objetivo sino el camino hasta llegar ahí."
     }
   ]
 }

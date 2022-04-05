@@ -1,12 +1,11 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, createRef, useRef } from "react";
 
 export default function useObserver(
   targetRef = null,
-  { root, threshold, rootMargin, runOnce, onVisible }
+  { root, threshold, rootMargin, runOnce = true, onVisible }
 ) {
   const ref = useMemo(() => targetRef, []);
   const [isVisible, setVisible] = useState(false);
-
   useEffect(() => {
     if (!ref.current) {
       console.error("targetRef is nullish or empty");
@@ -22,17 +21,16 @@ export default function useObserver(
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.disconnect();
-          //  trigger callback to each entry if cb is provided
+          //  conditional triggers.
+          runOnce && observer.unobserve(entry.target);
           onVisible && onVisible();
         }
       });
     }, options);
     observer.observe(ref.current);
 
-    // clean up when the component is unmounted
     return () => observer.disconnect();
-  }, [ref, threshold, rootMargin, onVisible]);
+  }, [ref, threshold, rootMargin, runOnce, onVisible]);
 
   return [isVisible];
 }

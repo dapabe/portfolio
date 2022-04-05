@@ -25,30 +25,32 @@ export default function SectionProjects() {
 
   return (
     <section className="projectSection noMaxWidth">
-      <h1 className="sectionTitle">Proyectos</h1>
       <div className="decorative-1" />
-      <div className="projectSlider-Container">
-        <Arrows
-          prevSlide={btnPrev}
-          nextSlide={btnNext}
-          {...(ProjectINFO.length <= 1 && { disabled: true })}
-        >
-          <ul className="projectSlider">
-            <ProjectCards
-              displayedData={ProjectINFO.data}
-              indexState={activeIndex}
-              mouseEvent={setDesktopDesc}
-            />
-          </ul>
-        </Arrows>
+      <h1 className="sectionTitle mb-4 text-center">Proyectos</h1>
+      <div className="flex h-full w-full flex-wrap justify-center">
+        <div className="projectSlider-Container">
+          <Arrows
+            prevSlide={btnPrev}
+            nextSlide={btnNext}
+            {...(ProjectINFO.length <= 1 && { disabled: true })}
+          >
+            <ul className="projectSlider">
+              <ProjectCards
+                displayedData={ProjectINFO.data}
+                indexState={activeIndex}
+                mouseEvent={setDesktopDesc}
+              />
+            </ul>
+          </Arrows>
+        </div>
+        {width >= 1024 && (
+          <HoverInfo>
+            {desktopDesc
+              ? desktopDesc
+              : "Pasa el cursor encima de algun proyecto para ver su información"}
+          </HoverInfo>
+        )}
       </div>
-      {width >= 1024 && (
-        <HoverInfo>
-          {desktopDesc
-            ? desktopDesc
-            : "Pasa el cursor encima de algun proyecto para ver su información"}
-        </HoverInfo>
-      )}
     </section>
   );
 }
