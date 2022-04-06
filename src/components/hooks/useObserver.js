@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState, createRef, useRef } from "react";
 
 export default function useObserver(
   targetRef = null,
-  { root, threshold, rootMargin, runOnce = true, onVisible }
+  { root, threshold, rootMargin, runOnce = true, onVisible = false }
 ) {
   const ref = useMemo(() => targetRef, []);
   const [isVisible, setVisible] = useState(false);
@@ -22,7 +22,7 @@ export default function useObserver(
         if (entry.isIntersecting) {
           setVisible(true);
           //  conditional triggers.
-          runOnce && observer.unobserve(entry.target);
+          runOnce && observer.disconnect();
           onVisible && onVisible();
         }
       });

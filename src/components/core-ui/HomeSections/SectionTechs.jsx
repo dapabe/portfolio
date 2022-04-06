@@ -17,6 +17,7 @@ export default function SectionTechs() {
   const targetRef = createRef(null);
   const [isVisible] = useObserver(targetRef, {
     rootMargin: "300px",
+    runOnce: false,
   });
 
   return (
