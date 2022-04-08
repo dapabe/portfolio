@@ -1,12 +1,10 @@
-import { useState } from "react";
 import useToggle from "@hooks/useToggle";
-import {
-  BrandLogo,
-  MenuModal,
-  SkipNav,
-  SocialLinks,
-  MenuButton,
-} from "./common/exports";
+import SkipNav from "./SkipNav";
+import BrandLogo from "./BrandLogo";
+import LangSwitch from "./LangSwitch";
+import MenuButton from "./MenuButton";
+import SocialLinks from "../SocialLinks";
+import MenuModal from "./MenuModal";
 
 export default function Header() {
   const [buttonState, handleButton] = useToggle();

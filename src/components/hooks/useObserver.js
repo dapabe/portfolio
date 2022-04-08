@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, createRef, useRef } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export default function useObserver(
   targetRef = null,

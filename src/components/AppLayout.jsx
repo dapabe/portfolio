@@ -1,5 +1,6 @@
-import { Header, Footer } from "./AppLayout/exports";
-import { BackToTop } from "./AppLayout/common/exports";
+import Header from "@ui/unique/HeaderUI/Header";
+import Footer from "@ui/unique/FooterUI/Footer";
+import BackToTop from "@ui/unique/BackToTop";
 
 import { Outlet } from "react-router-dom";
 

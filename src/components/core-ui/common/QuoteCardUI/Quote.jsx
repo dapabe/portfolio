@@ -1,6 +1,9 @@
 import { ExternalLinkIcon } from "@heroicons/react/solid";
+import { useContext } from "react";
+import { QuoteData } from "./QuoteCard";
 
-export default function Quote({ cite, quote, webpage, nickname }) {
+export default function Quote() {
+  const { cite, quote, webpage, nickname } = useContext(QuoteData);
   return (
     <section className="sm:ml-24">
       <p>

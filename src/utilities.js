@@ -1,5 +1,3 @@
-import data from "./assets/data.json";
-
 //  Compare the 1st array to the 2nd, searches into the 2nd array
 //  and filters the object with the 1st keyword, if it matches
 //  then retrieves the exact object where the 2nd keyword of the 2nd array[obj] is.

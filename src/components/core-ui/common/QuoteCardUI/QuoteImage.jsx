@@ -1,7 +1,8 @@
-import { forwardRef } from "react";
+import { forwardRef, useContext } from "react";
+import { QuoteData } from "./QuoteCard";
 
-const QuoteImage = forwardRef(({ displayCondition, nickname, image }, ref) => {
-  console.log(ref);
+const QuoteImage = forwardRef(({ displayCondition }, ref) => {
+  const { nickname, image } = useContext(QuoteData);
   return (
     <div
       ref={ref}
