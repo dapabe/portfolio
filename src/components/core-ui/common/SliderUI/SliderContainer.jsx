@@ -12,6 +12,7 @@ export default function SliderContainer({ type, children }) {
   const btnNext = () =>
     setActiveIndex(activeIndex === lengthAmount ? 0 : activeIndex + 1);
   //  =================
+
   return (
     <div className="projectSlider-Container">
       <Arrows
