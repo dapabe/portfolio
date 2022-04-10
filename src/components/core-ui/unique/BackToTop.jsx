@@ -11,7 +11,7 @@ export default function BackToTop() {
       }`}
       title="Volver arriba"
     >
-      <ChevronDoubleUpIcon fill="#334155" />
+      <ChevronDoubleUpIcon className="text-sutilBlack" />
     </button>
   );
 }

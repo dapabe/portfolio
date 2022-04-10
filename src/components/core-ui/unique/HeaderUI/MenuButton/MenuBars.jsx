@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { HeaderContext } from "../Header";
 
-const WHnClosed = "h-6 w-1 md:h-4 md:w-[.20rem] md:group-hover:h-6",
-  WHnOpen = "absolute h-10 w-1 md:h-8 md:w-[.20rem] left-1/2 -translate-x-1/2 ";
+const WHnClosed = "h-5 bg-sutilBlack md:bg-white md:group-hover:h-7 ",
+  WHnOpen =
+    "absolute h-10 left-1/2 -translate-x-1/2 bg-sutilBlack md:group-hover:h-11 ";
 const Bars = [
   {
     id: "bar1",
@@ -11,7 +12,7 @@ const Bars = [
   },
   {
     id: "bar2",
-    closed: "h-6 w-1 md:w-[.20rem] md:group-hover:h-3",
+    closed: "h-8 md:group-hover:h-4 bg-sutilBlack md:bg-white",
     open: "opacity-0",
   },
   {
@@ -23,31 +24,10 @@ const Bars = [
 export default function MenuBars() {
   const { menuClosed } = useContext(HeaderContext);
   return (
-    <ul className={`menuBars ${menuClosed ? "gap-x-0" : "gap-x-1"}`}>
+    <ul className="menuBars">
       {Bars.map(({ id, closed, open }) => (
         <li key={id} className={menuClosed ? open : closed} />
       ))}
-      {/* <div
-        className={`${initial} ${
-          menuClosed
-            ? "h-3 w-[3px] group-hover:h-6"
-            : "absolute h-2/3 w-[2px] rotate-45 group-hover:scale-110 sm:bg-slate-700"
-        } transition-[scale_rotate]`}
-      />
-      <div
-        className={`${
-          menuClosed
-            ? "mx-1 h-6 w-[3px] opacity-100 group-hover:h-3" + initial
-            : "opacity-0"
-        } transition-[scale_opacity]`}
-      />
-      <div
-        className={`${initial} ${
-          menuClosed
-            ? " h-3 w-[3px] group-hover:h-6"
-            : "absolute h-2/3 w-[2px] -rotate-45 group-hover:scale-110 sm:bg-slate-700"
-        } transition-[scale_rotate]`}
-      /> */}
     </ul>
   );
 }
