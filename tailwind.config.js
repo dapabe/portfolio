@@ -5,7 +5,6 @@ module.exports = {
       colors: {
         vaporBlue: "#111122",
         vaporViolet: "#2c2c54",
-        pastelViolet: "#685489",
         strongOrange: "#f4583a",
         strongRed: "#cd1e38",
         sutilBlack: "#1C1B20",

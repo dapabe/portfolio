@@ -1,33 +1,31 @@
 import { useContext } from "react";
 import { HeaderContext } from "../Header";
 
-const initialClass = "rounded-full bg-sutilBlack";
+const WHnClosed = "h-6 w-1 md:h-4 md:w-[.20rem] md:group-hover:h-6",
+  WHnOpen = "absolute h-10 w-1 md:h-8 md:w-[.20rem] left-1/2 -translate-x-1/2 ";
 const Bars = [
   {
     id: "bar1",
-    initClass: initialClass + " transition-[scale_rotate]",
-    closed: "h-4 w-0.5",
-    open: "h-3 w-[3px]",
+    closed: WHnClosed,
+    open: WHnOpen + "rotate-45",
   },
   {
     id: "bar2",
-    initClass: initialClass + "transition-[scale_opacity]",
-    closed: "h-6 w-0.5 opacity-100 group-hover:h-3",
+    closed: "h-6 w-1 md:w-[.20rem] md:group-hover:h-3",
     open: "opacity-0",
   },
   {
     id: "bar3",
-    initClass: initialClass + "transition-[scale_rotate]",
-    closed: "h-2/3 w-0.5",
-    open: "h-3 w-[3px]",
+    closed: WHnClosed,
+    open: WHnOpen + "-rotate-45",
   },
 ];
 export default function MenuBars() {
   const { menuClosed } = useContext(HeaderContext);
   return (
-    <ul className="menuBars">
-      {Bars.map(({ id, initClass, closed, open }) => (
-        <li key={id} className={`${initClass} ${menuClosed ? closed : open}`} />
+    <ul className={`menuBars ${menuClosed ? "gap-x-0" : "gap-x-1"}`}>
+      {Bars.map(({ id, closed, open }) => (
+        <li key={id} className={menuClosed ? open : closed} />
       ))}
       {/* <div
         className={`${initial} ${

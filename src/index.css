@@ -8,8 +8,14 @@
   html {
     @apply scroll-smooth;
   }
+  html::-webkit-scrollbar {
+    @apply bg-gradient-to-b from-vaporBlue via-pink-900 to-vaporBlue;
+  }
+  html::-webkit-scrollbar-thumb {
+    @apply mx-1 rounded-lg bg-vaporBlue;
+  }
   body {
-    @apply relative bg-gradient-to-r from-strongOrange to-strongRed font-Comfortaa text-white scrollbar-hide;
+    @apply relative bg-gradient-to-r from-strongOrange to-strongRed font-Comfortaa text-white;
   }
   header {
     @apply absolute w-full;
@@ -62,12 +68,10 @@
     @apply fixed left-4 bottom-2 z-30 flex -rotate-90 flex-col items-center md:bottom-1/2 md:translate-y-1/2;
   }
   .menuBars {
-    @apply flex rounded-full bg-white p-1 md:transition-colors;
+    @apply relative flex h-16 w-16 place-content-center rounded-full bg-white p-1 md:h-11 md:w-11 md:transition-colors;
   }
   .menuBars li {
-    /* @apply; */
-  }
-  .menuButton:hover ul > li {
+    @apply self-center rounded-full bg-sutilBlack transition-[scale_rotate_opacity];
   }
   .menuText {
     @apply mt-3 gap-x-1 text-[.7rem];

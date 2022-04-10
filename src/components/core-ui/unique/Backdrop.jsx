@@ -4,7 +4,7 @@ export default function Backdrop({ ...props }) {
   const { menuClosed } = useContext(HeaderContext);
   return (
     <div
-      className={`backdrop ${!menuClosed ? "bg-black/0" : "bg-black/90"}`}
+      className={`backdrop ${menuClosed ? "bg-black/90" : "bg-black/0"}`}
       {...props}
     />
   );
