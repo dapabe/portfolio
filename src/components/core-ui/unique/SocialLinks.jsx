@@ -2,19 +2,17 @@ import data from "@src/assets/data.json";
 
 const SOCIAL = data.social_data;
 
-export default function SocialLinks() {
-  return SOCIAL.map((link) => (
-    <i className="social-icon" key={link.name}>
+export default function SocialLinks({ ...attr }) {
+  return SOCIAL.map(({ name, url, img, img_desc, fallback_img }) => (
+    <i className="social-icon" key={name}>
       <a
-        href={link.url}
+        href={url}
         target="_blank"
         rel="noopener noreferrer"
-        title={link.img_desc}
+        title={img_desc}
+        {...attr}
       >
-        <img
-          src={`/icons/social/${link.img || link.fallback_img}`}
-          alt={link.img_desc}
-        />
+        <img src={`/icons/social/${img || fallback_img}`} alt={img_desc} />
       </a>
     </i>
   ));

@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { HeaderContext } from "./Header";
+
 import useStopScroll from "@hooks/useStopScroll";
 import usePageOffset from "@hooks/usePageOffset";
 
@@ -6,10 +9,13 @@ import Backdrop from "../Backdrop";
 import SocialLinks from "../SocialLinks";
 import CustomLink from "@ui/common/CustomLink";
 
-export default function MenuModal({ initialState, ...props }) {
-  useStopScroll(initialState);
+//  Stops scrolling on Modal opened,
+//  on anchor selection go window scroll on Y.
+export default function MenuModal() {
+  const { menuClosed, handleMenu } = useContext(HeaderContext);
+  useStopScroll(menuClosed);
   const scrollTime = usePageOffset() ? 300 : 0;
-  const closeModal = props.onClick;
+  const closeModal = handleMenu;
   const CloseAndResetPage = () => {
     closeModal();
     setTimeout(() => {
@@ -17,28 +23,37 @@ export default function MenuModal({ initialState, ...props }) {
     }, scrollTime);
   };
 
-  const isOpen = initialState
-    ? "z-20 delay-500 opacity-100"
-    : "-z-50 opacity-0 -translate-y-[200%]";
-
-  const LI_Routes = () =>
+  //  Not selectable if menu is closed.
+  const NotSelectable = {
+    ...(!menuClosed && { tabIndex: -1 }),
+  };
+  const LI_Routes = ({ ...attr }) =>
     ROUTES.map((element) => (
       <li key={element.text}>
-        <CustomLink type="primary" {...element} onClick={CloseAndResetPage}>
+        <CustomLink
+          type="primary"
+          {...element}
+          onClick={CloseAndResetPage}
+          {...attr}
+        >
           {element.text}
         </CustomLink>
       </li>
     ));
 
+  const isOpen = menuClosed
+    ? "z-20 delay-500 opacity-100"
+    : "-z-50 opacity-0 -translate-y-[200%]";
+
   return (
-    <section className={`menuContainer ${!initialState ? "-z-50" : "z-20"}`}>
-      {initialState && <Backdrop onClick={closeModal} />}
+    <section className={`menuContainer ${menuClosed ? "z-20" : "-z-50"}`}>
+      <Backdrop onClick={closeModal} />
       <nav className={`menu ${isOpen}`}>
-        <ul className="flex w-max flex-col gap-y-4 self-center ">
-          <LI_Routes />
+        <ul className="menuLinks">
+          <LI_Routes {...NotSelectable} />
         </ul>
         <div className="flex justify-evenly sm:flex-col sm:justify-end sm:space-y-4">
-          <SocialLinks />
+          <SocialLinks {...NotSelectable} />
         </div>
       </nav>
     </section>

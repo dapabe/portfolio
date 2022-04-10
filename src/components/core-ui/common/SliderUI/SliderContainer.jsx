@@ -15,11 +15,7 @@ export default function SliderContainer({ type, children }) {
 
   return (
     <div className="projectSlider-Container">
-      <Arrows
-        prevSlide={btnPrev}
-        nextSlide={btnNext}
-        {...(children.length <= 1 && { style: { display: "none" } })}
-      >
+      <Arrows prevSlide={btnPrev} nextSlide={btnNext} indexState={activeIndex}>
         <ul className="projectSlider">
           <SlideITEM displayCondition={activeIndex}>{children}</SlideITEM>
         </ul>

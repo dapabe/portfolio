@@ -27,7 +27,7 @@
     @apply mx-auto max-w-xs transition-[max-width] sm:max-w-sm md:max-w-xl lg:max-w-4xl xl:max-w-6xl;
   }
   img {
-    @apply text-xs;
+    /* @apply text-xs; */
   }
   input:invalid[focused="true"],
   textarea:invalid[focused="true"] {
@@ -46,7 +46,7 @@
     @apply fixed top-0 left-28 -translate-y-[80px] rounded-b-3xl border-2 border-white border-t-transparent bg-strongOrange px-3 py-1 outline-none transition focus:translate-y-0;
   }
   .brandLogo {
-    @apply fixed top-0 left-0 z-30 ml-2 text-3xl tracking-wider;
+    @apply fixed top-2 left-0 z-30 ml-2 text-3xl tracking-wider;
   }
   .menuContainer {
     @apply fixed inset-0 flex sm:px-24 mxsm:justify-center;
@@ -55,26 +55,31 @@
     @apply before:btriangle-tl after:btriangle-tr relative flex h-2/3 max-w-xs flex-grow flex-wrap justify-center space-y-20
    bg-orange-500 px-6 text-3xl transition-transform before:absolute before:top-[95%] before:left-0 before:border-[6rem] before:border-orange-500 after:absolute after:top-[95%] after:right-0 after:border-[6rem] after:border-orange-500 sm:justify-between mxsm:flex-col mxsm:p-10;
   }
-  .menuButton-container {
-    @apply fixed left-4 z-30 flex -rotate-90 flex-col items-center sm:top-1/2 sm:-translate-y-1/2 mxsm:bottom-2;
+  .menuLinks {
+    @apply flex w-max flex-col gap-y-4 self-center;
   }
   .menuButton {
-    @apply min-h-max min-w-max rounded-full bg-white py-4 px-5 sm:p-0 sm:transition-colors;
+    @apply fixed left-4 bottom-2 z-30 flex -rotate-90 flex-col items-center md:bottom-1/2 md:translate-y-1/2;
   }
-  .active {
-    @apply p-1;
+  .menuBars {
+    @apply flex rounded-full bg-white p-1 md:transition-colors;
   }
-  .closed {
-    @apply sm:bg-transparent;
+  .menuBars li {
+    /* @apply; */
+  }
+  .menuButton:hover ul > li {
+  }
+  .menuText {
+    @apply mt-3 gap-x-1 text-[.7rem];
   }
   .sidebar {
-    @apply fixed top-1/2 right-2 z-10 hidden -translate-y-1/2 flex-col space-y-3 sm:flex;
+    @apply fixed top-1/2 right-2 z-10 hidden -translate-y-1/2 flex-col space-y-3 sm:flex md:transition-opacity;
   }
   .social-icon {
     @apply h-8 w-8 hover:scale-110;
   }
   .backdrop {
-    @apply absolute inset-0 z-20 bg-black/90;
+    @apply absolute inset-0;
   }
   .heroSection {
     @apply grid place-items-center;
@@ -123,6 +128,9 @@
   .inspirationSection {
     @apply flex flex-col gap-y-6;
   }
+  .quoteCard {
+    @apply relative flex max-h-[200px] min-h-[150px] max-w-lg rounded-md bg-white text-sutilBlack md:rounded-full;
+  }
   .contactSection {
     @apply relative min-h-[60vh] bg-sutilBlack text-white;
   }
@@ -139,6 +147,19 @@
 @layer utilities {
   .sectionTitle {
     @apply text-xl uppercase tracking-widest;
+  }
+  .skeleton {
+    @apply animate-skeleton;
+  }
+  .skeleton-text {
+    width: 100%;
+    height: 0.5rem;
+    margin-bottom: 0.25rem;
+    border-radius: 0.125rem;
+  }
+  .skeleton-text:last-child {
+    margin-bottom: 0;
+    width: 80%;
   }
   .btriangle-tl {
     z-index: -1;

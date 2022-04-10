@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
+import PropTypes from "prop-types";
 
-export default function useObserver(
-  targetRef = null,
-  { root, threshold, rootMargin, runOnce = true, onVisible = false }
+function useObserver(
+  targetRef,
+  { root, threshold, rootMargin, runOnce, onVisible }
 ) {
-  const ref = useMemo(() => targetRef, []);
+  const ref = useMemo(() => targetRef);
   const [isVisible, setVisible] = useState(false);
   useEffect(() => {
     if (!ref.current) {
@@ -22,15 +23,33 @@ export default function useObserver(
         if (entry.isIntersecting) {
           setVisible(true);
           //  conditional triggers.
-          runOnce && observer.disconnect();
+          runOnce && observer.unobserve(entry.target);
           onVisible && onVisible();
         }
       });
     }, options);
     observer.observe(ref.current);
-
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, [ref, threshold, rootMargin, runOnce, onVisible]);
 
   return [isVisible];
 }
+useObserver.defaultProps = {
+  root: null,
+  threshold: 1,
+  rootMargin: "0px",
+  runOnce: true,
+};
+
+useObserver.propTypes = {
+  targetRef: PropTypes.node.isRequired,
+  root: PropTypes.node,
+  threshold: PropTypes.number,
+  rootMargin: PropTypes.string,
+  runOnce: PropTypes.boolean,
+  onVisible: PropTypes.func,
+};
+
+export default useObserver;

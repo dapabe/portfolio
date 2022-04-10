@@ -1,29 +1,26 @@
-import { createRef, createContext } from "react";
-import useObserver from "@hooks/useObserver";
+import { createContext } from "react";
 import Quote from "./Quote";
 import QuoteImage from "./QuoteImage";
+import { CustomImage } from "@ui/common/extras";
 
 export const QuoteData = createContext({});
 
 export function QuoteCard({ cite, quote, webpage, nickname, image }) {
-  const targetRef = createRef();
-  const [isVisible] = useObserver(targetRef, {
-    rootMargin: "300px",
-  });
-
+  // const targetRef = createRef();
+  // const [isVisible] = useObserver(targetRef, {
+  //   rootMargin: "0px 0px -500px 0px",
+  //   threshold: 0,
+  // });
   return (
-    <blockquote
-      className="relative flex min-h-[132px] max-w-md rounded-full bg-white py-3 text-sutilBlack sm:rounded-l-none sm:pr-14 mxsm:rounded-md mxsm:pl-10 mxsm:pr-14"
-      cite={cite}
-    >
+    <blockquote className="quoteCard" cite={cite}>
       <QuoteData.Provider value={{ cite, quote, webpage, nickname, image }}>
-        <QuoteImage ref={targetRef} displayCondition={isVisible} />
+        <QuoteImage />
         <Quote />
       </QuoteData.Provider>
-      <img
+      <CustomImage
         src="/images/quote.png"
         alt="Simbolo de cita textual"
-        className="absolute -right-2 top-0 h-14 w-14"
+        className="mr-2 max-w-[4rem]"
       />
     </blockquote>
   );

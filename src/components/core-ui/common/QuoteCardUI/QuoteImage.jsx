@@ -1,21 +1,16 @@
-import { forwardRef, useContext } from "react";
+import { useContext } from "react";
+import { CustomImage } from "@ui/common/extras";
 import { QuoteData } from "./QuoteCard";
 
-const QuoteImage = forwardRef(({ displayCondition }, ref) => {
+export default function QuoteImage() {
   const { nickname, image } = useContext(QuoteData);
   return (
-    <div
-      ref={ref}
-      className="absolute top-0 h-full min-w-[132px] -translate-x-1/2 overflow-hidden rounded-full bg-white mxsm:hidden"
-    >
-      {displayCondition && (
-        <img
-          src={`/images/inspirations/${image}` || "/images/placeholder.jpg"}
-          alt={nickname}
-          className="h-full w-full object-cover"
-        />
-      )}
+    <div className="hidden min-h-full min-w-[150px] overflow-hidden rounded-full bg-white md:block">
+      <CustomImage
+        src={`/images/inspirations/${image}`}
+        alt={nickname}
+        className="my-auto object-cover"
+      />
     </div>
   );
-});
-export default QuoteImage;
+}
