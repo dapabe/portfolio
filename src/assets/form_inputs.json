@@ -2,12 +2,12 @@
   "contact_form": [
     {
       "node": "input",
-      "_id": "EMAIL",
+      "id": "EMAIL",
       "name": "email",
       "type": "email",
-      "placeholder": "nombre@dominio.com",
+      "placeholder": "ejemplo@dominio.com",
       "required": true,
-      "className": "peer text-black rounded-md placeholder:text-sm p-1",
+      "className": "peer text-black mr-2 rounded-md placeholder:text-sm p-1 border-sutilBlack border-2",
 
       "label": {
         "text": "De : "
@@ -16,13 +16,13 @@
     },
     {
       "node": "textarea",
-      "_id": "MESSAGE",
+      "id": "MESSAGE",
       "name": "message",
       "type": "message",
       "placeholder": "Hola Patricio, he visto tu pagina web y...",
       "required": true,
       "rows": 3,
-      "className": "w-full text-black bg-red resize-none rounded-md p-1 placeholder:text-sm p-2",
+      "className": "w-full text-black bg-red resize-none rounded-md p-1 placeholder:text-sm p-2 border-sutilBlack border-2",
 
       "label": {
         "text": "Tu mensaje :"

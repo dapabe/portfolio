@@ -1,6 +1,6 @@
 export default function SectionIntro() {
   return (
-    <section className={"ml-auto h-max  mxsm:space-y-4 "}>
+    <section className="introSection noMaxWidth">
       <div className="mx-auto max-w-sm space-y-4 rounded border bg-white/20 py-2 px-4 backdrop-blur-sm sm:my-auto sm:mx-0 sm:p-10">
         <h1 className="text-center text-xl tracking-wide underline decoration-white underline-offset-4 ">
           Daniel Patricio Becerra

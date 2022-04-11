@@ -2,7 +2,10 @@ import React, { useState } from "react";
 
 export default function CreateInput(props) {
   const [focused, setFocused] = useState(false);
-  const { node, _id, label, onChange, errorMessage, ...attr } = props;
+  const { node, id, label, onChange, errorMessage, ...attr } = props;
+
+  // const regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$";
+  // RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$")         Regexp keeps breaking
 
   const handleFocus = () => {
     setFocused(true);
@@ -12,16 +15,15 @@ export default function CreateInput(props) {
   //  Considering refactoring this.
   //  [NOTE] Input attributes/events:
   //  --------------------------------
-  //  onChange: is being setted 2 lvls up.          PROP DRILLING ISSUE
   //  onBlur: checks if the user Clicks
   //    and leaves the INPUT, if so, then
   //    sets the focused attribute to a boolean.
   //  onFocus:  checks if user Clicked 1 time.      NOT USED
 
   return (
-    <div>
+    <div className="inputContainer">
       <label
-        htmlFor={_id}
+        htmlFor={id}
         {...(label.className && { className: label.className })}
       >
         {label.text}
@@ -30,7 +32,8 @@ export default function CreateInput(props) {
         node,
         {
           ...attr,
-          id: _id,
+          id: id,
+          // ...(attr.name.email && { pattern: regexp }),
           onChange: onChange,
           onBlur: handleFocus,
           // onFocus: lastInput,

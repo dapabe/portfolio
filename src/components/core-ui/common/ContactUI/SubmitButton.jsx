@@ -6,10 +6,10 @@ export default function SubmitButton({ displayCondition }) {
       type="submit"
       disabled={displayCondition}
       title="Enviar formulario"
-      className="ml-auto h-max min-h-[2rem] min-w-[2.5rem] rounded-full bg-blue-600 px-2 py-1  text-white transition-colors disabled:cursor-not-allowed"
+      className="ml-auto h-max min-h-[2rem] min-w-[9ch] rounded-md bg-blue-600 px-3 py-1  text-white transition-colors disabled:cursor-not-allowed"
     >
       {displayCondition ? (
-        <RefreshIcon className="h-6 w-6 animate-spin" />
+        <RefreshIcon className="mx-auto h-6 w-6 animate-spin" />
       ) : (
         "Enviar"
       )}

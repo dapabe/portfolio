@@ -53,3 +53,20 @@ export function SkeletonText({ howMany = 1, className, ...attr }) {
     <span key={number} className={`skeleton-text ${className}`} {...attr} />
   ));
 }
+export function VaporSun() {
+  const lineArr = [];
+  for (let i = 0; i < 10; i++) {
+    lineArr.push(i);
+  }
+  return (
+    <ul className="absolute h-72 w-72 overflow-hidden rounded-full bg-gradient-to-b from-[#ffcb55] to-[#ff0488] shadow-2xl ">
+      {lineArr.map((i) => (
+        <li
+          className="absolute -bottom-[6vw] h-[10%] w-full animate-[wave_10s_linear_infinite] bg-vaporBlue"
+          style={{ animationDelay: `-${[i]}s` }}
+          key={i}
+        />
+      ))}
+    </ul>
+  );
+}

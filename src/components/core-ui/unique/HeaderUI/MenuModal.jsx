@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { HeaderContext } from "./Header";
 
-import useStopScroll from "@hooks/useStopScroll";
+import useNoScroll from "@hooks/useNoScroll";
 import usePageOffset from "@hooks/usePageOffset";
 
 import ROUTES from "@src/assets/routes.json";
@@ -13,7 +13,7 @@ import CustomLink from "@ui/common/CustomLink";
 //  on anchor selection go window scroll on Y.
 export default function MenuModal() {
   const { menuClosed, handleMenu } = useContext(HeaderContext);
-  useStopScroll(menuClosed);
+  useNoScroll(menuClosed);
   const scrollTime = usePageOffset() ? 300 : 0;
   const closeModal = handleMenu;
   const CloseAndResetPage = () => {
@@ -23,7 +23,7 @@ export default function MenuModal() {
     }, scrollTime);
   };
 
-  //  Not selectable if menu is closed.
+  //  Not selectable if menu is closed.   <- refactor
   const NotSelectable = {
     ...(!menuClosed && { tabIndex: -1 }),
   };
