@@ -21,7 +21,7 @@ export default function SectionTechs() {
   });
 
   return (
-    <section className="techSection noMaxWidth" ref={targetRef}>
+    <section className="techSection noMaxWidth noSpace" ref={targetRef}>
       <svg viewBox="0 0 1440 320" className="absolute bottom-full">
         <path
           fill="#1C1B20"

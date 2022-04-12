@@ -25,9 +25,9 @@
     @apply min-h-screen;
   }
   main > section:not(:first-child, .noSpace) {
-    padding-top: 4rem;
+    @apply pt-16;
   }
-  main > section:not(:only-child) {
+  main > section {
     @apply min-h-[90vh];
   }
   main > section:not(.noMaxWidth) {
@@ -82,7 +82,7 @@
     @apply absolute inset-0;
   }
   .heroSection {
-    @apply flex min-h-screen items-center justify-center;
+    @apply flex min-h-[80vh] items-center justify-center;
   }
   .heroSection > h1 {
     @apply relative text-6xl transition-[font-size] sm:text-7xl md:text-9xl md:tracking-wide;
@@ -137,9 +137,6 @@
   .contactSection {
     @apply relative flex min-h-[50vh] items-center justify-center bg-sutilBlack py-4;
   }
-  /* .feedbackTxt {
-    @apply w-full resize-none rounded-md bg-sutilBlack p-1 tracking-wide text-white placeholder:text-sm;
-  } */
   .feedbackBtn {
     @apply absolute mx-auto flex max-w-xs flex-col items-center rounded-md bg-white py-3 px-2 transition-opacity;
   }
@@ -151,21 +148,27 @@
   }
 }
 @layer utilities {
+  .paragraphTitle {
+    @apply mb-6 text-xl uppercase tracking-wide;
+  }
   .sectionTitle {
     @apply text-xl uppercase tracking-widest;
   }
-  .skeleton {
-    @apply animate-skeleton;
+  .skeleton-title-sm {
+    @apply mb-6 h-8 w-1/3 animate-pulse rounded-sm;
+  }
+  .skeleton-text:first-child:not(:only-child) {
+    @apply ml-auto w-[90%];
   }
   .skeleton-text {
-    width: 100%;
-    height: 0.5rem;
-    margin-bottom: 0.25rem;
-    border-radius: 0.125rem;
+    @apply mb-2 h-6 w-full animate-pulse rounded-sm;
   }
-  .skeleton-text:last-child {
-    margin-bottom: 0;
-    width: 80%;
+  .skeleton-text:nth-of-type(5) {
+    @apply mt-8;
+  }
+  .skeleton-text:last-child:not(:only-child),
+  .skeleton-text:nth-of-type(4) {
+    @apply mb-0 w-[60%];
   }
   .btriangle-tl {
     z-index: -1;

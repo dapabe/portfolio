@@ -1,9 +1,16 @@
 import { RefreshIcon } from "@heroicons/react/solid";
 
-export function Loading() {
+export function LoadingArticle() {
   return (
-    <section>
-      <RefreshIcon className="h-1/2 w-1/2 animate-spin text-white/50" />
+    <section className="flex flex-col justify-center">
+      <div className="skeleton-title-sm bg-white/40" />
+      <div>
+        {Array(10)
+          .fill(null)
+          .map((_, i) => (
+            <div key={i} className="skeleton-text bg-white/40" />
+          ))}
+      </div>
     </section>
   );
 }

@@ -14,7 +14,6 @@ module.exports = {
       },
       animation: {
         scroll: "scroll 30s linear infinite",
-        skeleton: "skeleton-loading 1s linear infinite alternate",
       },
       keyframes: {
         wave: {
@@ -31,14 +30,6 @@ module.exports = {
           },
           "100%": {
             transform: "translateX(calc(-200px * 7))",
-          },
-        },
-        "skeleton-loading": {
-          "0%": {
-            "background-color": "hsl(0, 0%, 25%)",
-          },
-          "100%": {
-            "background-color": "hsl(0,0%,10%)",
           },
         },
       },

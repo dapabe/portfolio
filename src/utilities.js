@@ -30,7 +30,7 @@ export function CompareAndRetrieve({
   return returnedValues.length !== 0 ? returnedValues : undefined;
 }
 
-export function CompareAndRetrieveAll(
+export function RetrieveConcidences(
   arrToLook,
   arrToSearch,
   keyToSearch,
