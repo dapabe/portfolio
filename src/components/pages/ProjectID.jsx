@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { getProject } from "../RouterUtils";
+import { getProject } from "@src/RouterUtils";
 
 export default function ProjectID() {
   const params = useParams();

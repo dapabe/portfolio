@@ -16,19 +16,22 @@
     @apply absolute w-full;
   }
   main {
-    @apply max-h-max min-h-screen overflow-hidden;
-  }
-  main > section:not(:first-child, :last-child) {
-    padding-top: 4rem;
+    @apply min-h-screen overflow-hidden;
   }
   footer {
     @apply relative flex min-h-[13rem] w-full justify-between bg-sutilBlack;
   }
-  main > section {
+  main > section:only-child {
+    @apply min-h-screen;
+  }
+  main > section:not(:first-child, .noSpace) {
+    padding-top: 4rem;
+  }
+  main > section:not(:only-child) {
     @apply min-h-[90vh];
   }
   main > section:not(.noMaxWidth) {
-    @apply mx-auto max-w-xs transition-[max-width] sm:max-w-sm md:max-w-xl lg:max-w-4xl xl:max-w-6xl;
+    @apply mx-auto max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-4xl xl:max-w-6xl;
   }
   .inputContainer *:invalid[focused="true"] {
     border: 2px solid red;
@@ -79,7 +82,7 @@
     @apply absolute inset-0;
   }
   .heroSection {
-    @apply grid min-h-screen place-items-center;
+    @apply flex min-h-screen items-center justify-center;
   }
   .heroSection > h1 {
     @apply relative text-6xl transition-[font-size] sm:text-7xl md:text-9xl md:tracking-wide;
@@ -88,7 +91,7 @@
     @apply ml-auto h-max mxsm:space-y-4;
   }
   .techSection {
-    @apply relative flex min-h-max flex-col gap-10 bg-sutilBlack py-10;
+    @apply relative flex min-h-max flex-col gap-10 bg-sutilBlack;
   }
   .projectSection {
     @apply relative h-[30vh] transition-[min-height] lg:justify-around mxsm:min-h-[50vh];
@@ -132,15 +135,17 @@
     @apply relative flex max-h-[200px] min-h-[150px] max-w-lg rounded-md bg-white text-sutilBlack md:rounded-full;
   }
   .contactSection {
-    @apply relative min-h-max bg-sutilBlack;
+    @apply relative flex min-h-[50vh] items-center justify-center bg-sutilBlack py-4;
   }
   /* .feedbackTxt {
     @apply w-full resize-none rounded-md bg-sutilBlack p-1 tracking-wide text-white placeholder:text-sm;
   } */
   .feedbackBtn {
-    @apply mx-auto flex max-w-xs translate-y-1/2 flex-col items-center rounded-md bg-white py-4 transition-opacity;
+    @apply absolute mx-auto flex max-w-xs flex-col items-center rounded-md bg-white py-3 px-2 transition-opacity;
   }
-
+  .feedbackForm {
+    @apply mx-auto flex max-w-sm overflow-hidden rounded-md bg-white p-4 text-sutilBlack transition-opacity delay-300 sm:max-w-md md:max-w-lg lg:max-w-xl;
+  }
   .inputError {
     @apply hidden text-sm text-red-600;
   }

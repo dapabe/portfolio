@@ -13,7 +13,6 @@ export const serviceMessage = Object.seal({
 
 export async function formSubmission(serviceResponse, POST_OBJ) {
   try {
-    // throw new Error();
     await fetch(FORM_ENDPOINT, {
       method: "POST",
       headers: {

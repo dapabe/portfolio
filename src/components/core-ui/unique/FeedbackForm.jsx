@@ -15,8 +15,8 @@ const EveryInput = Object.freeze(form_inputs.contact_form);
 export default function FeedbackForm({ displayCondition }) {
   const { formData, handleChange } = useForm(initialFormValues);
   //  Server response
+  //  & Form States
   const [serviceMsg, setServiceMsg] = useState(serviceMessage);
-  //  Form States
   const [isSubmitting, setSubmitting] = useState(false);
 
   const formSubmit = async (event) => {
@@ -26,15 +26,10 @@ export default function FeedbackForm({ displayCondition }) {
     setSubmitting(false);
   };
 
-  const showFeedback = displayCondition
-    ? "-translate-y-20"
-    : "translate-y-full";
+  const showFeedback = displayCondition ? "opacity-100" : "opacity-0 -z-10";
 
   return (
-    <form
-      onSubmit={formSubmit}
-      className={`${showFeedback} mx-auto flex  max-w-sm overflow-hidden rounded-md bg-white p-4 text-sutilBlack transition-transform delay-300 sm:max-w-md md:max-w-lg lg:max-w-xl`}
-    >
+    <form onSubmit={formSubmit} className={`feedbackForm ${showFeedback}`}>
       <FORM_UI submitState={isSubmitting} serviceResponse={serviceMsg}>
         {EveryInput.map((element) => (
           <CreateInput

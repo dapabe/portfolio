@@ -4,10 +4,12 @@ import { HeaderContext } from "./Header";
 import useNoScroll from "@hooks/useNoScroll";
 import usePageOffset from "@hooks/usePageOffset";
 
-import ROUTES from "@src/assets/routes.json";
+import routesData from "@src/assets/routes.json";
 import Backdrop from "../Backdrop";
 import SocialLinks from "../SocialLinks";
 import CustomLink from "@ui/common/CustomLink";
+
+const ROUTES = routesData.links;
 
 //  Stops scrolling on Modal opened,
 //  on anchor selection go window scroll on Y.

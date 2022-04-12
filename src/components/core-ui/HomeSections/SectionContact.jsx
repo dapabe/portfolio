@@ -6,7 +6,7 @@ import FeedbackForm from "@ui/unique/FeedbackForm";
 export default function SectionContact() {
   const [show, setShow] = useState(false);
   return (
-    <section className="contactSection noMaxWidth">
+    <section className="contactSection noMaxWidth noSpace">
       <svg viewBox="0 0 1440 320" className="absolute bottom-full w-full">
         <path
           fill="#1C1B20"
@@ -19,7 +19,7 @@ export default function SectionContact() {
         title="Boton de contacto"
         onClick={() => setShow(true)}
         disabled={show}
-        className={`feedbackBtn ${show ? "opacity-0" : ""}`}
+        className={`feedbackBtn ${show ? "-z-10 opacity-0" : "opacity-100"}`}
       >
         <h1 className="text-center text-xl font-semibold text-sutilBlack">
           ¿Te gustaria dejarme un mensaje o feedback?

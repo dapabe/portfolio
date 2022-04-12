@@ -22,7 +22,7 @@
       "placeholder": "Hola Patricio, he visto tu pagina web y...",
       "required": true,
       "rows": 3,
-      "className": "w-full text-black bg-red resize-none rounded-md p-1 placeholder:text-sm p-2 border-sutilBlack border-2",
+      "className": "w-full text-black rounded-md p-1 placeholder:text-sm p-2 border-sutilBlack border-2",
 
       "label": {
         "text": "Tu mensaje :"

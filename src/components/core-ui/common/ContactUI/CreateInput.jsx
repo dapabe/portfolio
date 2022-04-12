@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, createElement } from "react";
 
 export default function CreateInput(props) {
   const [focused, setFocused] = useState(false);
@@ -28,12 +28,15 @@ export default function CreateInput(props) {
       >
         {label.text}
       </label>
-      {React.createElement(
+      {createElement(
         node,
         {
           ...attr,
           id: id,
           // ...(attr.name.email && { pattern: regexp }),
+          ...(attr.type === "message" && {
+            className: attr.className + " resize-none", // tailwindcss resize class doesn't work properly
+          }),
           onChange: onChange,
           onBlur: handleFocus,
           // onFocus: lastInput,

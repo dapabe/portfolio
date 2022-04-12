@@ -1,3 +1,14 @@
+import { lazy } from "react";
+
+//  Simulate IRL page loading.
+export function SimDelay(componentRoute, delay = 1000) {
+  return lazy(
+    () =>
+      new Promise((resolve) => {
+        setTimeout(() => resolve(import(componentRoute)), delay);
+      })
+  );
+}
 //  Compare the 1st array to the 2nd, searches into the 2nd array
 //  and filters the object with the 1st keyword, if it matches
 //  then retrieves the exact object where the 2nd keyword of the 2nd array[obj] is.
