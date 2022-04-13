@@ -9,7 +9,7 @@ const Intro = lazy(() => import("@ui/sections/home/Introduction"));
 // const Intro = SimDelay("@ui/sections/home/Section");
 const Techs = lazy(() => import("@ui/sections/home/Technologies"));
 const Projects = lazy(() => import("@ui/sections/home/Projects"));
-const Inspirations = lazy(() => import("@ui/sections/home/Inspirations"));
+const Inspiration = lazy(() => import("@ui/sections/home/Inspiration"));
 const Contact = lazy(() => import("@ui/sections/home/Contact"));
 
 // function SuspendedComponents() {
@@ -25,7 +25,7 @@ export default function Home() {
         <Intro />
         <Techs />
         <Projects />
-        <Inspirations />
+        <Inspiration />
         <Contact />
       </LoadElement>
     </>
