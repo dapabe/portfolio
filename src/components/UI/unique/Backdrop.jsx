@@ -1,10 +1,7 @@
-import { useContext } from "react";
-import { HeaderContext } from "./HeaderUI/Header";
-export default function Backdrop({ ...props }) {
-  const { menuClosed } = useContext(HeaderContext);
+export default function Backdrop({ displayCondition, ...props }) {
   return (
     <div
-      className={`backdrop ${menuClosed ? "bg-black/90" : "bg-black/0"}`}
+      className={`backdrop ${displayCondition ? "bg-black/90" : "bg-black/0"}`}
       {...props}
     />
   );

@@ -1,6 +1,3 @@
-import { useContext } from "react";
-import { HeaderContext } from "../Header";
-
 const Letters = [
   { letter: "M", className: "group-hover:-translate-y-[5px]" },
   { letter: "E", className: "group-hover:translate-y-[2px]" },
@@ -8,8 +5,7 @@ const Letters = [
   { letter: "U", className: "group-hover:-translate-y-[6px]" },
 ];
 
-export default function MenuText() {
-  const { menuClosed } = useContext(HeaderContext);
+export default function MenuText({ displayCondition }) {
   const device = {
     small: "hidden",
     desktop: "hidden md:flex",
@@ -17,7 +13,7 @@ export default function MenuText() {
   return (
     <ol
       translate="no"
-      className={`menuText ${menuClosed ? device.small : device.desktop}`}
+      className={`menuText ${displayCondition ? device.small : device.desktop}`}
     >
       {Letters.map(({ letter, className }) => (
         <li key={letter} className={`transition-transform ${className}`}>

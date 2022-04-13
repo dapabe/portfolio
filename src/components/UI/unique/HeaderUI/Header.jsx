@@ -1,33 +1,36 @@
-import { createContext } from "react";
-import useToggle from "@hooks/useToggle";
+import { useContext } from "react";
+import { GlobalContext } from "@context/GlobalState";
+
 import SkipNav from "./SkipNav";
-import BrandLogo from "./BrandLogo";
+import CustomLink from "@ui/router/CustomLink";
 import LangSwitch from "./LangSwitch";
 import MenuButton from "./MenuButton/MenuButton";
 import SocialLinks from "../SocialLinks";
 import MenuModal from "./MenuModal";
 
-export const HeaderContext = createContext({});
-
 export default function Header() {
-  const [menuClosed, handleMenu] = useToggle(); //  false
+  const { menuClosed, CloseAndResetPage } = useContext(GlobalContext);
 
   //  TODO: Switch Langs, Toggle Light/Dark Theme,
   //  better keyboard navigation.
   return (
     <header>
       <SkipNav />
-      <BrandLogo />
+
+      <CustomLink
+        to="/"
+        className="brandLogo"
+        onClick={menuClosed ? CloseAndResetPage : () => window.scroll(0, 0)}
+      >
+        dpb
+      </CustomLink>
       {/* <LangSwitch/> */}
-      <HeaderContext.Provider value={{ menuClosed, handleMenu }}>
-        <MenuButton />
-        <MenuModal />
-        <aside
-          className={`sidebar ${!menuClosed ? "opacity-100" : "opacity-0"}`}
-        >
-          <SocialLinks />
-        </aside>
-      </HeaderContext.Provider>
+
+      <MenuButton />
+      <MenuModal />
+      <aside className={`sidebar ${!menuClosed ? "opacity-100" : "opacity-0"}`}>
+        <SocialLinks />
+      </aside>
     </header>
   );
 }

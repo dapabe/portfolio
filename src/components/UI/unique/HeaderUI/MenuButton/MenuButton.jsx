@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { HeaderContext } from "../Header";
+import { GlobalContext } from "@context/GlobalState";
 import MenuBars from "./MenuBars";
 import MenuText from "./MenuText";
 
 export default function MenuButton() {
-  const { menuClosed, handleMenu } = useContext(HeaderContext);
+  const { menuClosed, handleMenu } = useContext(GlobalContext);
 
   return (
     <button
@@ -14,8 +14,8 @@ export default function MenuButton() {
       }`}
       onClick={handleMenu}
     >
-      <MenuBars />
-      <MenuText />
+      <MenuBars displayCondition={menuClosed} />
+      <MenuText displayCondition={menuClosed} />
     </button>
   );
 }

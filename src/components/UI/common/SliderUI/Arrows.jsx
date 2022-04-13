@@ -13,11 +13,11 @@ export default function Arrows({
   const lastPos = children.props.children.props.children.length - 1;
   // const attributes = {
   //   prev: {
-  //     ...((children.length <= 1 || indexState === 0) && { ...attr }),
+  //     ...((children.length <= 1 || indexState === 0) && { ...props }),
   //   },
   //   next: {
   //     ...((children.length <= 1 || indexState == lastPos) && {
-  //       ...attr,
+  //       ...props,
   //     }),
   //   },
   // };
@@ -34,7 +34,7 @@ export default function Arrows({
           className={btnClass}
           aria-label="Anterior imagen"
           title="Anterior imagen"
-          {...(children.length <= 1 && { ...attr })}
+          {...(children.length <= 1 && { ...props })}
         >
           <ChevronUpIcon className="w-8" />
         </button>
@@ -46,7 +46,7 @@ export default function Arrows({
           className={btnClass}
           aria-label="Siguiente imagen"
           title="Siguiente imagen"
-          {...(children.length <= 1 && { ...attr })}
+          {...(children.length <= 1 && { ...props })}
         >
           <ChevronDownIcon className="w-8" />
         </button>

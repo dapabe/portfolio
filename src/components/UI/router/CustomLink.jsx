@@ -1,7 +1,6 @@
-import { createElement } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
-export default function CustomLink({ type, to, children, ...attr }) {
+export default function CustomLink({ type, to, children, ...props }) {
   const resolved = useResolvedPath(to);
   const match = useMatch({ path: resolved.pathname, end: true });
 
@@ -15,13 +14,9 @@ export default function CustomLink({ type, to, children, ...attr }) {
     }
   };
 
-  return createElement(
-    Link,
-    {
-      className: match && styling(type),
-      to: to,
-      ...attr,
-    },
-    ...children
+  return (
+    <Link className={match && styling(type)} to={to} {...props}>
+      {children}
+    </Link>
   );
 }

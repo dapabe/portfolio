@@ -5,11 +5,10 @@ export default function useToggle(initialState = false) {
 
   // Define and memorize toggler function in case we pass down the component,
   // This function change the boolean value to it's opposite value
-  const memoizedValue = useMemo(() => initialValue, [initialValue]);
   const Toggle = useCallback(
-    () => setValue((memoizedValue) => !memoizedValue),
+    () => setValue((initialValue) => !initialValue),
     []
   );
 
-  return [memoizedValue, Toggle];
+  return [initialValue, Toggle];
 }
