@@ -3,15 +3,15 @@ import { StrictMode, Suspense, lazy } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Fallback from "@fallback";
-//  For testing    SuspendedEl  import
+//  For testing    SuspendedEl  importShorthand
 import { SimDelay, LoadElement, load } from "./utilities/common";
 //  ====================================
 
 import AppLayout from "./components/AppLayout";
-import { Home, E404 } from "./components/pages/exports";
-const About = load("./components/pages/About.jsx");
-const Projects = load("./components/pages/Projects.jsx");
-const ProjectID = load("./components/pages/ProjectID.jsx");
+import { Home, E404 } from "@pages/exports";
+const About = lazy(() => import("@pages/About.jsx"));
+const Projects = lazy(() => import("@pages/Projects.jsx"));
+const ProjectID = lazy(() => import("@pages/ProjectID.jsx"));
 
 // Route Composition
 render(

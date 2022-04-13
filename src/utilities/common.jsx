@@ -10,7 +10,8 @@ export function SimDelay(componentRoute, delay = 1000) {
   );
 }
 
-export const load = (componentRoute) => lazy(() => import(`${componentRoute}`));
+export const load = (componentRoute) =>
+  lazy(async () => await import(componentRoute));
 
 export function LoadElement({ children, fallback }) {
   if (!children) return;

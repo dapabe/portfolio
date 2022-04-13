@@ -1,7 +1,7 @@
 import data from "@src/assets/data.json";
-import { QuoteCard } from "../common/exports";
+import { QuoteCard } from "@ui/common/exports";
 
-const INSPIRATIONS = Object.freeze(data.inspirations);
+const INSPIRATIONS = data.inspirations;
 const LI_Inspirations = () => {
   return INSPIRATIONS.map((person) => (
     <li key={person.nickname} className="inline-flex self-center">
