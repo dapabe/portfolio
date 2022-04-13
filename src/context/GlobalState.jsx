@@ -2,30 +2,33 @@ import { createContext } from "react";
 
 import useToggle from "@hooks/useToggle";
 import useNoScroll from "@hooks/useNoScroll";
+import useKeyboard from "@hooks/useKeyboard";
 import usePageOffset from "@hooks/usePageOffset";
 
 export const GlobalContext = createContext({});
 
-//  1.Stops scrolling on Modal opened.
-//  2.Event: window scrolls to the top.
+const scrollTop = () => window.scroll(0, 0);
+//  1.On document load.
+//  2.Events.
 export default function GlobalState({ children }) {
   const [menuClosed, handleMenu] = useToggle(); //  Initialized as false
   const scrollDelay = usePageOffset() ? 300 : 0; //  Detect page scrolled > Height amount
 
   //  1.
   useNoScroll(menuClosed);
-
+  useKeyboard(handleMenu);
   //  2.
-  const CloseAndResetPage = () => {
+  const handleKeyboard = (e) => e.key === "m" && handleMenu();
+  const closeAndResetPage = () => {
     handleMenu();
     setTimeout(() => {
-      window.scroll(0, 0);
+      scrollTop();
     }, scrollDelay);
   };
 
   return (
     <GlobalContext.Provider
-      value={{ menuClosed, handleMenu, CloseAndResetPage }}
+      value={{ menuClosed, handleMenu, closeAndResetPage, scrollTop }}
     >
       {children}
     </GlobalContext.Provider>

@@ -1,7 +1,6 @@
 {
   "links": [
     { "to": "/", "text": "Inicio" },
-    { "to": "/about", "text": "Acerca" },
-    { "to": "/projects", "text": "Proyectos" }
+    { "to": "/about", "text": "Acerca" }
   ]
 }

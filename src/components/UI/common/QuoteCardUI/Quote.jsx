@@ -35,7 +35,7 @@ export default function Quote() {
           title="Ir a su pagina web."
           target="_blank"
           rel="noopener noreferrer"
-          className="relative mt-1 ml-auto block w-max font-semibold after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-right after:scale-x-0 after:bg-sutilBlack after:transition-transform after:ease-in after:hover:origin-left after:hover:scale-x-100"
+          className="btn-inOut mt-1 ml-auto block font-semibold after:bg-sutilBlack"
         >
           {nickname}
         </a>

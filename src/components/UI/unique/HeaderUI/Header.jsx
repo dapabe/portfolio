@@ -9,7 +9,8 @@ import SocialLinks from "../SocialLinks";
 import MenuModal from "./MenuModal";
 
 export default function Header() {
-  const { menuClosed, CloseAndResetPage } = useContext(GlobalContext);
+  const { menuClosed, closeAndResetPage, scrollTop } =
+    useContext(GlobalContext);
 
   //  TODO: Switch Langs, Toggle Light/Dark Theme,
   //  better keyboard navigation.
@@ -20,7 +21,7 @@ export default function Header() {
       <CustomLink
         to="/"
         className="brandLogo"
-        onClick={menuClosed ? CloseAndResetPage : () => window.scroll(0, 0)}
+        onClick={menuClosed ? closeAndResetPage : scrollTop}
       >
         dpb
       </CustomLink>

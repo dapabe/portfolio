@@ -9,7 +9,7 @@ import CustomLink from "@ui/router/CustomLink";
 const ROUTES = routesData.links;
 
 export default function MenuModal() {
-  const { menuClosed, handleMenu, CloseAndResetPage } =
+  const { menuClosed, handleMenu, closeAndResetPage } =
     useContext(GlobalContext);
 
   //  Not selectable if menu is closed.   <- refactor for better keyboard exp
@@ -17,13 +17,13 @@ export default function MenuModal() {
     ...(!menuClosed && { tabIndex: -1 }),
   };
   const LI_Routes = () =>
-    ROUTES.map(({ to, text }) => (
+    ROUTES.map(({ to, text, ...props }) => (
       <li key={text}>
         <CustomLink
-          type="primary"
           to={to}
-          onClick={CloseAndResetPage}
+          onClick={closeAndResetPage}
           {...NotSelectable}
+          {...props}
         >
           {text}
         </CustomLink>
