@@ -1,37 +1,34 @@
 import "./index.css";
 import { StrictMode, Suspense, lazy } from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-//  For testing
-import { SimDelay } from "./utilities";
+import Fallback from "@fallback";
+//  For testing    SuspendedEl  import
+import { SimDelay, LoadElement, load } from "./utilities/common";
 //  ====================================
-
-const load = (componentRoute) => lazy(() => import(componentRoute));
-const lazyElement = (component, fallback) => {
-  if (!component) return;
-  return (
-    <Suspense fallback={fallback || <LoadingArticle />}>{component}</Suspense>
-  );
-};
 
 import AppLayout from "./components/AppLayout";
 import { Home, E404 } from "./components/pages/exports";
-import { LoadingArticle } from "@ui/fallbacks";
-const About = SimDelay("./components/pages/About");
-const Projects = SimDelay("./components/pages/Projects");
-const ProjectID = SimDelay("./components/pages/ProjectID");
+const About = load("./components/pages/About.jsx");
+const Projects = load("./components/pages/Projects.jsx");
+const ProjectID = load("./components/pages/ProjectID.jsx");
 
 // Route Composition
-ReactDOM.render(
+render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
-          <Route path="about" element={lazyElement(<About />)} />
-          <Route path="projects" element={lazyElement(<Projects />)}>
-            <Route path=":projectId" element={lazyElement(<ProjectID />)} />
+          <Route path="about" element={<LoadElement children={<About />} />} />
+          <Route
+            path="projects"
+            element={<LoadElement children={<Projects />} />}
+          >
+            <Route
+              path=":projectId"
+              element={<LoadElement children={<ProjectID />} />}
+            />
           </Route>
           <Route path="*" element={<E404 />} />
         </Route>

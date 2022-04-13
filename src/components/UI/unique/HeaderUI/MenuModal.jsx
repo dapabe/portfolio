@@ -7,12 +7,12 @@ import usePageOffset from "@hooks/usePageOffset";
 import routesData from "@src/assets/routes.json";
 import Backdrop from "../Backdrop";
 import SocialLinks from "../SocialLinks";
-import CustomLink from "@ui/common/CustomLink";
+import CustomLink from "@ui/router/CustomLink";
 
 const ROUTES = routesData.links;
 
 //  Stops scrolling on Modal opened,
-//  on anchor selection go window scroll on Y.
+//  on anchor selection window scrolls on Y.
 export default function MenuModal() {
   const { menuClosed, handleMenu } = useContext(HeaderContext);
   useNoScroll(menuClosed);

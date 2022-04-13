@@ -1,6 +1,6 @@
 import { createRef } from "react";
 import useObserver from "@hooks/useObserver";
-import { CompareAndRetrieve } from "@src/utilities.js";
+import { CompareAndRetrieve } from "@utils/common.jsx";
 import { Carousel } from "@ui/common/exports";
 import data from "@src/assets/data.json";
 

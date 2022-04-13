@@ -1,5 +1,5 @@
-import { lazy } from "react";
-
+import { Suspense, lazy } from "react";
+import Fallback from "@fallback";
 //  Simulate IRL page loading.
 export function SimDelay(componentRoute, delay = 1000) {
   return lazy(
@@ -8,6 +8,13 @@ export function SimDelay(componentRoute, delay = 1000) {
         setTimeout(() => resolve(import(componentRoute)), delay);
       })
   );
+}
+
+export const load = (componentRoute) => lazy(() => import(`${componentRoute}`));
+
+export function LoadElement({ children, fallback }) {
+  if (!children) return;
+  return <Suspense fallback={fallback || <Fallback />}>{children}</Suspense>;
 }
 //  Compare the 1st array to the 2nd, searches into the 2nd array
 //  and filters the object with the 1st keyword, if it matches
