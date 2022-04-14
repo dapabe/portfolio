@@ -18,9 +18,6 @@
   main {
     @apply min-h-screen overflow-hidden;
   }
-  footer {
-    @apply relative flex min-h-[13rem] w-full justify-between bg-sutilBlack;
-  }
   main > section:only-child {
     @apply min-h-screen;
   }
@@ -31,7 +28,7 @@
     @apply min-h-[90vh];
   }
   main > section:not(.noMaxWidth) {
-    @apply mx-auto max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-4xl xl:max-w-6xl;
+    @apply my-container;
   }
   .inputContainer *:invalid[focused="true"] {
     border: 2px solid red;
@@ -41,6 +38,9 @@
   }
 }
 @layer components {
+  .my-container {
+    @apply mx-auto max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-4xl xl:max-w-5xl;
+  }
   .decorative-1 {
     @apply absolute -left-1/2 top-0 -z-10 min-h-[400%] min-w-[90%] rotate-12 rounded-tr-3xl bg-sutilBlack;
   }
@@ -77,9 +77,6 @@
   }
   .social-icon {
     @apply h-8 w-8 hover:scale-110;
-  }
-  .backdrop {
-    @apply absolute inset-0;
   }
   .heroSection {
     @apply flex min-h-[80vh] items-center justify-center;

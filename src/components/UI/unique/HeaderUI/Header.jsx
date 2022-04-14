@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, Suspense, lazy } from "react";
 import { GlobalContext } from "@context/GlobalState";
 
 import SkipNav from "./SkipNav";
@@ -6,7 +6,8 @@ import CustomLink from "@ui/react-router/CustomLink";
 import LangSwitch from "./LangSwitch";
 import MenuButton from "./MenuButton/MenuButton";
 import SocialLinks from "../SocialLinks";
-import MenuModal from "./MenuModal";
+import Backdrop from "../Backdrop";
+const MenuModal = lazy(() => import("./MenuModal"));
 
 export default function Header() {
   const { isMenuOpen, closeAndResetPage, scrollTop } =
@@ -28,7 +29,9 @@ export default function Header() {
       {/* <LangSwitch/> */}
 
       <MenuButton />
-      <MenuModal />
+      <Suspense fallback={<Backdrop displayCondition={isMenuOpen} />}>
+        <MenuModal />
+      </Suspense>
       <aside className={`sidebar ${!isMenuOpen ? "opacity-100" : "opacity-0"}`}>
         <SocialLinks />
       </aside>

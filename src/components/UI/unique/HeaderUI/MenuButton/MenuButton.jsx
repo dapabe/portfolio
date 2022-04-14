@@ -15,7 +15,7 @@ export default function MenuButton() {
 
   useEffect(() => {
     isMenuOpen && setMenuRef();
-  }, [isMenuOpen, setMenuRef]);
+  }, [isMenuOpen]);
   return (
     <button
       ref={MenuRef}

@@ -1,6 +1,6 @@
 import { RefreshIcon } from "@heroicons/react/solid";
 
-export default function Fallback({ title = true, lines = 1 }) {
+export default function Fallback({ title = false, lines = 1 }) {
   return (
     <section className="flex flex-col justify-center">
       {title && <div className="skeleton-title-sm bg-white/40" />}

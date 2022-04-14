@@ -1,10 +1,10 @@
 import "./index.css";
-import { StrictMode, lazy } from "react";
+import { StrictMode, Suspense, lazy } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import Fallback from "@fallback";
+import Fallback from "@fallback";
 //      For testing  SuspendedEl
-import { slowImport, LoadElement } from "./utilities/common";
+import { slowImport } from "./utilities/common";
 //  ====================================
 
 import AppLayout from "./components/AppLayout";
@@ -20,7 +20,14 @@ render(
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
-          <Route path="about" element={<LoadElement children={<About />} />} />
+          <Route
+            path="about"
+            element={
+              <Suspense fallback={<Fallback title lines={6} />}>
+                <About />
+              </Suspense>
+            }
+          />
           {/* <Route
             path="projects"
             element={<LoadElement children={<Projects />} />}

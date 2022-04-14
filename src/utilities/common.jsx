@@ -9,7 +9,12 @@ export function slowImport(value, ms = 1000) {
       })
   );
 }
-
+//  default keyword inside resolve is because its a component.
+export function fakeImportComponent(value, ms = 1000) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve({ default: value }), ms);
+  });
+}
 export function LoadElement({ children, fallback }) {
   if (!children) return;
   return <Suspense fallback={fallback || <Fallback />}>{children}</Suspense>;
