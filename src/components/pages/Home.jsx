@@ -1,4 +1,4 @@
-import { LoadElement, load, SimDelay } from "@utils/common";
+import { LoadElement, slowImport } from "@utils/common";
 import { lazy } from "react";
 
 //  [NOTE]  Can't import relative paths lazily,

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { GlobalContext } from "@context/GlobalState";
 
 import SkipNav from "./SkipNav";
-import CustomLink from "@ui/router/CustomLink";
+import CustomLink from "@ui/react-router/CustomLink";
 import LangSwitch from "./LangSwitch";
 import MenuButton from "./MenuButton/MenuButton";
 import SocialLinks from "../SocialLinks";

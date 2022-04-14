@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { GlobalContext } from "@context/GlobalState";
 
 import routesData from "@src/assets/routes.json";
-import CustomLink from "@ui/router/CustomLink";
+import CustomLink from "@ui/react-router/CustomLink";
 import Backdrop from "../Backdrop";
 import SocialLinks from "../SocialLinks";
 

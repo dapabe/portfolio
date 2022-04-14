@@ -2,14 +2,14 @@ import "./index.css";
 import { StrictMode, lazy } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Fallback from "@fallback";
-//  For testing    SuspendedEl  importShorthand
-import { SimDelay, LoadElement, load } from "./utilities/common";
+// import Fallback from "@fallback";
+//      For testing  SuspendedEl
+import { slowImport, LoadElement } from "./utilities/common";
 //  ====================================
 
 import AppLayout from "./components/AppLayout";
 import { Home, E404 } from "@pages/exports";
-const About = lazy(() => import("@pages/About.jsx"));
+const About = slowImport(import("@pages/About.jsx"));
 const Projects = lazy(() => import("@pages/Projects.jsx"));
 const ProjectID = lazy(() => import("@pages/ProjectID.jsx"));
 
