@@ -1,4 +1,4 @@
-import { useCallback, useState, useMemo } from "react";
+import { useCallback, useState } from "react";
 
 export default function useToggle(initialState = false) {
   const [initialValue, setValue] = useState(initialState);

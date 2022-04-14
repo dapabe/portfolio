@@ -11,14 +11,13 @@ const scrollTop = () => window.scroll(0, 0);
 //  1.On document load.
 //  2.Events.
 export default function GlobalState({ children }) {
-  const [menuClosed, handleMenu] = useToggle(); //  Initialized as false
+  const [isMenuOpen, handleMenu] = useToggle(); //  Initialized as false
   const scrollDelay = usePageOffset() ? 300 : 0; //  Detect page scrolled > Height amount
 
   //  1.
-  useNoScroll(menuClosed);
+  useNoScroll(isMenuOpen);
   useKeyboard(handleMenu);
   //  2.
-  const handleKeyboard = (e) => e.key === "m" && handleMenu();
   const closeAndResetPage = () => {
     handleMenu();
     setTimeout(() => {
@@ -28,7 +27,7 @@ export default function GlobalState({ children }) {
 
   return (
     <GlobalContext.Provider
-      value={{ menuClosed, handleMenu, closeAndResetPage, scrollTop }}
+      value={{ isMenuOpen, handleMenu, closeAndResetPage, scrollTop }}
     >
       {children}
     </GlobalContext.Provider>

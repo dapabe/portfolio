@@ -17,5 +17,5 @@ export default function useKeyboard(callback) {
     document.addEventListener("keydown", execGlobalFunc, false);
 
     return () => document.removeEventListener("keydown", execGlobalFunc, false);
-  }, []);
+  }, [execGlobalFunc]);
 }

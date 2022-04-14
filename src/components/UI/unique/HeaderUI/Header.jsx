@@ -9,7 +9,7 @@ import SocialLinks from "../SocialLinks";
 import MenuModal from "./MenuModal";
 
 export default function Header() {
-  const { menuClosed, closeAndResetPage, scrollTop } =
+  const { isMenuOpen, closeAndResetPage, scrollTop } =
     useContext(GlobalContext);
 
   //  TODO: Switch Langs, Toggle Light/Dark Theme,
@@ -21,7 +21,7 @@ export default function Header() {
       <CustomLink
         to="/"
         className="brandLogo"
-        onClick={menuClosed ? closeAndResetPage : scrollTop}
+        onClick={isMenuOpen ? closeAndResetPage : scrollTop}
       >
         dpb
       </CustomLink>
@@ -29,7 +29,7 @@ export default function Header() {
 
       <MenuButton />
       <MenuModal />
-      <aside className={`sidebar ${!menuClosed ? "opacity-100" : "opacity-0"}`}>
+      <aside className={`sidebar ${!isMenuOpen ? "opacity-100" : "opacity-0"}`}>
         <SocialLinks />
       </aside>
     </header>

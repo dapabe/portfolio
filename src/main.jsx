@@ -1,5 +1,5 @@
 import "./index.css";
-import { StrictMode, Suspense, lazy } from "react";
+import { StrictMode, lazy } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Fallback from "@fallback";
@@ -21,7 +21,7 @@ render(
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<LoadElement children={<About />} />} />
-          <Route
+          {/* <Route
             path="projects"
             element={<LoadElement children={<Projects />} />}
           >
@@ -29,7 +29,7 @@ render(
               path=":projectId"
               element={<LoadElement children={<ProjectID />} />}
             />
-          </Route>
+          </Route> */}
           <Route path="*" element={<E404 />} />
         </Route>
       </Routes>
