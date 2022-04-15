@@ -8,6 +8,7 @@ module.exports = {
         strongOrange: "#f4583a",
         strongRed: "#cd1e38",
         sutilBlack: "#1C1B20",
+        whiteCream: "#EBD8C3",
       },
       fontFamily: {
         Comfortaa: ["Comfortaa", "serif"],

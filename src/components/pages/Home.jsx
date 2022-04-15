@@ -1,5 +1,6 @@
-import { LoadElement, slowImport } from "@utils/common";
-import { lazy } from "react";
+import { slowImport } from "@utils/common";
+import { Suspense, lazy } from "react";
+import { Lines } from "@fallback";
 
 //  [NOTE]  Can't import relative paths lazily,
 //  only absolute paths are accepted.
@@ -21,13 +22,13 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <LoadElement>
+      <Suspense fallback={<Lines />}>
         <Intro />
         <Techs />
         <Projects />
         <Inspiration />
         <Contact />
-      </LoadElement>
+      </Suspense>
     </>
   );
 }

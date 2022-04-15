@@ -8,12 +8,11 @@ const freezedInfo = Object.freeze(data.projects_data);
 
 export default function SectionProjects() {
   const [desktopDesc, setDesktopDesc] = useState("");
-  const { width } = useWindowSize();
 
   return (
-    <section className="projectSection noMaxWidth">
+    <section className="projectSection noMaxWidth noSpace">
       <h1 className="sectionTitle mb-4 text-center">Proyectos</h1>
-      <div className="flex h-full w-full flex-wrap justify-center">
+      <div className="flex h-full flex-wrap justify-center">
         <SliderContainer>
           {freezedInfo.map(
             ({ id, image, title, description, links, made_with }) => (
@@ -30,13 +29,11 @@ export default function SectionProjects() {
             )
           )}
         </SliderContainer>
-        {width >= 1024 && (
-          <HoverInfo>
-            {desktopDesc
-              ? desktopDesc
-              : "Pasa el cursor encima de algun proyecto para ver su información"}
-          </HoverInfo>
-        )}
+        <HoverInfo>
+          {desktopDesc
+            ? desktopDesc
+            : "Pasa el cursor encima de algun proyecto para ver su información"}
+        </HoverInfo>
       </div>
     </section>
   );

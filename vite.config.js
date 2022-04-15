@@ -14,7 +14,7 @@ export default defineConfig({
       "@pages": pathing(__dirname, "./src/components/pages"),
       "@ui": pathing(__dirname, "./src/components/UI"),
       "@context": pathing(__dirname, "./src/context"),
-      "@fallback": pathing(__dirname, "./src/components/UI/fallback.jsx"),
+      "@fallback": pathing(__dirname, "./src/components/UI/Fallback.jsx"),
       "@utils": pathing(__dirname, "./src/utilities"),
     },
   },

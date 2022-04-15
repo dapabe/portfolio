@@ -1,5 +1,6 @@
 import data from "@src/assets/data.json";
 import { QuoteCard } from "@ui/common/exports";
+import SVGWave2 from "@ui/common/decorations/SVGWave2";
 
 const INSPIRATIONS = data.inspirations;
 const LI_Inspirations = () => {
@@ -12,7 +13,8 @@ const LI_Inspirations = () => {
 
 export default function SectionInspire() {
   return (
-    <section className="inspirationSection">
+    <section className="inspirationSection noSpace noMaxWidth">
+      <SVGWave2 />
       <h1 className="sectionTitle text-center">Inspiraciones</h1>
       <ul className="flex flex-col gap-y-6 ">
         <LI_Inspirations />
@@ -21,6 +23,7 @@ export default function SectionInspire() {
         Con la correcta forma de pensar tienes las bases para un camino bien
         pavimentado, con ese camino guiaras a otros.
       </p>
+      <SVGWave2 styling="rotate-0" />
     </section>
   );
 }

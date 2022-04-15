@@ -2,7 +2,7 @@ import "./index.css";
 import { StrictMode, Suspense, lazy } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Fallback from "@fallback";
+import { Lines } from "@fallback";
 //      For testing  SuspendedEl
 import { slowImport } from "./utilities/common";
 //  ====================================
@@ -23,7 +23,7 @@ render(
           <Route
             path="about"
             element={
-              <Suspense fallback={<Fallback title lines={6} />}>
+              <Suspense fallback={<Lines title lines={8} />}>
                 <About />
               </Suspense>
             }

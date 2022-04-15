@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import Fallback from "@fallback";
+import { Lines } from "@fallback";
 //  Simulate IRL page loading.
 export function slowImport(value, ms = 1000) {
   return lazy(
@@ -14,10 +14,6 @@ export function fakeImportComponent(value, ms = 1000) {
   return new Promise((resolve) => {
     setTimeout(() => resolve({ default: value }), ms);
   });
-}
-export function LoadElement({ children, fallback }) {
-  if (!children) return;
-  return <Suspense fallback={fallback || <Fallback />}>{children}</Suspense>;
 }
 
 //  Compare the 1st array to the 2nd, searches into the 2nd array

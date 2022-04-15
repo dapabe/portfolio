@@ -24,7 +24,7 @@ export default function Arrows({
   const btnContainer =
     "absolute left-1/2 z-10 flex h-[15%] w-full -translate-x-1/2 justify-center from-sutilBlack via-sutilBlack/40 to-transparent";
   const btnClass =
-    "rounded-md bg-slate-600 hover:bg-slate-700 transition-colors h-min p-2 self-center";
+    "rounded-md bg-white hover:scale-110 transition-transform h-min p-2 self-center";
 
   return (
     <>
@@ -36,7 +36,7 @@ export default function Arrows({
           title="Anterior imagen"
           {...(children.length <= 1 && { ...props })}
         >
-          <ChevronUpIcon className="w-8" />
+          <ChevronUpIcon className="w-8 text-sutilBlack" />
         </button>
       </span>
       {children}
@@ -48,7 +48,7 @@ export default function Arrows({
           title="Siguiente imagen"
           {...(children.length <= 1 && { ...props })}
         >
-          <ChevronDownIcon className="w-8" />
+          <ChevronDownIcon className="w-8 text-sutilBlack" />
         </button>
       </span>
     </>

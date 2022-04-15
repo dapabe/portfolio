@@ -59,18 +59,18 @@
   ],
   "social_data": [
     {
+      "name": "Github",
+      "url": "https://github.com/dapabe/portfolio-react-vite",
+      "img": "Github-mono.svg",
+      "fallback_img": "Github.svg",
+      "img_desc": "Ir al perfil de Github"
+    },
+    {
       "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/daniel-patricio-becerra-5042681b5/",
       "img": "LinkedIn-mono.svg",
       "fallback_img": "LinkedIn.svg",
       "img_desc": "Ir al perfil de LinkedIn"
-    },
-    {
-      "name": "Github",
-      "url": "https://github.com/dapabe",
-      "img": "Github-mono.svg",
-      "fallback_img": "Github.svg",
-      "img_desc": "Ir al perfil de Github"
     },
     {
       "name": "Twitter",

@@ -1,7 +1,7 @@
 import { ChevronDoubleUpIcon } from "@heroicons/react/solid";
 import usePageOffset from "@hooks/usePageOffset";
 
-export default function BackToTop() {
+export default function GoTop() {
   return (
     <button
       type="button"
@@ -9,7 +9,7 @@ export default function BackToTop() {
       className={`fixed right-4 bottom-2  w-12 rounded-md bg-white  transition-opacity hover:scale-105 ${
         usePageOffset() ? "z-[15] opacity-100" : "-z-50 opacity-0"
       }`}
-      title="Volver arriba"
+      title="Volver arriba del todo"
     >
       <ChevronDoubleUpIcon className="text-sutilBlack" />
     </button>
