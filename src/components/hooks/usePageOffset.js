@@ -1,18 +1,16 @@
 import { useState, useEffect } from "react";
 
-export default function usePageOffset(pixels = window.innerHeight) {
-  const [hasOffset, setOffset] = useState(false);
+export default function usePageOffset(pixels = globalThis.innerHeight) {
+  const [isOffset, setOffset] = useState(false);
   const checkTopScroll = () => {
-    !hasOffset && window.pageYOffset >= pixels && setOffset(true);
-    hasOffset && window.pageYOffset <= pixels && setOffset(false);
+    !isOffset && window.pageYOffset >= pixels && setOffset(true);
+    isOffset && window.pageYOffset <= pixels && setOffset(false);
   };
   useEffect(() => {
-    window.addEventListener("scroll", checkTopScroll);
+    globalThis.addEventListener("scroll", checkTopScroll);
 
-    return () => {
-      window.removeEventListener("scroll", checkTopScroll);
-    };
-  }, [hasOffset]);
+    return () => globalThis.removeEventListener("scroll", checkTopScroll);
+  }, [isOffset]);
 
-  return hasOffset;
+  return { isOffset };
 }

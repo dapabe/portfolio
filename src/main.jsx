@@ -23,7 +23,7 @@ render(
           <Route
             path="about"
             element={
-              <Suspense fallback={<Lines title lines={8} />}>
+              <Suspense fallback={<Lines title lines={15} />}>
                 <About />
               </Suspense>
             }

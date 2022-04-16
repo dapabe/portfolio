@@ -34,7 +34,7 @@ export function CompareAndRetrieve({
     );
     return foundValues && item1[keyToReturn];
   });
-  return returnedValues.length !== 0 ? returnedValues : undefined;
+  return returnedValues.length !== 0 && returnedValues;
 }
 
 export function RetrieveConcidences(

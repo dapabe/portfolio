@@ -5,17 +5,16 @@ import { useEffect, useCallback } from "react";
 //  ex: ([key]: [func()])-> map it into the "execGlobalFunc"
 //      event.key === [key] && [prop]() ?
 //  Parameters should be a spreaded object.
-export default function useKeyboard(callback) {
+export default function useKeyboard({ element = globalThis, key, cb }) {
   const execGlobalFunc = useCallback(
     (event) => {
-      event.key === "m" && callback();
+      event.key === key && cb();
     },
-    [callback]
+    [cb]
   );
-
   useEffect(() => {
-    document.addEventListener("keydown", execGlobalFunc, false);
+    element.addEventListener("keydown", execGlobalFunc, false);
 
-    return () => document.removeEventListener("keydown", execGlobalFunc, false);
+    return () => element.removeEventListener("keydown", execGlobalFunc, false);
   }, [execGlobalFunc]);
 }

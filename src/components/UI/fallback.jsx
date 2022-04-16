@@ -1,7 +1,7 @@
 export function Lines({ title = false, lines = 1 }) {
   return (
     <section className="noMaxWidth bg-1">
-      <div className="my-container">
+      <div className="mx-auto max-w-md">
         {title && <div className="skeleton-title-sm bg-white/40" />}
         <div>
           {Array(lines)
