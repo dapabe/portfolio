@@ -3,7 +3,7 @@
     {
       "node": "input",
       "id": "EMAIL",
-      "name": "email",
+      "name": "user_email",
       "type": "email",
       "placeholder": "ejemplo@dominio.com",
       "required": true,

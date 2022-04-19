@@ -4,9 +4,11 @@ import { PaperAirplaneIcon } from "@heroicons/react/solid";
 import FeedbackForm from "@ui/unique/FeedbackForm";
 
 export default function SectionContact() {
+  //  Show form card
   const [show, setShow] = useState(false);
-  return (
-    <section className="contactSection noMaxWidth noSpace">
+
+  const Button = () => {
+    return (
       <button
         type="button"
         title="Boton de contacto"
@@ -19,6 +21,11 @@ export default function SectionContact() {
         </h1>
         <PaperAirplaneIcon className="w-10 rotate-90 text-pink-700" />
       </button>
+    );
+  };
+  return (
+    <section className="contactSection noMaxWidth noSpace">
+      <Button />
       <FeedbackForm displayCondition={show} />
     </section>
   );

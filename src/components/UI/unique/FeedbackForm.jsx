@@ -1,13 +1,13 @@
 const FORM_ENDPOINT = import.meta.env.VITE_ENDPOINT_URL;
 
-import useFetch from "@hooks/useFetch";
+import usePost from "@hooks/fetch/usePost";
 
 import form_inputs from "@src/assets/form_inputs.json";
 
-import FORM_UI from "@ui/common/ContactUI/FORM_UI";
-import CreateInput from "@ui/common/ContactUI/CreateInput";
+import FORM_UI from "@ui/common/FormUI/FORM_UI";
+import CreateInput from "@ui/common/FormUI/CreateInput";
 
-const EveryInput = Object.freeze(form_inputs.contact_form);
+const everyInput = Object.freeze(form_inputs.contact_form);
 
 const serverResponse = {
   ok: {
@@ -17,29 +17,30 @@ const serverResponse = {
   },
   error: {
     class: "text-red-600 inline max-w-[50%] text-sm",
-    text: "Ha habido un error, por favor intentalo de nuevo.",
+    text: "Ha habido un error, por favor intentalo más tarde.",
   },
 };
+const postValues = Object.seal({ user_email: "", message: "" });
 
 export default function FeedbackForm({ displayCondition }) {
-  const { response, error, isLoading, inputData, handleChange, formSubmit } = useFetch({
-    POST,
-    FORM_ENDPOINT,
-    serverResponse,
+  const { response, isLoading, inputData, handleChange, formSubmit } = usePost({
+    url: FORM_ENDPOINT,
+    postResponse: serverResponse,
+    inputValues: postValues,
   });
 
-
+  console.log(inputData, response);
   const showFeedback = displayCondition ? "opacity-100" : "opacity-0 -z-10";
 
   return (
     <form onSubmit={formSubmit} className={`feedbackForm ${showFeedback}`}>
-      <FORM_UI submitState={isLoading} serviceResponse={}>
-        {EveryInput.map((element) => (
+      <FORM_UI submitState={isLoading} serviceResponse={response}>
+        {everyInput.map((element) => (
           <CreateInput
             key={element.id}
             {...element}
-            value={inputData[element.name]}
             onChange={handleChange}
+            value={inputData[element.name]}
           />
         ))}
       </FORM_UI>

@@ -17,7 +17,7 @@ export default function CreateInput(props) {
   //  --------------------------------
   //  onBlur: checks if the user Clicks
   //    and leaves the INPUT, if so, then
-  //    sets the focused attribute to a boolean.
+  //    sets the focused attribute to TRUE.
   //  onFocus:  checks if user Clicked 1 time.      NOT USED
 
   return (

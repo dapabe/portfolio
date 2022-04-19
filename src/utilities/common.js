@@ -1,5 +1,8 @@
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 import { Lines } from "@fallback";
+const FORM = import.meta.env.VITE_FORM_ID;
+const P_KEY = import.meta.env.VITE_PUBLIC_KEY;
+
 //  Simulate IRL page loading.
 export function slowImport(value, ms = 1000) {
   return lazy(
@@ -14,6 +17,10 @@ export function fakeImportComponent(value, ms = 1000) {
   return new Promise((resolve) => {
     setTimeout(() => resolve({ default: value }), ms);
   });
+}
+
+export async function sendEmail(body) {
+  return await emailjs.sendForm("default_service", FORM, body, P_KEY);
 }
 
 //  Compare the 1st array to the 2nd, searches into the 2nd array

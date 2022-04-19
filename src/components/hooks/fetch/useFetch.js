@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 
 //                                                          Optional
-export default async function useFetch({ POST = false, url, postResponse }) {
+export default async function useFetch({
+  POST = false,
+  url,
+  postResponse,
+  initialValues,
+}) {
   const [response, setResponse] = useState(null);
-  const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(false);
-  const [inputData, setInputData] = useState(null);
+  const [inputData, setInputData] = useState(initialValues);
 
   //  [NOTE]  Using Computing Properties
   //          to overwrite previous data
@@ -15,9 +19,10 @@ export default async function useFetch({ POST = false, url, postResponse }) {
     setInputData({ ...inputData, [name]: value });
   };
 
-  const formSubmit = (event) => {
+  const formSubmit = async (event) => {
     event.preventDefault();
     try {
+      // throw Error("Error");
       await fetch(url, {
         method: "POST",
         headers: {
@@ -28,37 +33,32 @@ export default async function useFetch({ POST = false, url, postResponse }) {
       });
       setResponse(postResponse.ok); //  Needs testing
       setLoading(false);
-      setError(null);
     } catch (error) {
-      setResponse(postResponse.error);
+      setResponse(error);
       setLoading(false);
-      setError(error);
     }
   };
 
-  useEffect(() => {
+  useEffect(async () => {
     setLoading(true);
-    setError(null);
 
     //  fetchs defaults to GET, POST = false = GET
     if (!POST) {
-      return await fetch(url)
+      await fetch(url)
         .then((res) => res.json())
         .then((data) => {
           setResponse(data);
           setLoading(false);
-          setError(null);
         })
         .catch((error) => {
-          setResponse(null);
+          setResponse(error);
           setLoading(false);
-          setError(error);
         });
     } else formSubmit();
 
-    return () => setResponse(null), setError(null), setLoading(false);
+    return () => setResponse(null), setLoading(false);
   }, []);
 
-  //   GET/POST.response               POST       onChange      onSubmit
-  return { response, error, isLoading, inputData, handleChange, formSubmit };
+  //GET/POST.response           POST       onChange      onSubmit
+  return { response, isLoading, inputData, handleChange, formSubmit };
 }
