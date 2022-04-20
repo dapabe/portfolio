@@ -13,7 +13,7 @@
     @apply relative bg-sutilBlack font-Comfortaa text-white;
   }
   header {
-    @apply absolute w-full;
+    @apply absolute w-full text-sutilBlack;
   }
   main {
     @apply min-h-screen overflow-hidden;
@@ -31,10 +31,10 @@
     @apply my-container;
   }
   .inputContainer *:invalid[focused="true"] {
-    border: 2px solid red;
+    @apply border-2 border-red-600;
   }
   .inputContainer *:invalid[focused="true"] ~ .inputError {
-    display: inline-block;
+    @apply opacity-100;
   }
 }
 @layer components {
@@ -132,16 +132,16 @@
     @apply relative flex max-h-[200px] min-h-[150px] max-w-lg rounded-md bg-white text-sutilBlack md:rounded-full;
   }
   .contactSection {
-    @apply relative flex min-h-[50vh] items-center justify-center;
+    @apply relative flex min-h-[60vh] items-center justify-center pb-4;
   }
   .feedbackBtn {
     @apply absolute mx-auto flex max-w-xs flex-col items-center rounded-md bg-white py-3 px-2 transition-opacity;
   }
   .feedbackForm {
-    @apply mx-auto flex max-w-sm overflow-hidden rounded-md bg-white p-4 text-sutilBlack transition-opacity delay-300 sm:max-w-md md:max-w-lg lg:max-w-xl;
+    @apply mx-auto flex w-[440px] max-w-lg overflow-hidden rounded-md bg-white p-4 text-sutilBlack transition-opacity delay-300;
   }
   .inputError {
-    @apply hidden text-sm text-red-600;
+    @apply inline-block text-sm text-red-600 opacity-0 lg:transition-opacity;
   }
 }
 @layer utilities {

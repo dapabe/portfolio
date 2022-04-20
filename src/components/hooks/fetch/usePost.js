@@ -6,30 +6,33 @@ export default function usePost({ url, postResponse, inputValues = null }) {
   const [isLoading, setLoading] = useState(false);
   const [inputData, setInputData] = useState(inputValues);
 
+  //  Computed properties overwriting previous
+  //  prop values.
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputData({ ...inputData, [name]: value });
   };
 
+  //  Might refactor using 2 services into 1.
+  //  Limited amount of messages to theses services.
   const formSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    await fetch(url, {
-      // method: "POST",
-      // headers: {
-      //   "Content-type": "application/json; charset=UTF-8",
-      //   Accept: "application/json",
-      // },
-      // body: JSON.stringify(inputData),
+    return await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(inputData),
     })
       .then(() => {
         setResponse(postResponse.ok);
         setLoading(false);
       })
-      .catch((error) => {
-        console.log(error.toString(), error);
-        sendEmail(error.toString()).then(() => {
+      .catch(() => {
+        sendEmail(e.target).then(() => {
           setResponse(postResponse.error);
           setLoading(false);
         });

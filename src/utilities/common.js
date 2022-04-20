@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { Lines } from "@fallback";
+
 const FORM = import.meta.env.VITE_FORM_ID;
 const P_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
@@ -12,7 +12,7 @@ export function slowImport(value, ms = 1000) {
       })
   );
 }
-//  default keyword inside resolve is because its a component.
+//  default keyword inside resolve because its a component.
 export function fakeImportComponent(value, ms = 1000) {
   return new Promise((resolve) => {
     setTimeout(() => resolve({ default: value }), ms);

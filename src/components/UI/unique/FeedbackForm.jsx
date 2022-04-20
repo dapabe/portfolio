@@ -16,7 +16,7 @@ const serverResponse = {
     text: "¡Gracias, leeré tu mensaje!",
   },
   error: {
-    class: "text-red-600 inline max-w-[50%] text-sm",
+    class: "text-sm text-red-600 opacity-100",
     text: "Ha habido un error, por favor intentalo más tarde.",
   },
 };
@@ -28,8 +28,7 @@ export default function FeedbackForm({ displayCondition }) {
     postResponse: serverResponse,
     inputValues: postValues,
   });
-
-  console.log(inputData, response);
+  console.log(inputData);
   const showFeedback = displayCondition ? "opacity-100" : "opacity-0 -z-10";
 
   return (
