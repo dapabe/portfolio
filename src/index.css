@@ -141,7 +141,7 @@
     @apply mx-auto flex w-[440px] max-w-lg overflow-hidden rounded-md bg-white p-4 text-sutilBlack transition-opacity delay-300;
   }
   .inputError {
-    @apply inline-block text-sm text-red-600 opacity-0 lg:transition-opacity;
+    @apply inline-block select-none text-sm text-red-600 opacity-0 lg:transition-opacity;
   }
 }
 @layer utilities {

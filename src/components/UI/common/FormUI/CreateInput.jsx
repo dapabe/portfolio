@@ -44,7 +44,7 @@ export default function CreateInput(props) {
         },
         null
       )}
-      <span className="inputError">{errorMessage}</span>
+      <span className="inputError ">{errorMessage}</span>
     </div>
   );
 }

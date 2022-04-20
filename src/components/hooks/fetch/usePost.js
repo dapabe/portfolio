@@ -6,15 +6,15 @@ export default function usePost({ url, postResponse, inputValues = null }) {
   const [isLoading, setLoading] = useState(false);
   const [inputData, setInputData] = useState(inputValues);
 
-  //  Computed properties overwriting previous
-  //  prop values.
+  //  Computed properties overwriting a
+  //  copy of previous prop values
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputData({ ...inputData, [name]: value });
   };
 
-  //  Might refactor using 2 services into 1.
-  //  Limited amount of messages to theses services.
+  //  Might refactor using 1 service instead of 2.
+  //  Limited amount of messages for these services.
   const formSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
