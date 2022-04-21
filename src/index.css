@@ -10,10 +10,13 @@
   }
 
   body {
-    @apply relative bg-sutilBlack font-Comfortaa text-white;
+    @apply relative bg-champagnePink font-Comfortaa text-sutilBlack;
   }
   header {
     @apply absolute w-full text-sutilBlack;
+  }
+  header > * {
+    @apply fixed;
   }
   main {
     @apply min-h-screen overflow-hidden;
@@ -25,11 +28,12 @@
     @apply pt-16;
   }
   main > section {
-    @apply min-h-[90vh];
+    @apply relative min-h-[90vh];
   }
   main > section:not(.noMaxWidth) {
     @apply my-container;
   }
+  /* Form inputs */
   .inputContainer *:invalid[focused="true"] {
     @apply border-2 border-red-600;
   }
@@ -42,16 +46,16 @@
     @apply mx-auto max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-4xl xl:max-w-5xl;
   }
   .decorative-1 {
-    @apply absolute -left-1/2 top-0 -z-10 min-h-[400%] min-w-[90%] rotate-12 rounded-tr-3xl bg-sutilBlack;
+    @apply absolute -left-1/2 top-0 -z-10 min-h-[400%] min-w-[90%] rotate-12 rounded-tr-3xl;
   }
   .skipNav {
-    @apply fixed top-0 left-28 -translate-y-[80px] rounded-b-3xl border-2 border-white border-t-transparent bg-strongOrange px-3 py-1 outline-none transition focus:translate-y-0;
+    @apply top-0 left-28 -translate-y-[80px] rounded-b-3xl border-2 border-white border-t-transparent bg-strongOrange px-3 py-1 outline-none transition focus:translate-y-0;
   }
   .brandLogo {
-    @apply fixed top-2 left-0 z-30 ml-2 text-3xl tracking-wider;
+    @apply top-2 left-0 z-30 ml-2 text-3xl tracking-wider;
   }
   .menuContainer {
-    @apply fixed inset-0 flex sm:px-24 mxsm:justify-center;
+    @apply inset-0 flex sm:px-24 mxsm:justify-center;
   }
   .menu {
     @apply before:btriangle-tl after:btriangle-tr relative flex h-2/3 max-w-xs flex-grow flex-wrap justify-center space-y-20
@@ -61,7 +65,7 @@
     @apply flex w-max flex-col gap-y-4 self-center;
   }
   .menuButton {
-    @apply fixed left-4 bottom-2 z-30 flex -rotate-90 flex-col items-center rounded-full md:bottom-1/2 md:translate-y-1/2;
+    @apply left-4 bottom-2 z-30 flex -rotate-90 flex-col items-center rounded-full md:left-0 md:bottom-1/2 md:translate-y-1/2;
   }
   .menuBars {
     @apply relative flex h-14 w-14 place-content-center gap-x-1;
@@ -73,25 +77,26 @@
     @apply absolute -bottom-4 gap-x-1 text-[.7rem];
   }
   .sidebar {
-    @apply fixed top-1/2 right-2 z-10 hidden -translate-y-1/2 flex-col space-y-3 sm:flex md:transition-opacity;
+    @apply top-1/2 right-1 z-10 hidden -translate-y-1/2 flex-col space-y-3 sm:flex md:transition-opacity;
   }
   .social-icon {
     @apply h-8 w-8 hover:scale-110;
   }
+  /* Sections */
   .heroSection {
-    @apply bg-1 relative flex min-h-[80vh] items-center justify-center;
+    @apply flex h-[150vh];
   }
-  .heroSection > h1 {
-    @apply relative text-6xl sm:text-7xl md:text-8xl md:tracking-wide lg:text-9xl;
+  .heroSection span {
+    @apply text-6xl font-bold sm:text-7xl md:text-8xl md:tracking-wide lg:text-9xl;
   }
   .introSection {
     @apply ml-auto h-max mxsm:space-y-4;
   }
   .techSection {
-    @apply bg-1 relative flex min-h-max flex-col gap-10;
+    @apply bg-1  flex min-h-max flex-col gap-10;
   }
   .projectSection {
-    @apply relative h-[30vh] transition-[min-height] lg:justify-around mxsm:min-h-[50vh];
+    @apply h-[30vh] transition-[min-height] lg:justify-around mxsm:min-h-[50vh];
   }
   .projectSlider-Container {
     @apply relative h-full overflow-hidden rounded-lg shadow-lg shadow-sutilBlack;
@@ -126,13 +131,13 @@
     @apply transition-[scale] hover:scale-105;
   }
   .inspirationSection {
-    @apply bg-1 relative flex flex-col gap-y-6;
+    @apply bg-1  flex flex-col gap-y-6;
   }
   .quoteCard {
     @apply relative flex max-h-[200px] min-h-[150px] max-w-lg rounded-md bg-white text-sutilBlack md:rounded-full;
   }
   .contactSection {
-    @apply relative flex min-h-[60vh] items-center justify-center pb-4;
+    @apply flex min-h-[60vh] items-center justify-center pb-4;
   }
   .feedbackBtn {
     @apply absolute mx-auto flex max-w-xs flex-col items-center rounded-md bg-white py-3 px-2 transition-opacity;

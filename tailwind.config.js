@@ -3,6 +3,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        champagnePink: "#EFD9CE",
         vaporBlue: "#111122",
         vaporViolet: "#2c2c54",
         strongOrange: "#f4583a",
