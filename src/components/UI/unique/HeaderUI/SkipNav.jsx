@@ -1,6 +1,6 @@
-export default function SkipNav({ ...props }) {
+export default function SkipNav() {
   return (
-    <a href="#main" className="skipNav" {...props}>
+    <a href="#main" className="skipNav">
       Ir al contenido
     </a>
   );

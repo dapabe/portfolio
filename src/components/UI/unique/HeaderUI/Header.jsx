@@ -7,7 +7,7 @@ import LangSwitch from "./LangSwitch";
 import MenuButton from "./MenuButton/MenuButton";
 import SocialLinks from "../SocialLinks";
 import Backdrop from "../Backdrop";
-import AsideBars from "./AsideBars";
+import OverlayBars from "./OverlayBars";
 const MenuModal = lazy(() => import("./MenuModal"));
 
 export default function Header() {
@@ -18,8 +18,8 @@ export default function Header() {
   //  better keyboard navigation.
   return (
     <header>
-      <AsideBars />
       <SkipNav />
+      <OverlayBars />
 
       <CustomLink
         to="/"

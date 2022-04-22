@@ -13,10 +13,10 @@
     @apply relative bg-champagnePink font-Comfortaa text-sutilBlack;
   }
   header {
-    @apply absolute w-full text-sutilBlack;
+    @apply absolute w-full text-white;
   }
   header > * {
-    @apply fixed;
+    @apply fixed z-20;
   }
   main {
     @apply min-h-screen overflow-hidden;
@@ -49,10 +49,10 @@
     @apply absolute -left-1/2 top-0 -z-10 min-h-[400%] min-w-[90%] rotate-12 rounded-tr-3xl;
   }
   .skipNav {
-    @apply top-0 left-28 -translate-y-[80px] rounded-b-3xl border-2 border-white border-t-transparent bg-strongOrange px-3 py-1 outline-none transition focus:translate-y-0;
+    @apply top-0 left-28 -translate-y-full rounded-b-3xl border-2 border-white border-t-transparent bg-strongOrange px-3 py-1 outline-none transition focus:translate-y-0;
   }
   .brandLogo {
-    @apply top-2 left-0 z-30 ml-2 text-3xl tracking-wider;
+    @apply top-0.5 left-0 z-30 ml-2 text-3xl tracking-wider;
   }
   .menuContainer {
     @apply inset-0 flex sm:px-24 mxsm:justify-center;
@@ -77,7 +77,7 @@
     @apply absolute -bottom-4 gap-x-1 text-[.7rem];
   }
   .sidebar {
-    @apply top-1/2 right-1 z-10 hidden -translate-y-1/2 flex-col space-y-3 sm:flex md:transition-opacity;
+    @apply top-1/2 right-1 hidden -translate-y-1/2 flex-col gap-y-9 sm:flex md:transition-opacity;
   }
   .social-icon {
     @apply h-8 w-8 hover:scale-110;
