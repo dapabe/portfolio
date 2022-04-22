@@ -5,13 +5,18 @@ import { GlobalContext } from "@context/GlobalState";
 import MenuBars from "./MenuBars";
 import MenuText from "./MenuText";
 
+const device = {
+  small: "rounded-full bg-white",
+  desktop: "rounded-full bg-white md:bg-sutilBlack",
+};
+
 export default function MenuButton() {
   const { isMenuOpen, handleMenu } = useContext(GlobalContext);
   const [MenuRef, setMenuRef] = useFocus();
 
-  //  [BUG] unstable_flushDiscreteUpdates: Cannot flush updates when React is already rendering
-  //  setting ref directly without useEffect causes it.
-  //  Waiting till the component has rendered to apply focus
+  //  [BUG] "unstable_flushDiscreteUpdates: Cannot flush updates when React is already rendering"
+  //  Updating the ref attribute directly without useEffect causes it, wait till the component
+  //  has rendered to apply focus.
 
   useEffect(() => {
     isMenuOpen && setMenuRef();
@@ -21,7 +26,7 @@ export default function MenuButton() {
       ref={MenuRef}
       type="button"
       className={`menuButton group ${
-        isMenuOpen ? "bg-white" : "bg-white md:bg-transparent"
+        isMenuOpen ? device.small : device.desktop
       }`}
       onClick={handleMenu}
     >

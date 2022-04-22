@@ -65,7 +65,7 @@
     @apply flex w-max flex-col gap-y-4 self-center;
   }
   .menuButton {
-    @apply left-4 bottom-2 z-30 flex -rotate-90 flex-col items-center rounded-full md:left-0 md:bottom-1/2 md:translate-y-1/2;
+    @apply left-4 bottom-2 z-30 flex -rotate-90 flex-col items-center md:left-0 md:bottom-1/2 md:translate-y-1/2;
   }
   .menuBars {
     @apply relative flex h-14 w-14 place-content-center gap-x-1;
@@ -74,7 +74,7 @@
     @apply w-1 self-center rounded-full transition-[translate_opacity];
   }
   .menuText {
-    @apply absolute -bottom-4 gap-x-1 text-[.7rem];
+    @apply absolute -bottom-6 w-14 justify-center gap-x-1 text-sutilBlack;
   }
   .sidebar {
     @apply top-1/2 right-1 hidden -translate-y-1/2 flex-col gap-y-9 sm:flex md:transition-opacity;
