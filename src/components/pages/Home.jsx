@@ -6,6 +6,7 @@ import { Lines } from "@fallback";
 //  only absolute paths are accepted.
 //  TODO: Look for a refactor
 import Hero from "@ui/sections/home/Hero";
+const Intro = lazy(() => import("@ui/sections/home/Introduction"));
 const Techs = lazy(() => import("@ui/sections/home/Technologies"));
 const Projects = lazy(() => import("@ui/sections/home/Projects"));
 const Inspiration = lazy(() => import("@ui/sections/home/Inspiration"));
@@ -21,6 +22,7 @@ export default function Home() {
     <>
       <Hero />
       <Suspense fallback={<Lines />}>
+        <Intro />
         <Techs />
         <Projects />
         <Inspiration />

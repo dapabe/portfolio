@@ -21,7 +21,7 @@ const WHnOpen =
 
 export default function MenuBars({ displayCondition }) {
   return (
-    <ul className="menuBars">
+    <ul className="menuBars md:group-active:border-0">
       {Bars.map(({ id, closed, open }) => (
         <li key={id} className={displayCondition ? open : closed} />
       ))}

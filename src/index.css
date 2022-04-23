@@ -6,7 +6,7 @@
 
 @layer base {
   html {
-    @apply scroll-smooth scrollbar-hide;
+    @apply scroll-smooth;
   }
 
   body {
@@ -68,7 +68,7 @@
     @apply left-4 bottom-2 z-30 flex -rotate-90 flex-col items-center md:left-0 md:bottom-1/2 md:translate-y-1/2;
   }
   .menuBars {
-    @apply relative flex h-14 w-14 place-content-center gap-x-1;
+    @apply relative flex h-14 w-14 place-content-center gap-x-1 rounded-full border-2 border-sutilBlack;
   }
   .menuBars li {
     @apply w-1 self-center rounded-full transition-[translate_opacity];
@@ -84,13 +84,13 @@
   }
   /* Sections */
   .heroSection {
-    @apply flex h-[150vh];
+    @apply h-screen overflow-scroll;
   }
   .heroSection span {
     @apply text-6xl font-bold sm:text-7xl md:text-8xl md:tracking-wide lg:text-9xl;
   }
   .introSection {
-    @apply ml-auto h-max mxsm:space-y-4;
+    @apply ml-auto min-h-max bg-sutilBlack mxsm:space-y-4;
   }
   .techSection {
     @apply bg-1  flex min-h-max flex-col gap-10;
