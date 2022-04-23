@@ -84,7 +84,7 @@
   }
   /* Sections */
   .heroSection {
-    @apply h-screen overflow-scroll;
+    @apply sticky top-0 h-screen overflow-x-hidden overflow-y-scroll;
   }
   .heroSection span {
     @apply text-6xl font-bold sm:text-7xl md:text-8xl md:tracking-wide lg:text-9xl;
