@@ -11,8 +11,7 @@ import OverlayBars from "./OverlayBars";
 const MenuModal = lazy(() => import("./MenuModal"));
 
 export default function Header() {
-  const { isMenuOpen, closeAndResetPage, scrollTop } =
-    useContext(GlobalContext);
+  const { isMenuOpen, closeAndResetPage } = useContext(GlobalContext);
 
   //  TODO: Switch Langs, Toggle Light/Dark Theme,
   //  better keyboard navigation.
@@ -24,7 +23,7 @@ export default function Header() {
       <CustomLink
         to="/"
         className="brandLogo"
-        onClick={isMenuOpen ? closeAndResetPage : scrollTop}
+        onClick={isMenuOpen ? closeAndResetPage : () => window.scroll(0, 0)}
       >
         dpb
       </CustomLink>

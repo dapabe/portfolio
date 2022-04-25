@@ -18,9 +18,9 @@ export default function MenuModal() {
     ...(!isMenuOpen && { tabIndex: -1 }),
   };
   const LI_Routes = () =>
-    ROUTES.map(({ to, text, ...props }) => (
+    ROUTES.map(({ to, text }) => (
       <li key={text}>
-        <CustomLink to={to} onClick={closeAndResetPage} {...props}>
+        <CustomLink to={to} onClick={closeAndResetPage}>
           {text}
         </CustomLink>
       </li>

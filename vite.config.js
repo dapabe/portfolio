@@ -13,7 +13,7 @@ export default defineConfig({
       "@hooks": pathing(__dirname, "./src/components/hooks"),
       "@pages": pathing(__dirname, "./src/components/pages"),
       "@ui": pathing(__dirname, "./src/components/UI"),
-      "@context": pathing(__dirname, "./src/context"),
+      "@context": pathing(__dirname, "./src/components/context"),
       "@fallback": pathing(__dirname, "./src/components/UI/Fallback.jsx"),
       "@utils": pathing(__dirname, "./src/utilities"),
     },

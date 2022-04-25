@@ -19,7 +19,7 @@
     @apply fixed z-20;
   }
   main {
-    @apply min-h-screen overflow-hidden;
+    @apply min-h-screen overflow-x-clip;
   }
   main > section:only-child {
     @apply min-h-screen;
@@ -84,7 +84,7 @@
   }
   /* Sections */
   .heroSection {
-    @apply sticky top-0 h-screen overflow-x-hidden overflow-y-scroll;
+    @apply sticky top-0 h-[150vh] overflow-x-hidden overflow-y-scroll;
   }
   .heroSection span {
     @apply text-6xl font-bold sm:text-7xl md:text-8xl md:tracking-wide lg:text-9xl;

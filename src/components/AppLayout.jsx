@@ -11,17 +11,15 @@ import { Outlet } from "react-router-dom";
 
 export default function AppLayout() {
   return (
-    <>
-      <GlobalState>
-        <Header />
-        <main id="main">
-          <Outlet />
-        </main>
-      </GlobalState>
+    <GlobalState>
+      <Header />
+      <main id="main">
+        <Outlet />
+      </main>
       <Suspense fallback={<Lines lines={4} />}>
         <Footer />
         <GoTop />
       </Suspense>
-    </>
+    </GlobalState>
   );
 }
