@@ -1,41 +1,32 @@
 import { useMemo, useEffect, useState } from "react";
 import useToggle from "./useToggle";
 
-//  [NOTE]  Calculate pixel distance between
-//          a HTMLElement and its parent
-//          container.
-//          Returns a boolean indicating when
-//          the target's offset has reached
-//          the pixel value.
+//  [NOTE]  Refactor
 
 export default function useElementOffset(options = {}) {
-  const {
-    parent = null,
-    target = null,
-    pixels = globalThis.innerHeight,
-  } = options;
+  const { target, pixels = globalThis.innerHeight } = options;
 
-  const [isOffset, handleOffset] = useToggle(false); //  false
+  // const [isOffset, setOffset] = useState(false); //  false
+  const [isOffset, handleOffset] = useToggle(false);
+  // const newContainer = useMemo(() => {
+  //   return parent ?? window;
+  // }, [parent]);
 
-  const newContainer = useMemo(() => {
-    return parent ?? window;
-  }, [parent]);
+  // console.log(target.current?.offsetTop);
+  const targetOffset = target?.offsetTop ?? globalThis.scrollY;
 
-  const targetOffset =
-    target ??
-    target?.offsetTop ??
-    (globalThis.scrollY || globalThis.pageYOffset);
-
+  console.log(targetOffset);
   const checkTopScroll = () => {
-    if (!isOffset && targetOffset >= pixels) return handleOffset();
-    if (isOffset && targetOffset <= pixels) return handleOffset();
+    targetOffset > pixels && handleOffset();
+    console.log(targetOffset > pixels);
   };
 
   useEffect(() => {
-    console.log(targetOffset, pixels, isOffset);
+    // console.log(target.current.offsetTop, pixels, options);
     window.addEventListener("scroll", checkTopScroll);
+
     return () => window.removeEventListener("scroll", checkTopScroll);
-  }, [targetOffset]);
+  }, [isOffset]);
 
   return { isOffset };
 }

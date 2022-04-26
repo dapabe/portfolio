@@ -28,15 +28,6 @@ render(
               </Suspense>
             }
           />
-          {/* <Route
-            path="projects"
-            element={<LoadElement children={<Projects />} />}
-          >
-            <Route
-              path=":projectId"
-              element={<LoadElement children={<ProjectID />} />}
-            />
-          </Route> */}
           <Route path="*" element={<E404 />} />
         </Route>
       </Routes>

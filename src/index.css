@@ -84,10 +84,10 @@
   }
   /* Sections */
   .heroSection {
-    @apply sticky top-0 h-[150vh] overflow-x-hidden overflow-y-scroll;
+    @apply h-screen overflow-x-hidden overflow-y-scroll;
   }
   .heroSection span {
-    @apply text-6xl font-bold sm:text-7xl md:text-8xl md:tracking-wide lg:text-9xl;
+    @apply text-6xl font-bold sm:scale-150;
   }
   .introSection {
     @apply ml-auto min-h-max bg-sutilBlack mxsm:space-y-4;

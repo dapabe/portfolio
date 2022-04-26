@@ -1,9 +1,8 @@
-import useElementOffset from "@hooks/useElementOffset";
+import usePageOffset from "@hooks/usePageOffset";
 import { ChevronDoubleUpIcon } from "@heroicons/react/solid";
 
 export default function GoTop() {
-  // const { isOffset } = useElementOffset({});
-  const isOffset = false;
+  const { isOffset } = usePageOffset();
   const hasScrolled = isOffset ? "z-20" : "-z-50 opacity-0";
   return (
     <button
