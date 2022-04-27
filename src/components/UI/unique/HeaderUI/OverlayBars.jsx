@@ -17,7 +17,7 @@ export default function OverlayBars() {
   return bars.map(({ classes }, i) => (
     <div
       key={i}
-      className={`${classes} bg-sutilBlack transition-transform ease-in-out`}
+      className={`${classes} pointer-events-none bg-sutilBlack transition-transform ease-in-out`}
     />
   ));
 }
