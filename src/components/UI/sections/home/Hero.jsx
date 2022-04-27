@@ -37,7 +37,7 @@ export default function SectionHero() {
 
         <Intro displayCondition={isOffset} />
       </section>
-      <div className="h-[4rem]" />
+      <div className="h-4" />
       {/* <section className="h-[50vh] w-full bg-cyan-500"></section> */}
       {/* <SVGWave1 position="bottom" display="absolute" /> */}
     </section>

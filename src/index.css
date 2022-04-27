@@ -86,9 +86,7 @@
   .heroSection {
     @apply h-screen overflow-x-hidden overflow-y-scroll;
   }
-  .heroSection span {
-    @apply text-6xl font-bold sm:scale-150;
-  }
+
   .introSection {
     @apply ml-auto min-h-max bg-sutilBlack mxsm:space-y-4;
   }
