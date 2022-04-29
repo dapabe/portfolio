@@ -33,7 +33,7 @@ export default function Header() {
       <Suspense fallback={<Backdrop displayCondition={isMenuOpen} />}>
         <MenuModal />
       </Suspense>
-      <aside className={`sidebar ${!isMenuOpen ? "opacity-100" : "opacity-0"}`}>
+      <aside className={`sidebar ${isMenuOpen ? "-z-50 opacity-0" : ""}`}>
         <SocialLinks />
       </aside>
     </header>

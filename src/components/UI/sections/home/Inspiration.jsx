@@ -19,11 +19,11 @@ export default function SectionInspire() {
       <ul className="flex flex-col gap-y-6 ">
         <LI_Inspirations />
       </ul>
-      <p className="mx-auto max-w-sm rounded-md bg-sutilBlack p-1 text-center">
+      <p className="mx-auto max-w-sm rounded-md p-1 text-center">
         Con la correcta forma de pensar tienes las bases para un camino bien
         pavimentado, con ese camino guiaras a otros.
       </p>
-      <SVGWave2 styling="rotate-0" />
+      <SVGWave2 position="rotate-0" fill="fill-sutilBlack" />
     </section>
   );
 }

@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply relative bg-champagnePink font-Comfortaa text-sutilBlack;
+    @apply relative bg-champagnePink font-Comfortaa tracking-wide text-sutilBlack scrollbar-hide;
   }
   header {
     @apply absolute w-full text-white;
@@ -25,7 +25,7 @@
     @apply min-h-screen;
   }
   main > section:not(:first-child:not(:only-child), .noSpace) {
-    @apply pt-16;
+    @apply my-8;
   }
   main > section {
     @apply relative min-h-[90vh];
@@ -39,6 +39,9 @@
   }
   .inputContainer *:invalid[focused="true"] ~ .inputError {
     @apply opacity-100;
+  }
+  h2 {
+    @apply text-lg;
   }
 }
 @layer components {
@@ -84,14 +87,29 @@
   }
   /* Sections */
   .heroSection {
-    @apply h-screen overflow-x-hidden overflow-y-scroll;
+    @apply h-screen overflow-x-hidden overflow-y-scroll scrollbar-hide;
   }
 
   .introSection {
-    @apply ml-auto min-h-max bg-sutilBlack mxsm:space-y-4;
+    @apply flex min-h-max flex-wrap justify-between gap-1;
+  }
+  .introSection > * {
+    @apply m-auto h-max max-w-md;
+  }
+  .intro_focus {
+    @apply bg-sutilBlack p-8 text-base text-gray-400;
+  }
+  .intro_focus h2 {
+    @apply text-white;
+  }
+  .intro_list > li {
+    @apply list-disc;
+  }
+  .intro_shortAbout {
+    @apply my-auto;
   }
   .techSection {
-    @apply bg-1  flex min-h-max flex-col gap-10;
+    @apply flex  min-h-max flex-col gap-10 bg-red-500;
   }
   .projectSection {
     @apply h-[30vh] transition-[min-height] lg:justify-around mxsm:min-h-[50vh];
@@ -129,13 +147,13 @@
     @apply transition-[scale] hover:scale-105;
   }
   .inspirationSection {
-    @apply bg-1  flex flex-col gap-y-6;
+    @apply flex flex-col gap-y-6 bg-red-500 text-white;
   }
   .quoteCard {
     @apply relative flex max-h-[200px] min-h-[150px] max-w-lg rounded-md bg-white text-sutilBlack md:rounded-full;
   }
   .contactSection {
-    @apply flex min-h-[60vh] items-center justify-center pb-4;
+    @apply flex min-h-[60vh] items-center justify-center bg-sutilBlack pb-4;
   }
   .feedbackBtn {
     @apply absolute mx-auto flex max-w-xs flex-col items-center rounded-md bg-white py-3 px-2 transition-opacity;
@@ -148,9 +166,6 @@
   }
 }
 @layer utilities {
-  .bg-1 {
-    @apply bg-gradient-to-r from-strongRed to-pink-900;
-  }
   .paragraphTitle {
     @apply mb-6 text-xl uppercase tracking-wide;
   }

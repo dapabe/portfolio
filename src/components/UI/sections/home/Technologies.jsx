@@ -28,12 +28,12 @@ export default function SectionTechs() {
         Tecnologias
       </h1>
       <Carousel>
-        {ICONS_DATA.map((icon) => (
-          <li key={icon.name + 1}>
+        {ICONS_DATA.map(({ name, file, img_desc }) => (
+          <li key={name + 1}>
             {isVisible && (
               <img
-                src={`/icons/logos/${icon.file}`}
-                alt={icon.img_desc}
+                src={`/icons/logos/${file}`}
+                alt={img_desc}
                 className="h-20 w-[200px]"
               />
             )}

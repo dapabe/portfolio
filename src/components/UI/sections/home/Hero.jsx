@@ -28,18 +28,10 @@ export default function SectionHero() {
       onScroll={checkScroll}
     >
       <section className={hasScrolledHero}>
-        {/* <div className="absolute right-1 top-1/2 flex -translate-y-1/2 translate-x-1/2 items-end justify-center">
-          <span className="text-champagnePink">dap</span>
-          <span>abe</span>
-          <span className="absolute left-full top-2/3 h-8 w-8 -translate-y-1/2 rounded-full bg-red-500" />
-        </div> */}
         <Logo className="absolute right-1 top-1/2 flex -translate-y-1/2 translate-x-[54%] items-end justify-center text-[20rem] transition-transform sm:translate-x-[55%] sm:scale-125 md:scale-[1.4] lg:translate-x-[57%] lg:scale-[2] xl:translate-x-[58%] xl:scale-[2.5]" />
-
         <Intro displayCondition={isOffset} />
       </section>
       <div className="h-4" />
-      {/* <section className="h-[50vh] w-full bg-cyan-500"></section> */}
-      {/* <SVGWave1 position="bottom" display="absolute" /> */}
     </section>
   );
 }
