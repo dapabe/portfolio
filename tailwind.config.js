@@ -9,7 +9,6 @@ module.exports = {
         strongOrange: "#f4583a",
         strongRed: "#cd1e38",
         sutilBlack: "#1C1B20",
-        whiteCream: "#EBD8C3",
       },
       fontFamily: {
         Comfortaa: ["Comfortaa", "serif"],
@@ -17,6 +16,7 @@ module.exports = {
       animation: {
         scroll: "scroll 30s linear infinite",
       },
+
       keyframes: {
         wave: {
           "0%": {

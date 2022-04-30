@@ -10,7 +10,10 @@
   }
 
   body {
-    @apply relative bg-champagnePink font-Comfortaa tracking-wide text-sutilBlack scrollbar-hide;
+    @apply relative bg-champagnePink font-Comfortaa tracking-wide text-sutilBlack;
+  }
+  body::-webkit-scrollbar-track-piece {
+    @apply bg-sutilBlack;
   }
   header {
     @apply absolute w-full text-white;

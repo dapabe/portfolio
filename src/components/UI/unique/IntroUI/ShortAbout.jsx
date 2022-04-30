@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 export default function ShortAbout() {
   return (
     <div className="intro_shortAbout">
-      <h2 className="font-semibold">Un poco acerca de mi</h2>
+      <h2 className="sectionTitle">Un poco de mi</h2>
       <p className="indent-3">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nihil
         in porro cupiditate reiciendis natus, a cum mollitia. Voluptate veniam
