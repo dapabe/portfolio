@@ -31,11 +31,15 @@ export default function SectionHero() {
         <Logo className="absolute right-1 top-1/2 flex -translate-y-1/2 translate-x-[54%] items-end justify-center text-[20rem] transition-transform sm:translate-x-[55%] sm:scale-125 md:scale-[1.4] lg:translate-x-[57%] lg:scale-[2] xl:translate-x-[58%] xl:scale-[2.5]" />
         <Intro displayCondition={elmOffset} />
         {
-          <div className="absolute bottom-[10%] right-[4%] animate-bounce text-champagnePink">
-            <i className="absolute -top-9 -right-3 -rotate-90 tracking-widest">
+          <div
+            className={`${
+              elmOffset ? "right-0 sm:right-10" : "right-0"
+            } absolute bottom-0 animate-bounce text-xs text-champagnePink sm:bottom-10`}
+          >
+            <div className="absolute -top-7 -right-3 -rotate-90 tracking-widest">
               Scroll
-            </i>
-            <ArrowSmDownIcon className="w-8" />
+            </div>
+            <ArrowSmDownIcon className="w-5" />
           </div>
         }
       </section>
