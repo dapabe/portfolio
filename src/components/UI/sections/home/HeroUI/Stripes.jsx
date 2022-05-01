@@ -1,10 +1,10 @@
 export default function Stripes({ displayCondition }) {
   const stripes = [
     {
-      classes: "top-[18%] w-1/2",
+      classes: "top-[20%] w-1/3 h-20",
     },
     {
-      classes: "top-1/3 w-1/3",
+      classes: "top-1/3 w-[25%] h-10",
     },
   ];
 
@@ -13,7 +13,7 @@ export default function Stripes({ displayCondition }) {
       key={idx}
       className={`${classes} ${
         displayCondition ? "translate-x-0" : "-translate-x-full opacity-0"
-      } absolute h-20 rounded-r-full bg-champagnePink transition-[translate_opacity] delay-300 ease-in-out`}
+      } absolute rounded-r-full bg-champagnePink transition-[translate_opacity] delay-300 ease-in-out`}
     />
   ));
 }
