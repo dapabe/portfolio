@@ -1,5 +1,5 @@
-import ShortAbout from "@ui/unique/IntroUI/ShortAbout";
-import Focus from "@ui/unique/IntroUI/Focus";
+import ShortAbout from "./IntroUI/ShortAbout";
+import Focus from "./IntroUI/Focus";
 
 export default function SectionIntro() {
   return (

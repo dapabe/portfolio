@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import useToggle from "@hooks/useToggle";
 import { ReactComponent as Logo } from "/public/dapabe.svg";
-import Intro from "@ui/unique/HeroUI/Intro";
-import Stripes from "@ui/unique/HeroUI/Stripes";
+import Intro from "./HeroUI/Intro";
+import Stripes from "./HeroUI/Stripes";
 
 import { ArrowSmDownIcon } from "@heroicons/react/outline";
 
@@ -33,7 +33,7 @@ export default function SectionHero() {
         {
           <div
             className={`${
-              elmOffset ? "right-0 sm:right-10" : "right-0"
+              elmOffset ? "left-[95%] sm:left-10" : "right-0"
             } absolute bottom-0 animate-bounce text-xs text-champagnePink sm:bottom-10`}
           >
             <div className="absolute -top-7 -right-3 -rotate-90 tracking-widest">

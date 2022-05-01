@@ -27,7 +27,7 @@
   main > section:only-child {
     @apply min-h-screen;
   }
-  main > section:not(:first-child:not(:only-child), .noSpace) {
+  main > section:not(:only-child, :first-child, .noSpace) {
     @apply my-8;
   }
   main > section {
@@ -45,6 +45,9 @@
   }
   h2 {
     @apply text-lg;
+  }
+  abbr {
+    @apply underline-offset-4;
   }
 }
 @layer components {
@@ -103,16 +106,14 @@
     @apply bg-sutilBlack p-8 text-base text-gray-400;
   }
   .intro_focus h2 {
-    @apply text-white;
+    @apply mb-2 text-white;
   }
   .intro_list > li {
     @apply list-disc;
   }
-  .intro_shortAbout {
-    @apply my-auto;
-  }
+
   .techSection {
-    @apply flex  min-h-max flex-col gap-10 bg-red-500;
+    @apply flex  min-h-max flex-col gap-10 bg-red-500 text-white;
   }
   .projectSection {
     @apply h-[30vh] transition-[min-height] lg:justify-around mxsm:min-h-[50vh];
