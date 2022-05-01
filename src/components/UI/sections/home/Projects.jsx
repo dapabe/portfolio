@@ -1,17 +1,18 @@
 import { useState } from "react";
-import useWindowSize from "@hooks/useWindowSize";
 import data from "@src/assets/data.json";
 
 import { HoverInfo, SliderContainer, CustomCard } from "@ui/common/exports";
+import SVGWave1 from "@ui/common/decorations/SVGWave1";
 
-const freezedInfo = Object.freeze(data.projects_data);
+const freezedInfo = data.projects_data;
 
 export default function SectionProjects() {
   const [desktopDesc, setDesktopDesc] = useState("");
 
   return (
     <section className="projectSection noMaxWidth noSpace">
-      <h1 className="sectionTitle mb-4 text-center">Proyectos</h1>
+      <SVGWave1 />
+      <h2 className="sectionTitle mb-4 text-center">Proyectos</h2>
       <div className="flex h-full flex-wrap justify-center">
         <SliderContainer>
           {freezedInfo.map(

@@ -1,24 +1,12 @@
-import data from "@src/assets/data.json";
-import { QuoteCard } from "@ui/common/exports";
 import SVGWave2 from "@ui/common/decorations/SVGWave2";
-
-const INSPIRATIONS = data.inspirations;
-const LI_Inspirations = () => {
-  return INSPIRATIONS.map((person) => (
-    <li key={person.nickname} className="inline-flex self-center">
-      <QuoteCard {...person} />
-    </li>
-  ));
-};
+import AllQuotes from "./InspirationUI/AllQuotes";
 
 export default function SectionInspire() {
   return (
     <section className="inspirationSection noSpace noMaxWidth">
-      <SVGWave2 />
+      <SVGWave2 fill="fill-vaporViolet" />
       <h1 className="sectionTitle text-center">Inspiraciones</h1>
-      <ul className="flex flex-col gap-y-6 ">
-        <LI_Inspirations />
-      </ul>
+      <AllQuotes />
       <p className="mx-auto max-w-sm rounded-md p-1 text-center">
         Con la correcta forma de pensar tienes las bases para un camino bien
         pavimentado, con ese camino guiaras a otros.

@@ -19,13 +19,14 @@ export default function GlobalState({ children }) {
   //  1.
   useNoScroll(isMenuOpen);
   useKeyboard({ key: "m", cb: handleMenu }); //  TODO: map each event case.
+
   //  2.
   const closeAndResetPage = () => {
     handleMenu();
     setTimeout(() => window.scroll(0, 0), 200);
   };
   //=====================================================================
-  const values = useMemo(
+  const memoValues = useMemo(
     () => ({
       isMenuOpen,
       handleMenu,
@@ -35,6 +36,8 @@ export default function GlobalState({ children }) {
   );
 
   return (
-    <GlobalContext.Provider value={values}>{children}</GlobalContext.Provider>
+    <GlobalContext.Provider value={memoValues}>
+      {children}
+    </GlobalContext.Provider>
   );
 }

@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import PropTypes from "prop-types";
 
 function useObserver(
   targetRef,
-  { root, threshold, rootMargin, runOnce, onVisible }
+  { root = null, threshold = 1, rootMargin = "0px", runOnce = true, onVisible }
 ) {
   const ref = useMemo(() => targetRef);
   const [isVisible, setVisible] = useState(false);
@@ -36,20 +35,5 @@ function useObserver(
 
   return [isVisible];
 }
-useObserver.defaultProps = {
-  root: null,
-  threshold: 1,
-  rootMargin: "0px",
-  runOnce: true,
-};
-
-useObserver.propTypes = {
-  targetRef: PropTypes.node.isRequired,
-  root: PropTypes.node,
-  threshold: PropTypes.number,
-  rootMargin: PropTypes.string,
-  runOnce: PropTypes.boolean,
-  onVisible: PropTypes.func,
-};
 
 export default useObserver;

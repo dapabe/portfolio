@@ -1,6 +1,6 @@
-import { ExternalLinkIcon } from "@heroicons/react/solid";
 import { useContext } from "react";
-import { QuoteData } from "./QuoteCard";
+import { QuoteData } from "@context/UI";
+import { ExternalLinkIcon } from "@heroicons/react/solid";
 
 export default function Quote() {
   const { cite, quote, webpage, nickname } = useContext(QuoteData);
@@ -28,18 +28,18 @@ export default function Quote() {
           <ExternalLinkIcon className="ml-1 inline-block w-5" />
         </a>
       </p>
-      <h1>
+      <h2>
         <a
           href={webpage}
           aria-label="Ir a su pagina web."
           title="Ir a su pagina web."
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-inOut mt-1 ml-auto block font-semibold after:bg-sutilBlack"
+          className="btn-inOut mt-auto ml-auto block font-semibold after:bg-sutilBlack"
         >
           {nickname}
         </a>
-      </h1>
+      </h2>
     </section>
   );
 }

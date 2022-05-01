@@ -116,7 +116,7 @@
     @apply min-h-max bg-gradient-to-t from-vaporBlue to-vaporViolet text-white;
   }
   .projectSection {
-    @apply h-[30vh] bg-gradient-to-b from-vaporBlue to-strongRed lg:justify-around mxsm:min-h-[50vh];
+    @apply h-[30vh] bg-gradient-to-b from-vaporBlue to-vaporViolet text-white lg:justify-around mxsm:min-h-[50vh];
   }
   .projectSlider-Container {
     @apply relative h-full overflow-hidden rounded-lg shadow-lg shadow-sutilBlack;
@@ -154,7 +154,7 @@
     @apply flex flex-col gap-y-3 bg-red-500 text-white;
   }
   .quoteCard {
-    @apply relative flex max-h-[200px] min-h-[150px] max-w-lg rounded-md bg-white text-sutilBlack md:rounded-full;
+    @apply relative flex max-h-[200px] max-w-lg rounded-md bg-white text-sutilBlack md:rounded-full;
   }
   .contactSection {
     @apply flex min-h-[60vh] items-center justify-center bg-sutilBlack pb-4;
