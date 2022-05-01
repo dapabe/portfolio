@@ -113,7 +113,7 @@
   }
 
   .techSection {
-    @apply flex  min-h-max flex-col gap-10 bg-red-500 text-white;
+    @apply min-h-max bg-red-500 text-white;
   }
   .projectSection {
     @apply h-[30vh] transition-[min-height] lg:justify-around mxsm:min-h-[50vh];

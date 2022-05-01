@@ -37,25 +37,28 @@
       "file": "Instagram.svg",
       "img_desc": "Logo de Instagram"
     },
-    { "name": "Twitter", "file": "Twitter.svg", "img_desc": "Logo de Twitter" }
+    { "name": "Twitter", "file": "Twitter.svg", "img_desc": "Logo de Twitter" },
+
+    { "name": "Figma", "file": "Figma.svg", "img_desc": "Logo de Figma" }
   ],
   "tech_data": [
-    { "name": "HTML" },
-    { "name": "CSS" },
-    { "name": "JavaScript" },
-    { "name": "TailwindCSS" },
-    { "name": "NodeJS" },
-    { "name": "ReactJS" },
-    { "name": "NextJS" },
-    { "name": "MySQL" },
-    { "name": "HTML" },
-    { "name": "CSS" },
-    { "name": "JavaScript" },
-    { "name": "TailwindCSS" },
-    { "name": "NodeJS" },
-    { "name": "ReactJS" },
-    { "name": "NextJS" },
-    { "name": "MySQL" }
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TailwindCSS",
+    "NodeJS",
+    "ReactJS",
+    "NextJS",
+    "MySQL",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TailwindCSS",
+    "NodeJS",
+    "ReactJS",
+    "NextJS",
+    "MySQL",
+    "Figma"
   ],
   "social_data": [
     {

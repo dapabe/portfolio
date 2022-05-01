@@ -1,48 +1,24 @@
-import { createRef } from "react";
-import useObserver from "@hooks/useObserver";
-import { CompareAndRetrieve } from "@utils/common";
-import { Carousel } from "@ui/common/exports";
-import data from "@src/assets/data.json";
 import SVGWave1 from "@ui/common/decorations/SVGWave1";
+import TechCarousel from "./TechUI/TechCarousel";
 
-const TECHS = data.tech_data;
-const ICONS = data.icons_data;
-const ICONS_DATA = CompareAndRetrieve({
-  arrToLook: TECHS,
-  arrToSearch: ICONS,
-  keyToSearch: "name",
-  keyToReturn: "file",
-});
+import data from "@src/assets/data.json";
+import TechList from "./TechUI/TechList";
+
+const tech_data = data.tech_data;
+const tech_icons = data.icons_data;
 
 export default function SectionTechs() {
-  const targetRef = createRef(null);
-  const [isVisible] = useObserver(targetRef, {
-    rootMargin: "300px",
-    runOnce: false,
-  });
-
   return (
-    <section className="techSection noMaxWidth noSpace" ref={targetRef}>
+    <section className="techSection noMaxWidth noSpace">
       <SVGWave1 />
-      <h1 className="sectionTitle sm:indent-[5rem] mxsm:text-center">
+      <h2 className="sectionTitle mb-8 sm:indent-[5rem] mxsm:text-center">
         Tecnologias
-      </h1>
-      <Carousel>
-        {ICONS_DATA.map(({ name, file, img_desc }) => (
-          <li key={name + 1}>
-            {isVisible && (
-              <img
-                src={`/icons/logos/${file}`}
-                alt={img_desc}
-                className="h-20 w-[200px]"
-              />
-            )}
-          </li>
-        ))}
-      </Carousel>
-      <h1 className="ml-auto mr-16 text-center sm:max-w-md sm:text-left mxsm:mx-auto mxsm:max-w-xs">
+      </h2>
+      <TechCarousel list={[tech_data, tech_icons]} />
+      <TechList list={tech_data} />
+      <h3 className="ml-auto mr-16 mt-8 text-center sm:max-w-md sm:text-left mxsm:mx-auto mxsm:max-w-xs">
         - Siempre aprendiendo tecnologias solicitadas en el mercado.
-      </h1>
+      </h3>
       <SVGWave1 position="bottom" />
     </section>
   );
