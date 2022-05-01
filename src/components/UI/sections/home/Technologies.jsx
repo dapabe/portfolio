@@ -14,12 +14,12 @@ export default function SectionTechs() {
       <h2 className="sectionTitle mb-8 sm:indent-[5rem] mxsm:text-center">
         Tecnologias
       </h2>
-      <TechCarousel list={[tech_data, tech_icons]} />
+      {/* <TechCarousel list={[tech_data, tech_icons]} /> */}
       <TechList list={tech_data} />
       <h3 className="ml-auto mr-16 mt-8 text-center sm:max-w-md sm:text-left mxsm:mx-auto mxsm:max-w-xs">
         - Siempre aprendiendo tecnologias solicitadas en el mercado.
       </h3>
-      <SVGWave1 position="bottom" />
+      {/* <SVGWave1 position="bottom" /> */}
     </section>
   );
 }

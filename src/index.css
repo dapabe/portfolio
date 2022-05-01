@@ -113,10 +113,10 @@
   }
 
   .techSection {
-    @apply min-h-max bg-red-500 text-white;
+    @apply min-h-max bg-gradient-to-t from-vaporBlue to-vaporViolet text-white;
   }
   .projectSection {
-    @apply h-[30vh] transition-[min-height] lg:justify-around mxsm:min-h-[50vh];
+    @apply h-[30vh] bg-gradient-to-b from-vaporBlue to-strongRed lg:justify-around mxsm:min-h-[50vh];
   }
   .projectSlider-Container {
     @apply relative h-full overflow-hidden rounded-lg shadow-lg shadow-sutilBlack;
