@@ -151,7 +151,7 @@
     @apply transition-[scale] hover:scale-105;
   }
   .inspirationSection {
-    @apply flex flex-col gap-y-6 bg-red-500 text-white;
+    @apply flex flex-col gap-y-3 bg-red-500 text-white;
   }
   .quoteCard {
     @apply relative flex max-h-[200px] min-h-[150px] max-w-lg rounded-md bg-white text-sutilBlack md:rounded-full;
