@@ -5,8 +5,8 @@ import QuoteCard from "./QuoteCard";
 const inspirations = data.inspirations;
 
 const LI_Inspirations = () => {
-  return inspirations.map(({ nickname, ...props }) => (
-    <li key={nickname} className="inline-flex self-center">
+  return inspirations.map(({ ...props }) => (
+    <li key={props.nickname} className="inline-flex self-center">
       <QuoteData.Provider value={{ ...props }}>
         <QuoteCard {...props} />
       </QuoteData.Provider>
@@ -15,7 +15,7 @@ const LI_Inspirations = () => {
 };
 function AllQuotes() {
   return (
-    <ul className="flex flex-col gap-y-6 ">
+    <ul className="mx-auto flex max-w-full flex-wrap justify-center gap-4 ">
       <LI_Inspirations />
     </ul>
   );

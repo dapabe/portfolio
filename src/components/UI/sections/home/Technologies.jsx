@@ -19,7 +19,7 @@ export default function SectionTechs() {
       <h3 className="ml-auto mr-16 mt-8 text-center sm:max-w-md sm:text-left mxsm:mx-auto mxsm:max-w-xs">
         - Siempre aprendiendo tecnologias solicitadas en el mercado.
       </h3>
-      <SVGWave1 position="bottom" />
+      <SVGWave1 position="bottom" fill="fill-vaporBlue" />
     </section>
   );
 }

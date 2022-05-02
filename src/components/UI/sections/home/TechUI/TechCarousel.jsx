@@ -17,7 +17,7 @@ export default function TechCarousel({ list }) {
           <img
             src={`/icons/logos/${file}`}
             alt={img_desc}
-            className="h-20 w-[200px]"
+            className="h-20 w-40"
           />
         </li>
       ))}

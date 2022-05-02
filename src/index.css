@@ -10,11 +10,11 @@
   }
 
   body {
-    @apply relative bg-champagnePink font-Comfortaa tracking-wide text-sutilBlack;
+    @apply relative bg-champagnePink font-Comfortaa tracking-wide text-sutilBlack scrollbar-hide;
   }
-  body::-webkit-scrollbar-track-piece {
+  /* body::-webkit-scrollbar-track-piece {
     @apply bg-sutilBlack;
-  }
+  } */
   header {
     @apply absolute w-full text-white;
   }
@@ -116,8 +116,15 @@
     @apply min-h-max bg-gradient-to-t from-vaporBlue to-vaporViolet text-white;
   }
   .projectSection {
-    @apply h-[30vh] bg-gradient-to-b from-vaporBlue to-vaporViolet text-white lg:justify-around mxsm:min-h-[50vh];
+    @apply min-h-max bg-gradient-to-b from-vaporBlue to-vaporViolet text-white lg:justify-around;
   }
+  .wideCard {
+    /* @apply relative flex max-h-[15rem] min-w-[320px] max-w-lg overflow-hidden rounded-lg bg-strongRed; */
+  }
+  .wideCard > figcaption {
+    /* @apply  */
+  }
+  /* ============================================================= */
   .projectSlider-Container {
     @apply relative h-full overflow-hidden rounded-lg shadow-lg shadow-sutilBlack;
   }
@@ -151,10 +158,10 @@
     @apply transition-[scale] hover:scale-105;
   }
   .inspirationSection {
-    @apply flex flex-col gap-y-3 bg-red-500 text-white;
+    @apply flex flex-col gap-y-6 bg-red-500 text-white;
   }
   .quoteCard {
-    @apply relative flex max-h-[200px] max-w-lg rounded-md bg-white text-sutilBlack md:rounded-full;
+    @apply relative flex max-w-lg rounded-md bg-white text-sutilBlack md:rounded-full;
   }
   .contactSection {
     @apply flex min-h-[60vh] items-center justify-center bg-sutilBlack pb-4;
