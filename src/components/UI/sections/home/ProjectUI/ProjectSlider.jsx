@@ -1,4 +1,3 @@
-import { SliderContainer, CustomCard } from "@ui/common/exports";
 import WideCard from "./WideCard";
 
 import { ProjectData } from "@context/UI";
@@ -12,9 +11,8 @@ export default function ProjectSlider() {
     <div className="flex h-full flex-wrap justify-center gap-10">
       {/* <SliderContainer> */}
       {info.map(({ id, image, title, description, links, made_with }) => (
-        <ProjectData.Provider value={{ links, made_with }}>
+        <ProjectData.Provider value={{ links, made_with }} key={id}>
           <WideCard
-            key={id}
             image={image}
             title={title}
             description={description.short}

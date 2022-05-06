@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Intro({ displayCondition }) {
   const scrollIntoView = displayCondition
     ? "translate-y-0"

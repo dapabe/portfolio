@@ -20,7 +20,7 @@ export default function MenuModal() {
   const LI_Routes = () =>
     ROUTES.map(({ to, text }) => (
       <li key={text}>
-        <CustomLink to={to} onClick={closeAndResetPage}>
+        <CustomLink to={to} onClick={closeAndResetPage} {...NotSelectable}>
           {text}
         </CustomLink>
       </li>
@@ -46,7 +46,7 @@ export default function MenuModal() {
           <LI_Routes />
         </ul>
         <div className="flex justify-evenly sm:flex-col sm:justify-end sm:space-y-4">
-          <SocialLinks />
+          <SocialLinks {...NotSelectable} />
         </div>
       </nav>
     </section>

@@ -1,11 +1,8 @@
-import { Suspense, lazy } from "react";
 import GlobalState from "@context/GlobalState";
 
-import { Lines } from "@fallback";
-
 import Header from "@ui/unique/HeaderUI/Header";
-const Footer = lazy(() => import("@ui/unique/FooterUI/Footer"));
-const GoTop = lazy(() => import("@ui/unique/GoTop"));
+import Footer from "@ui/unique/FooterUI/Footer";
+import GoTop from "@ui/unique/GoTop";
 
 import { Outlet } from "react-router-dom";
 
@@ -16,10 +13,8 @@ export default function AppLayout() {
       <main id="main">
         <Outlet />
       </main>
-      <Suspense fallback={<Lines lines={4} />}>
-        <Footer />
-        <GoTop />
-      </Suspense>
+      <Footer />
+      <GoTop />
     </GlobalState>
   );
 }
