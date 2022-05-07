@@ -17,7 +17,7 @@ export default function MenuText({ displayCondition }) {
     >
       {Letters.map(({ letter, className }) => (
         <li key={letter} className={`${className} transition-transform`}>
-          <span>{letter}</span>
+          {letter}
         </li>
       ))}
     </ol>

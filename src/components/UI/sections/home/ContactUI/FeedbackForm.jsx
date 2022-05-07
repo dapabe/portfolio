@@ -28,7 +28,6 @@ export default function FeedbackForm({ displayCondition }) {
     postResponse: serverResponse,
     inputValues: postValues,
   });
-
   const showFeedback = displayCondition ? "opacity-100" : "opacity-0 -z-10";
 
   return (

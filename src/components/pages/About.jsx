@@ -32,12 +32,12 @@ export default function About() {
           Cuando comencé con las herramientas básicas{" "}
           <abbr title="Hyper Text Markup Language">HTML</abbr>,{" "}
           <abbr title="Cascade Style Sheets">CSS</abbr> y JavaScript todo
-          parecía ir muy lento pero seguro, hasta que conocí framworks como
+          parecía ir muy lento pero seguro, hasta que conocí frameworks como
           ReactJS y NextJS, estos me despertaron la pasión por el desarrollo
           web.
           <br />
           <br />Y desde ello cada día he querido ir aprendiendo y ampliar más mi
-          saber por las nuevas tecnologías que hay, y vendran.
+          saber por las nuevas tecnologías que existen, y que existiran.
         </p>
       </section>
     </section>
