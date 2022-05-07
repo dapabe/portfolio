@@ -54,9 +54,6 @@
   .my-container {
     @apply mx-auto max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-4xl xl:max-w-5xl;
   }
-  .skipNav {
-    @apply top-0 left-28 z-30 -translate-y-full rounded-b-3xl border-2 border-white border-t-transparent bg-strongOrange px-3 py-1 outline-none transition focus:translate-y-0;
-  }
   .brandLogo {
     @apply top-0.5 left-0 z-30 ml-2 text-3xl tracking-wider;
   }

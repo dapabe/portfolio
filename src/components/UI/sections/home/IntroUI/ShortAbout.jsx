@@ -5,7 +5,7 @@ export default function ShortAbout() {
       <h2 className="sectionTitle">Un poco de mi</h2>
       <p className="indent-3">
         Manejo mi tiempo en mayor parte programando y en mi tiempo libre hago
-        camintas o leo contenido nuevo que pueda implementar a mi repertorio.
+        caminatas o leo contenido nuevo que pueda implementar a mi repertorio.
         <br />
         Amo la musica{" "}
         <abbr title="Hip Hop y Jazz, entre otros géneros musicales">
@@ -20,7 +20,7 @@ export default function ShortAbout() {
           className="text-sm underline-offset-2 hover:underline"
           onClick={() => setTimeout(() => window.scroll(0, 0), 200)}
         >
-          Leér más a detalle <i>&rarr;</i>
+          Leér más a detalle &rarr;
         </CustomLink>
       </div>
     </div>

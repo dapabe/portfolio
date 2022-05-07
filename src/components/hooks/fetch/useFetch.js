@@ -4,7 +4,7 @@ const responseType = {
   clientRes: null,
   serverRes: null,
 };
-
+//  TODO: Refactor to be used in the future
 export default function useFetch(url) {
   const [response, setResponse] = useState(responseType);
   const [isLoading, setLoading] = useState(false);

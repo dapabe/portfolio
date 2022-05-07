@@ -96,20 +96,6 @@
         "webpage": "https://moviedb-clone-dapabe.vercel.app/"
       },
       "made_with": ["TailwindCSS.svg", "NextJS-mono.svg", "API.png"]
-    },
-    {
-      "id": "2b",
-      "title": "Chat2You",
-
-      "description": {
-        "short": "Servicio para chatear con otras personas, pensado como clon de Whatsapp.",
-        "tech": "..."
-      },
-      "links": {
-        "repository": "https://github.com/dapabe/api-moviedb",
-        "webpage": "https://moviedb-clone-dapabe.vercel.app/"
-      },
-      "made_with": [""]
     }
   ],
   "inspirations": [

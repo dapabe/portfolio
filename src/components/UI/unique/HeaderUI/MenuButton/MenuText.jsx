@@ -16,8 +16,8 @@ export default function MenuText({ displayCondition }) {
       className={`menuText ${displayCondition ? device.small : device.desktop}`}
     >
       {Letters.map(({ letter, className }) => (
-        <li key={letter} className={`transition-transform ${className}`}>
-          {letter}
+        <li key={letter} className={`${className} transition-transform`}>
+          <span>{letter}</span>
         </li>
       ))}
     </ol>

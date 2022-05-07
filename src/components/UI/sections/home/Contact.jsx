@@ -1,18 +1,17 @@
-import { useState } from "react";
-
+import useToggle from "@hooks/useToggle";
 import { PaperAirplaneIcon } from "@heroicons/react/solid";
-import FeedbackForm from "@ui/unique/FeedbackForm";
+import FeedbackForm from "./ContactUI/FeedbackForm";
 
 export default function SectionContact() {
   //  Show form card
-  const [show, setShow] = useState(false);
+  const [show, handleShow] = useToggle(false);
 
   const Button = () => {
     return (
       <button
         type="button"
         title="Boton de contacto"
-        onClick={() => setShow(true)}
+        onClick={handleShow}
         disabled={show}
         className={`feedbackBtn ${show ? "-z-10 opacity-0" : "opacity-100"}`}
       >

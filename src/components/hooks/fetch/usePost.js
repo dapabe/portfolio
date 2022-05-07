@@ -1,9 +1,10 @@
 import { useState } from "react";
+import useToggle from "@hooks/useToggle";
 import { sendEmail } from "@utils/common";
 
 export default function usePost({ url, postResponse, inputValues = null }) {
   const [response, setResponse] = useState(null);
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, handleLoad] = useToggle(false);
   const [inputData, setInputData] = useState(inputValues);
 
   //  Computed properties overwriting a
@@ -17,7 +18,7 @@ export default function usePost({ url, postResponse, inputValues = null }) {
   //  Limited amount of messages for these services.
   const formSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    handleLoad(); // true
 
     return await fetch(url, {
       method: "POST",
@@ -29,12 +30,12 @@ export default function usePost({ url, postResponse, inputValues = null }) {
     })
       .then(() => {
         setResponse(postResponse.ok);
-        setLoading(false);
+        handleLoad(); //  false
       })
       .catch(() => {
         sendEmail(e.target).then(() => {
           setResponse(postResponse.error);
-          setLoading(false);
+          handleLoad(); //  false
         });
       });
   };

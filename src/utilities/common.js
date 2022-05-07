@@ -45,13 +45,14 @@ export function compareAndRetrieve({
 }
 //  [HowWorks]    Works exactly as compareAndRetrieve except this
 //                function takes a string[] as 1st parameter.
+//                Returns the concidence else Null.
 export function arrayCompareAndRetrieve({ aToLook, aToSearch, kToSearch }) {
   const returnedValues = aToSearch.filter((item1) => {
     return aToLook.find((item2) => item2 === item1[kToSearch]);
   });
   return returnedValues.length !== 0 ? returnedValues : null;
 }
-export function retrieveConcidences(aToLook, aToSearch, kToSearch) {
+export function retrieveWithDupe(aToLook, aToSearch, kToSearch) {
   //  Does the same as compareAndRetrieve() but it doesn't filter
   //  the coincidences and return it all.
   // const returnedVaues =

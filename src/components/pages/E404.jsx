@@ -6,6 +6,12 @@ export default function E404() {
         <h2>
           ¿Estas seguro que esta es <br /> una dirección correcta?
         </h2>
+        <a
+          href="/"
+          className="btn-inOut mt-40 text-red-500 after:top-full after:bg-red-500"
+        >
+          Volver al inicio
+        </a>
       </div>
     </section>
   );
