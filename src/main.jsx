@@ -33,5 +33,5 @@ render(
       </Routes>
     </BrowserRouter>
   </StrictMode>,
-  document.getElementById("root")
+  document.getElementById("app-root")
 );

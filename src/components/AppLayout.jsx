@@ -1,8 +1,8 @@
 import GlobalState from "@context/GlobalState";
 
-import Header from "@ui/unique/HeaderUI/Header";
-import Footer from "@ui/unique/FooterUI/Footer";
-import GoTop from "@ui/unique/GoTop";
+import Header from "./UI/unique/HeaderUI/Header";
+import Footer from "./UI/unique/FooterUI/Footer";
+import GoTop from "./UI/unique/GoTop";
 
 import { Outlet } from "react-router-dom";
 

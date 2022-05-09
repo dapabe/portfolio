@@ -8,7 +8,7 @@ import MenuButton from "./MenuButton/MenuButton";
 import SocialLinks from "../SocialLinks";
 import Backdrop from "../Backdrop";
 import OverlayBars from "./OverlayBars";
-const MenuModal = lazy(() => import("./MenuModal"));
+const MenuModal = lazy(() => import("../MenuUI/MenuModal"));
 
 export default function Header() {
   const { isMenuOpen, closeAndResetPage } = useContext(GlobalContext);
@@ -30,7 +30,7 @@ export default function Header() {
       {/* <LangSwitch/> */}
 
       <MenuButton />
-      <Suspense fallback={<Backdrop displayCondition={isMenuOpen} />}>
+      <Suspense fallback={<Backdrop displayCondition />}>
         <MenuModal />
       </Suspense>
       <aside className={`sidebar ${isMenuOpen ? "-z-50 opacity-0" : ""}`}>

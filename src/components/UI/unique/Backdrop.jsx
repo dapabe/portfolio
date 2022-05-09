@@ -1,4 +1,4 @@
-export default function Backdrop({ displayCondition, ...props }) {
+export default function Backdrop({ displayCondition = false, ...props }) {
   return (
     <div
       className={`absolute inset-0 ${
