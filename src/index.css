@@ -15,17 +15,21 @@
   /* body::-webkit-scrollbar-track-piece {
     @apply bg-sutilBlack;
   } */
-  header {
+  header,
+  #menu-root {
     @apply absolute w-full text-white;
   }
   header > * {
     @apply fixed z-20;
   }
+  #menu-root > * {
+    @apply fixed;
+  }
   main {
     @apply min-h-screen overflow-x-clip;
   }
   main > section:not(:only-child, :first-child, .noSpace) {
-    @apply my-8;
+    @apply my-10;
   }
   main > section {
     @apply relative;
@@ -36,6 +40,7 @@
   main > section:not(.noMaxWidth) {
     @apply my-container;
   }
+
   /* Form inputs */
   .inputContainer *:invalid[focused="true"] {
     @apply border-2 border-red-600;
