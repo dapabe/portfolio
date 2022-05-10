@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { GlobalContext } from "@context/GlobalState";
-import usePageOffset from "@hooks/usePageOffset";
+import useElementOffset from "@hooks/useElementOffset";
 import { ChevronDoubleUpIcon } from "@heroicons/react/solid";
 
 export default function GoTop() {
   const { isMenuOpen } = useContext(GlobalContext);
-  const { isOffset } = usePageOffset();
+  const { isOffset } = useElementOffset();
 
   const hasScrolled = isOffset && !isMenuOpen ? "z-20" : "-z-50 opacity-0";
   return (

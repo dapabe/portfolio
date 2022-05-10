@@ -6,10 +6,12 @@ import useKeyboard from "@hooks/useKeyboard";
 
 export const GlobalContext = createContext({});
 
+//  TODO:     map each event case.
+
 //  1.On document load.
 //  2.Events.
 export default function GlobalState({ children }) {
-  const [isMenuOpen, handleMenu] = useToggle(); //  Initialized as false
+  const [isMenuOpen, handleMenu] = useToggle(false);
 
   // const events = [
   //   { key: "m", cb: handleMenu, condition: true },
@@ -18,21 +20,24 @@ export default function GlobalState({ children }) {
 
   //  1.
   useNoScroll(isMenuOpen);
-  useKeyboard({ key: "m", cb: handleMenu }); //  TODO: map each event case.
+  // if (!globalThis.activeElement.tagName.includes("TEXTAREA" || "INPUT"))
+  useKeyboard({ key: "m", cb: handleMenu });
 
   //  2.
   const closeAndResetPage = () => {
     handleMenu();
     setTimeout(() => window.scroll(0, 0), 200);
   };
+
   //=====================================================================
   const memoValues = useMemo(
     () => ({
       isMenuOpen,
       handleMenu,
+
       closeAndResetPage,
     }),
-    [isMenuOpen, handleMenu]
+    [isMenuOpen]
   );
 
   return (

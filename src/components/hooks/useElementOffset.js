@@ -1,37 +1,24 @@
-import { useMemo, useEffect, useState, useCallback } from "react";
-import useToggle from "./useToggle";
+import { useEffect, useState } from "react";
+import useToggle from "@hooks/useToggle";
 
-//  [NOTE]  Refactor for parallax usage.
-//  This function has to be able to detect
-//  how if a certain threshold in pixels has been
-//  reached from the parent container.
-//  Container must be scrollable.
-//  EX; <container>         <-- ref.offsetParent
-//        <target ref/>
-//      </container>
-export default function useElementOffset(
-  targetRef,
-  pixels = globalThis.innerHeight
-) {
-  const [values, setValues] = useState({ obj: null, p: pixels });
+export default function useElementOffset(options = {}) {
+  const { element = globalThis, pixels = globalThis.innerHeight } = options;
+
   const [isOffset, handleOffset] = useToggle(false);
+  const [currOffset, setNumericOffset] = useState(0);
 
-  // if (targetRef?.current ?? true) throw new Error("ref is empty or undefined");
-  const targetOffset = values.p;
-  const checkScroll = useCallback(() => {
-    !isOffset && targetOffset > pixels && handleOffset();
-    isOffset && targetOffset < pixels && handleOffset();
-  }, [targetOffset]);
+  const checkTopScroll = () => {
+    const elementOffset =
+      element.scrollY ?? element.pageYOffset ?? element.scrollTop;
+    setNumericOffset(elementOffset);
+    !isOffset && elementOffset >= pixels && handleOffset();
+    isOffset && elementOffset <= pixels && handleOffset();
+  };
 
-  console.log(values, targetOffset);
   useEffect(() => {
-    console.log(values, targetOffset);
-    setValues({
-      obj: targetRef?.current,
-      p: targetRef?.current?.scrollTop ?? globalThis.scrollY,
-    });
-    return () => setValues({ obj: null, p: pixels });
-  }, [values.obj]);
+    element.addEventListener("scroll", checkTopScroll);
+    return () => element.removeEventListener("scroll", checkTopScroll);
+  }, [isOffset]);
 
-  return { isOffset, checkScroll };
+  return { isOffset, currOffset };
 }

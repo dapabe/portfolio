@@ -19,5 +19,5 @@ export default function useWindowSize() {
     return () => globalThis.removeEventListener("resize", changeWindowSize);
   }, [changeWindowSize]);
 
-  return windowSize;
+  return { windowSize };
 }
