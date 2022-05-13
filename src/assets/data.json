@@ -46,9 +46,9 @@
     "CSS",
     "JavaScript",
     "TailwindCSS",
-    "NodeJS",
-    "ReactJS",
-    "NextJS",
+    "Node.JS",
+    "React.JS",
+    "Next.JS",
     "MySQL",
     "Figma"
   ],
@@ -88,7 +88,7 @@
       "title": "TakeALook",
       "image": "moviedb.png",
       "description": {
-        "short": "Servicio para ver información de peliculas y series, pensado como clon de Netflix.",
+        "short": "Servicio para ver información de películas y series, pensado como clon de Netflix.",
         "tech": "..."
       },
       "links": {
