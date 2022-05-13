@@ -190,4 +190,7 @@
   .btn-inOut {
     @apply relative w-max after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:origin-right after:scale-x-0 after:rounded after:transition-transform after:ease-in after:hover:origin-left after:hover:scale-x-100;
   }
+  .text-outline {
+    -webkit-text-stroke: 2px white;
+  }
 }

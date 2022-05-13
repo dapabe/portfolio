@@ -1,4 +1,4 @@
-import { CustomImage } from "@ui/common/extras";
+import { CustomImage } from "@ui/reusable/extras";
 import Quote from "./Quote";
 import QuoteImage from "./QuoteImage";
 

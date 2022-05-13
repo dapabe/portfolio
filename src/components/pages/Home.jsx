@@ -1,4 +1,3 @@
-import { slowImport } from "@utils/common";
 import { Suspense, lazy } from "react";
 import { Lines } from "@fallback";
 

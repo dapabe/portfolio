@@ -1,6 +1,6 @@
 import useToggle from "@hooks/useToggle";
 import { PaperAirplaneIcon } from "@heroicons/react/solid";
-import FeedbackForm from "./ContactUI/FeedbackForm";
+import FORM_Feedback from "./ContactUI/FORM_Feedback";
 
 export default function SectionContact() {
   //  Show form card
@@ -25,7 +25,7 @@ export default function SectionContact() {
   return (
     <section className="contactSection noMaxWidth noSpace">
       <Button />
-      <FeedbackForm displayCondition={show} />
+      <FORM_Feedback displayCondition={show} />
     </section>
   );
 }

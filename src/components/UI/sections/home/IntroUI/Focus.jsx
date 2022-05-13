@@ -8,7 +8,7 @@ export default function Focus() {
           <abbr title="Interfaz de usuario">UI</abbr>.
         </li>
         <li>Priorizo el rendimiento.</li>
-        <li>Diseño adaptable/responsive para diferentes dispositivos.</li>
+        <li>Diseño adaptable/responsivo para diferentes dispositivos.</li>
         <li>Accesibilidad; manejo de teclado y lectores de pantalla.</li>
       </ul>
     </div>

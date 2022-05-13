@@ -6,14 +6,9 @@ import NavRoutes from "./NavRoutes.jsx";
 import SocialLinks from "../SocialLinks";
 
 export default function Menu() {
-  const { isMenuOpen, handleMenu, closeAndResetPage } =
+  const { isMenuOpen, handleMenu, closeAndResetPage, notSelectable } =
     useContext(GlobalContext);
   const Modal = useRef(null);
-
-  //  Not selectable if menu is closed.   <- refactor for better keyboard exp
-  const NotSelectable = {
-    ...(!isMenuOpen && { tabIndex: -1 }),
-  };
 
   const isOpen = isMenuOpen
     ? "z-20 delay-500 opacity-100"
@@ -28,10 +23,10 @@ export default function Menu() {
       <Backdrop displayCondition={isMenuOpen} onClick={handleMenu} />
       <nav className={`menu ${isOpen}`} aria-labelledby="modal">
         <ul className="menuLinks">
-          <NavRoutes onClick={closeAndResetPage} />
+          <NavRoutes onClick={closeAndResetPage} {...notSelectable} />
         </ul>
         <div className="flex justify-evenly sm:flex-col sm:justify-end sm:space-y-4">
-          <SocialLinks />
+          <SocialLinks {...notSelectable} />
         </div>
       </nav>
     </section>

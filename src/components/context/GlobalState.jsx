@@ -6,7 +6,9 @@ import useKeyboard from "@hooks/useKeyboard";
 
 export const GlobalContext = createContext({});
 
-//  TODO:     map each event case.
+//  TODO:     Map each event case.
+//            Fix global bug on key
+//            interference with user input.
 
 //  1.On document load.
 //  2.Events.
@@ -20,8 +22,7 @@ export default function GlobalState({ children }) {
 
   //  1.
   useNoScroll(isMenuOpen);
-  // if (!globalThis.activeElement.tagName.includes("TEXTAREA" || "INPUT"))
-  useKeyboard({ key: "m", cb: handleMenu });
+  // useKeyboard({ key: "m", cb: handleMenu });
 
   //  2.
   const closeAndResetPage = () => {
@@ -30,12 +31,17 @@ export default function GlobalState({ children }) {
   };
 
   //=====================================================================
+  //  Not selectable if menu is closed.   <- refactor for better keyboard exp
+  const notSelectable = {
+    ...(!isMenuOpen && { tabIndex: -1 }),
+  };
+
   const memoValues = useMemo(
     () => ({
       isMenuOpen,
       handleMenu,
-
       closeAndResetPage,
+      notSelectable,
     }),
     [isMenuOpen]
   );

@@ -1,4 +1,4 @@
-import SVGWave2 from "@ui/common/decorations/SVGWave2";
+import SVGWave2 from "@ui/reusable/decorations/SVGWave2";
 import AllQuotes from "./InspirationUI/AllQuotes";
 
 export default function SectionInspire() {

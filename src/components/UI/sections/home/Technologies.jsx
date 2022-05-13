@@ -1,4 +1,4 @@
-import SVGWave1 from "@ui/common/decorations/SVGWave1";
+import SVGWave1 from "@ui/reusable/decorations/SVGWave1";
 import TechCarousel from "./TechUI/TechCarousel";
 
 import data from "@src/assets/data.json";

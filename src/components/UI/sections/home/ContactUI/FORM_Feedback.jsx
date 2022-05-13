@@ -1,11 +1,12 @@
 const FORM_ENDPOINT = import.meta.env.VITE_ENDPOINT_URL;
-
+import { useContext } from "react";
+import { GlobalContext } from "@context/GlobalState";
 import usePost from "@hooks/fetch/usePost";
 
 import form_inputs from "@src/assets/form_inputs.json";
 
-import FORM_UI from "@ui/common/FormUI/FORM_UI";
-import CreateInput from "@ui/common/FormUI/CreateInput";
+import FORM_UI from "./FORM_UI";
+import CreateInput from "@ui/reusable/FORM/CreateInput";
 
 const everyInput = Object.freeze(form_inputs.contact_form);
 
@@ -22,14 +23,15 @@ const serverResponse = {
 };
 const postValues = Object.seal({ user_email: "", message: "" });
 
-export default function FeedbackForm({ displayCondition }) {
+export default function FORM_Feedback({ displayCondition }) {
   const { response, isLoading, inputData, handleChange, formSubmit } = usePost({
     url: FORM_ENDPOINT,
     postResponse: serverResponse,
     inputValues: postValues,
   });
-  const showFeedback = displayCondition ? "opacity-100" : "opacity-0 -z-10";
+  const { notSelectable } = useContext(GlobalContext);
 
+  const showFeedback = displayCondition ? "opacity-100" : "opacity-0 -z-10";
   return (
     <form onSubmit={formSubmit} className={`feedbackForm ${showFeedback}`}>
       <FORM_UI submitState={isLoading} serviceResponse={response}>
@@ -39,6 +41,7 @@ export default function FeedbackForm({ displayCondition }) {
             {...element}
             onChange={handleChange}
             value={inputData[element.name]}
+            {...notSelectable}
           />
         ))}
       </FORM_UI>
