@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useToggle from "@hooks/useToggle";
-import { sendEmail } from "@utils/common";
+import { sendEmail } from "@utils/reusable";
 
 export default function usePost({ url, postResponse, inputValues = null }) {
   const [response, setResponse] = useState(null);

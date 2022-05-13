@@ -31,8 +31,8 @@ export default function Quote() {
       <h2>
         <a
           href={webpage}
-          aria-label="Ir a su pagina web."
-          title="Ir a su pagina web."
+          aria-label="Ir a su página web."
+          title="Ir a su página web."
           target="_blank"
           rel="noopener noreferrer"
           className="btn-inOut mt-auto ml-auto block font-semibold after:bg-sutilBlack"

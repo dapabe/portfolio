@@ -1,4 +1,4 @@
-import { ExternalLinkIcon } from "@heroicons/react/solid";
+import { ExtLink, AbbrLang } from "@utils/text";
 
 export default function About() {
   return (
@@ -12,16 +12,12 @@ export default function About() {
           aprender inglés desde muy temprana edad y adentrarme aún más en este
           mundo.
           <br />
-          <br />A los 20 años tuve un "click" por la programación, creé mods
-          para juegos, por ejemplo{" "}
-          <a
-            href="https://steamcommunity.com/sharedfiles/filedetails/?id=2380720925"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <br />A mis 20 años tuve un "clic" por la programación, creé{" "}
+          <AbbrLang title="Modificaciones">mods</AbbrLang> para juegos, por
+          ejemplo{" "}
+          <ExtLink href="https://steamcommunity.com/sharedfiles/filedetails/?id=2380720925">
             Starbound
-            <ExternalLinkIcon className="inline w-5" />
-          </a>
+          </ExtLink>
           , y luego me enfoqué en el desarrollo web.
         </p>
 
@@ -32,12 +28,14 @@ export default function About() {
           Cuando comencé con las herramientas básicas{" "}
           <abbr title="Hyper Text Markup Language">HTML</abbr>,{" "}
           <abbr title="Cascade Style Sheets">CSS</abbr> y JavaScript todo
-          parecía ir muy lento pero seguro, hasta que conocí frameworks como
-          ReactJS y NextJS, estos me despertaron la pasión por el desarrollo
-          web.
+          parecía ir muy lento, pero seguro, hasta que conocí{" "}
+          <AbbrLang title="Marcos de trabajo">frameworks</AbbrLang> como{" "}
+          <ExtLink href="https://es.reactjs.org/">React.JS</ExtLink> y{" "}
+          <ExtLink href="https://nextjs.org/">NEXT.JS</ExtLink>
+          , estos me despertaron la pasión por el desarrollo web.
           <br />
           <br />Y desde ello cada día he querido ir aprendiendo y ampliar más mi
-          saber por las nuevas tecnologías que existen, y que existiran.
+          saber por las nuevas tecnologías que existen, y que existirán.
         </p>
       </section>
     </section>

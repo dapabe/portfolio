@@ -12,14 +12,14 @@
       "label": {
         "text": "De : "
       },
-      "errorMessage": "Tiene que ser un correo valido."
+      "errorMessage": "Tiene que ser un correo válido."
     },
     {
       "node": "textarea",
       "id": "MESSAGE",
       "name": "message",
       "type": "message",
-      "placeholder": "Hola Patricio, he visto tu pagina web y...",
+      "placeholder": "Hola Patricio, he visto tu página web y ...",
       "required": true,
       "rows": 3,
       "className": "w-full text-black rounded-md p-1 placeholder:text-sm p-2 border-sutilBlack border-2",

@@ -2,7 +2,7 @@ import { createRef } from "react";
 import useObserver from "@hooks/useObserver";
 import { Carousel } from "@ui/reusable/exports";
 
-import { arrayCompareAndRetrieve } from "@utils/common";
+import { arrayCompareAndRetrieve } from "@utils/reusable";
 
 export default function TechCarousel({ list }) {
   const ICONS_DATA = arrayCompareAndRetrieve({
