@@ -1,6 +1,6 @@
 import { ContactDisplay } from "@context/UI";
 import useToggle from "@hooks/useToggle";
-import { CursorClickIcon, PaperAirplaneIcon } from "@heroicons/react/solid";
+import { CursorClickIcon } from "@heroicons/react/solid";
 import FORM_Feedback from "./ContactUI/FORM_Feedback";
 
 export default function SectionContact() {
@@ -17,8 +17,7 @@ export default function SectionContact() {
         className={`feedbackBtn ${show ? "-z-10 opacity-0" : "z-10"}`}
       >
         <h2 className="text-center text-xl font-semibold text-sutilBlack">
-          ¿Te gustaría dejarme un mensaje?{" "}
-          <PaperAirplaneIcon className="inline w-6 rotate-90 text-pink-700" />
+          ¿Te gustaría dejarme un mensaje?
         </h2>
         <CursorClickIcon className="absolute left-[85%] top-[65%] w-20 text-pink-700" />
       </button>
