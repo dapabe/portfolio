@@ -7,7 +7,7 @@ const links = [
 
 export default function Focus() {
   return (
-    <div className="intro_focus">
+    <section className="intro_focus">
       <h2 className="mb-2 tracking-wider text-white">Enfoques</h2>
       <ul className="intro_list">
         <li>Priorizar el rendimiento.</li>
@@ -15,10 +15,16 @@ export default function Focus() {
         <li>Crear agradables interfaces y experiencias de usuario.</li>
         <li>
           <dfn>Accesibilidad</dfn> ;{" "}
-          <ExtLink href={links[0]}>Navegación por teclado</ExtLink> y{" "}
-          <ExtLink href={links[1]}>lectores de pantalla</ExtLink>.
+          <ExtLink href={links[0]} className="text-gray-300">
+            Navegación por teclado
+          </ExtLink>{" "}
+          y{" "}
+          <ExtLink href={links[1]} className="text-gray-300">
+            lectores de pantalla
+          </ExtLink>
+          .
         </li>
       </ul>
-    </div>
+    </section>
   );
 }

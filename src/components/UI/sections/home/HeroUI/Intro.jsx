@@ -1,6 +1,4 @@
-import { ArrowRightIcon, MailIcon } from "@heroicons/react/solid";
-
-const hoverAnim = "inline w-6 transition-transform group-hover:translate-x-4";
+import { MailIcon } from "@heroicons/react/solid";
 
 export default function Intro({ displayCondition }) {
   const scrollIntoView = displayCondition
@@ -8,29 +6,28 @@ export default function Intro({ displayCondition }) {
     : "translate-y-6 opacity-0";
 
   return (
-    <section className="mt-40 ml-4 translate-y-1/2 space-y-2 self-center text-xl font-bold tracking-wide text-white sm:ml-24">
+    <section className="mt-40 ml-4 translate-y-1/2 space-y-3 self-center text-xl font-bold tracking-wide text-white sm:ml-24">
       <h1
-        className={`${scrollIntoView} text-4xl text-sutilBlack transition-[translate_opacity] delay-300`}
+        className={`${scrollIntoView} text-4xl leading-none text-sutilBlack transition-[translate_opacity] delay-300`}
       >
         Daniel P. Becerra
       </h1>
-      <p
+      <h2
         className={`${scrollIntoView} font-medium transition-[translate_opacity] delay-500`}
       >
         Desarrollador Front-End. <br />
-      </p>
-      <p
-        className={`${scrollIntoView} font-medium transition-[translate_opacity] delay-700`}
+      </h2>
+      <h3
+        className={`${scrollIntoView} mt-6 transition-[translate_opacity] delay-700`}
       >
         <a
           href="#contactSection"
-          className="group text-base transition-transform hover:translate-x-4"
-          title="Enviar un correo"
+          className="analog-shadow block w-max rounded-md bg-champagnePink p-2 text-base text-sutilBlack  transition-[box-shadow_transform] active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-gray-500"
+          title="Ir a la sección de contacto"
         >
-          Enviar un <MailIcon className={hoverAnim} />{" "}
-          <ArrowRightIcon className={hoverAnim} />
+          CONTÁCTAME <MailIcon className="inline-block w-6 -translate-y-0.5" />
         </a>
-      </p>
+      </h3>
     </section>
   );
 }
