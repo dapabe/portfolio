@@ -1,3 +1,4 @@
+import { ContactDisplay } from "@context/UI";
 import useToggle from "@hooks/useToggle";
 import { CursorClickIcon, PaperAirplaneIcon } from "@heroicons/react/solid";
 import FORM_Feedback from "./ContactUI/FORM_Feedback";
@@ -26,7 +27,9 @@ export default function SectionContact() {
   return (
     <section id="contactSection" className="contactSection noMaxWidth noSpace">
       <Button />
-      <FORM_Feedback displayCondition={show} />
+      <ContactDisplay.Provider value={{ show }}>
+        <FORM_Feedback displayCondition={show} />
+      </ContactDisplay.Provider>
     </section>
   );
 }

@@ -22,7 +22,11 @@ export function fakeImportComponent(value, ms = 1000) {
 export async function sendEmail(body) {
   return await emailjs.sendForm("default_service", FORM, body, P_KEY);
 }
-
+//  ===============================================================================================
+//  Dinamically allow kbd focus.
+export function notSelectable(condition) {
+  return { ...(condition && { tabIndex: -1 }) };
+}
 //  Compare the 1st Object[] to the 2nd, searches into the 2nd array
 //  and filters the object with the 1st keyword, if it matches
 //  then retrieves the exact object where the 2nd keyword of the 2nd array[obj] is.

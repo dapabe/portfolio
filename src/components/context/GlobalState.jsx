@@ -2,7 +2,7 @@ import { createContext, useMemo } from "react";
 
 import useToggle from "@hooks/useToggle";
 import useNoScroll from "@hooks/useNoScroll";
-import useKeyboard from "@hooks/useKeyboard";
+// import useKeyboard from "@hooks/useKeyboard";
 
 export const GlobalContext = createContext({});
 
@@ -31,17 +31,12 @@ export default function GlobalState({ children }) {
   };
 
   //=====================================================================
-  //  Not selectable if menu is closed.   <- refactor for better keyboard exp
-  const notSelectable = {
-    ...(!isMenuOpen && { tabIndex: -1 }),
-  };
 
   const memoValues = useMemo(
     () => ({
       isMenuOpen,
       handleMenu,
       closeAndResetPage,
-      notSelectable,
     }),
     [isMenuOpen]
   );

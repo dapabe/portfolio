@@ -1,12 +1,13 @@
 import { useContext, useRef } from "react";
 import { GlobalContext } from "@context/GlobalState";
+import { notSelectable } from "@utils/reusable";
 
 import Backdrop from "../Backdrop";
 import NavRoutes from "./NavRoutes.jsx";
 import SocialLinks from "../SocialLinks";
 
 export default function Menu() {
-  const { isMenuOpen, handleMenu, closeAndResetPage, notSelectable } =
+  const { isMenuOpen, handleMenu, closeAndResetPage } =
     useContext(GlobalContext);
   const Modal = useRef(null);
 
@@ -23,10 +24,13 @@ export default function Menu() {
       <Backdrop displayCondition={isMenuOpen} onClick={handleMenu} />
       <nav className={`menu ${isOpen}`} aria-labelledby="modal">
         <ul className="menuLinks">
-          <NavRoutes onClick={closeAndResetPage} {...notSelectable} />
+          <NavRoutes
+            onClick={closeAndResetPage}
+            {...notSelectable(!isMenuOpen)}
+          />
         </ul>
         <div className="flex justify-evenly sm:flex-col sm:justify-end sm:space-y-4">
-          <SocialLinks {...notSelectable} />
+          <SocialLinks {...notSelectable(!isMenuOpen)} />
         </div>
       </nav>
     </section>

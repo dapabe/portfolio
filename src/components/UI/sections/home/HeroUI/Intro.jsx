@@ -1,5 +1,7 @@
 import { ArrowRightIcon, MailIcon } from "@heroicons/react/solid";
 
+const hoverAnim = "inline w-6 transition-transform group-hover:translate-x-4";
+
 export default function Intro({ displayCondition }) {
   const scrollIntoView = displayCondition
     ? "translate-y-0"
@@ -22,12 +24,11 @@ export default function Intro({ displayCondition }) {
       >
         <a
           href="#contactSection"
-          className="group text-base"
+          className="group text-base transition-transform hover:translate-x-4"
           title="Enviar un correo"
         >
-          Enviar un{" "}
-          <MailIcon className="inline w-6 transition-transform group-hover:translate-x-4" />{" "}
-          <ArrowRightIcon className="inline w-6 transition-transform group-hover:translate-x-4" />
+          Enviar un <MailIcon className={hoverAnim} />{" "}
+          <ArrowRightIcon className={hoverAnim} />
         </a>
       </p>
     </section>

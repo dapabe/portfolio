@@ -1,10 +1,8 @@
 const FORM_ENDPOINT = import.meta.env.VITE_ENDPOINT_URL;
-import { useContext } from "react";
-import { GlobalContext } from "@context/GlobalState";
+
+import { notSelectable } from "@utils/reusable";
 import usePost from "@hooks/fetch/usePost";
-
 import form_inputs from "@src/assets/form_inputs.json";
-
 import FORM_UI from "./FORM_UI";
 import CreateInput from "@ui/reusable/FORM/CreateInput";
 
@@ -29,7 +27,6 @@ export default function FORM_Feedback({ displayCondition }) {
     postResponse: serverResponse,
     inputValues: postValues,
   });
-  const { notSelectable } = useContext(GlobalContext);
 
   const showFeedback = displayCondition ? "opacity-100" : "opacity-0 -z-10";
   return (
@@ -41,7 +38,7 @@ export default function FORM_Feedback({ displayCondition }) {
             {...element}
             onChange={handleChange}
             value={inputData[element.name]}
-            {...notSelectable}
+            {...notSelectable(!displayCondition)}
           />
         ))}
       </FORM_UI>
