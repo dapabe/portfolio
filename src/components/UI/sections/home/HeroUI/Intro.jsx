@@ -1,3 +1,5 @@
+import { ArrowRightIcon, MailIcon } from "@heroicons/react/solid";
+
 export default function Intro({ displayCondition }) {
   const scrollIntoView = displayCondition
     ? "translate-y-0"
@@ -13,7 +15,20 @@ export default function Intro({ displayCondition }) {
       <p
         className={`${scrollIntoView} font-medium transition-[translate_opacity] delay-500`}
       >
-        Futuro Desarrollador Full-Stack.
+        Desarrollador Front-End. <br />
+      </p>
+      <p
+        className={`${scrollIntoView} font-medium transition-[translate_opacity] delay-700`}
+      >
+        <a
+          href="#contactSection"
+          className="group text-base"
+          title="Enviar un correo"
+        >
+          Enviar un{" "}
+          <MailIcon className="inline w-6 transition-transform group-hover:translate-x-4" />{" "}
+          <ArrowRightIcon className="inline w-6 transition-transform group-hover:translate-x-4" />
+        </a>
       </p>
     </section>
   );

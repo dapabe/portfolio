@@ -104,8 +104,8 @@
   .intro_focus {
     @apply bg-sutilBlack p-8 text-base text-gray-400;
   }
-  .intro_focus h2 {
-    @apply mb-2 text-white;
+  .intro_list {
+    @apply space-y-2;
   }
   .intro_list > li {
     @apply list-disc;
@@ -124,10 +124,10 @@
     @apply relative flex max-w-lg rounded-md bg-white text-sutilBlack md:rounded-full;
   }
   .contactSection {
-    @apply flex min-h-[60vh] items-center justify-center bg-sutilBlack;
+    @apply flex items-center justify-center bg-sutilBlack;
   }
   .feedbackBtn {
-    @apply absolute mx-auto flex max-w-xs flex-col items-center rounded-md bg-white py-3 px-2 transition-opacity;
+    @apply absolute mx-auto flex h-40 max-w-xs items-center rounded-md bg-white py-3 px-2 transition-opacity;
   }
   .feedbackForm {
     @apply mx-auto flex w-[440px] max-w-lg overflow-hidden rounded-md bg-white p-4 text-sutilBlack transition-opacity delay-300;

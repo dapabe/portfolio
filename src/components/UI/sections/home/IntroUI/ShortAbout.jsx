@@ -4,15 +4,10 @@ export default function ShortAbout() {
     <div>
       <h2 className="sectionTitle">UN POCO DE MÍ</h2>
       <p className="indent-3">
-        Manejo mi tiempo en mayor parte programando y en mi tiempo libre hago
-        caminatas o leo contenido nuevo que pueda implementar a mi repertorio.
+        Manejo mayor parte de mi tiempo programando y por otro lado hago
+        caminatas, leo articulos o contenido nuevo que pueda implementar a mi
+        repertorio.
         <br />
-        Amo la música{" "}
-        <abbr title="Hip Hop y Jazz, entre otros géneros musicales">
-          Lo - Fi
-        </abbr>{" "}
-        y la complemento con Rock-Alternativo para largas sesiones escribiendo
-        código.
       </p>
       <div className="flex flex-col items-end text-sm">
         <CustomLink

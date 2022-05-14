@@ -19,7 +19,7 @@
       "id": "MESSAGE",
       "name": "message",
       "type": "message",
-      "placeholder": "Hola Patricio, he visto tu página web y ...",
+      "placeholder": "Hola Patricio, me contacto contigo para ...",
       "required": true,
       "rows": 3,
       "className": "w-full text-black rounded-md p-1 placeholder:text-sm p-2 border-sutilBlack border-2",
