@@ -44,7 +44,8 @@ export default function About() {
           <br />
           <br />
           Ahora estoy en camino de dominar estos y aprender más lenguajes, y
-          frameworks ampliando más mi conocimiento.
+          frameworks ampliando más mi conocimiento junto con otras herramientas
+          de diseño.
         </p>
       </section>
     </section>
