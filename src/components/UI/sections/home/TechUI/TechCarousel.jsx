@@ -1,5 +1,5 @@
-import { createRef } from "react";
-import useObserver from "@hooks/useObserver";
+// import { createRef } from "react";
+// import useObserver from "@hooks/useObserver";
 import { Carousel } from "@ui/reusable/exports";
 
 import { arrayCompareAndRetrieve } from "@utils/reusable";

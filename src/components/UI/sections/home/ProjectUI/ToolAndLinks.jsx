@@ -2,12 +2,15 @@ import { useContext } from "react";
 import { ProjectData } from "@context/UI";
 import { LinkIcon } from "@heroicons/react/solid";
 
+const linkStyle =
+  "m-auto h-8 w-8 transition-[scale] hover:scale-105 m-auto h-8 w-8 transition-[scale] hover:scale-105";
+
 export default function ToolsAndLinks() {
   const { made_with, links } = useContext(ProjectData);
   return (
-    <section className="mt-auto flex justify-between">
-      <div>
-        <h3 className="mb-2">Hecho con</h3>
+    <ul className="mt-auto flex justify-between text-center uppercase">
+      <li>
+        <h2 className="mb-2 text-sm tracking-widest">Hecho con</h2>
         <ul className="flex gap-3">
           {made_with.map((tool) => (
             <li key={tool}>
@@ -19,9 +22,9 @@ export default function ToolsAndLinks() {
             </li>
           ))}
         </ul>
-      </div>
-      <div>
-        <h3 className="mb-2">Links</h3>
+      </li>
+      <li>
+        <h2 className="mb-2 text-sm tracking-widest">Links</h2>
         <ol className="flex gap-3">
           <li>
             <a
@@ -34,7 +37,7 @@ export default function ToolsAndLinks() {
               <img
                 src={`icons/social/${"Github-mono.svg" || "Github.svg"}`}
                 alt="Logo de Github"
-                className="m-auto h-8 w-8 transition-[scale] hover:scale-105"
+                className={linkStyle}
               />
             </a>
           </li>
@@ -46,11 +49,11 @@ export default function ToolsAndLinks() {
               title="Ir a la pagina web"
               aria-label="Link hacia la pagina web"
             >
-              <LinkIcon className="m-auto h-8 w-8 transition-[scale] hover:scale-105" />
+              <LinkIcon className={linkStyle} />
             </a>
           </li>
         </ol>
-      </div>
-    </section>
+      </li>
+    </ul>
   );
 }

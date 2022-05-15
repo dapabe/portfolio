@@ -7,14 +7,16 @@ export default function GoTop() {
   const { isMenuOpen } = useContext(GlobalContext);
   const { isOffset } = useElementOffset();
 
-  const hasScrolled = isOffset && !isMenuOpen ? "z-20" : "-z-50 opacity-0";
+  const hasScrolled = isOffset && !isMenuOpen && true;
   return (
-    <a
-      href="#main"
-      className={`fixed right-4 bottom-2 w-12 rounded-md border-2 border-sutilBlack bg-white transition-opacity hover:scale-105 ${hasScrolled}`}
-      title="Volver arriba del todo"
-    >
-      <ChevronDoubleUpIcon className="text-sutilBlack" />
-    </a>
+    hasScrolled && (
+      <a
+        href="#main"
+        className="fixed right-4 bottom-2 z-20 w-12 rounded-md border-2 border-sutilBlack bg-white text-sutilBlack transition-[opacity_transform] hover:scale-105"
+        title="Volver arriba del todo"
+      >
+        <ChevronDoubleUpIcon />
+      </a>
+    )
   );
 }

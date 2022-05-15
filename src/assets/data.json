@@ -1,6 +1,6 @@
 {
   "icons_data": [
-    { "name": "HTML", "file": "HTML.svg", "img_desc": "Logo de HTML5" },
+    { "name": "HTML5", "file": "HTML5.svg", "img_desc": "Logo de HTML5" },
     { "name": "CSS", "file": "CSS.svg", "img_desc": "Logo de CSS" },
     {
       "name": "JavaScript",
@@ -14,11 +14,15 @@
       "img_desc": "Logo de TailwindCSS"
     },
 
-    { "name": "NodeJS", "file": "NodeJS.svg", "img_desc": "Logo de NodeJS" },
-    { "name": "ReactJS", "file": "ReactJS.svg", "img_desc": "Logo de ReactJS" },
-    { "name": "NextJS", "file": "NextJS.svg", "img_desc": "Logo de NextJS" },
+    { "name": "Node.JS", "file": "NodeJS.svg", "img_desc": "Logo de NodeJS" },
     {
-      "name": "NextJS-mono",
+      "name": "React.JS",
+      "file": "ReactJS.svg",
+      "img_desc": "Logo de ReactJS"
+    },
+    { "name": "Next.JS", "file": "NextJS.svg", "img_desc": "Logo de NextJS" },
+    {
+      "name": "Next.JS-mono",
       "file": "NextJS-mono.svg",
       "img_desc": "Logo de NextJS"
     },
@@ -42,7 +46,7 @@
     { "name": "Figma", "file": "Figma.svg", "img_desc": "Logo de Figma" }
   ],
   "tech_data": [
-    "HTML",
+    "HTML5",
     "CSS",
     "JavaScript",
     "TailwindCSS",

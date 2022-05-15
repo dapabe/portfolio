@@ -1,9 +1,24 @@
+import { arrayCompareAndRetrieve } from "@utils/reusable";
+
 export default function TechList({ list }) {
+  const ICONS_DATA = arrayCompareAndRetrieve({
+    aToLook: list[0],
+    aToSearch: list[1],
+    kToSearch: "name",
+  });
+  console.log(list[1]);
   return (
-    <ul className="mx-auto flex max-h-60 max-w-lg flex-wrap justify-center gap-2 font-semibold text-sutilBlack">
-      {list.map((name) => (
-        <li key={name} className="w-max rounded-md bg-champagnePink p-2">
-          {name}
+    <ul className="mx-auto flex max-w-xl flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
+      {ICONS_DATA.map(({ name, file, img_desc }) => (
+        <li key={name}>
+          <figure>
+            <img
+              src={`icons/logos/${file}`}
+              alt={img_desc}
+              className="mx-auto h-14 w-20"
+            />
+            <figcaption className="mx-auto mt-1 block w-max">{name}</figcaption>
+          </figure>
         </li>
       ))}
     </ul>
