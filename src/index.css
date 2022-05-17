@@ -137,7 +137,7 @@
   }
   /*============================================ About Page */
   .about {
-    @apply h-max p-10 pb-0 font-bold;
+    @apply h-max p-10 font-bold;
   }
   .about p {
     @apply indent-4;

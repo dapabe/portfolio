@@ -21,9 +21,9 @@ export default function Home() {
     <>
       <Hero />
       <Suspense fallback={<Lines />}>
-        <Intro />
         <Techs />
         <Projects />
+        <Intro />
         <Inspiration />
         <Contact />
       </Suspense>

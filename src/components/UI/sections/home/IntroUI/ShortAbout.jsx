@@ -4,9 +4,9 @@ export default function ShortAbout() {
     <section className="space-y-3">
       <h2 className="sectionTitle">UN POCO DE MÍ</h2>
       <p className="indent-3">
-        Manejo mayor parte de mi tiempo programando y, por otro lado, hago
-        caminatas, leo artículos o contenido nuevo que pueda implementar a mi
-        repertorio; el conocer nueva información nunca es en vano.
+        Manejo mayor parte de mi tiempo programando, por otro lado, leo
+        artículos o contenido nuevo que pueda agregar e implementar a mis
+        proyectos.
       </p>
       <CustomLink
         to="/about"
