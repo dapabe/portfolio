@@ -14,19 +14,23 @@ export default function Focus() {
       <h2 className="mb-2 tracking-wider text-white">Enfoques</h2>
       <ul className="intro_list">
         <li>Priorizar el rendimiento.</li>
-        <li>Diseño adaptable para diferentes dispositivos y plataformas.</li>
-        <li>Crear agradables interfaces y experiencias de usuario.</li>
         <li>
-          Accesibilidad;{" "}
+          Aplicar diseños adaptables para diferentes dispositivos y plataformas.
+        </li>
+        <li>
+          Crear interfaces agradables y satisfactorias experiencias de usuario.
+        </li>
+        <li>
+          Adaptar elementos de accesibilidad para personas que navegan con{" "}
           <ExtLink
             href={links[0]}
             className="text-gray-300"
             aria-labelledby={labels[0]}
             title={labels[0]}
           >
-            navegación por teclado
+            teclado
           </ExtLink>{" "}
-          y{" "}
+          y que utilicen{" "}
           <ExtLink
             href={links[1]}
             className="text-gray-300"
