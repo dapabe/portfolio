@@ -24,7 +24,10 @@ export default function SectionContact() {
     );
   };
   return (
-    <section id="contactSection" className="contactSection noMaxWidth noSpace">
+    <section
+      id="contactSection"
+      className="contactSection noMaxWidth noPadding"
+    >
       <Button />
       <ContactDisplay.Provider value={{ show }}>
         <FORM_Feedback displayCondition={show} />

@@ -28,11 +28,11 @@
   main {
     @apply min-h-screen overflow-x-clip;
   }
-  main > section:not(:only-child, :first-child, .noSpace) {
-    @apply my-10;
+  main > section:not(.noPadding) {
+    @apply py-10;
   }
   main > section {
-    @apply relative;
+    @apply relative text-white;
   }
   main > section:only-child {
     @apply min-h-screen;
@@ -82,7 +82,7 @@
     @apply w-1 self-center rounded-full transition-[translate_opacity];
   }
   .menuText {
-    @apply absolute -bottom-6 w-14 justify-center gap-x-1 text-sutilBlack;
+    @apply absolute -bottom-6 w-14 justify-center gap-x-1 text-xs;
   }
   .sidebar {
     @apply top-1/2 right-1 hidden -translate-y-1/2 flex-col gap-y-9 sm:flex md:transition-opacity;
@@ -90,19 +90,22 @@
   .social-icon {
     @apply h-8 w-8 hover:scale-110;
   }
-  /* Sections */
+  /* Sections ====================================================================================== */
+
   .heroSection {
     @apply h-screen overflow-x-hidden overflow-y-scroll scrollbar-hide;
   }
-
+  .projectSection {
+    @apply text-sutilBlack;
+  }
+  .techSection {
+    @apply bg-gradient-to-t from-vaporBlue to-vaporViolet;
+  }
   .introSection {
-    @apply flex min-h-max flex-wrap justify-between gap-2;
+    @apply flex flex-col justify-around gap-4 bg-gradient-to-b from-vaporBlue to-vaporViolet lg:flex-row;
   }
-  .introSection > * {
+  .introSection > section {
     @apply m-auto h-max max-w-md;
-  }
-  .intro_focus {
-    @apply bg-sutilBlack p-8 text-base text-gray-400;
   }
   .intro_list {
     @apply space-y-2;
@@ -110,15 +113,8 @@
   .intro_list > li {
     @apply list-disc;
   }
-
-  .techSection {
-    @apply min-h-max bg-gradient-to-t from-vaporBlue to-vaporViolet text-white;
-  }
-  .projectSection {
-    @apply min-h-max bg-gradient-to-b from-vaporBlue to-vaporViolet text-white lg:justify-around;
-  }
   .inspirationSection {
-    @apply flex flex-col gap-y-6 bg-red-500 text-white;
+    @apply flex flex-col gap-y-6 bg-red-500;
   }
   .quoteCard {
     @apply relative flex max-w-lg rounded-md bg-white text-sutilBlack md:rounded-full;
@@ -135,9 +131,9 @@
   .inputError {
     @apply inline-block select-none text-sm text-red-600 opacity-0 lg:transition-opacity;
   }
-  /*============================================ About Page */
+  /* About Page ====================================================================================== */
   .about {
-    @apply h-max p-10 font-bold;
+    @apply font-semibold text-sutilBlack;
   }
   .about p {
     @apply indent-4;

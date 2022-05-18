@@ -1,25 +1,29 @@
 import SVGWave1 from "@ui/reusable/decorations/SVGWave1";
-import TechCarousel from "./TechUI/TechCarousel";
+
+import { arrayCompareAndRetrieve } from "@utils/reusable";
 
 import data from "@src/assets/data.json";
+// import TechCarousel from "./TechUI/TechCarousel";
 import TechList from "./TechUI/TechList";
 
-const tech_data = data.tech_data;
-const tech_icons = data.icons_data;
-
+const ICONS_DATA = arrayCompareAndRetrieve({
+  aToLook: data.tech_data,
+  aToSearch: data.icons_data,
+  kToSearch: "name",
+});
 export default function SectionTechs() {
   return (
-    <section className="techSection noMaxWidth noSpace">
-      <SVGWave1 />
+    <section className="techSection noMaxWidth noPadding">
+      <SVGWave1 className="rotate-180" />
       <h2 className="sectionTitle mb-8 ml-16 mxsm:ml-0 mxsm:text-center">
         TECNOLOGÍAS
       </h2>
-      {/* <TechCarousel list={[tech_data, tech_icons]} /> */}
-      <TechList list={[tech_data, tech_icons]} />
-      <h3 className="ml-auto mr-16 mt-8 w-max max-w-xs mxsm:mx-auto">
-        - Siempre al tanto de las tecnologías solicitadas en el mercado.
+      {/* <TechCarousel list={ICONS_DATA} /> */}
+      <TechList list={ICONS_DATA} />
+      <h3 className="ml-auto mr-16 mt-8 w-max max-w-sm mxsm:mx-auto">
+        - Siempre informado de las tecnologías más utilizadas del mercado.
       </h3>
-      <SVGWave1 position="bottom" fill="fill-vaporBlue" />
+      <SVGWave1 fill="fill-vaporBlue" />
     </section>
   );
 }

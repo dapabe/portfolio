@@ -1,15 +1,7 @@
-import { arrayCompareAndRetrieve } from "@utils/reusable";
-
 export default function TechList({ list }) {
-  const ICONS_DATA = arrayCompareAndRetrieve({
-    aToLook: list[0],
-    aToSearch: list[1],
-    kToSearch: "name",
-  });
-  console.log(list[1]);
   return (
     <ul className="mx-auto flex max-w-xl flex-wrap justify-center gap-x-4 gap-y-2 text-sm">
-      {ICONS_DATA.map(({ name, file, img_desc }) => (
+      {list.map(({ name, file, img_desc }) => (
         <li key={name}>
           <figure>
             <img

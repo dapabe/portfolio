@@ -1,7 +1,7 @@
 import CustomLink from "@ui/react-router/CustomLink";
 export default function ShortAbout() {
   return (
-    <section className="space-y-3">
+    <section className="space-y-3 rounded-md border bg-white p-4 text-sutilBlack">
       <h2 className="sectionTitle">UN POCO DE MÍ</h2>
       <p className="indent-3">
         Manejo mayor parte de mi tiempo programando, por otro lado, leo
@@ -10,7 +10,7 @@ export default function ShortAbout() {
       </p>
       <CustomLink
         to="/about"
-        className="relative ml-auto block w-max text-sm tracking-widest text-white before:absolute before:-bottom-1 before:-left-2 before:-z-10 before:h-7 before:w-48 before:-skew-x-12 before:rounded-md before:bg-sutilBlack before:transition-transform before:ease-in before:hover:scale-y-125"
+        className="ml-auto block w-max -skew-x-12 bg-sutilBlack py-1 px-2 text-sm tracking-widest text-white  transition-transform ease-in hover:translate-x-2"
         onClick={() => setTimeout(() => window.scroll(0, 0), 200)}
         aria-labelledby="Ir a mi biografía"
         title="Ir a mi biografía"

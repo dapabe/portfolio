@@ -23,7 +23,7 @@ export default function SectionHero() {
   return (
     <section
       ref={target}
-      className="heroSection noMaxWidth "
+      className="heroSection noMaxWidth noPadding"
       onScroll={checkScroll}
     >
       <section className={hasScrolledHero}>

@@ -1,15 +1,6 @@
-export default function SVGWave1({ display, position, fill }) {
-  const styling = (pos) => {
-    switch (pos) {
-      case "bottom":
-        return "bottom-0";
-
-      default:
-        return "top-0 rotate-180";
-    }
-  };
+export default function SVGWave1({ className, fill }) {
   return (
-    <div className={`${display} ${styling(position)} left-0 w-full `}>
+    <div className={`${className ?? ""} w-full `}>
       <svg
         viewBox="0 0 1200 120"
         preserveAspectRatio="none"

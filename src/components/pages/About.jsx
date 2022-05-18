@@ -2,7 +2,7 @@ import { ExtLink, AbbrLang } from "@utils/text";
 
 export default function About() {
   return (
-    <section className="about noMaxWidth ">
+    <section className="about noMaxWidth">
       <section className="mx-auto mt-10 max-w-xl space-y-6">
         <h1 className="paragraphTitle text-center underline underline-offset-4">
           COMO EMPECE

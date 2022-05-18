@@ -3,7 +3,7 @@ import Focus from "./IntroUI/Focus";
 
 export default function SectionIntro() {
   return (
-    <section className="introSection">
+    <section className="introSection noMaxWidth">
       <ShortAbout />
       <Focus />
     </section>

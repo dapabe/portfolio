@@ -3,7 +3,7 @@ import ToolsAndLinks from "./ToolAndLinks";
 export default function WideCard({ image, title, description }) {
   return (
     <article>
-      <figure className="group relative flex h-max min-w-[250px] max-w-min flex-wrap overflow-hidden rounded-lg border-2 border-champagnePink bg-sutilBlack md:max-h-min md:max-w-2xl md:flex-nowrap">
+      <figure className="group relative flex h-max min-w-[250px] max-w-min flex-wrap overflow-hidden rounded-lg border-2 border-sutilBlack bg-sutilBlack text-white md:max-h-min md:max-w-2xl md:flex-nowrap">
         <img
           src={`/images/works/${image || "placeholder.jpg"}`}
           alt={description}
