@@ -1,20 +1,22 @@
-import { useState } from "react";
+import useToggle from "@hooks/useToggle";
 import PlayButton from "./PlayButton";
 
 export default function Carousel({ children }) {
-  const [pause, setPause] = useState(false);
-  const handlePause = () => {
-    setPause(!pause);
-  };
+  const [pause, handlePause] = useToggle(true);
+
   return (
     <div className="relative w-full overflow-hidden">
       <ul
         style={{ animationPlayState: pause ? "paused" : "running" }}
-        className={`flex h-max w-[${200 * children.length}px] animate-scroll`}
+        className={`flex h-max w-[${
+          200 * children.length
+        }px] animate-scroll gap-x-4`}
       >
-        {children}
+        {children.map((child, idx) => (
+          <li key={idx}>{child}</li>
+        ))}
       </ul>
-      <PlayButton initialState={pause} onClick={handlePause} />
+      <PlayButton initialState={pause} cb={handlePause} />
     </div>
   );
 }

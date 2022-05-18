@@ -8,6 +8,7 @@ export default function TechList({ list }) {
               src={`icons/logos/${file}`}
               alt={img_desc}
               className="mx-auto h-14 w-20"
+              loading="lazy"
             />
             <figcaption className="mx-auto mt-1 block w-max">{name}</figcaption>
           </figure>
