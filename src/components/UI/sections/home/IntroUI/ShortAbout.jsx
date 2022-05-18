@@ -1,7 +1,7 @@
 import CustomLink from "@ui/react-router/CustomLink";
 export default function ShortAbout() {
   return (
-    <section className="space-y-3 rounded-md border bg-white p-4 text-sutilBlack">
+    <section className="space-y-3 rounded-md border bg-champagnePink p-4 text-sutilBlack">
       <h2 className="sectionTitle">UN POCO DE MÍ</h2>
       <p className="indent-3">
         Manejo mayor parte de mi tiempo programando, por otro lado, leo
