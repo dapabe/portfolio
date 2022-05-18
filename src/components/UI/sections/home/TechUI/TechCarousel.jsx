@@ -5,6 +5,7 @@ export default function TechCarousel({ list }) {
     <Carousel>
       {list.map(({ file, img_desc }) => (
         <img
+          key={file}
           src={`/icons/logos/${file}`}
           alt={img_desc}
           loading="lazy"

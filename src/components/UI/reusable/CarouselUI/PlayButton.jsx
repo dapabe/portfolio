@@ -1,31 +1,31 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { CarouselAnimation } from "@context/UI";
 import { PlayIcon, StopIcon } from "@heroicons/react/solid";
 
-const iconSizes = "h-full w-full";
-
-export default function PlayButton({ initialState, cb }) {
-  const [firstTime, setFirstTime] = useState(true);
-
-  const displayButton = `w-20 transition-opacity ${
-    !firstTime && "opacity-0 group-hover:opacity-100 group-active:opacity-100"
+export default function PlayButton() {
+  const { firstWatch, setFirstWatch, isPaused, handlePause } =
+    useContext(CarouselAnimation);
+  const displayButton = `transition-opacity ${
+    !firstWatch && "opacity-0 group-hover:opacity-100 group-active:opacity-100"
   }`;
+
   return (
     <button
       type="button"
       className="group absolute inset-0 flex justify-center"
-      title={initialState ? "Resumir carrusel" : "Pausar carrusel"}
+      title={isPaused ? "Resumir carrusel" : "Pausar carrusel"}
       onClick={() => {
-        setFirstTime(false);
-        cb();
+        setFirstWatch(false);
+        handlePause();
       }}
     >
-      {initialState ? (
+      {isPaused ? (
         <i className={displayButton}>
-          <PlayIcon className={iconSizes} />
+          <PlayIcon className="w-20" />
         </i>
       ) : (
         <i className={displayButton}>
-          <StopIcon className={iconSizes} />
+          <StopIcon className="w-20" />
         </i>
       )}
     </button>

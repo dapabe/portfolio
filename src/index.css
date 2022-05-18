@@ -26,7 +26,7 @@
     @apply fixed;
   }
   main {
-    @apply min-h-screen overflow-x-clip;
+    @apply min-h-screen overflow-x-hidden;
   }
   main > section:not(.noPadding) {
     @apply py-10;
