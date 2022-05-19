@@ -14,7 +14,7 @@ module.exports = {
         Comfortaa: ["Comfortaa", "serif"],
       },
       animation: {
-        scroll: "scroll 30s linear infinite",
+        slide: "slide 22s linear infinite",
       },
 
       keyframes: {
@@ -26,12 +26,12 @@ module.exports = {
             transform: "translateY(-24vw) scaleY(0)",
           },
         },
-        scroll: {
+        slide: {
           "0%": {
             transform: "translateX(0)",
           },
           "100%": {
-            transform: "translateX(calc(-200px * 7))",
+            transform: "translateX(calc(-160px * 9))",
           },
         },
       },

@@ -7,6 +7,7 @@ export default function WideCard({ image, title, description }) {
         <img
           src={`/images/works/${image || "placeholder.jpg"}`}
           alt={description}
+          loading="lazy"
           className="h-full max-h-[15rem] max-w-sm object-cover"
         />
         <div className="absolute bottom-0 left-1/2 hidden lg:block" />

@@ -1,20 +1,14 @@
 import { useState, useMemo } from "react";
 import { CarouselAnimation } from "@context/UI";
 import useToggle from "@hooks/useToggle";
-import { arrayCompareAndRetrieve } from "@utils/reusable";
 
 import data from "@src/assets/data.json";
+
 import TechCarousel from "./TechUI/TechCarousel";
 import TechList from "./TechUI/TechList";
 
 import SVGWave1 from "@ui/reusable/decorations/SVGWave1";
 import { FilmIcon, CollectionIcon } from "@heroicons/react/outline";
-
-const ICONS_DATA = arrayCompareAndRetrieve({
-  aToLook: data.tech_data,
-  aToSearch: data.icons_data,
-  kToSearch: "name",
-});
 
 export default function SectionTechs() {
   const [hasAnim, handleDisplay] = useToggle(true);
@@ -49,7 +43,7 @@ const ListSwitchButton = ({ ...props }) => {
   return (
     <button
       type="button"
-      className={`relative w-max rounded-md bg-white p-1 text-sutilBlack after:absolute after:-right-2 after:-top-2 after:h-4 after:w-4 after:rounded-full mxsm:ml-0 mxsm:text-center ${displayPing}`}
+      className={`analog-shadow-right relative w-max rounded-md bg-white p-1 text-sutilBlack transition-[box-shadow_transform] before:bg-gray-500 after:absolute after:-right-2 after:-top-2 after:h-4 after:w-4 after:rounded-full active:translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-gray-500 mxsm:ml-0 mxsm:text-center ${displayPing}`}
       onClick={() => {
         cb();
         cb2();
@@ -76,15 +70,17 @@ const AlternateLists = ({ displayCondition }) => {
   //  Handle visual effects;
   //    Display play btn icon the first time.
   //    Maintain animation state between re-renders.
+  const memoValues = useMemo(
+    () => ({ firstWatch, setFirstWatch, isPaused, handlePause }),
+    [isPaused]
+  );
   return (
-    <CarouselAnimation.Provider
-      value={{ firstWatch, setFirstWatch, isPaused, handlePause }}
-    >
+    <CarouselAnimation.Provider value={memoValues}>
       <div className="container mx-auto">
         {displayCondition ? (
-          <TechCarousel list={ICONS_DATA} />
+          <TechCarousel data={data} />
         ) : (
-          <TechList list={ICONS_DATA} />
+          <TechList data={data} />
         )}
       </div>
     </CarouselAnimation.Provider>

@@ -22,7 +22,7 @@ export default function Intro({ displayCondition }) {
       >
         <a
           href="#contactSection"
-          className="analog-shadow block w-max rounded-md bg-white p-2 text-base text-sutilBlack transition-[box-shadow_transform] active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-gray-500"
+          className="analog-shadow-left block w-max rounded-md bg-white p-2 text-base text-sutilBlack transition-[box-shadow_transform] active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-gray-500"
           title="Ir a la sección de contacto"
         >
           CONTÁCTAME <MailIcon className="inline-block w-6 -translate-y-0.5" />

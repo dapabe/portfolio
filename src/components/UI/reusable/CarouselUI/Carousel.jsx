@@ -9,12 +9,12 @@ export default function Carousel({ children }) {
     <div className="relative w-full overflow-hidden">
       <ul
         style={{ animationPlayState: isPaused ? "paused" : "running" }}
-        className={`flex h-max w-[${
-          100 * children.length
-        }px] animate-scroll gap-x-4`}
+        className={`animate-slide whitespace-nowrap `}
       >
         {children.map((child, idx) => (
-          <li key={idx}>{child}</li>
+          <li key={idx} className="inline-block align-top">
+            {child}
+          </li>
         ))}
       </ul>
       <PlayButton />
