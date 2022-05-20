@@ -18,14 +18,6 @@ module.exports = {
       },
 
       keyframes: {
-        wave: {
-          "0%": {
-            transform: "translateY(0) scaleY(1)",
-          },
-          "100%": {
-            transform: "translateY(-24vw) scaleY(0)",
-          },
-        },
         slide: {
           "0%": {
             transform: "translateX(0)",
