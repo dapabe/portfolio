@@ -1,5 +1,5 @@
 import { arrayRetrieveWithDupe } from "@utils/reusable";
-import { Carousel } from "@ui/reusable/exports";
+import Carousel from "@ui/reusable/CarouselUI/Carousel";
 export default function TechCarousel({ data }) {
   const display_info = arrayRetrieveWithDupe({
     aToLook: data.tech_data,
