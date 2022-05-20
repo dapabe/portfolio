@@ -15,18 +15,18 @@ export default function Quote() {
           <q>{quote}</q>{" "}
         </ExtLink>
       </p>
-      <h2>
+      <b>
         <a
           href={webpage}
           aria-label="Ir a su página web."
           title="Ir a su página web."
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-inOut mt-auto ml-auto block font-semibold after:bg-sutilBlack"
+          className="btn-inOut mt-auto ml-auto block after:bg-sutilBlack"
         >
           {nickname}
         </a>
-      </h2>
+      </b>
     </section>
   );
 }

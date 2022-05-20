@@ -13,7 +13,7 @@ export default function PlayButton() {
     <button
       type="button"
       className="group absolute inset-0 flex justify-center"
-      title={isPaused ? "Resumir carrusel" : "Pausar carrusel"}
+      title={isPaused ? "Resumir" : "Pausar"}
       onClick={() => {
         setFirstWatch(false);
         handlePause();

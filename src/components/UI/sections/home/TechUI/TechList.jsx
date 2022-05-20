@@ -16,7 +16,9 @@ export default function TechList({ data }) {
               className="mx-auto h-20 w-20"
               loading="lazy"
             />
-            <figcaption className="mx-auto mt-1 block w-max">{name}</figcaption>
+            <figcaption className="mt-1 text-center">
+              <small>{name}</small>
+            </figcaption>
           </figure>
         </li>
       ))}

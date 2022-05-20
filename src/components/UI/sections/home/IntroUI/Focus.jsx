@@ -10,7 +10,7 @@ const labels = [
 ];
 export default function Focus() {
   return (
-    <section className="bg-sutilBlack p-8 text-base text-gray-400">
+    <section className="bg-sutilBlack p-8  text-base text-gray-400">
       <h2 className="mb-2 tracking-wider text-white">Enfoques</h2>
       <ul className="intro_list">
         <li>Priorizar el rendimiento.</li>

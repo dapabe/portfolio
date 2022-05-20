@@ -51,15 +51,15 @@ export function compareAndRetrieve({
 //                function takes a string[] as 1st parameter.
 //                Returns the concidence else Null.
 export function arrayCompareAndRetrieve({ aToLook, aToSearch, kToSearch }) {
-  const foundValues = aToSearch.filter((item1) => {
-    return aToLook.find((item2) => item2 === item1[kToSearch]);
-  });
+  const foundValues = aToSearch.filter((item1) =>
+    aToLook.find((item2) => item2 === item1[kToSearch])
+  );
   return foundValues.length === 0 ? null : foundValues;
 }
 export function arrayRetrieveWithDupe({ aToLook, aToSearch, kToSearch }) {
-  const foundValues = aToSearch.filter((item1) => {
-    return aToLook.find((item2) => item2 === item1[kToSearch]);
-  });
+  const foundValues = aToSearch.filter((item1) =>
+    aToLook.find((item2) => item2 === item1[kToSearch])
+  );
   const dupedArr = [...foundValues];
   dupedArr.push(...foundValues);
   return foundValues.length === 0 ? null : dupedArr;

@@ -30,9 +30,9 @@ export default function SectionTechs() {
         />
       </div>
       <AlternateLists displayCondition={hasAnim} />
-      <h3 className="ml-auto mr-16 mt-8 w-max max-w-sm mxsm:mx-auto">
+      <small className="ml-auto mr-16 mt-8 block w-max max-w-sm mxsm:mx-auto">
         - Siempre informado de las tecnologías más utilizadas del mercado.
-      </h3>
+      </small>
       <SVGWave1 fill="fill-vaporBlue" />
     </section>
   );
