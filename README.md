@@ -1,6 +1,6 @@
 ### Leér en [Español](#mi-portafolio)
 
-### Read in [English](#my-portfolio) .
+<!-- ### Read in [English](#my-portfolio) . -->
 
 ---
 
@@ -8,8 +8,8 @@
 
 # Mi Portafolio
 
-&nbsp;&nbsp;&nbsp;&nbsp; Mi sitio web personal, es una SPA
+&nbsp;&nbsp;&nbsp;&nbsp; Mi sitio web personal, actualmente es una SPA y está en proceso de recrearse todo el sitio con SSR a traves de Next.JS.
 
-Actualmente desarrollado con:
-- React.JS
+Herramientas de desarrollo:
+- React.JS -> Next.JS
 - Tailwind CSS
