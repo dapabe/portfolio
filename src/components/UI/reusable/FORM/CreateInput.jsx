@@ -7,9 +7,8 @@ export default function CreateInput(props) {
   // const regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$";
   // RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$")         Regexp keeps breaking
 
-  const handleFocus = () => {
-    setFocused(true);
-  };
+  const handleFocus = () => setFocused(true);
+
   // const lastInput = () => attrs.name === "message" && setFocused(true);  <-  good UX?
 
   //  Considering refactoring this.
@@ -22,12 +21,7 @@ export default function CreateInput(props) {
 
   return (
     <div className="inputContainer">
-      <label
-        htmlFor={id}
-        {...(label.className && { className: label.className })}
-      >
-        {label.text}
-      </label>
+      <label htmlFor={id}>{label}</label>
       {createElement(
         node,
         {
@@ -44,7 +38,7 @@ export default function CreateInput(props) {
         },
         null
       )}
-      <span className="inputError ">{errorMessage}</span>
+      <span className="inputError">{errorMessage}</span>
     </div>
   );
 }

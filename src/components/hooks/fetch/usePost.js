@@ -1,8 +1,12 @@
 import { useState } from "react";
 import useToggle from "@hooks/useToggle";
-import { sendEmail } from "@utils/reusable";
+import { sendEmail, isEmpty, isEmail } from "@utils/reusable";
 
-export default function usePost({ url, postResponse, inputValues = null }) {
+export default function usePost({
+  url,
+  postResponses = null,
+  inputValues = null,
+}) {
   const [response, setResponse] = useState(null);
   const [isLoading, handleLoad] = useToggle(false);
   const [inputData, setInputData] = useState(inputValues);
@@ -20,25 +24,70 @@ export default function usePost({ url, postResponse, inputValues = null }) {
     e.preventDefault();
     handleLoad(); // true
 
-    return await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(inputData),
-    })
-      .then(() => {
-        setResponse(postResponse.ok);
-        handleLoad(); //  false
-      })
-      .catch(() => {
-        sendEmail(e.target).then(() => {
-          setResponse(postResponse.error);
-          handleLoad(); //  false
-        });
-      });
+    try {
+      try {
+        checkInputs();
+        await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(inputData),
+        })
+          .then(() => {
+            setResponse(postResponses.ok);
+            handleLoad();
+          })
+          .catch((error) => {
+            throw error;
+          });
+      } catch (error) {
+        sendEmail(e.target).then(
+          () => {
+            setResponse(postResponses.ok);
+            handleLoad();
+          },
+          (error) => {
+            throw error;
+          }
+        );
+      }
+    } catch (error) {
+      sendEmail(error).then(
+        () => {
+          setResponse(postResponses.error);
+          handleLoad();
+        },
+        () => {
+          postResponses.error.text =
+            "Ha ocurrido un error fatal, trabajaré en ello.";
+          setResponse(postResponses.error);
+          handleLoad();
+        }
+      );
+    }
   };
+  function checkInputs() {
+    const { user_email, message } = inputData;
+    user_email.trim();
+
+    if (isEmpty(user_email)) {
+      postResponses.error.text = "Por favor, rellena los campos vacíos.";
+      handleLoad();
+      throw new Error("Email validation 1");
+    } else if (!isEmail(user_email)) {
+      postResponses.error.text = "Ingresa un correo válido.";
+      handleLoad();
+      throw Error("Email validation 2");
+    }
+
+    if (isEmpty(message)) {
+      postResponses.error.text = "Por favor, rellena los campos vacíos.";
+      handleLoad();
+      throw new Error("Message validation 1");
+    }
+  }
 
   return { response, isLoading, inputData, handleChange, formSubmit };
 }

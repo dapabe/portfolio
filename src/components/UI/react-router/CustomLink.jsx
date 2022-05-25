@@ -12,16 +12,12 @@ const styling = (type) => {
 export default function CustomLink({ type, to, children, ...props }) {
   const resolved = useResolvedPath(to);
   const match = useMatch({ path: resolved.pathname, end: true });
+  const customCSS =
+    props.className ||
+    (match ? styling(type ? type : "primary") : styling("default"));
 
   return (
-    <Link
-      className={
-        props.className ||
-        (match ? styling(type ? type : "primary") : styling("default"))
-      }
-      to={to}
-      {...props}
-    >
+    <Link className={customCSS} to={to} {...props}>
       {children}
     </Link>
   );

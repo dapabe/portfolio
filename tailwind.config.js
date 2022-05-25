@@ -15,6 +15,7 @@ module.exports = {
       animation: {
         slide: "slide 22s linear infinite",
         xBounce: "xBounce 1s infinite",
+        spinBackwards: "spinBackwards 1s linear infinite",
       },
 
       keyframes: {
@@ -38,6 +39,11 @@ module.exports = {
           "100%": {
             transform: "translateY(-25%) rotate(-90deg)",
             animationTimingFunction: "cubic-bezier(0.8,0,1,1)",
+          },
+        },
+        spinBackwards: {
+          "100%": {
+            transform: "rotate(-360deg)",
           },
         },
       },
