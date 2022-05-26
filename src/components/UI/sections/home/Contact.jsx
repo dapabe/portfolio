@@ -4,7 +4,7 @@ import { CursorClickIcon } from "@heroicons/react/solid";
 import FORM_Feedback from "./ContactUI/FORM_Feedback";
 
 export default function SectionContact() {
-  const [show, handleShow] = useToggle(true);
+  const [show, handleShow] = useToggle(false);
   return (
     <section
       id="contactSection"
