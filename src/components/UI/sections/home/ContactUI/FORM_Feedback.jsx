@@ -19,9 +19,8 @@ export default function FORM_Feedback({ displayCondition }) {
     inputValues: postValues,
   });
 
-  const responseCondition = response ?? null;
+  const postResponse = response?.text || "";
   const responseClass = response?.className || "opacity-0";
-  console.log(response, responseCondition, responseClass);
 
   const showFeedback = displayCondition ? "opacity-100" : "opacity-0 -z-10";
   return (
@@ -38,7 +37,7 @@ export default function FORM_Feedback({ displayCondition }) {
         />
         <section className="flex">
           <span className={`transition-opacity ${responseClass}`}>
-            {response?.text || ""}
+            {postResponse}
           </span>
           <SubmitButton displayCondition={isLoading} />
         </section>
