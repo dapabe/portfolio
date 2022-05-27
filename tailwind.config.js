@@ -24,7 +24,7 @@ module.exports = {
             transform: "translateX(0)",
           },
           "100%": {
-            transform: "translateX(calc(-160px * 9))",
+            transform: "translateX(calc(-160px * 11))",
           },
         },
         xBounce: {
