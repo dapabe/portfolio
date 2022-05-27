@@ -20,6 +20,11 @@
       "file": "ReactJS.svg",
       "img_desc": "Logo de ReactJS"
     },
+    {
+      "name": "Redux",
+      "file": "Redux.svg",
+      "img_desc": "Logo de Redux"
+    },
     { "name": "Next.JS", "file": "NextJS.svg", "img_desc": "Logo de NextJS" },
     {
       "name": "Next.JS-mono",
@@ -43,7 +48,12 @@
     },
     { "name": "Twitter", "file": "Twitter.svg", "img_desc": "Logo de Twitter" },
 
-    { "name": "Figma", "file": "Figma.svg", "img_desc": "Logo de Figma" }
+    { "name": "Figma", "file": "Figma.svg", "img_desc": "Logo de Figma" },
+    {
+      "name": "Git",
+      "file": "Git.svg",
+      "img_desc": "Logo de Git"
+    }
   ],
   "tech_data": [
     "HTML5",
@@ -52,14 +62,16 @@
     "TailwindCSS",
     "Node.JS",
     "React.JS",
+    "Redux",
     "Next.JS",
     "MySQL",
-    "Figma"
+    "Figma",
+    "Git"
   ],
   "social_data": [
     {
       "name": "Github",
-      "url": "https://github.com/dapabe/portfolio-react-vite",
+      "url": "https://github.com/dapabe/portfolio",
       "img": "Github-mono.svg",
       "fallback_img": "Github.svg",
       "img_desc": "Ir al perfil de Github"
