@@ -8,8 +8,7 @@
 
 # Mi Portafolio
 
-&nbsp;&nbsp;&nbsp;&nbsp; Mi sitio web personal, actualmente es una SPA y está en proceso de recrearse todo el sitio con SSR a traves de un plugin de Vite; vite-plugin-ssr.
-
+&nbsp;&nbsp;&nbsp;&nbsp; Mi sitio web personal, actualmente es una SPA y está en proceso de migrar a una SSR.
 Herramientas de desarrollo:
 - React.JS 
 - Tailwind CSS
@@ -18,7 +17,7 @@ Herramientas de desarrollo:
 
 # My Portfolio
 
-&nbsp;&nbsp;&nbsp;&nbsp; Mi personal website, right now it's a SPA and it's being in process of being recreated into a SSR with a Vite plugin; vite-plugin-ssr.
+&nbsp;&nbsp;&nbsp;&nbsp; Mi personal website, right now it's a SPA and it's being in process of being migrated to a SSR.
 
 Development tools:
 - React.JS 
