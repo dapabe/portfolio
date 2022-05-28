@@ -23,14 +23,14 @@ export default function SectionTechs() {
       <div className="my-container mx-auto my-3 mb-8 flex items-center justify-between">
         <h2 className="sectionTitle w-max">TECNOLOGÍAS</h2>
         <ListSwitchButton
-          cb={() => setClick(true)}
-          cb2={handleDisplay}
           displayPing={displayPing}
           switchCondition={hasAnim}
+          cb={() => setClick(true)}
+          cb2={handleDisplay}
         />
       </div>
       <AlternateLists displayCondition={hasAnim} />
-      <small className="ml-auto mr-16 mt-8 block w-max max-w-sm mxsm:mx-auto">
+      <small className="mx-auto mt-8 block max-w-sm text-center sm:ml-auto sm:mr-16 sm:text-left">
         - Siempre informado de las tecnologías más utilizadas del mercado.
       </small>
       <SVGWave1 fill="fill-vaporBlue" />
@@ -43,7 +43,7 @@ const ListSwitchButton = ({ ...props }) => {
   return (
     <button
       type="button"
-      className={`analog-shadow-right relative w-max rounded-md bg-white p-1 text-sutilBlack transition-[box-shadow_transform] before:bg-gray-500 after:absolute after:-right-2 after:-top-2 after:h-4 after:w-4 after:rounded-full active:translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-gray-500 mxsm:ml-0 mxsm:text-center ${displayPing}`}
+      className={`analog-shadow-right relative w-max rounded-md bg-white p-1 text-sutilBlack transition-[box-shadow_transform] before:bg-gray-500 after:absolute after:-right-2 after:-top-2 after:h-4 after:w-4 after:rounded-full active:translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-gray-500 ${displayPing}`}
       onClick={() => {
         cb();
         cb2();

@@ -29,7 +29,7 @@ export default function Menu() {
             {...notSelectable(!isMenuOpen)}
           />
         </ul>
-        <div className="flex justify-evenly sm:flex-col sm:justify-end sm:space-y-4">
+        <div className="mt-auto flex justify-evenly">
           <SocialLinks {...notSelectable(!isMenuOpen)} />
         </div>
       </nav>

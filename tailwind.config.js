@@ -47,9 +47,6 @@ module.exports = {
           },
         },
       },
-      screens: {
-        mxsm: { max: "639px" },
-      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],

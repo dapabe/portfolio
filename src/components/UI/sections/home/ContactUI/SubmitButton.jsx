@@ -16,9 +16,9 @@ export default function SubmitButton({ displayCondition }) {
       {...notSelectable(!show)}
     >
       {displayCondition ? (
-        "Enviar"
-      ) : (
         <RefreshIcon className="mx-auto h-6 w-6 animate-spinBackwards" />
+      ) : (
+        "Enviar"
       )}
     </button>
   );
