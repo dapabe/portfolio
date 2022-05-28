@@ -3,8 +3,6 @@
 ### Read in [English](#my-portfolio) 
 
 ---
-[![Netlify Status](https://api.netlify.com/api/v1/badges/572f4485-bb7e-4edd-a92a-2ff1e0908458/deploy-status)](https://app.netlify.com/sites/dapabe/deploys)
-![Portfolio logo](public/preview.png)
 
 # Mi Portafolio
 
