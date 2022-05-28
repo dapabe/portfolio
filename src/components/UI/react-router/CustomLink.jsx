@@ -13,8 +13,7 @@ export default function CustomLink({ type, to, children, ...props }) {
   const resolved = useResolvedPath(to);
   const match = useMatch({ path: resolved.pathname, end: true });
   const customCSS =
-    props.className ||
-    (match ? styling(type ? type : "primary") : styling("default"));
+    props.className || (match ? styling(type ? type : "primary") : styling());
 
   return (
     <Link className={customCSS} to={to} {...props}>

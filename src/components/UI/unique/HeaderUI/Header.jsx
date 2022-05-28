@@ -3,7 +3,7 @@ import { GlobalContext } from "@context/GlobalState";
 
 import SkipNav from "./SkipNav";
 import CustomLink from "@ui/react-router/CustomLink";
-import LangSwitch from "./LangSwitch";
+// import LangSwitch from "./LangSwitch";
 import MenuButton from "./MenuButton/MenuButton";
 import SocialLinks from "../SocialLinks";
 import OverlayBars from "./OverlayBars";
@@ -28,9 +28,11 @@ export default function Header() {
       {/* <LangSwitch/> */}
 
       <MenuButton />
-      <aside className={`sidebar ${isMenuOpen ? "-z-50 opacity-0" : ""}`}>
-        <SocialLinks />
-      </aside>
+      {!isMenuOpen && (
+        <aside className="sidebar">
+          <SocialLinks />
+        </aside>
+      )}
     </header>
   );
 }
