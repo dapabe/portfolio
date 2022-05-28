@@ -9,6 +9,7 @@
 # Mi Portafolio
 
 &nbsp;&nbsp;&nbsp;&nbsp; Mi sitio web personal, actualmente es una SPA y está en proceso de migrar a una SSR.
+
 Herramientas de desarrollo:
 - React.JS 
 - Tailwind CSS
