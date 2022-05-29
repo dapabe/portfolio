@@ -1,6 +1,6 @@
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Lines } from "@fallback";
+import { Lines } from "@ui/Fallback.jsx";
 
 //      For testing
 // import { slowImport } from "./utilities/common";

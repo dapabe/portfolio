@@ -5,11 +5,11 @@ import { Lines } from "@ui/Fallback.jsx";
 //  only absolute paths are accepted.
 //  TODO: Look for a refactor
 import Hero from "@ui/sections/home/Hero";
-const Intro = lazy(() => import("@ui/sections/home/Introduction"));
-const Techs = lazy(() => import("@ui/sections/home/Technologies"));
-const Projects = lazy(() => import("@ui/sections/home/Projects"));
-const Inspiration = lazy(() => import("@ui/sections/home/Inspiration"));
-const Contact = lazy(() => import("@ui/sections/home/Contact"));
+// const Intro = lazy(() => import("@ui/sections/home/Introduction"));
+// const Techs = lazy(() => import("@ui/sections/home/Technologies"));
+// const Projects = lazy(() => import("@ui/sections/home/Projects"));
+// const Inspiration = lazy(() => import("@ui/sections/home/Inspiration"));
+// const Contact = lazy(() => import("@ui/sections/home/Contact"));
 
 // function SuspendedComponents() {
 //   return sections.map((section, i) => (
@@ -20,13 +20,13 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Suspense fallback={<Lines />}>
+      {/* <Suspense fallback={<Lines />}>
         <Projects />
         <Techs />
         <Intro />
         <Inspiration />
         <Contact />
-      </Suspense>
+      </Suspense> */}
     </>
   );
 }

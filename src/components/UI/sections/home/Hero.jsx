@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import useToggle from "@hooks/useToggle";
-import useWindowSize from "@hooks/useWindowSize";
-import { ReactComponent as Logo } from "/public/dapabe.svg";
+import Logo from "public/dapabe.svg";
 import Intro from "./HeroUI/Intro";
 import Stripes from "./HeroUI/Stripes";
 import ScrollBouncer from "./HeroUI/ScrollBouncer";
+import Image from "next/image";
 
 export default function SectionHero() {
   const target = useRef();
@@ -28,7 +28,7 @@ export default function SectionHero() {
     >
       <section className={hasScrolledHero}>
         <Stripes displayCondition={elmOffset} />
-        <Logo className="absolute right-1 top-1/2 flex -translate-y-1/2 translate-x-[54%] items-end justify-center text-[20rem] transition-transform sm:translate-x-[55%] sm:scale-125 md:scale-[1.4] lg:translate-x-[57%] lg:scale-[2] xl:translate-x-[58%] xl:scale-[2.5]" />
+        <Logo className="absolute right-1 top-1/2 -translate-y-1/2 translate-x-[53%] scale-75 text-[20rem] transition-transform sm:translate-x-[52.75%] lg:translate-x-[52.5%] " />
         <Intro displayCondition={elmOffset} />
         <ScrollBouncer displayCondition={elmOffset} />
       </section>
