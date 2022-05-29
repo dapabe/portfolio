@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { arrayRetrieveWithDupe } from "@utils/reusable";
 import Carousel from "@ui/reusable/CarouselUI/Carousel";
 export default function TechCarousel({ data }) {
@@ -9,12 +10,12 @@ export default function TechCarousel({ data }) {
   return (
     <Carousel>
       {display_info.map(({ file, img_desc }, idx) => (
-        <img
+        <Image
           key={idx}
           src={`/icons/logos/${file}`}
           alt={img_desc}
-          loading="lazy"
-          className="h-20 w-40"
+          width={160}
+          height={80}
         />
       ))}
     </Carousel>

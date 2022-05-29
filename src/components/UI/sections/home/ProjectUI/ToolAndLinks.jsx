@@ -1,22 +1,24 @@
 import { useContext } from "react";
 import { ProjectData } from "@context/UI";
 import { LinkIcon } from "@heroicons/react/solid";
+import Image from "next/image";
 
-const linkStyle =
-  "m-auto h-8 w-8 transition-[scale] hover:scale-105 m-auto h-8 w-8 transition-[scale] hover:scale-105";
+const linkStyle = "m-auto transition-[scale] hover:scale-105";
 
 export default function ToolsAndLinks() {
   const { made_with, links } = useContext(ProjectData);
   return (
-    <ul className="mt-auto flex justify-between text-center uppercase">
+    <ul className="mb-auto flex justify-between text-center uppercase">
       <li>
         <h2 className="mb-2 text-sm tracking-widest">Hecho con</h2>
         <ul className="flex gap-3">
           {made_with.map((tool) => (
             <li key={tool}>
-              <img
-                src={`icons/logos/${tool}`}
-                className="m-auto h-8 w-8"
+              <Image
+                src={`/icons/logos/${tool}`}
+                width={32}
+                height={32}
+                className="m-auto"
                 alt={tool}
               />
             </li>
@@ -34,10 +36,12 @@ export default function ToolsAndLinks() {
               title="Ir al repositorio de Github"
               aria-label="Link hacia le repositorio"
             >
-              <img
-                src={`icons/social/${"Github-mono.svg" || "Github.svg"}`}
-                alt="Logo de Github"
+              <Image
+                src={`/icons/social/${"Github-mono.svg" || "Github.svg"}`}
+                width={32}
+                height={32}
                 className={linkStyle}
+                alt="Logo de Github"
               />
             </a>
           </li>
@@ -49,7 +53,7 @@ export default function ToolsAndLinks() {
               title="Ir a la pagina web"
               aria-label="Link hacia la pagina web"
             >
-              <LinkIcon className={linkStyle} />
+              <LinkIcon className={linkStyle + " h-8 w-8"} />
             </a>
           </li>
         </ol>
