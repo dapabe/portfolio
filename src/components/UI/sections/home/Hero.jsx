@@ -4,7 +4,6 @@ import Logo from "public/dapabe.svg";
 import Intro from "./HeroUI/Intro";
 import Stripes from "./HeroUI/Stripes";
 import ScrollBouncer from "./HeroUI/ScrollBouncer";
-import Image from "next/image";
 
 export default function SectionHero() {
   const target = useRef();
