@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ProjectData } from "@context/UI";
+import { ProjectData } from "@context/states";
 import { LinkIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 

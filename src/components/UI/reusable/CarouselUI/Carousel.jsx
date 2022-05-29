@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CarouselAnimation } from "@context/UI";
+import { CarouselAnimation } from "@context/states";
 import PlayButton from "./PlayButton";
 
 export default function Carousel({ children }) {

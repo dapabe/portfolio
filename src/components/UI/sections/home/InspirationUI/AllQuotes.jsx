@@ -1,4 +1,4 @@
-import { QuoteData } from "@context/UI";
+import { QuoteData } from "@context/states";
 import data from "@src/assets/data.json";
 import QuoteCard from "./QuoteCard";
 

@@ -1,5 +1,5 @@
 import { useContext, useRef } from "react";
-import { GlobalContext } from "@context/GlobalState";
+import { GlobalContext } from "@context/states";
 import { notSelectable } from "@utils/reusable";
 
 import Backdrop from "../Backdrop";

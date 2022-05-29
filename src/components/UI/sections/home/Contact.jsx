@@ -1,4 +1,4 @@
-import { ContactDisplay } from "@context/UI";
+import { ContactDisplay } from "@context/states";
 import useToggle from "@hooks/useToggle";
 import { CursorClickIcon } from "@heroicons/react/solid";
 import FORM_Feedback from "./ContactUI/FORM_Feedback";

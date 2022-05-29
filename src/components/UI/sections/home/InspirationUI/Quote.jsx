@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { QuoteData } from "@context/UI";
+import { QuoteData } from "@context/states";
 import { ExtLink } from "@utils/text";
 
 export default function Quote() {

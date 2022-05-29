@@ -1,9 +1,10 @@
-import GlobalState from "@context/GlobalState";
+import GlobalState from "./HOC/GlobalState";
+import Portal from "./HOC/Portal";
 
 import Header from "./UI/unique/HeaderUI/Header";
 import Footer from "./UI/unique/FooterUI/Footer";
 import GoTop from "./UI/unique/GoTop";
-import MenuModal from "./UI/unique/MenuUI/MenuModal";
+import Menu from "./UI/unique/MenuUI/Menu";
 
 export default function AppLayout({ children }) {
   return (
@@ -12,7 +13,9 @@ export default function AppLayout({ children }) {
       <main id="main">{children}</main>
       <Footer />
       <GoTop />
-      {/* <MenuModal /> */}
+      <Portal selector="menu-root">
+        <Menu />
+      </Portal>
     </GlobalState>
   );
 }
