@@ -8,6 +8,6 @@ export default function MenuModal() {
     <Suspense fallback={null}>
       <Menu />
     </Suspense>,
-    globalThis.getElementById("menu-root")
+    document.getElementById("menu-root")
   );
 }

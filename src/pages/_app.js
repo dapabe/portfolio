@@ -53,6 +53,11 @@ function MyApp({ Component, pageProps }) {
         />
         <meta property="og:description" content="Tu página hecha realidad.." />
         <meta property="og:site_name" content="dapabe" />
+        <script
+          defer
+          type="module"
+          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+        ></script>
       </Head>
       <Component {...pageProps} />
     </AppLayout>

@@ -5,10 +5,15 @@ import { Lines } from "@ui/Fallback.jsx";
 //  only absolute paths are accepted.
 //  TODO: Look for a refactor
 import Hero from "@ui/sections/home/Hero";
-// const Intro = lazy(() => import("@ui/sections/home/Introduction"));
-// const Techs = lazy(() => import("@ui/sections/home/Technologies"));
+import Projects from "@ui/sections/home/Projects";
 // const Projects = lazy(() => import("@ui/sections/home/Projects"));
+import Techs from "@ui/sections/home/Technologies";
+// const Techs = lazy(() => import("@ui/sections/home/Technologies"));
+import Intro from "@ui/sections/home/Introduction";
+// const Intro = lazy(() => import("@ui/sections/home/Introduction"));
+import Inspiration from "@ui/sections/home/Inspiration";
 // const Inspiration = lazy(() => import("@ui/sections/home/Inspiration"));
+import Contact from "@ui/sections/home/Contact";
 // const Contact = lazy(() => import("@ui/sections/home/Contact"));
 
 // function SuspendedComponents() {
@@ -20,13 +25,13 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <Suspense fallback={<Lines />}>
-        <Projects />
-        <Techs />
-        <Intro />
-        <Inspiration />
-        <Contact />
-      </Suspense> */}
+      <Projects />
+      <Techs />
+      <Intro />
+      <Inspiration />
+      {/* {/* <Suspense fallback={<Lines />}> */}
+      <Contact />
+      {/* </Suspense> */}
     </>
   );
 }

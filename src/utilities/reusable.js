@@ -1,7 +1,7 @@
 import { lazy } from "react";
 
-const FORM = import.meta.env.VITE_FORM_ID;
-const P_KEY = import.meta.env.VITE_PUBLIC_KEY;
+const FORM = process.env.FORM_ID;
+const P_KEY = process.env.PUBLIC_KEY;
 
 //  Simulate IRL page loading.
 export const slowImport = (value, ms = 1000) =>
@@ -33,12 +33,15 @@ export const isEmail = (email) =>
   );
 
 //  [HowWorks]    Takes a string[] as 1st parameter.
-//                Returns the concidence else Null.
+//                Searches into an Object[] at the 2nd parameter
+//                looking to a KEY, returns the concidence else Null.
+//                Extra: If values.length is 0 -> false, any other number
+//                        returns the values.
 export const arrayCompareAndRetrieve = ({ aToLook, aToSearch, kToSearch }) => {
   const foundValues = aToSearch.filter((item1) =>
     aToLook.find((item2) => item2 === item1[kToSearch])
   );
-  return foundValues.length === 0 ? null : foundValues;
+  return foundValues.length ? foundValues : null;
 };
 
 export const arrayRetrieveWithDupe = ({ aToLook, aToSearch, kToSearch }) => {
@@ -47,5 +50,5 @@ export const arrayRetrieveWithDupe = ({ aToLook, aToSearch, kToSearch }) => {
   );
   const dupedArr = [...foundValues];
   dupedArr.push(...foundValues);
-  return foundValues.length === 0 ? null : dupedArr;
+  return foundValues.length ? dupedArr : null;
 };

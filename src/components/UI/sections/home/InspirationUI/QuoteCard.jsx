@@ -10,19 +10,19 @@ export default function QuoteCard({ cite, image, nickname }) {
   // });
   return (
     <blockquote className="quoteCard" cite={cite}>
-      <QuoteImage>
+      {/* <QuoteImage>
         <CustomImage
           src={`/images/inspirations/${image}`}
           alt={nickname}
           className="my-auto object-cover"
-        />
-      </QuoteImage>
+  />
+      </QuoteImage> */}
       <Quote />
-      <CustomImage
+      {/* <CustomImage
         src="/images/quote.png"
         alt="Simbolo de cita textual"
         className="mr-2 max-w-[4rem]"
-      />
+      /> */}
     </blockquote>
   );
 }
