@@ -2,6 +2,11 @@
 
 ### Read in [English](#my-portfolio) 
 
+>To run the app do this
+> ~~~ 
+> npm install
+> npm run dev
+> ~~~
 ---
 
 ![Portfolio logo](public/preview.png)
