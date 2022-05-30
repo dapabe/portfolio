@@ -1,7 +1,7 @@
 import { lazy } from "react";
 
-const FORM = process.env.FORM_ID;
-const P_KEY = process.env.PUBLIC_KEY;
+const FORM = process.env.NEXT_PUBLIC_FORM_ID;
+const P_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY;
 
 //  Simulate IRL page loading.
 export const slowImport = (value, ms = 1000) =>
@@ -27,10 +27,11 @@ export const notSelectable = (condition) => {
   return { ...(condition && { tabIndex: -1 }) };
 };
 export const isEmpty = (str) => str.trim().length === 0;
-export const isEmail = (email) =>
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    email
-  );
+export const isEmail = (email) => {
+  const validation =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return validation.test(email);
+};
 
 //  [HowWorks]    Takes a string[] as 1st parameter.
 //                Searches into an Object[] at the 2nd parameter

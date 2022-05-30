@@ -1,4 +1,4 @@
-const FORM_ENDPOINT = process.env.ENDPOINT_URL;
+const FORM_ENDPOINT = process.env.NEXT_PUBLIC_ENDPOINT_URL;
 
 import { notSelectable } from "@utils/reusable";
 import usePost from "@hooks/fetch/usePost";

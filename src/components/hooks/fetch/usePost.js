@@ -21,6 +21,7 @@ export default function usePost({
   function checkInputs() {
     const { user_email, message } = inputData;
     user_email.trim();
+
     if (isEmpty(user_email)) {
       postResponses.error.text = "Por favor, rellena el campo de email.";
       throw Error("email1");
@@ -32,12 +33,15 @@ export default function usePost({
     if (isEmpty(message)) {
       postResponses.error.text = "Por favor, rellena el campo vacio.";
       throw Error("msg1");
-    } else {
     }
   }
 
   //  Might refactor using 1 service instead of 2.
   //  Limited amount of messages for these services.
+
+  //  [HowWorks]  Check for valid user inputs then fetch
+  //              if the fetch "ok" prop is false then
+  //              use the 2nd service, else show an error.
   const formSubmit = async (e) => {
     e.preventDefault();
     handleLoad(); // true
@@ -52,19 +56,24 @@ export default function usePost({
             Accept: "application/json",
           },
           body: JSON.stringify(inputData),
-        })
-          .then(() => {
-            setResponse(postResponses.ok);
-            handleLoad();
-          })
-          .catch((error) => {
+        }).then(
+          (res) => {
+            if (res.ok) {
+              setResponse(postResponses.ok);
+              handleLoad();
+            } else {
+              throw new Error();
+            }
+          },
+          (error) => {
             throw error;
-          });
+          }
+        );
       } catch (error) {
         if (errorSwitch(error.message)) {
           throw error;
         } else {
-          sendEmail(e.target).then(
+          await sendEmail(e.target).then(
             () => {
               setResponse(postResponses.ok);
               handleLoad();
