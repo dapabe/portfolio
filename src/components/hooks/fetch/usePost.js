@@ -49,7 +49,7 @@ export default function usePost({
     try {
       try {
         checkInputs();
-        await fetch("url", {
+        await fetch(url, {
           method: "POST",
           headers: {
             "Content-type": "application/json; charset=UTF-8",
