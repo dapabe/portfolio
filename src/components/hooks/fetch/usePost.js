@@ -41,7 +41,7 @@ export default function usePost({
 
   //  [HowWorks]  Check for valid user inputs then fetch
   //              if the fetch "ok" prop is false then
-  //              use the 2nd service, else show an error.
+  //              use the 2nd service, else show default error.
   const formSubmit = async (e) => {
     e.preventDefault();
     handleLoad(); // true
@@ -62,11 +62,11 @@ export default function usePost({
               setResponse(postResponses.ok);
               handleLoad();
             } else {
-              throw new Error();
+              throw Error("Inesperado");
             }
           },
-          (error) => {
-            throw error;
+          (err) => {
+            throw err;
           }
         );
       } catch (error) {
@@ -78,13 +78,14 @@ export default function usePost({
               setResponse(postResponses.ok);
               handleLoad();
             },
-            (error) => {
-              throw error;
+            (err) => {
+              throw err;
             }
           );
         }
       }
     } catch (error) {
+      console.error(error);
       setResponse(postResponses.error);
       handleLoad();
     }

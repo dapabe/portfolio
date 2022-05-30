@@ -26,7 +26,7 @@ export default function FORM_Feedback({ displayCondition }) {
   const showFeedback = displayCondition ? "opacity-100" : "opacity-0 -z-10";
   return (
     <form onSubmit={formSubmit} className={`feedbackForm ${showFeedback}`}>
-      <fieldset className="relative flex-grow space-y-2 rounded-md border-2 border-sutilBlack px-4 pb-4 font-semibold">
+      <fieldset className="relative flex-grow space-y-2 overflow-hidden rounded-md border-2 border-sutilBlack px-4 pb-4 font-semibold">
         <legend className="flex w-max items-center justify-between text-lg tracking-widest">
           <h2 className="mr-2 uppercase">CONTÁCTAME</h2>
           <ChatAlt2Icon className="w-8 text-blue-600" />
@@ -37,9 +37,7 @@ export default function FORM_Feedback({ displayCondition }) {
           displayCondition={displayCondition}
         />
         <section className="flex">
-          <span className={`transition-opacity ${responseClass}`}>
-            {postResponse}
-          </span>
+          <span className={responseClass}>{postResponse}</span>
           <SubmitButton displayCondition={isLoading} />
         </section>
       </fieldset>
