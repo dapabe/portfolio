@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { GlobalContext } from "@context/GlobalState";
+import { GlobalContext } from "@context/states";
 import useElementOffset from "@hooks/useElementOffset";
 import { ChevronDoubleUpIcon } from "@heroicons/react/solid";
 

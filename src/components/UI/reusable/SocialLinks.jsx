@@ -1,3 +1,4 @@
+import Image from "next/image";
 import data from "@src/assets/data.json";
 
 const social_icons = data.social_data;
@@ -12,7 +13,12 @@ export default function SocialLinks({ ...props }) {
         title={img_desc}
         {...props}
       >
-        <img src={`/icons/social/${img || fallback_img}`} alt={img_desc} />
+        <Image
+          src={`/images/icons/social/${img || fallback_img}`}
+          alt={img_desc}
+          width={32}
+          height={32}
+        />
       </a>
     </i>
   ));

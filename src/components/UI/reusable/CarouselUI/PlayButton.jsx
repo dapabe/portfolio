@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CarouselAnimation } from "@context/UI";
+import { CarouselAnimation } from "@context/states";
 import { PlayIcon, StopIcon } from "@heroicons/react/solid";
 
 export default function PlayButton() {

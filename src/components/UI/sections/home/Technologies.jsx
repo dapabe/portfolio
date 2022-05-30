@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { CarouselAnimation } from "@context/UI";
+import { CarouselAnimation } from "@context/states";
 import useToggle from "@hooks/useToggle";
 
 import data from "@src/assets/data.json";
