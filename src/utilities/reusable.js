@@ -34,7 +34,7 @@ export const isEmail = (email) =>
 
 //  [HowWorks]    Takes a string[] as 1st parameter.
 //                Searches into an Object[] at the 2nd parameter
-//                looking to a KEY, returns the concidence else Null.
+//                looking for a KEY, returns the concidence else Null.
 //                Extra: If values.length is 0 -> false, any other number
 //                        returns the values.
 export const arrayCompareAndRetrieve = ({ aToLook, aToSearch, kToSearch }) => {
