@@ -11,7 +11,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp; Mi sitio web personal, actualmente es una SPA y está en proceso de migrar a una SSR.
 
 Herramientas de desarrollo:
-- React.JS 
+- Next.JS 
 - Tailwind CSS
 
 ---
@@ -21,5 +21,5 @@ Herramientas de desarrollo:
 &nbsp;&nbsp;&nbsp;&nbsp; Mi personal website, right now it's a SPA and it's being in process of being migrated to a SSR.
 
 Development tools:
-- React.JS 
+- Next.JS 
 - Tailwind CSS
