@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 export const Skeleton = ({ className, ...props }) => {
   return <i className={`skeleton h-full w-full ${className}`} {...props} />;
 };
