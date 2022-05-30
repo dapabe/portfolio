@@ -18,7 +18,7 @@ Herramientas de desarrollo:
 
 # My Portfolio
 
-&nbsp;&nbsp;&nbsp;&nbsp; Mi personal website, right now it's a SPA and it's being in process of being migrated to a SSR.
+&nbsp;&nbsp;&nbsp;&nbsp; Mi personal website, right now it's a SPA and it's in process of being migrated to a SSR.
 
 Development tools:
 - Next.JS 
