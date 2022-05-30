@@ -1,7 +1,7 @@
 ### Leér en [Español](#mi-portafolio)
 
 ### Read in [English](#my-portfolio) 
-
+---
 >To run the app do this
 > ~~~ 
 > npm install
