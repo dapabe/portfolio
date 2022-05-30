@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Script from "next/script";
 
 //  TODO: Look for a refactor for suspended components
 import Hero from "@ui/sections/home/Hero";
@@ -24,10 +23,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <Script
+        <script
+          defer
+          type="module"
           src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-          strategy="lazyOnload"
-        />
+        ></script>
       </Head>
       <Hero />
       <Projects />
