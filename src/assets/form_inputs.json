@@ -28,11 +28,11 @@
     "responses": {
       "ok": {
         "text": "¡Gracias, leeré tu mensaje!",
-        "className": "absolute flex inset-0 text-sutilBlack tracking-wide bg-white justify-center items-center scale-125"
+        "isValid": true
       },
       "error": {
-        "text": "Ha habido un error, por favor intentalo más tarde.",
-        "className": "font-Raleway text-sm max-w-[25ch] text-red-600  opacity-100"
+        "text": "Error de sistema, por favor intentalo más tarde.",
+        "isValid": false
       }
     }
   }

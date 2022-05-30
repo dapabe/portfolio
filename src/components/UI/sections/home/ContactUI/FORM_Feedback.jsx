@@ -18,9 +18,10 @@ export default function FORM_Feedback({ displayCondition }) {
     postResponses: serverResponse,
     inputValues: postValues,
   });
-
   const postResponse = response?.text || "";
-  const responseClass = response?.className || "opacity-0";
+  const responseClass = response?.isValid
+    ? "absolute flex inset-0 text-sutilBlack tracking-wide bg-white justify-center items-center scale-125"
+    : "font-Raleway text-sm max-w-[25ch] text-red-600";
 
   const showFeedback = displayCondition ? "opacity-100" : "opacity-0 -z-10";
   return (
