@@ -14,7 +14,7 @@ export default function SocialLinks({ ...props }) {
         {...props}
       >
         <Image
-          src={`/icons/social/${img || fallback_img}`}
+          src={`/images/icons/social/${img || fallback_img}`}
           alt={img_desc}
           width={32}
           height={32}

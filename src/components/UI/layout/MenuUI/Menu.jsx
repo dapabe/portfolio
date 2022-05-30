@@ -4,7 +4,7 @@ import { notSelectable } from "@utils/reusable";
 
 import Backdrop from "../Backdrop";
 import NavRoutes from "./NavRoutes.jsx";
-import SocialLinks from "../SocialLinks";
+import SocialLinks from "@ui/reusable/SocialLinks";
 
 export default function Menu() {
   const { isMenuOpen, handleMenu, closeAndResetPage } =

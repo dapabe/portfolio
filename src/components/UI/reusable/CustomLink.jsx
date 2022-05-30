@@ -9,15 +9,17 @@ const styling = (type) => {
   }
 };
 
-export default function CustomLink({ type, to, children, ...props }) {
+export default function CustomLink({ href, type, children, ...props }) {
   // const resolved = useResolvedPath(to);
   // const match = useMatch({ path: resolved.pathname, end: true });
   // const customCSS =
   //   props.className || (match ? styling(type ? type : "primary") : styling());
 
   return (
-    <Link href={to}>
-      <a {...props}>{children}</a>
+    <Link href={href}>
+      <a className="" {...props}>
+        {children}
+      </a>
     </Link>
   );
 }

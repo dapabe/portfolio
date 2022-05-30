@@ -15,7 +15,7 @@ export default function ToolsAndLinks() {
           {made_with.map((tool) => (
             <li key={tool}>
               <Image
-                src={`/icons/logos/${tool}`}
+                src={`/images/icons/logos/${tool}`}
                 width={32}
                 height={32}
                 className="m-auto"
@@ -37,7 +37,9 @@ export default function ToolsAndLinks() {
               aria-label="Link hacia le repositorio"
             >
               <Image
-                src={`/icons/social/${"Github-mono.svg" || "Github.svg"}`}
+                src={`/images/icons/social/${
+                  "Github-mono.svg" || "Github.svg"
+                }`}
                 width={32}
                 height={32}
                 className={linkStyle}

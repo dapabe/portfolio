@@ -12,7 +12,7 @@ export default function TechList({ data }) {
         <li key={name}>
           <figure>
             <Image
-              src={`/icons/logos/${file}`}
+              src={`/images/icons/logos/${file}`}
               alt={img_desc}
               width={80}
               height={80}

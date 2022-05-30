@@ -1,10 +1,10 @@
 import GlobalState from "./HOC/GlobalState";
 import Portal from "./HOC/Portal";
 
-import Header from "./UI/unique/HeaderUI/Header";
-import Footer from "./UI/unique/FooterUI/Footer";
-import GoTop from "./UI/unique/GoTop";
-import Menu from "./UI/unique/MenuUI/Menu";
+import Header from "./UI/layout/HeaderUI/Header";
+import Footer from "./UI/layout/FooterUI/Footer";
+import GoTop from "./UI/layout/GoTop";
+import Menu from "./UI/layout/MenuUI/Menu";
 
 export default function AppLayout({ children }) {
   return (

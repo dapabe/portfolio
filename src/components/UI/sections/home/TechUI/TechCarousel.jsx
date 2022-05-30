@@ -12,7 +12,7 @@ export default function TechCarousel({ data }) {
       {display_info.map(({ file, img_desc }, idx) => (
         <Image
           key={idx}
-          src={`/icons/logos/${file}`}
+          src={`/images/icons/logos/${file}`}
           alt={img_desc}
           width={160}
           height={80}

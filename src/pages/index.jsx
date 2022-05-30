@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import { Lines } from "@ui/Fallback.jsx";
-
+import Head from "next/head";
+import Script from "next/script";
 //  [NOTE]  Can't import relative paths lazily,
 //  only absolute paths are accepted.
 //  TODO: Look for a refactor
@@ -24,6 +25,12 @@ import Contact from "@ui/sections/home/Contact";
 export default function Home() {
   return (
     <>
+      <Head>
+        <Script
+          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+          strategy="lazyOnload"
+        />
+      </Head>
       <Hero />
       <Projects />
       <Techs />
