@@ -1,6 +1,6 @@
 import WideCard from "./WideCard";
 
-import { ProjectData } from "@context/UI";
+import { ProjectData } from "@context/states";
 import data from "@src/assets/data.json";
 
 const info = data.projects_data;

@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { QuoteData } from "@context/UI";
+import { QuoteData } from "@context/states";
 import { ExtLink } from "@utils/text";
 
 export default function Quote() {
   const { cite, quote, webpage, nickname } = useContext(QuoteData);
   return (
-    <section className="my-3 ml-14 md:my-auto md:ml-0">
+    <section className="my-3 ml-8 flex flex-col justify-center sm:my-auto sm:ml-0">
       <p>
         <ExtLink
           href={cite}
@@ -15,18 +15,18 @@ export default function Quote() {
           <q>{quote}</q>{" "}
         </ExtLink>
       </p>
-      <b>
+      <strong className="mt-2 text-right">
         <a
           href={webpage}
           aria-label="Ir a su página web."
           title="Ir a su página web."
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-inOut mt-auto ml-auto block after:bg-sutilBlack"
+          className="btn-inOut after:top-full after:bg-sutilBlack"
         >
           {nickname}
         </a>
-      </b>
+      </strong>
     </section>
   );
 }

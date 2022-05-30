@@ -30,7 +30,7 @@ export default function Focus() {
           >
             teclado
           </ExtLink>{" "}
-          y que utilicen{" "}
+          o utilicen{" "}
           <ExtLink
             href={links[1]}
             className="text-gray-300"

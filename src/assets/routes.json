@@ -1,6 +1,6 @@
 {
   "links": [
-    { "to": "/", "text": "Inicio" },
-    { "to": "/about", "text": "Acerca" }
+    { "href": "/", "text": "Inicio" },
+    { "href": "/about", "text": "Acerca" }
   ]
 }

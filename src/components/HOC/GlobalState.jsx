@@ -1,10 +1,9 @@
-import { createContext, useMemo } from "react";
+import { useMemo } from "react";
 
 import useToggle from "@hooks/useToggle";
 import useNoScroll from "@hooks/useNoScroll";
+import { GlobalContext } from "@context/states";
 // import useKeyboard from "@hooks/useKeyboard";
-
-export const GlobalContext = createContext({});
 
 //  TODO:     Map each event case.
 //            Fix global bug on key

@@ -1,4 +1,4 @@
-import CustomLink from "@ui/react-router/CustomLink";
+import CustomLink from "@ui/reusable/CustomLink";
 export default function ShortAbout() {
   return (
     <section className="space-y-3 rounded-md border bg-champagnePink p-4 text-sutilBlack">
@@ -9,7 +9,7 @@ export default function ShortAbout() {
         proyectos.
       </p>
       <CustomLink
-        to="/about"
+        href="/about"
         className="ml-auto block w-max -skew-x-12 bg-sutilBlack py-1 px-2 text-sm tracking-widest text-white  transition-transform ease-in hover:translate-x-2"
         onClick={() => setTimeout(() => window.scroll(0, 0), 200)}
         aria-labelledby="Ir a mi biografía"

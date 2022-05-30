@@ -34,7 +34,7 @@
 
     {
       "name": "API",
-      "file": "API.png",
+      "file": "API.svg",
       "img_desc": "Imagen con las siglas de API"
     },
     { "name": "MySQL", "file": "MySQL.svg", "img_desc": "Logo de MySQL" },
@@ -111,7 +111,7 @@
         "repository": "https://github.com/dapabe/api-moviedb",
         "webpage": "https://moviedb-clone-dapabe.vercel.app/"
       },
-      "made_with": ["TailwindCSS.svg", "NextJS-mono.svg", "API.png"]
+      "made_with": ["TailwindCSS.svg", "NextJS-mono.svg", "API.svg"]
     }
   ],
   "inspirations": [

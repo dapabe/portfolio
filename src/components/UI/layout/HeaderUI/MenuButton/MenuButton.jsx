@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import useFocus from "@hooks/useFocus";
-import { GlobalContext } from "@context/GlobalState";
+import { GlobalContext } from "@context/states";
 
 import MenuBars from "./MenuBars";
 import MenuText from "./MenuText";

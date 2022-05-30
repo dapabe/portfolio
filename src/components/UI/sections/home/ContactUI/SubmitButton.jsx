@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ContactDisplay } from "@context/UI";
+import { ContactDisplay } from "@context/states";
 
 import { notSelectable } from "@utils/reusable";
 
