@@ -46,8 +46,7 @@ export default function About() {
           frameworks ampliando más mi conocimiento junto con otras herramientas
           de diseño.
           <br /> <br />
-          Siguiente objetivo:{" "}
-          <ExtLink href="https://angularjs.org/">Angular.JS</ExtLink>
+          Siguiente objetivo: React Native y TypeScript.
         </p>
       </section>
     </section>
