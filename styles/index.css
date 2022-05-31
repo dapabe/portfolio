@@ -94,7 +94,7 @@
     @apply absolute -bottom-6 w-14 justify-center gap-x-1 text-xs;
   }
   .sidebar {
-    @apply top-1/2 right-1 hidden -translate-y-1/2 flex-col gap-y-9 sm:flex md:transition-opacity;
+    @apply top-1/2 right-1 hidden -translate-y-1/2 flex-col gap-y-9 md:flex md:transition-opacity;
   }
   .social-icon {
     @apply h-8 w-8 hover:scale-110;
