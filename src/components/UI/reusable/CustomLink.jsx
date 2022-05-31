@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const styling = (type) => {
   switch (type) {
@@ -9,15 +10,15 @@ const styling = (type) => {
   }
 };
 
-export default function CustomLink({ href, type, children, ...props }) {
-  // const resolved = useResolvedPath(to);
-  // const match = useMatch({ path: resolved.pathname, end: true });
-  // const customCSS =
-  //   props.className || (match ? styling(type ? type : "primary") : styling());
+export default function CustomLink({ href, children, ...props }) {
+  const router = useRouter();
+  const customCSS =
+    props.className ||
+    (router.pathname === href ? styling("primary") : styling());
 
   return (
     <Link href={href}>
-      <a className="" {...props}>
+      <a className={customCSS} {...props}>
         {children}
       </a>
     </Link>
