@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:image:width " content="1000" />
         <meta property="og:image:heigth " content="800" />
         <meta property="og:url" content="https://dapabe.netlify.app" />
-        <meta name="twitter:card" content="summary_large" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:create" content="@_danzen" />
         <meta
           name="twitter:title"
