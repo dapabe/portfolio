@@ -7,8 +7,7 @@ import NavRoutes from "./NavRoutes.jsx";
 import SocialLinks from "@ui/reusable/SocialLinks";
 
 export default function Menu() {
-  const { isMenuOpen, handleMenu, closeAndResetPage } =
-    useContext(GlobalContext);
+  const { isMenuOpen, handleMenu } = useContext(GlobalContext);
   const Modal = useRef(null);
 
   const isOpen = isMenuOpen
@@ -24,10 +23,7 @@ export default function Menu() {
       <Backdrop displayCondition={isMenuOpen} onClick={handleMenu} />
       <nav className={`menu ${isOpen}`} aria-labelledby="modal">
         <ul className="menuLinks">
-          <NavRoutes
-            onClick={closeAndResetPage}
-            {...notSelectable(!isMenuOpen)}
-          />
+          <NavRoutes onClick={handleMenu} {...notSelectable(!isMenuOpen)} />
         </ul>
         <div className="mt-auto flex justify-evenly">
           <SocialLinks {...notSelectable(!isMenuOpen)} />

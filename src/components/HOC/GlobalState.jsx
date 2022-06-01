@@ -23,19 +23,12 @@ export default function GlobalState({ children }) {
   useNoScroll(isMenuOpen);
   // useKeyboard({ key: "m", cb: handleMenu });
 
-  //  2.
-  const closeAndResetPage = () => {
-    handleMenu();
-    setTimeout(() => window.scroll(0, 0), 200);
-  };
-
   //=====================================================================
 
   const memoValues = useMemo(
     () => ({
       isMenuOpen,
       handleMenu,
-      closeAndResetPage,
     }),
     [isMenuOpen]
   );
