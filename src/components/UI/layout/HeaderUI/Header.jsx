@@ -10,7 +10,7 @@ import OverlayBars from "./OverlayBars";
 import SocialLinks from "@ui/reusable/SocialLinks";
 
 export default function Header() {
-  const { isMenuOpen, closeAndResetPage } = useContext(GlobalContext);
+  const { isMenuOpen, handleMenu } = useContext(GlobalContext);
 
   //  TODO: Switch Langs, Toggle Light/Dark Theme,
   //  better keyboard navigation.
@@ -22,7 +22,7 @@ export default function Header() {
       <CustomLink
         href="/"
         className="brandLogo"
-        onClick={isMenuOpen ? closeAndResetPage : () => window.scroll(0, 0)}
+        onClick={isMenuOpen && handleMenu}
       >
         dpb
       </CustomLink>
