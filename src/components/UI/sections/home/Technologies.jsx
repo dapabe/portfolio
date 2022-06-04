@@ -11,12 +11,6 @@ import SVGWave1 from "@ui/reusable/decorations/SVGWave1";
 import { FilmIcon, CollectionIcon } from "@heroicons/react/outline";
 import { arrayCompareAndRetrieve } from "@utils/reusable";
 
-const displaying_icons = arrayCompareAndRetrieve({
-  aToLook: data.tech_data,
-  aToSearch: data.icons_data,
-  kToSearch: "name",
-});
-
 export default function SectionTechs() {
   const [hasAnim, handleDisplay] = useToggle(true);
   const [pingClicked, setClick] = useState(false);
@@ -36,7 +30,9 @@ export default function SectionTechs() {
           cb2={handleDisplay}
         />
       </div>
+
       <AlternateLists displayCondition={hasAnim} />
+
       <small className="mx-auto mt-8 block max-w-sm text-center sm:ml-auto sm:mr-16 sm:text-left">
         - Siempre informado de las tecnologías más utilizadas del mercado.
       </small>
@@ -73,6 +69,12 @@ const ListSwitchButton = ({ ...props }) => {
 const AlternateLists = ({ displayCondition }) => {
   const [isPaused, handlePause] = useToggle(true);
   const [firstWatch, setFirstWatch] = useState(true);
+
+  const displaying_icons = arrayCompareAndRetrieve({
+    aToLook: data.tech_data,
+    aToSearch: data.icons_data,
+    kToSearch: "name",
+  });
 
   //  Handle visual effects;
   //    Display play btn icon the first time.
