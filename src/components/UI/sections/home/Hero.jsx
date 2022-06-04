@@ -27,10 +27,11 @@ export default function SectionHero() {
       <section className={hasScrolledHero}>
         <Stripes displayCondition={elmOffset} />
         <img
+          loading="eager"
           src="dapabe.svg"
           title="Logo Dapabe"
           alt="Las primeras 2 iniciales del nombre Daniel Patricio Becerra, dapabe."
-          className="absolute right-1 top-1/2 -translate-y-1/2 translate-x-[53%] scale-75 text-[20rem] transition-transform sm:translate-x-[52.75%] lg:translate-x-[52.5%] "
+          className="absolute right-1 top-1/2 -translate-y-1/2 translate-x-[53%] scale-75 text-[20rem] transition-transform sm:translate-x-[52.75%] lg:translate-x-[52.5%]"
         />
         <Intro displayCondition={elmOffset} />
         <ScrollBouncer displayCondition={elmOffset} />

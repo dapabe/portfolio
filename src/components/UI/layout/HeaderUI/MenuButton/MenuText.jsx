@@ -6,14 +6,10 @@ const Letters = [
 ];
 
 export default function MenuText({ displayCondition }) {
-  const device = {
-    small: "hidden",
-    desktop: "hidden md:flex",
-  };
   return (
     <ol
       translate="no"
-      className={`menuText ${displayCondition ? device.small : device.desktop}`}
+      className={`menuText ${displayCondition ? "hidden" : "hidden md:flex"}`}
     >
       {Letters.map(({ letter, className }) => (
         <li key={letter} className={`${className} transition-transform`}>

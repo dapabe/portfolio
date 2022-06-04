@@ -9,6 +9,13 @@ import TechList from "./TechUI/TechList";
 
 import SVGWave1 from "@ui/reusable/decorations/SVGWave1";
 import { FilmIcon, CollectionIcon } from "@heroicons/react/outline";
+import { arrayCompareAndRetrieve } from "@utils/reusable";
+
+const displaying_icons = arrayCompareAndRetrieve({
+  aToLook: data.tech_data,
+  aToSearch: data.icons_data,
+  kToSearch: "name",
+});
 
 export default function SectionTechs() {
   const [hasAnim, handleDisplay] = useToggle(true);
@@ -74,13 +81,15 @@ const AlternateLists = ({ displayCondition }) => {
     () => ({ firstWatch, setFirstWatch, isPaused, handlePause }),
     [isPaused]
   );
+  //  TechCarousel has to have a duped array
+  //  for a loop animation.
   return (
     <CarouselAnimation.Provider value={memoValues}>
       <div className="container mx-auto">
         {displayCondition ? (
-          <TechCarousel data={data} />
+          <TechCarousel data={[...displaying_icons, ...displaying_icons]} />
         ) : (
-          <TechList data={data} />
+          <TechList data={displaying_icons} />
         )}
       </div>
     </CarouselAnimation.Provider>

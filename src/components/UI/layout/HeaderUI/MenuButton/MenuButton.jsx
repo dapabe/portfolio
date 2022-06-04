@@ -5,11 +5,6 @@ import { GlobalContext } from "@context/states";
 import MenuBars from "./MenuBars";
 import MenuText from "./MenuText";
 
-const device = {
-  small: "rounded-full bg-white",
-  desktop: "rounded-full bg-white md:bg-sutilBlack",
-};
-
 export default function MenuButton() {
   const { isMenuOpen, handleMenu } = useContext(GlobalContext);
   const [MenuRef, setMenuRef] = useFocus();
@@ -26,7 +21,9 @@ export default function MenuButton() {
       ref={MenuRef}
       type="button"
       className={`menuButton group ${
-        isMenuOpen ? device.small : device.desktop
+        isMenuOpen
+          ? "rounded-full bg-white"
+          : "rounded-full bg-white md:bg-sutilBlack"
       }`}
       onClick={handleMenu}
     >
