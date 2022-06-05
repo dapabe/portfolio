@@ -6,7 +6,7 @@ export default function Intro({ displayCondition }) {
     : "translate-y-6 opacity-0";
 
   return (
-    <section className="mt-40 ml-4 translate-y-1/2 space-y-3 self-center text-xl font-bold tracking-wide text-white sm:ml-24">
+    <section className="mt-40 ml-4 translate-y-1/2 space-y-3 self-center text-xl font-bold tracking-wide text-white md:ml-24">
       <h1
         className={`${scrollIntoView} text-4xl leading-none text-sutilBlack transition-[translate_opacity] delay-300`}
       >
