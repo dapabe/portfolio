@@ -39,7 +39,7 @@ export const isEmail = (email) => {
 //                Extra: If values.length is 0 -> false, any other number
 //                        returns the values.
 export const arrayCompareAndRetrieve = ({ aToLook, aToSearch, kToSearch }) => {
-  const keyToSearch = (obj) => aToLook.find((item) => item === obj[kToSearch]);
+  const keyToSearch = (obj) => aToLook.includes(obj[kToSearch]);
   const foundValues = aToSearch.filter(keyToSearch);
   return foundValues.length ? foundValues : null;
 };
