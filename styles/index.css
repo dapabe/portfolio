@@ -70,7 +70,7 @@
     @apply mx-auto max-w-xs sm:max-w-[28rem] md:max-w-xl lg:max-w-3xl xl:max-w-5xl;
   }
   .brandLogo {
-    @apply top-0.5 left-0 z-30 ml-2 text-3xl tracking-wider;
+    @apply mt-0.5 ml-2 inline-block text-3xl tracking-wider;
   }
   .menuContainer {
     @apply inset-0 flex justify-center sm:justify-start sm:px-24;

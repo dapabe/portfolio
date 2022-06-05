@@ -17,15 +17,16 @@ export default function Header() {
   return (
     <header>
       <SkipNav />
-      <OverlayBars />
+      <OverlayBars>
+        <CustomLink
+          href="/"
+          className="brandLogo"
+          onClick={isMenuOpen && handleMenu}
+        >
+          dpb
+        </CustomLink>
+      </OverlayBars>
 
-      <CustomLink
-        href="/"
-        className="brandLogo"
-        onClick={isMenuOpen && handleMenu}
-      >
-        dpb
-      </CustomLink>
       {/* <LangSwitch/> */}
 
       <MenuButton />
