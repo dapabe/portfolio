@@ -25,16 +25,12 @@ export default function Header() {
         >
           dpb
         </CustomLink>
+        {!isMenuOpen && <SocialLinks />}
       </OverlayBars>
 
       {/* <LangSwitch/> */}
 
       <MenuButton />
-      {!isMenuOpen && (
-        <aside className="sidebar">
-          <SocialLinks />
-        </aside>
-      )}
     </header>
   );
 }
