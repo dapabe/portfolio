@@ -1,15 +1,10 @@
-import { useState, useMemo } from "react";
-import { CarouselAnimation } from "@context/states";
+import { useState } from "react";
 import useToggle from "@hooks/useToggle";
 
-import data from "@src/assets/data.json";
-
-import TechCarousel from "./TechUI/TechCarousel";
-import TechList from "./TechUI/TechList";
+import ListSwitchButton from "./TechUI/ListSwitchButton";
+import AlternateLists from "./TechUI/AlternateLists";
 
 import SVGWave1 from "@ui/reusable/decorations/SVGWave1";
-import { FilmIcon, CollectionIcon } from "@heroicons/react/outline";
-import { arrayCompareAndRetrieve } from "@utils/reusable";
 
 export default function SectionTechs() {
   const [hasAnim, handleDisplay] = useToggle(true);
@@ -40,60 +35,3 @@ export default function SectionTechs() {
     </section>
   );
 }
-
-const ListSwitchButton = ({ ...props }) => {
-  const { displayPing, switchCondition, cb, cb2 } = props;
-  return (
-    <button
-      type="button"
-      className={`analog-shadow-right relative w-max rounded-md bg-white p-1 text-sutilBlack transition-[box-shadow_transform] before:bg-gray-500 after:absolute after:-right-2 after:-top-2 after:h-4 after:w-4 after:rounded-full active:translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-gray-500 ${displayPing}`}
-      onClick={() => {
-        cb();
-        cb2();
-      }}
-      title={
-        switchCondition
-          ? "Mostrar una lista de imagenes"
-          : "Mostrar una animación"
-      }
-    >
-      {switchCondition ? (
-        <CollectionIcon className="w-6" />
-      ) : (
-        <FilmIcon className="w-6" />
-      )}
-    </button>
-  );
-};
-
-const AlternateLists = ({ displayCondition }) => {
-  const [isPaused, handlePause] = useToggle(true);
-  const [firstWatch, setFirstWatch] = useState(true);
-
-  const displaying_icons = arrayCompareAndRetrieve({
-    aToLook: data.tech_data,
-    aToSearch: data.icons_data,
-    kToSearch: "name",
-  });
-
-  //  Handle visual effects;
-  //    Display play btn icon the first time.
-  //    Maintain animation state between re-renders.
-  const memoValues = useMemo(
-    () => ({ firstWatch, setFirstWatch, isPaused, handlePause }),
-    [isPaused]
-  );
-  //  TechCarousel has to have a duped array
-  //  for a loop animation.
-  return (
-    <CarouselAnimation.Provider value={memoValues}>
-      <div className="container mx-auto">
-        {displayCondition ? (
-          <TechCarousel data={[...displaying_icons, ...displaying_icons]} />
-        ) : (
-          <TechList data={displaying_icons} />
-        )}
-      </div>
-    </CarouselAnimation.Provider>
-  );
-};

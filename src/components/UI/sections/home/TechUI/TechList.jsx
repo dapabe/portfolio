@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function TechList({ data }) {
   return (
-    <ul className="mx-auto flex max-w-xl flex-wrap justify-center gap-x-6 gap-y-4 text-sm">
+    <ul className="mx-auto flex max-w-xl flex-wrap justify-center gap-x-5 gap-y-4 text-sm">
       {data.map(({ name, file, img_desc }) => (
         <li key={name}>
           <figure>
