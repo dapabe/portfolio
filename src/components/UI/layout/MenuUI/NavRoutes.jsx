@@ -17,7 +17,7 @@ export default function NavRoutes({ ...props }) {
 
   return ROUTES.map(({ text, ...attr }) => (
     <li key={text}>
-      <CustomLink {...attr} {...props}>
+      <CustomLink {...attr} onClick={props.onClick}>
         {text}
       </CustomLink>
     </li>

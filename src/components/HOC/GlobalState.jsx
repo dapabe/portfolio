@@ -13,14 +13,16 @@ import { GlobalContext } from "@context/states";
 //  2.Events.
 export default function GlobalState({ children }) {
   const [isMenuOpen, handleMenu] = useToggle(false);
-
+  const [isLangOptionsOpen, handleLangOptions] = useToggle(false);
   // const events = [
   //   { key: "m", cb: handleMenu, condition: true },
   //   { key: "Escape", cb: handleMenu, condition: isMenuOpen },
   // ];
 
+  const noScrollBehaviour = isMenuOpen || isLangOptionsOpen;
+
   //  1.
-  useNoScroll(isMenuOpen);
+  useNoScroll(noScrollBehaviour);
   // useKeyboard({ key: "m", cb: handleMenu });
 
   //=====================================================================
@@ -29,8 +31,11 @@ export default function GlobalState({ children }) {
     () => ({
       isMenuOpen,
       handleMenu,
+      isLangOptionsOpen,
+      handleLangOptions,
+      noScrollBehaviour,
     }),
-    [isMenuOpen]
+    [isMenuOpen, isLangOptionsOpen]
   );
 
   return (

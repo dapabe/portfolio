@@ -7,7 +7,7 @@ export default function Portal({ selector, children }) {
 
   useEffect(() => {
     handleMount();
-    return handleMount();
+    return handleMount;
   }, []);
 
   return isMounted

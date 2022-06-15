@@ -6,16 +6,21 @@ import MenuBars from "./MenuBars";
 import MenuText from "./MenuText";
 
 export default function MenuButton() {
-  const { isMenuOpen, handleMenu } = useContext(GlobalContext);
+  const { isMenuOpen, handleMenu, isLangOptionsOpen } =
+    useContext(GlobalContext);
   const [MenuRef, setMenuRef] = useFocus();
 
-  //  [BUG] "unstable_flushDiscreteUpdates: Cannot flush updates when React is already rendering"
-  //  Updating the ref attribute directly without useEffect causes it, wait till the component
+  //  [BUG] "unstable_flushDiscreteUpdates: Cannot flush
+  //        updates when React is already rendering"
+  //  Updating the ref attribute directly without
+  //  useEffect causes it, wait till the component
   //  has rendered to apply focus.
 
   useEffect(() => {
     isMenuOpen && setMenuRef();
   }, [isMenuOpen]);
+
+  if (isLangOptionsOpen && !isMenuOpen) return null;
   return (
     <button
       ref={MenuRef}

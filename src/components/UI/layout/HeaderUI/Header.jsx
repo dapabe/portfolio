@@ -12,7 +12,7 @@ import SocialLinks from "@ui/reusable/SocialLinks";
 export default function Header() {
   const { isMenuOpen, handleMenu } = useContext(GlobalContext);
 
-  //  TODO: Switch Langs, Toggle Light/Dark Theme,
+  //  TODO: Toggle Light/Dark Theme,
   //  better keyboard navigation.
   return (
     <header>
@@ -28,7 +28,6 @@ export default function Header() {
         <LangSwitch />
         {!isMenuOpen && <SocialLinks />}
       </OverlayBars>
-
       <MenuButton />
     </header>
   );

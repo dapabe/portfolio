@@ -25,9 +25,7 @@ export default function SectionTechs() {
           cb2={handleDisplay}
         />
       </div>
-
       <AlternateLists displayCondition={hasAnim} />
-
       <small className="mx-auto mt-8 block max-w-sm text-center sm:ml-auto sm:mr-16 sm:text-left">
         - Siempre informado de las tecnologías más utilizadas del mercado.
       </small>

@@ -1,21 +1,67 @@
-import { useRouter } from "next/router";
-import CustomLink from "@ui/reusable/CustomLink";
+import { useContext } from "react";
+import { GlobalContext } from "@context/states";
 
-const langs = ["es", "en"];
+import Link from "next/link";
+import { useRouter } from "next/router";
+
+import Backdrop from "../Backdrop";
+import { ChevronDownIcon } from "@heroicons/react/solid";
 
 export default function LangSwitch() {
-  const router = useRouter();
-  console.log(router);
+  const { locales, asPath, defaultLocale } = useRouter();
+  const { isMenuOpen, isLangOptionsOpen, handleLangOptions, handleMenu } =
+    useContext(GlobalContext);
+
+  const openOptions = isLangOptionsOpen ? "absolute" : "hidden";
+
+  const clickActions = () => {
+    isMenuOpen && handleMenu();
+
+    return handleLangOptions();
+  };
+
   return (
-    // <a title="Language Switcher" className="mr-2 text-lg tracking-wider">
-    //   <span>ES</span>/<span>EN</span>
-    // </a>
-    <select name="Idiomas" id="" className="mr-2 bg-transparent uppercase">
-      {langs.map((lang, i) => (
-        <option key={lang} value={lang}>
-          {lang}
-        </option>
-      ))}
-    </select>
+    <>
+      {!isMenuOpen && (
+        <Backdrop
+          displayCondition={isLangOptionsOpen}
+          onClick={handleLangOptions}
+        />
+      )}
+      <div className="relative mr-2">
+        <button
+          type="button"
+          className="rounded-sm px-1 transition-colors hover:bg-red-500"
+          onClick={handleLangOptions}
+        >
+          <span className="uppercase">
+            {defaultLocale}
+            <sup>
+              <ChevronDownIcon className="inline-block w-5" />
+            </sup>
+          </span>
+        </button>
+        <ol
+          className={`${openOptions} top-0 right-0 rounded-sm border bg-white text-left text-black`}
+        >
+          {locales.map((lang) => (
+            <li key={lang} className={`px-2 py-1 `}>
+              <Link href={asPath} locale={lang}>
+                <a onClick={clickActions}>{langTextSwitcher(lang)}</a>
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </>
   );
 }
+
+const langTextSwitcher = (string) => {
+  switch (string) {
+    case "en":
+      return "English";
+    default:
+      return "Español";
+  }
+};
