@@ -17,10 +17,8 @@ export default function CustomLink({ href, children, ...props }) {
     (router.pathname === href ? styling("primary") : styling());
 
   return (
-    <Link href={href}>
-      <a className={customCSS} {...props}>
-        {children}
-      </a>
+    <Link href={href} {...props}>
+      <a className={customCSS}>{children}</a>
     </Link>
   );
 }

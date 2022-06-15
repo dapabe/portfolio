@@ -3,7 +3,7 @@ import { GlobalContext } from "@context/states";
 
 import SkipNav from "./SkipNav";
 import CustomLink from "@ui/reusable/CustomLink";
-// import LangSwitch from "./LangSwitch";
+import LangSwitch from "./LangSwitch";
 import MenuButton from "./MenuButton/MenuButton";
 
 import OverlayBars from "./OverlayBars";
@@ -20,15 +20,14 @@ export default function Header() {
       <OverlayBars>
         <CustomLink
           href="/"
-          className="brandLogo"
+          className="ml-2 text-3xl tracking-wider"
           onClick={isMenuOpen && handleMenu}
         >
           dpb
         </CustomLink>
+        <LangSwitch />
         {!isMenuOpen && <SocialLinks />}
       </OverlayBars>
-
-      {/* <LangSwitch/> */}
 
       <MenuButton />
     </header>

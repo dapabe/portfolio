@@ -64,13 +64,14 @@
   .inputContainer *:invalid[focused="true"] ~ .inputError {
     @apply select-text opacity-100;
   }
+
+  select[name="Idiomas"] > * {
+    @apply text-sutilBlack;
+  }
 }
 @layer components {
   .my-container {
     @apply mx-auto max-w-xs sm:max-w-[28rem] md:max-w-xl lg:max-w-3xl xl:max-w-5xl;
-  }
-  .brandLogo {
-    @apply mt-0.5 ml-2 inline-block text-3xl tracking-wider;
   }
   .menuContainer {
     @apply inset-0 flex justify-center sm:justify-start sm:px-24;
