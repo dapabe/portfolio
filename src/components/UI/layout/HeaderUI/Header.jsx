@@ -7,28 +7,46 @@ import LangSwitch from "./LangSwitch";
 import MenuButton from "./MenuButton/MenuButton";
 
 import OverlayBars from "./OverlayBars";
+import Backdrop from "../Backdrop";
 import SocialLinks from "@ui/reusable/SocialLinks";
 
+//  TODO: Toggle Light/Dark Theme,
+//  better keyboard navigation.
 export default function Header() {
-  const { isMenuOpen, handleMenu } = useContext(GlobalContext);
+  const { isMenuOpen, isLangOptionsOpen, handleMenu, handleLangOptions } =
+    useContext(GlobalContext);
 
-  //  TODO: Toggle Light/Dark Theme,
-  //  better keyboard navigation.
+  const backdropHandler = () => {
+    if (isMenuOpen && isLangOptionsOpen) {
+      handleMenu();
+      return handleLangOptions();
+    }
+    if (isLangOptionsOpen) return handleLangOptions();
+  };
   return (
     <header>
       <SkipNav />
-      <OverlayBars>
-        <CustomLink
-          href="/"
-          className="ml-2 text-3xl tracking-wider"
-          onClick={isMenuOpen && handleMenu}
-        >
-          dpb
-        </CustomLink>
-        <LangSwitch />
-        {!isMenuOpen && <SocialLinks />}
-      </OverlayBars>
+      <OverlayBars
+        topBar={[
+          <CustomLink
+            href="/"
+            className="ml-2 text-3xl tracking-wider"
+            onClick={isMenuOpen && handleMenu}
+          >
+            dpb
+          </CustomLink>,
+          <LangSwitch />,
+        ]}
+        rightBar={<ConditionalComponent displayCondition={!isMenuOpen} />}
+      />
+      {(isMenuOpen || isLangOptionsOpen) && (
+        <Backdrop onClick={backdropHandler} />
+      )}
       <MenuButton />
     </header>
   );
 }
+
+const ConditionalComponent = ({ displayCondition }) => {
+  return displayCondition && <SocialLinks />;
+};

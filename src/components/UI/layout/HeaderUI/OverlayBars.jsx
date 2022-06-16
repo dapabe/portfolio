@@ -5,14 +5,19 @@ const bars = [
   "w-10 bottom-0 h-[calc(100%-2.5rem)] -translate-x-full md:translate-x-0",
 ];
 
-export default function OverlayBars({ children }) {
+export default function OverlayBars({ topBar, rightBar }) {
   return bars.map((classes, i) => (
     <div
       key={i}
       className={`${classes} bg-sutilBlack transition-transform ease-in-out`}
     >
-      {!i && [children[0], children[1]]}
-      {i === 1 && children[2]}
+      {!i && spreadObject(topBar)}
+      {i === 1 && spreadObject(rightBar)}
     </div>
   ));
 }
+
+const spreadObject = (type) => {
+  if (Array.isArray(type)) return [...type];
+  return type;
+};

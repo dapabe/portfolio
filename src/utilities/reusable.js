@@ -43,3 +43,15 @@ export const arrayCompareAndRetrieve = ({ aToLook, aToSearch, kToSearch }) => {
   const foundValues = aToSearch.filter(keyToSearch);
   return foundValues.length ? foundValues : null;
 };
+
+//  [HowWorks]    Takes an [] to be referenced, creates a new array
+//                that is not equal to the passed parameter then
+//                inserts the 2nd parameter into the 1st position of the [].
+//                Use case: Always displays the current client language
+//                          as the 1st item in the language[].
+export const sugarSplice = (array, insertedItem) => {
+  if (!array.includes(insertedItem)) return [];
+  let notEqual = (current) => current !== insertedItem;
+  let excludedItem = [...array].filter(notEqual);
+  return [insertedItem, ...excludedItem];
+};

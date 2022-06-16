@@ -19,10 +19,8 @@ export default function GlobalState({ children }) {
   //   { key: "Escape", cb: handleMenu, condition: isMenuOpen },
   // ];
 
-  const noScrollBehaviour = isMenuOpen || isLangOptionsOpen;
-
   //  1.
-  useNoScroll(noScrollBehaviour);
+  useNoScroll(isMenuOpen || isLangOptionsOpen);
   // useKeyboard({ key: "m", cb: handleMenu });
 
   //=====================================================================
@@ -33,7 +31,6 @@ export default function GlobalState({ children }) {
       handleMenu,
       isLangOptionsOpen,
       handleLangOptions,
-      noScrollBehaviour,
     }),
     [isMenuOpen, isLangOptionsOpen]
   );

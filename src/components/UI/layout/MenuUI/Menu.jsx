@@ -2,7 +2,6 @@ import { useContext, useRef } from "react";
 import { GlobalContext } from "@context/states";
 import { notSelectable } from "@utils/reusable";
 
-import Backdrop from "../Backdrop";
 import NavRoutes from "./NavRoutes.jsx";
 import SocialLinks from "@ui/reusable/SocialLinks";
 
@@ -20,7 +19,6 @@ export default function Menu() {
       className={`menuContainer ${isMenuOpen ? "z-20" : "-z-50"}`}
       ref={Modal}
     >
-      <Backdrop displayCondition={isMenuOpen} onClick={handleMenu} />
       <nav className={`menu ${isOpen}`} aria-labelledby="modal">
         <ul className="menuLinks">
           <NavRoutes onClick={handleMenu} {...notSelectable(!isMenuOpen)} />

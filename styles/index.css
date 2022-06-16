@@ -64,10 +64,6 @@
   .inputContainer *:invalid[focused="true"] ~ .inputError {
     @apply select-text opacity-100;
   }
-
-  select[name="Idiomas"] > * {
-    @apply text-sutilBlack;
-  }
 }
 @layer components {
   .my-container {
