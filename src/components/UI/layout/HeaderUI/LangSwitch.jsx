@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { GlobalContext } from "@context/states";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { sugarSplice } from "@utils/reusable";
+import { sugarUnshift } from "@utils/reusable";
 
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
@@ -18,7 +18,7 @@ export default function LangSwitch() {
     }
     return handleLangOptions();
   };
-  const modifiedLocales = sugarSplice(locales, locale);
+  const modifiedLocales = sugarUnshift(locales, locale);
   const openOptions = isLangOptionsOpen ? "absolute" : "hidden";
   return (
     <div className="relative mr-2">

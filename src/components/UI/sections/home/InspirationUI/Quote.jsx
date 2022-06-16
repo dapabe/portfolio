@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { QuoteData } from "@context/states";
-import { ExtLink } from "@utils/text";
+import { ExtLink } from "@utils/helpers_text";
 
 export default function Quote() {
   const { cite, quote, webpage, nickname } = useContext(QuoteData);

@@ -1,4 +1,4 @@
-import { ExtLink, AbbrLang } from "@utils/text";
+import { ExtLink, AbbrLang } from "@utils/helpers_text";
 
 export default function About() {
   return (

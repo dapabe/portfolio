@@ -1,4 +1,4 @@
-import { ExtLink } from "@utils/text";
+import { ExtLink } from "@utils/helpers_text";
 
 const links = [
   "https://webaccesible.xyz/navegacion/teclado/#:~:text=Para%20navegar%20con%20el%20teclado,seleccionar%20o%20activar%20un%20elemento.",

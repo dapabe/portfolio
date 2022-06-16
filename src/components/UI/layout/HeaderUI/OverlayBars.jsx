@@ -5,7 +5,8 @@ const bars = [
   "w-10 bottom-0 h-[calc(100%-2.5rem)] -translate-x-full md:translate-x-0",
 ];
 
-export default function OverlayBars({ topBar, rightBar }) {
+export default function OverlayBars({ ...props }) {
+  const { topBar, rightBar, bottomBar, leftBar } = props;
   return bars.map((classes, i) => (
     <div
       key={i}
