@@ -23,8 +23,8 @@ export default function OverlayBars({ ...props }) {
  */
 
 const placeBindedComponents = (incomingObject, position) => {
-  return Object.values(incomingObject).map((obj, idx) => {
-    if (position === idx) return spreadObject(obj);
+  return Object.values(incomingObject).map((value, idx) => {
+    if (position === idx) return spreadObject(value);
   });
 };
 
