@@ -17,8 +17,10 @@ export default function Header() {
     useContext(GlobalContext);
 
   const backdropHandler = () => {
-    if (isMenuOpen && isLangOptionsOpen)
-      return [handleMenu(), handleLangOptions()];
+    if (isMenuOpen && isLangOptionsOpen) {
+      handleMenu();
+      handleLangOptions();
+    }
     if (isLangOptionsOpen) return handleLangOptions();
   };
   return (
