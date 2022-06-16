@@ -6,19 +6,29 @@ const bars = [
 ];
 
 export default function OverlayBars({ ...props }) {
-  const { topBar, rightBar, bottomBar, leftBar } = props;
-  return bars.map((classes, i) => (
+  return bars.map((classes, idx) => (
     <div
-      key={i}
+      key={idx}
       className={`${classes} bg-sutilBlack transition-transform ease-in-out`}
     >
-      {!i && spreadObject(topBar)}
-      {i === 1 && spreadObject(rightBar)}
+      {placeBindedComponents(props, idx)}
     </div>
   ));
 }
 
-const spreadObject = (type) => {
-  if (Array.isArray(type)) return [...type];
-  return type;
+/*  [Purpose]   For every property passed onto this component
+ *              place it on the same bar position.
+ *              If the property is an array; spread its
+ *              content in that place, else place it.
+ */
+
+const placeBindedComponents = (incomingObject, position) => {
+  return Object.values(incomingObject).map((obj, idx) => {
+    if (position === idx) return spreadObject(obj);
+  });
+};
+
+const spreadObject = (obj) => {
+  if (Array.isArray(obj)) return [...obj];
+  return obj;
 };
