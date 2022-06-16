@@ -18,9 +18,10 @@ export default function GlobalState({ children }) {
   //   { key: "m", cb: handleMenu, condition: true },
   //   { key: "Escape", cb: handleMenu, condition: isMenuOpen },
   // ];
+  const lockScreenConditions = [isMenuOpen, isLangOptionsOpen].some(Boolean);
 
   //  1.
-  useNoScroll(isMenuOpen || isLangOptionsOpen);
+  useNoScroll(lockScreenConditions);
   // useKeyboard({ key: "m", cb: handleMenu });
 
   //=====================================================================
@@ -31,6 +32,7 @@ export default function GlobalState({ children }) {
       handleMenu,
       isLangOptionsOpen,
       handleLangOptions,
+      lockScreenConditions,
     }),
     [isMenuOpen, isLangOptionsOpen]
   );

@@ -13,8 +13,13 @@ import SocialLinks from "@ui/reusable/SocialLinks";
 //  TODO: Toggle Light/Dark Theme,
 //  better keyboard navigation.
 export default function Header() {
-  const { isMenuOpen, isLangOptionsOpen, handleMenu, handleLangOptions } =
-    useContext(GlobalContext);
+  const {
+    isMenuOpen,
+    isLangOptionsOpen,
+    handleMenu,
+    handleLangOptions,
+    lockScreenConditions,
+  } = useContext(GlobalContext);
 
   const backdropHandler = () => {
     if (isMenuOpen && isLangOptionsOpen) {
@@ -37,16 +42,13 @@ export default function Header() {
           </CustomLink>,
           <LangSwitch />,
         ]}
-        rightBar={<ConditionalComponent displayCondition={!isMenuOpen} />}
+        rightBar={conditionalComponent(SocialLinks, !isMenuOpen)}
       />
-      {(isMenuOpen || isLangOptionsOpen) && (
-        <Backdrop onClick={backdropHandler} />
-      )}
+      {lockScreenConditions && <Backdrop onClick={backdropHandler} />}
       <MenuButton />
     </header>
   );
 }
 
-const ConditionalComponent = ({ displayCondition }) => {
-  return displayCondition && <SocialLinks />;
-};
+const conditionalComponent = (WrappedComponent, displayCondition) =>
+  displayCondition && <WrappedComponent />;
