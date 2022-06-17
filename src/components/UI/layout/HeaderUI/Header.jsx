@@ -25,27 +25,32 @@ export default function Header() {
     if (isMenuOpen) handleMenu();
     if (isLangOptionsOpen) handleLangOptions();
   };
+
   return (
     <header>
       <SkipNav />
-      <OverlayBars
-        topBar={[
-          <CustomLink
-            href="/"
-            className="ml-2 text-3xl tracking-wider"
-            onClick={isMenuOpen && handleMenu}
-          >
-            dpb
-          </CustomLink>,
-          <LangSwitch />,
-        ]}
-        rightBar={conditionalComponent(SocialLinks, !isMenuOpen)}
-      />
+      <OverlayBars {...barChildren(isMenuOpen, handleMenu)} />
       {lockScreenConditions && <Backdrop onClick={backdropHandler} />}
       <MenuButton />
     </header>
   );
 }
+
+const barChildren = (condition, callback) => {
+  return Object.freeze({
+    topBar: [
+      <CustomLink
+        href="/"
+        className="ml-2 text-3xl tracking-wider"
+        onClick={condition && callback}
+      >
+        dpb
+      </CustomLink>,
+      <LangSwitch />,
+    ],
+    rightBar: conditionalComponent(SocialLinks, !condition),
+  });
+};
 
 const conditionalComponent = (WrappedComponent, displayCondition) =>
   displayCondition && <WrappedComponent />;
