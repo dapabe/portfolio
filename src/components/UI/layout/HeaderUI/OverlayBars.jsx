@@ -37,7 +37,5 @@ const spreadObject = (value, index) => {
   return createNode(value, ++index);
 };
 
-const createNode = (node, index) => {
-  console.log(node);
-  return createElement(node.type, { ...node.props, key: index });
-};
+const createNode = (node, index) =>
+  createElement(node.type, { ...node.props, key: index });
