@@ -12,8 +12,13 @@ const styling = (type) => {
   }
 };
 
-export default function CustomLink({ ...props }) {
-  const { href, children, className, onClick } = props;
+export default function CustomLink({
+  href,
+  children,
+  className,
+  onClick,
+  ...props
+}) {
   const { pathname } = useRouter();
   const customCSS =
     className || styling(pathname === href ? "primary" : "default");

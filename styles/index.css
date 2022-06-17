@@ -70,10 +70,10 @@
     @apply mx-auto max-w-xs sm:max-w-[28rem] md:max-w-xl lg:max-w-3xl xl:max-w-5xl;
   }
   .menuContainer {
-    @apply inset-0 flex justify-center sm:justify-start sm:px-24;
+    @apply pointer-events-none inset-0 flex justify-center sm:justify-start sm:px-24;
   }
   .menu {
-    @apply before:btriangle-tl after:btriangle-tr relative flex h-2/3 max-w-xs flex-grow flex-col bg-orange-500 px-6 pt-10 text-3xl transition-transform before:absolute before:top-[95%] before:left-0 before:border-[6rem] before:border-orange-500 after:absolute after:top-[95%] after:right-0 after:border-[6rem] after:border-orange-500;
+    @apply before:btriangle-tl after:btriangle-tr pointer-events-auto relative flex h-2/3 max-w-xs flex-grow flex-col bg-orange-500 px-6 pt-10 text-3xl transition-transform before:absolute before:top-[95%] before:left-0 before:border-[6rem] before:border-orange-500 after:absolute after:top-[95%] after:right-0 after:border-[6rem] after:border-orange-500;
   }
   .menuLinks {
     @apply mt-auto flex w-max flex-col gap-y-4 self-center;

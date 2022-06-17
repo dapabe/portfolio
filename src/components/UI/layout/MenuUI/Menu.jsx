@@ -15,7 +15,6 @@ export default function Menu() {
 
   return (
     <section
-      role="dialog"
       className={`menuContainer ${isMenuOpen ? "z-20" : "-z-50"}`}
       ref={Modal}
     >

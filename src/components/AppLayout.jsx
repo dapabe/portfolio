@@ -12,10 +12,10 @@ export default function AppLayout({ children }) {
       <Header />
       <main id="main">{children}</main>
       <Footer />
-      <GoTop />
       <Portal selector="menu-root">
         <Menu />
       </Portal>
+      <GoTop />
     </GlobalState>
   );
 }

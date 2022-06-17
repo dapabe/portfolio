@@ -7,18 +7,11 @@ import { sugarUnshift } from "@utils/reusable";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
 export default function LangSwitch() {
-  const { locales, asPath, locale } = useRouter();
-  const { isMenuOpen, isLangOptionsOpen, handleMenu, handleLangOptions } =
-    useContext(GlobalContext);
+  const { locales, locale, pathname } = useRouter();
+  const { isLangOptionsOpen, handleLangOptions } = useContext(GlobalContext);
 
-  const clickActions = () => {
-    if (isMenuOpen && isLangOptionsOpen) {
-      handleMenu();
-      handleLangOptions();
-    }
-    return handleLangOptions();
-  };
   const modifiedLocales = sugarUnshift(locales, locale);
+
   const openOptions = isLangOptionsOpen ? "absolute" : "hidden";
   return (
     <div className="relative mr-2">
@@ -42,14 +35,8 @@ export default function LangSwitch() {
             key={lang}
             className="px-3 py-2 text-black first:bg-red-500 first:text-white"
           >
-            <Link
-              href={asPath}
-              locale={lang}
-              scroll={false}
-              prefetch={false}
-              passHref
-            >
-              <a onClick={clickActions}>{langTextSwitcher(lang)}</a>
+            <Link href={pathname} locale={lang} scroll={false} prefetch={false}>
+              <a onClick={handleLangOptions}>{langTextSwitcher(lang)}</a>
             </Link>
           </li>
         ))}
