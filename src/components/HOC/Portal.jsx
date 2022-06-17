@@ -1,14 +1,8 @@
-import useToggle from "@src/components/hooks/useToggle";
-import { useEffect } from "react";
 import { createPortal } from "react-dom";
 
+import useMount from "@hooks/useMount";
 export default function Portal({ selector, children }) {
-  const [isMounted, handleMount] = useToggle(false);
-
-  useEffect(() => {
-    handleMount();
-    return handleMount;
-  }, []);
+  const { isMounted } = useMount();
 
   return isMounted
     ? createPortal(children, document.getElementById(selector))
