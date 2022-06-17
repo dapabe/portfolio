@@ -36,8 +36,8 @@ export default function Header() {
   );
 }
 
-const barChildren = (condition, callback) => {
-  return Object.freeze({
+const barChildren = (condition, callback) =>
+  Object.freeze({
     topBar: [
       <CustomLink
         href="/"
@@ -48,9 +48,5 @@ const barChildren = (condition, callback) => {
       </CustomLink>,
       <LangSwitch />,
     ],
-    rightBar: conditionalComponent(SocialLinks, !condition),
+    rightBar: !condition && <SocialLinks />,
   });
-};
-
-const conditionalComponent = (WrappedComponent, displayCondition) =>
-  displayCondition && <WrappedComponent />;
