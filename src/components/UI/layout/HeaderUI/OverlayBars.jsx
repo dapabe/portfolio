@@ -28,14 +28,14 @@ export default function OverlayBars({ ...props }) {
 
 const placeBindedComponents = (incomingObject, position) => {
   return Object.values(incomingObject).map((obj, idx) => {
-    if (position === idx) return spreadObject(obj, idx);
+    if (position === idx) return spreadObject(obj);
   });
 };
 
-const spreadObject = (value, index) => {
+const spreadObject = (value) => {
   if (Array.isArray(value)) return value.map(createNode);
-  return createNode(value, ++index);
+  return createNode(value);
 };
 
-const createNode = (node, index) =>
-  createElement(node.type, { ...node.props, key: index });
+const createNode = (node) =>
+  createElement(node.type, { ...node.props, key: node.type.name });

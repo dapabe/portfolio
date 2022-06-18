@@ -1,8 +1,6 @@
+const nextTranslate = require("next-translate");
 module.exports = {
-  i18n: {
-    locales: ["es", "en"],
-    defaultLocale: "es",
-  },
+  ...nextTranslate(),
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
