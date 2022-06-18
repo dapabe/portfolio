@@ -1,5 +1,4 @@
 import Head from "next/head";
-import useTranslation from "next-translate/useTranslation";
 import componentMapper from "@src/components/HOC/componentMapper";
 
 import Hero from "@ui/sections/home/Hero";
@@ -19,7 +18,6 @@ const sections = [
 ];
 
 export default function Home() {
-  const { t } = useTranslation();
   return (
     <>
       <Head>
@@ -29,7 +27,7 @@ export default function Home() {
           src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
         ></script>
       </Head>
-      {componentMapper(sections, t)}
+      {componentMapper(sections)}
     </>
   );
 }

@@ -1,13 +1,10 @@
-import useTranslation from "next-translate/useTranslation";
 import { ExtLink, AbbrLang } from "@utils/helpers_text";
 export default function About() {
-  const { t } = useTranslation();
-
   return (
     <section className="about noMaxWidth">
       <section className="mx-auto mt-10 max-w-[75ch] space-y-6 px-4">
         <h2 className="paragraphTitle text-center underline underline-offset-4">
-          {t("about:title")}
+          {/* {t("about:title")} */}
         </h2>
         <p>
           Mi interés por la programación proviene desde el primer contacto que
