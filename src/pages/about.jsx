@@ -1,6 +1,7 @@
+import useTranslation from "next-translate/useTranslation";
 import { ExtLink, AbbrLang } from "@utils/helpers_text";
-
 export default function About() {
+  const { t } = useTranslation();
   return (
     <section className="about noMaxWidth">
       <section className="mx-auto mt-10 max-w-[75ch] space-y-6 px-4">
