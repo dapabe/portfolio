@@ -2,9 +2,9 @@ import { createElement, useMemo } from "react";
 
 const bars = [
   "h-10 w-full z-30 flex justify-between items-center",
-  "w-10 right-0 bottom-0 h-[calc(100%-2.5rem)] translate-x-full md:translate-x-0 flex flex-col items-center justify-center gap-y-6",
-  "h-10 right-10 bottom-0 w-[calc(100%-5rem)] translate-y-full md:translate-y-0",
-  "w-10 bottom-0 h-[calc(100%-2.5rem)] -translate-x-full md:translate-x-0",
+  "w-10 right-0 bottom-0 h-[calc(100%-2.5rem)] hidden md:flex flex-col items-center justify-center gap-y-6",
+  // "h-10 right-10 bottom-0 w-[calc(100%-5rem)] translate-y-full md:translate-y-0",
+  "w-10 bottom-0 h-[calc(100%-2.5rem)] hidden md:block",
 ];
 
 export default function OverlayBars({ ...props }) {
