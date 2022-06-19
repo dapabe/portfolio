@@ -1,0 +1,40 @@
+{
+  "/": {
+    "working_position": "Desarrollador Front-End.",
+    "cta_contact": "CONTÁCTAME",
+    "scroller_msg": "Deslizar"
+  },
+
+  "/about": {
+    "heading": "COMO EMPECE",
+    "1st_paragraph": "Mi interés por la programación proviene desde el primer contacto que tuve con una computadora, me pregunté como es que funcionaban las herramientas, programas en ella.",
+    "2nd_paragraph": "Gracias a mis estudios y al idioma Inglés pude comprender como eran posibles estas máquinas, ya que mucha de esa información existe en ese lenguaje.",
+    "3rd_paragraph": {
+      "1st_text": "A mis 20 años tuve interés en crear modificaciones para juegos y así comprendí como funcionaba la ",
+      "1st_tag": {
+        "href": "https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos",
+        "title": "Ir a la definición de POO",
+        "inner_tag": {
+          "rich": "<abbr>POO</abbr>",
+          "title": "Programación orientada a objetos"
+        }
+      }
+    },
+    "2nd_heading": "AL DÍA DE HOY",
+    "4th_paragraph": {
+      "1st_tag": {
+        "rich": "Deje a un lado mi <AbbrLang>hobby</AbbrLang> de crear ",
+        "title": "Afición u ocupación"
+      },
+      "2nd_tag": {
+        "rich": "<AbbrLang>mods</AbbrLang> para juegos y me especialice en el desarrollo web.",
+        "title": "Modificaciones"
+      }
+    },
+    "5th_paragraph": {
+      "rich": "Al dominar <abbr>HTML</abbr>, <abbr>CSS</abbr> y decidí investigar que herramientas de desarrollo web, o ",
+      "1st_title": "Lenguaje de Texto Hiper Marcado",
+      "2nd_title": "Hojas de Estilo en Cascada"
+    }
+  }
+}

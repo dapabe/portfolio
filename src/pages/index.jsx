@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { useTranslations } from "next-intl";
+
 import componentMapper from "@src/components/HOC/componentMapper";
 
 import Hero from "@ui/sections/home/Hero";
@@ -16,8 +18,10 @@ const sections = [
   <Inspiration />,
   <Contact />,
 ];
+//  Drilling translation function to every part of the home page
 
 export default function Home() {
+  const t = useTranslations("/");
   return (
     <>
       <Head>
@@ -27,7 +31,15 @@ export default function Home() {
           src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
         ></script>
       </Head>
-      {componentMapper(sections)}
+      {componentMapper(sections, t)}
     </>
   );
+}
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      translations: (await import(`@src/assets/locales/${locale}.json`))
+        .default,
+    },
+  };
 }

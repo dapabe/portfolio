@@ -1,40 +1,56 @@
 import { ExtLink, AbbrLang } from "@utils/helpers_text";
+import { useTranslations } from "next-intl";
 export default function About() {
+  const t = useTranslations("/about");
   return (
     <section className="about noMaxWidth">
       <section className="mx-auto mt-10 max-w-[75ch] space-y-6 px-4">
         <h2 className="paragraphTitle text-center underline underline-offset-4">
-          {/* {t("about:title")} */}
+          {t("heading")}
         </h2>
         <p>
-          Mi interés por la programación proviene desde el primer contacto que
-          tuve con una computadora, me pregunté como es que funcionaban las
-          herramientas y programas en ella. <br /> <br />
-          Gracias a mis estudios y el aprender el idioma Inglés pude comprender
-          como eran posibles estas máquinas, ya que mucha de esta información
-          existe en ese lenguaje.
+          {t("1st_paragraph")} <br />
           <br />
-          <br />A mis 20 años tuve interés en crear modificaciones para juegos y
-          comprendí como funcionaba la{" "}
+          {t("2nd_paragraph")} <br />
+          <br />
+          {t("3rd_paragraph.1st_text")}
           <ExtLink
-            href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos"
-            title="Ir a la definición de que es OOP"
+            href={t("3rd_paragraph.1st_tag.href")}
+            title={t("3rd_paragraph.1st_tag.title")}
           >
-            <abbr title="Object-oriented programming">OOP</abbr>
+            {t.rich("3rd_paragraph.1st_tag.inner_tag.rich", {
+              abbr: (text) => <abbr>{text}</abbr>,
+            })}
           </ExtLink>
-          ; programación orientada a objetos.
+          .
         </p>
         <h2 className="paragraphTitle text-center underline underline-offset-4">
-          AL DÍA DE HOY
+          {t("2nd_heading")}
         </h2>
         <p>
-          Deje a un lado mi{" "}
-          <AbbrLang title="Afición u ocupación">hobby</AbbrLang> de crear{" "}
-          <AbbrLang title="Modificaciones">mods</AbbrLang> para juegos y me
-          especialice en el desarrollo web. <br />
-          Al dominar <abbr title="Hyper Text Markup Language">HTML</abbr>,{" "}
-          <abbr title="Cascade Style Sheets">CSS</abbr> y JavaScript, decidí
-          investigar que herramientas de desarrollo web o{" "}
+          {t.rich("4th_paragraph.1st_tag.rich", {
+            AbbrLang: (text, rest) => (
+              <>
+                {rest}
+                <AbbrLang title={t("4th_paragraph.1st_tag.title")}>
+                  {text}
+                </AbbrLang>
+              </>
+            ),
+          })}
+          {t.rich("4th_paragraph.2nd_tag.rich", {
+            AbbrLang: (text) => (
+              <AbbrLang title={t("4th_paragraph.2nd_tag.title")}>
+                {text}
+              </AbbrLang>
+            ),
+          })}
+          <br />
+          {t.rich("5th_paragraph.rich", {
+            abbr: (text, rest) => (
+              <abbr title={t("5th_paragraph.1st_title")}>{text}</abbr>
+            ),
+          })}
           <AbbrLang title="Marcos de trabajo">frameworks</AbbrLang> eran los más
           utilizados, así es como me enfoque en{" "}
           <ExtLink href="https://es.reactjs.org/">React.JS</ExtLink> y{" "}
@@ -51,3 +67,20 @@ export default function About() {
     </section>
   );
 }
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      translations: (await import(`@src/assets/locales/${locale}.json`))
+        .default,
+    },
+  };
+}
+// A mis 20 años tuve interés en crear modificaciones para juegos y
+//           comprendí como funcionaba la{" "}
+//           <ExtLink
+//             href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos"
+//             title="Ir a la definición de que es OOP"
+//           >
+//             <abbr title="Object-oriented programming">OOP</abbr>
+//           </ExtLink>
+//           ; programación orientada a objetos.
