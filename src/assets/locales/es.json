@@ -1,8 +1,14 @@
 {
   "/": {
-    "working_position": "Desarrollador Front-End.",
-    "cta_contact": "CONTÁCTAME",
-    "scroller_msg": "Deslizar"
+    "section_hero": {
+      "logo": {
+        "title": "Logo de dapabe",
+        "alt": "Las primeras 2 iniciales del nombre Daniel Patricio Becerra"
+      },
+      "working_position": "Desarrollador Front-End.",
+      "cta": { "title": "Ir a la sección de contacto", "text": "CONTÁCTAME " },
+      "scroller_msg": "Deslizar"
+    }
   },
 
   "/about": {
@@ -32,9 +38,28 @@
       }
     },
     "5th_paragraph": {
-      "rich": "Al dominar <abbr>HTML</abbr>, <abbr>CSS</abbr> y decidí investigar que herramientas de desarrollo web, o ",
-      "1st_title": "Lenguaje de Texto Hiper Marcado",
-      "2nd_title": "Hojas de Estilo en Cascada"
+      "1st_tag": {
+        "rich": "Al dominar <abbr>HTML</abbr>, ",
+        "title": "Lenguaje de Texto Hiper Marcado"
+      },
+      "2nd_tag": {
+        "rich": "<abbr>CSS</abbr> y JavaScript, decidí investigar que herramientas de desarrollo web, o ",
+        "title": "Hojas de Estilo en Cascada"
+      },
+      "3rd_tag": {
+        "rich": "<AbbrLang>frameworks</AbbrLang> y librerias eran los más utilizados, así es como me enfoque en ",
+        "title": "Marcos de trabajo"
+      },
+      "4th_tag": {
+        "rich": "<ExtLink>React.JS</ExtLink> y ",
+        "href": "https://es.reactjs.org/"
+      },
+      "5th_tag": {
+        "rich": "<ExtLink>NEXT.JS</ExtLink>.",
+        "href": "https://nextjs.org/"
+      },
+      "1st_text": "Ahora estoy en camino de dominar estos y aprender más lenguajes, y frameworks ampliando más mi conocimiento junto con otras herramientas de diseño.",
+      "2nd_text": "Siguientes objetivos: React Native, TypeScript y .NET"
     }
   }
 }

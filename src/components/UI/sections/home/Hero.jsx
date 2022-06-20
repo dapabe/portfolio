@@ -1,10 +1,13 @@
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
+
 import useToggle from "@hooks/useToggle";
 import Intro from "./HeroUI/Intro";
 import Stripes from "./HeroUI/Stripes";
 import ScrollBouncer from "./HeroUI/ScrollBouncer";
 
-export default function SectionHero() {
+export default function SectionHero({ ...props }) {
+  const t = useTranslations("/");
   const target = useRef();
   const [elmOffset, handleOffset] = useToggle(false);
 
@@ -29,12 +32,14 @@ export default function SectionHero() {
         <img
           loading="eager"
           src="dapabe.svg"
-          title="Logo Dapabe"
-          alt="Las primeras 2 iniciales del nombre Daniel Patricio Becerra, dapabe."
+          title={t("section_hero.logo.title")}
+          alt={t("section_hero.logo.alt")}
           className="absolute right-1 top-1/2 -translate-y-1/2 translate-x-[53%] scale-75 transition-transform will-change-transform sm:translate-x-[52.75%] lg:translate-x-[52.5%]"
         />
         <Intro displayCondition={elmOffset} />
-        <ScrollBouncer displayCondition={elmOffset} />
+        <ScrollBouncer displayCondition={elmOffset}>
+          &larr; {t("section_hero.scroller_msg")}
+        </ScrollBouncer>
       </section>
       <div className="h-4" />
     </section>

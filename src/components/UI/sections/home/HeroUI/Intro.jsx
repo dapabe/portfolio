@@ -1,6 +1,7 @@
 import { MailIcon } from "@heroicons/react/solid";
-
+import { useTranslations } from "next-intl";
 export default function Intro({ displayCondition }) {
+  const t = useTranslations("/");
   const scrollIntoView = displayCondition
     ? "translate-y-0"
     : "translate-y-6 opacity-0";
@@ -15,7 +16,7 @@ export default function Intro({ displayCondition }) {
       <h2
         className={`${scrollIntoView} font-medium transition-[translate_opacity] delay-500`}
       >
-        Desarrollador Front-End. <br />
+        {t("section_hero.working_position")} <br />
       </h2>
       <h3
         className={`${scrollIntoView} mt-6 transition-[translate_opacity] delay-700`}
@@ -23,9 +24,10 @@ export default function Intro({ displayCondition }) {
         <a
           href="#contactSection"
           className="analog-shadow-left block w-max rounded-md bg-white p-2 text-base text-sutilBlack transition-[box-shadow_transform] active:-translate-x-1 active:translate-y-1 active:shadow-inner active:shadow-gray-500"
-          title="Ir a la sección de contacto"
+          title={t("section_hero.cta.title")}
         >
-          CONTÁCTAME <MailIcon className="inline-block w-6 -translate-y-0.5" />
+          {t("section_hero.cta.text")}{" "}
+          <MailIcon className="inline-block w-6 -translate-y-0.5" />
         </a>
       </h3>
     </section>

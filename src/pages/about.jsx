@@ -46,22 +46,38 @@ export default function About() {
             ),
           })}
           <br />
-          {t.rich("5th_paragraph.rich", {
-            abbr: (text, rest) => (
-              <abbr title={t("5th_paragraph.1st_title")}>{text}</abbr>
+          {t.rich("5th_paragraph.1st_tag.rich", {
+            abbr: (text) => (
+              <abbr title={t("5th_paragraph.1st_tag.title")}>{text}</abbr>
             ),
           })}
-          <AbbrLang title="Marcos de trabajo">frameworks</AbbrLang> eran los más
-          utilizados, así es como me enfoque en{" "}
-          <ExtLink href="https://es.reactjs.org/">React.JS</ExtLink> y{" "}
-          <ExtLink href="https://nextjs.org/">NEXT.JS</ExtLink>.
+          {t.rich("5th_paragraph.2nd_tag.rich", {
+            abbr: (text) => (
+              <abbr title={t("5th_paragraph.2nd_tag.title")}>{text}</abbr>
+            ),
+          })}
+          {t.rich("5th_paragraph.3rd_tag.rich", {
+            AbbrLang: (text) => (
+              <AbbrLang title={t("5th_paragraph.3rd_tag.title")}>
+                {text}
+              </AbbrLang>
+            ),
+          })}
+          {t.rich("5th_paragraph.4th_tag.rich", {
+            ExtLink: (text) => (
+              <ExtLink href={t("5th_paragraph.4th_tag.href")}>{text}</ExtLink>
+            ),
+          })}
+          {t.rich("5th_paragraph.5th_tag.rich", {
+            ExtLink: (text) => (
+              <ExtLink href={t("5th_paragraph.5th_tag.href")}>{text}</ExtLink>
+            ),
+          })}
           <br />
           <br />
-          Ahora estoy en camino de dominar estos y aprender más lenguajes, y
-          frameworks ampliando más mi conocimiento junto con otras herramientas
-          de diseño.
+          {t("5th_paragraph.1st_text")}
           <br /> <br />
-          Siguiente objetivo: React Native y TypeScript.
+          {t("5th_paragraph.2nd_text")}
         </p>
       </section>
     </section>
@@ -75,12 +91,3 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
-// A mis 20 años tuve interés en crear modificaciones para juegos y
-//           comprendí como funcionaba la{" "}
-//           <ExtLink
-//             href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos"
-//             title="Ir a la definición de que es OOP"
-//           >
-//             <abbr title="Object-oriented programming">OOP</abbr>
-//           </ExtLink>
-//           ; programación orientada a objetos.

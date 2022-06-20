@@ -2,13 +2,58 @@
   "/": {
     "working_position": "Desarrollador Front-End.",
     "cta_contact": "CONTÁCTAME",
-    "scroller_msg": "Deslizar"
+    "scroller_msg": "&larr; Deslizar"
   },
 
   "/about": {
-    "title": "COMO EMPECE",
-    "1st_paragraph": "Mi interés por la programación proviene desde el primer contacto que tuve con una computadora, me pregunté como es que funcionaban las herramientas, programas en ella.",
-    "2nd_paragraph": "Gracias a mis estudios y al idioma Inglés pude comprender como eran posibles estas máquinas, ya que mucha de esa información existe en ese lenguaje.",
-    "3rd_paragraph": "A mis 20 años tuve interés en crear modificaciones para juegos y así comprendí como funcionaba la <link><link_title>Ir a la definición de que significa OOP</link_title><abbr>Programación orientada a objetos.</abbr>OOP</link>; programación orientada a objetos."
+    "heading": "HOW I STARTED",
+    "1st_paragraph": "My interest in programming comes from the first contact I had with a computer, I wondered how the tools worked, programs in it.",
+    "2nd_paragraph": "Thanks to my studies and the English language I could understand how these machines were possible, since much of that information exists in that language.",
+    "3rd_paragraph": {
+      "1st_text": "At the age of 20 I had interest in creating modifications to games and thus I understood how the ",
+      "1st_tag": {
+        "href": "https://en.wikipedia.org/wiki/Object-oriented_programming",
+        "title": "Go to the definition of OOP",
+        "inner_tag": {
+          "rich": "<abbr>OOP</abbr>",
+          "title": "Object-oriented Programming"
+        }
+      }
+    },
+    "2nd_heading": "TODAY",
+    "4th_paragraph": {
+      "1st_tag": {
+        "rich": "I put aside my <AbbrLang>hobby</AbbrLang> to create ",
+        "title": "Occupation"
+      },
+      "2nd_tag": {
+        "rich": "<AbbrLang>mods</AbbrLang> for games and specialized in web development.",
+        "title": "Modifications"
+      }
+    },
+    "5th_paragraph": {
+      "1st_tag": {
+        "rich": "When dominating <abbr>HTML</abbr>, ",
+        "title": "Hyper-Text Markup Language"
+      },
+      "2nd_tag": {
+        "rich": "<abbr>CSS</abbr> and JavaScript, I decided to investigate what web development tools, or  ",
+        "title": "Cascade Style Sheet"
+      },
+      "3rd_tag": {
+        "rich": "<AbbrLang>frameworks</AbbrLang> and libraries were the most used, this is how I focus on ",
+        "title": ""
+      },
+      "4th_tag": {
+        "rich": "<ExtLink>React.JS</ExtLink> and ",
+        "href": "https://en.reactjs.org/"
+      },
+      "5th_tag": {
+        "rich": "<ExtLink>NEXT.JS</ExtLink>.",
+        "href": "https://nextjs.org/"
+      },
+      "1st_text": "Now I am on the way to dominate these and learn more languages, and frameworks expanding more my knowledge along with other design tools.",
+      "2nd_text": "Following objectives: React Native, TypeScript y .NET"
+    }
   }
 }

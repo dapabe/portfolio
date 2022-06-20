@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
 import AppLayout from "@src/components/AppLayout";
 import { NextIntlProvider } from "next-intl";
 
