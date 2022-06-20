@@ -8,7 +8,10 @@
       "working_position": "Desarrollador Front-End.",
       "cta": { "title": "Ir a la sección de contacto", "text": "CONTÁCTAME " },
       "scroller_msg": "Deslizar"
-    }
+    },
+    "section_projects":{},
+    "section_techs":{},
+    "section_"
   },
 
   "/about": {
