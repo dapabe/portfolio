@@ -17,12 +17,12 @@ export default function Home() {
           src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
         ></script>
       </Head>
-      <Hero />,
-      <Projects />,
-      <Techs />,
-      <Intro />,
-      <Inspiration />,
-      <Contact />,
+      <Hero />
+      <Projects />
+      <Techs />
+      <Intro />
+      <Inspiration />
+      <Contact />
     </>
   );
 }
