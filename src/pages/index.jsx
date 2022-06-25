@@ -29,8 +29,7 @@ export default function Home() {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      translations: (await import(`@src/assets/locales/${locale}.json`))
-        .default,
+      translations: (await import(`@src/assets/locales/${locale}.json`)).default
     },
   };
 }

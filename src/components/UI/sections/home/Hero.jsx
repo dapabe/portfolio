@@ -17,9 +17,8 @@ export default function SectionHero({ ...props }) {
     elmOffset && refOffset < pixels && handleOffset();
   };
 
-  const hasScrolledHero = `${
-    elmOffset ? "translate-x-0" : "-translate-x-1/2"
-  } transition-transform h-screen w-full bg-red-500 flex sticky top-0`;
+  const hasScrolledHero = `${elmOffset ? "translate-x-0" : "-translate-x-1/2"
+    } transition-transform h-screen w-full bg-red-500 flex sticky top-0`;
 
   return (
     <section
