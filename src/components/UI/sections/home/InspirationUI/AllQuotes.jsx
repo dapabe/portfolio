@@ -1,8 +1,7 @@
 import { QuoteData } from "@context/states";
-import data from "@src/assets/data.json";
+import inspirations from "@src/assets/static/inspirations.json";
 import QuoteCard from "./QuoteCard";
 
-const inspirations = data.inspirations;
 
 export default function AllQuotes() {
   return (

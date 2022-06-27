@@ -12,20 +12,15 @@ const styling = (type) => {
   }
 };
 
-export default function CustomLink({
-  href,
-  children,
-  className,
-  onClick,
-  ...props
-}) {
+export default function CustomLink({ ...props }) {
+  const { href, children, className, childProps } = props;
   const { pathname } = useRouter();
   const customCSS =
     className || styling(pathname === href ? "primary" : "default");
 
   return (
     <Link href={href} {...props}>
-      <a className={customCSS} onClick={onClick}>
+      <a className={customCSS} {...childProps} onClick={onClick}>
         {children}
       </a>
     </Link>

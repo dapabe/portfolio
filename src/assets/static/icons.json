@@ -1,0 +1,87 @@
+[
+  {
+    "name": "HTML5",
+    "file": "HTML5.svg",
+    "img_desc": "Logo de HTML5"
+  },
+  {
+    "name": "CSS",
+    "file": "CSS.svg",
+    "img_desc": "Logo de CSS"
+  },
+  {
+    "name": "JavaScript",
+    "file": "JavaScript.svg",
+    "img_desc": "Logo de JavaScript"
+  },
+  {
+    "name": "TailwindCSS",
+    "file": "TailwindCSS.svg",
+    "img_desc": "Logo de TailwindCSS"
+  },
+  {
+    "name": "Node.JS",
+    "file": "NodeJS.svg",
+    "img_desc": "Logo de NodeJS"
+  },
+  {
+    "name": "React.JS",
+    "file": "ReactJS.svg",
+    "img_desc": "Logo de ReactJS"
+  },
+  {
+    "name": "Redux",
+    "file": "Redux.svg",
+    "img_desc": "Logo de Redux"
+  },
+  {
+    "name": "Next.JS",
+    "file": "NextJS.svg",
+    "img_desc": "Logo de NextJS"
+  },
+  {
+    "name": "Next.JS-mono",
+    "file": "NextJS-mono.svg",
+    "img_desc": "Logo de NextJS"
+  },
+  {
+    "name": "API",
+    "file": "API.svg",
+    "img_desc": "Imagen con las siglas de API"
+  },
+  {
+    "name": "MySQL",
+    "file": "MySQL.svg",
+    "img_desc": "Logo de MySQL"
+  },
+  {
+    "name": "LinkedIn",
+    "file": "LinkedIn.svg",
+    "img_desc": "Logo de MySQL"
+  },
+  {
+    "name": "Github",
+    "file": "Github.svg",
+    "img_desc": "Logo de Github"
+  },
+  {
+    "name": "Instagram",
+    "file": "Instagram.svg",
+    "img_desc": "Logo de Instagram"
+  },
+  {
+    "name": "Twitter",
+    "file": "Twitter.svg",
+    "img_desc": "Logo de Twitter"
+  },
+  {
+    "name": "Figma",
+    "file": "Figma.svg",
+    "img_desc": "Logo de Figma"
+  },
+  {
+    "name": "Git",
+    "file": "Git.svg",
+    "img_desc": "Logo de Git"
+  }
+]

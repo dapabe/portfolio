@@ -1,5 +1,5 @@
-import data from "@src/assets/data.json";
-const social = data.social_data;
+import social from "@src/assets/static/social.json";
+
 export default function Footer() {
   return (
     <footer className="bg-sutilBlack pb-10 pt-4">

@@ -2,7 +2,8 @@ import { useState, useMemo } from "react";
 import { CarouselAnimation } from "@context/states";
 import useToggle from "@hooks/useToggle";
 
-import data from "@src/assets/data.json";
+import tech_data from "@src/assets/static/technologies.json";
+import icons_data from "@src/assets/static/icons.json";
 
 import TechCarousel from "./TechCarousel";
 import TechList from "./TechList";
@@ -20,8 +21,8 @@ export default function AlternateLists({ displayCondition }) {
   const [firstWatch, setFirstWatch] = useState(true);
 
   const displaying_icons = arrayCompareAndRetrieve({
-    aToLook: data.tech_data,
-    aToSearch: data.icons_data,
+    aToLook: tech_data,
+    aToSearch: icons_data,
     kToSearch: "name",
   });
 

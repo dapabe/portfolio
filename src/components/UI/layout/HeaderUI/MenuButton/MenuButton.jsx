@@ -25,6 +25,7 @@ export default function MenuButton() {
     <button
       ref={MenuRef}
       type="button"
+      title="Menu"
       className={`menuButton group ${
         isMenuOpen
           ? "rounded-full bg-white"

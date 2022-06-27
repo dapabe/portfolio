@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "@context/states";
 import { notSelectable } from "@utils/reusable";
 
@@ -7,7 +7,6 @@ import SocialLinks from "@ui/reusable/SocialLinks";
 
 export default function Menu() {
   const { isMenuOpen, handleMenu } = useContext(GlobalContext);
-  const Modal = useRef(null);
 
   const isOpen = isMenuOpen
     ? "z-20 delay-500 opacity-100"
@@ -16,7 +15,7 @@ export default function Menu() {
   return (
     <section
       className={`menuContainer ${isMenuOpen ? "z-20" : "-z-50"}`}
-      ref={Modal}
+     
     >
       <nav className={`menu ${isOpen}`} aria-labelledby="modal">
         <ul className="menuLinks">

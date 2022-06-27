@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Github",
+    "url": "https://github.com/dapabe/portfolio",
+    "img": "Github-mono.svg",
+    "fallback_img": "Github.svg",
+    "img_desc": {
+      "es": "Ir al perfil de Github",
+      "en": "Go to my Github profile."
+    }
+  },
+  {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/in/dapabe/",
+    "img": "LinkedIn-mono.svg",
+    "fallback_img": "LinkedIn.svg",
+    "img_desc": {
+      "es": "Ir al perfil de LinkedIn",
+      "en": "Go to my LinkedIn profile."
+    }
+  },
+  {
+    "name": "Twitter",
+    "url": "https://twitter.com/_danzen",
+    "img": "Twitter-mono.svg",
+    "fallback_img": "Twitter.svg",
+    "img_desc": {
+      "es": "Ir al perfil de Twitter",
+      "en": "Go to my Twitter profile."
+    }
+  },
+  {
+    "name": "Instagram",
+    "url": "https://www.instagram.com/_danzen",
+    "img": "Instagram-mono.svg",
+    "fallback_img": "Instagram.svg",
+    "img_desc": {
+      "es": "Ir al perfil de Instagram",
+      "en": "Go to my Instagram profile."
+    }
+  }
+]

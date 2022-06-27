@@ -2,7 +2,7 @@
   "/": {
     "section_hero": {
       "logo": {
-        "title": "Logo de dapabe",
+        "title": "Logo de DaPaBe",
         "alt": "Las primeras 2 iniciales del nombre Daniel Patricio Becerra"
       },
       "working_position": "Desarrollador Front-End.",
@@ -12,11 +12,33 @@
       },
       "scroller_msg": "Deslizar"
     },
-    "section_projects": {},
+    "section_projects": {
+      "heading": "PROYECTOS",
+      "tools": {
+        "repo_link": "Ir al repositorio de Github.",
+        "git_lobo": "Logo de Github."
+      }
+    },
     "section_techs": {},
     "section_intro": {},
-    "section_inspiration": {},
-    "section_contact": {}
+    "section_inspiration": {
+      "heading": "INSPIRACIÓN",
+      "quotes": {
+        "cite_origin": "Ir al origen de esta cita.",
+        "web_link": "Ir a su página web.",
+        "symbol": "Simbolo de cita textual"
+      },
+      "my_quote": "Con la correcta forma de pensar tienes las bases para un camino bien pavimentado, y con ese camino podrás guiar a otros."
+    },
+    "section_contact": {
+      "cta_title": "Botón de contacto",
+      "cta_text": "¿Te gustaria dejarme un mensaje?",
+      "heading": "CONTÁCTAME",
+      "btn_submit": {
+        "title": "Enviar mensaje.",
+        "text": "Enviar"
+      }
+    }
   },
   "/about": {
     "heading": "COMO EMPECE",

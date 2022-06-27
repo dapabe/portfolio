@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1a",
+    "title": "TakeALook",
+    "image": "moviedb.png",
+    "description": {
+      "es": {
+        "short": "Servicio para ver información de películas y series, pensado como clon de Netflix.",
+        "tech": "..."
+      },
+      "en": {
+        "short": "",
+        "tech": ""
+      }
+    },
+    "links": {
+      "repository": "https://github.com/dapabe/api-moviedb",
+      "webpage": "https://moviedb-clone-dapabe.vercel.app/"
+    },
+    "made_with": [
+      "TailwindCSS.svg",
+      "NextJS-mono.svg",
+      "API.svg"
+    ]
+  }
+]

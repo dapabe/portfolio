@@ -1,21 +1,23 @@
+import { useRouter } from "next/router";
 import Image from "next/image";
-import data from "@src/assets/data.json";
+import social_icons from "@src/assets/static/social.json";
 
-const social_icons = data.social_data;
 
 export default function SocialLinks({ ...props }) {
+  const { locale } = useRouter()
+
   return social_icons.map(({ name, url, img, img_desc, fallback_img }) => (
     <i className="social-icon" key={name}>
       <a
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        title={img_desc}
+        title={img_desc[locale]}
         {...props}
       >
         <Image
           src={`/images/icons/social/${img || fallback_img}`}
-          alt={img_desc}
+          alt={img_desc[locale]}
           width={32}
           height={32}
         />

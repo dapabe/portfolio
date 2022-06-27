@@ -1,0 +1,22 @@
+[
+  {
+    "nickname": "Kevin Powell",
+    "webpage": "https://www.kevinpowell.co/",
+    "image": "kevin_powell.jpeg",
+    "cite": "https://youtube.com/clip/UgkxeaxPrHxUDWi-Xu9rkoOGsoTonWsYYRmc",
+    "quote": {
+      "es": "Antes de escribir una sola línea de CSS, tu sitio web debe ser responsivo y con eso marcarás diferencia.",
+      "en": "Before writing a single CSS line, your website must be responsive and with that you will make a difference."
+    }
+  },
+  {
+    "nickname": "Miguel Ángel Durán",
+    "webpage": "https://midu.dev/",
+    "image": "miguel_angel_duran.png",
+    "cite": "https://youtube.com/shorts/w8Csu_uh-Qg?feature=share",
+    "quote": {
+      "es": "... hay que tener la paciencia para que pase de forma natural, lo importante no es el objetivo , sino el camino hasta llegar ahí.",
+      "en": "... you have to have patience for progress to happen naturally, the important thing is not the goal, but the way until you get there."
+    }
+  }
+]
