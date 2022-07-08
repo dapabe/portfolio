@@ -40,9 +40,9 @@ const barChildren = (condition, callback) =>
   Object.freeze({
     topBar: [
       <CustomLink
-        href="/"
+        linkProps={{ href: "/" }}
         className="ml-2 text-3xl tracking-wider"
-        onClick={condition && callback}
+        onClick={condition && callback} 
       >
         dpb
       </CustomLink>,

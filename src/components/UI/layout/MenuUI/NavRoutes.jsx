@@ -6,8 +6,9 @@ import CustomLink from "@ui/reusable/CustomLink";
 
 
 export default function NavRoutes({ ...props }) {
-  const {locale,pathname,prefetch} = useRouter();
+  const { locale, pathname, prefetch } = useRouter();
 
+  //  Refactor this
   useEffect(() => {
     routesData.forEach(({ href }) => {
       if (pathname !== href) return prefetch(href);
@@ -15,8 +16,8 @@ export default function NavRoutes({ ...props }) {
   }, []);
 
   return routesData.map(({ text, ...attr }) => (
-    <li key={text}>
-      <CustomLink {...attr} childProps={...props}>
+    <li key={attr.href}>
+      <CustomLink {...props} linkProps={{ ...attr }}>
         {text[locale]}
       </CustomLink>
     </li>

@@ -13,10 +13,7 @@ export default function Menu() {
     : "-z-50 opacity-0 -translate-y-[200%]";
 
   return (
-    <section
-      className={`menuContainer ${isMenuOpen ? "z-20" : "-z-50"}`}
-     
-    >
+    <section className={`menuContainer ${isMenuOpen ? "z-20" : "-z-50"}`}>
       <nav className={`menu ${isOpen}`} aria-labelledby="modal">
         <ul className="menuLinks">
           <NavRoutes onClick={handleMenu} {...notSelectable(!isMenuOpen)} />

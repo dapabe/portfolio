@@ -20,7 +20,30 @@
       }
     },
     "section_techs": {},
-    "section_intro": {},
+    "section_intro": {
+      "short_about": {
+        "heading": "UN POCO DE MÍ",
+        "1st_paragraph": "Manejo mayor parte de mi tiempo programando, por otro lado, leo artículos o contenido nuevo que pueda agregar e implementar a mis proyectos.",
+        "anchor_about": {
+          "a11y": "Ir a biografía",
+          "text": "Leer más a detalle"
+        }
+      },
+      "focus":{
+        "heading": "Enfoques",
+        "li_repeated": "<li>Priorizar el rendimiento</li><li>Aplicar diseños adaptables para diferentes dispositivos y plataformas.</li><li>Crear interfaces agradables y satisfactorias experiencias de usuario.</li>",
+        "1st_extlink":{
+          "href": "https://webaccesible.xyz/navegacion/teclado/#:~:text=Para%20navegar%20con%20el%20teclado,seleccionar%20o%20activar%20un%20elemento",
+          "a11y": "Link hacia una página que explica como navegar usando solo el teclado.",
+          "text": "Adaptar elementos de accesibilidad para personas que navegan con <ExtLink>teclado</ExtLink>"
+        },
+        "2nd_extlink":{
+          "href":"https://es.wikipedia.org/wiki/Lector_de_pantalla",
+          "a11y":"Link hacia una página que explica que son los lectores de pantalla.",
+          "text":" o utilicen <ExtLink>lectores de pantalla</ExtLink>."
+        }
+      }
+    },
     "section_inspiration": {
       "heading": "INSPIRACIÓN",
       "quotes": {

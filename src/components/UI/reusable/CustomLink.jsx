@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useMemo } from "react";
 
 const styling = (type) => {
   switch (type) {
@@ -12,17 +13,22 @@ const styling = (type) => {
   }
 };
 
-export default function CustomLink({ ...props }) {
-  const { href, children, className, childProps } = props;
+export default function CustomLink({ children, linkProps, ...props }) {
   const { pathname } = useRouter();
   const customCSS =
-    className || styling(pathname === href ? "primary" : "default");
+    props.className || styling(pathname === linkProps.href ? "primary" : "default");
 
+  const spreadLinkProps = Object.entries(linkProps).map(([key, value]) => {
+    return Object.assign({},{ [key]: value })
+  })
+
+  // console.log(spreadLinkProps)
   return (
-    <Link href={href} {...props}>
-      <a className={customCSS} {...childProps} onClick={onClick}>
+    <Link href={linkProps.href} {...spreadLinkProps}>
+      <a className={customCSS} {...props}>
         {children}
       </a>
     </Link>
   );
 }
+
