@@ -1,8 +1,84 @@
 {
+  "global": {
+    "logo_a11y": "Go to homepage.",
+    "btn_lang_a11y": "Change language.",
+    "btn_carousel": {
+      "pause": "Pause",
+      "resume": "Resume"
+    },
+    "btn_goTop_a11y": "Go back to the start of the page."
+  },
   "/": {
-    "working_position": "Desarrollador Front-End.",
-    "cta_contact": "CONTÁCTAME",
-    "scroller_msg": "&larr; Deslizar"
+    "section_hero": {
+      "logo": {
+        "title": "dapabe's logo",
+        "alt": "The thow initial letters of my full name: DAniel PAtricio BEcerra"
+      },
+      "working_position": "Front-End Developer.",
+      "cta": {
+        "title": "Go to the contact section",
+        "text": "CONTACT ME "
+      },
+      "scroller_msg": "Scroll"
+    },
+    "section_projects": {
+      "heading": "PROJECTS",
+      "tools": {
+        "heading": "Made with",
+        "repo_link": "Go to the Github repository.",
+        "page_link": "Go to the project's page."
+      }
+    },
+    "section_techs": {
+      "heading": "TECHNOLOGIES",
+      "btn_switch": {
+        "img": "Show an image list",
+        "anim": "Show an animation"
+      },
+      "note": "Always informed of the most used technologies in the market."
+    },
+    "section_intro": {
+      "short_about": {
+        "heading": "A LITTLE OF ME",
+        "1st_paragraph": "I handle most of my time programming, on the other hand, I read articles or new content that I can add and implement to my projects.",
+        "anchor_about": {
+          "a11y": "Go to biography",
+          "text": "Read in more detail"
+        }
+      },
+      "focus": {
+        "heading": "My Approaches",
+        "li_repeated": "<li>Prioritize performance.</li><li>Apply adaptable designs for different devices and platforms.</li><li>Create pleasant and satisfactory interfaces user experiences.</li>",
+        "1st_extlink": {
+          "href": "https://help.gnome.org/users/gnome-help/stable/keyboard-nav.html.en",
+          "a11y": "Link towards a page that explains how to navigate using a keyboard.",
+          "text": "Adapt accessibility elements for people who navigate with <ExtLink>keyboard</ExtLink>"
+        },
+        "2nd_extlink": {
+          "href": "https://en.wikipedia.org/wiki/Screen_reader",
+          "a11y": "Link towards a page that explains what are screen readers.",
+          "text": " or use <ExtLink>screen readers</ExtLink>."
+        }
+      }
+    },
+    "section_inspiration": {
+      "heading": "INSPIRATION",
+      "quotes": {
+        "cite_origin": "Go to the origin of this quote.",
+        "web_link": "Go to his webpage.",
+        "symbol": "Quote symbol"
+      },
+      "my_quote": "With the correct way of thinking you have the foundations for a well - paved path, and with that path you can guide others."
+    },
+    "section_contact": {
+      "heading": "CONTACT ME",
+      "cta_title": "Press to open a contact form",
+      "cta_text": "Would you like to leave a message?",
+      "btn_submit": {
+        "title": "Send Message",
+        "text": "Send"
+      }
+    }
   },
   "/about": {
     "heading": "HOW I STARTED",

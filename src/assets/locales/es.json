@@ -51,7 +51,7 @@
         "heading": "Enfoques",
         "li_repeated": "<li>Priorizar el rendimiento</li><li>Aplicar diseños adaptables para diferentes dispositivos y plataformas.</li><li>Crear interfaces agradables y satisfactorias experiencias de usuario.</li>",
         "1st_extlink": {
-          "href": "https://webaccesible.xyz/navegacion/teclado/#:~:text=Para%20navegar%20con%20el%20teclado,seleccionar%20o%20activar%20un%20elemento",
+          "href": "https://help.gnome.org/users/gnome-help/stable/keyboard-nav.html.es",
           "a11y": "Link hacia una página que explica como navegar usando solo el teclado.",
           "text": "Adaptar elementos de accesibilidad para personas que navegan con <ExtLink>teclado</ExtLink>"
         },

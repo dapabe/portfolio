@@ -5,11 +5,11 @@
     "image": "moviedb.png",
     "description": {
       "es": {
-        "short": "Servicio para ver información de películas y series, pensado como clon de Netflix.",
+        "short": "Servicio hecho para ver información de películas y series, pensado como clon de Netflix.",
         "tech": "..."
       },
       "en": {
-        "short": "",
+        "short": "Service made to see movie and series information, designed as Netflix clone.",
         "tech": ""
       }
     },
