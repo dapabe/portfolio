@@ -99,7 +99,7 @@
     @apply h-screen overflow-x-hidden overflow-y-scroll scrollbar-hide;
   }
   .projectSection {
-    @apply text-sutilBlack;
+    @apply text-sutilBlack relative;
   }
   .techSection {
     @apply bg-gradient-to-t from-vaporBlue to-vaporViolet;

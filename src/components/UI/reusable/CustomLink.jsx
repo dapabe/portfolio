@@ -16,12 +16,12 @@ const styling = (type) => {
 export default function CustomLink({ children, linkProps, ...props }) {
   const { pathname } = useRouter();
   const customCSS =
-    props.className || styling(pathname === linkProps.href ? "primary" : "default");
+    props.className ||
+    styling(pathname === linkProps.href ? "primary" : "default");
 
   const spreadLinkProps = Object.entries(linkProps).map(([key, value]) => {
-    return Object.assign({},{ [key]: value })
-  })
-
+    return Object.assign({}, { [key]: value });
+  });
   // console.log(spreadLinkProps)
   return (
     <Link href={linkProps.href} {...spreadLinkProps}>
@@ -31,4 +31,3 @@ export default function CustomLink({ children, linkProps, ...props }) {
     </Link>
   );
 }
-

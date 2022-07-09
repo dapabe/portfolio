@@ -1,9 +1,18 @@
 {
+  "global": {
+    "logo_a11y": "Ir a la página de inicio.",
+    "btn_lang_a11y": "Cambiar el idioma.",
+    "btn_carousel": {
+      "pause": "Pausar",
+      "resume": "Resumir"
+    },
+    "btn_goTop_a11y": "Volver al principio de la página."
+  },
   "/": {
     "section_hero": {
       "logo": {
-        "title": "Logo de DaPaBe",
-        "alt": "Las primeras 2 iniciales del nombre Daniel Patricio Becerra"
+        "title": "Logo de dapabe",
+        "alt": "Las primeras 2 iniciales del nombre DAniel PAtricio BEcerra"
       },
       "working_position": "Desarrollador Front-End.",
       "cta": {
@@ -15,11 +24,20 @@
     "section_projects": {
       "heading": "PROYECTOS",
       "tools": {
+        "heading": "Hecho con",
         "repo_link": "Ir al repositorio de Github.",
-        "git_lobo": "Logo de Github."
+        "page_link": "Ir a la página del proyecto."
       }
     },
-    "section_techs": {},
+    "section_techs": {
+      "heading": "TECNOLOGÍAS",
+      "btn_switch": {
+        "img": "Mostrar una lista de imagenes",
+        "anim": "Mostrar una animación"
+      },
+
+      "note": "Siempre informado de las tecnologías más utilizadas del mercado."
+    },
     "section_intro": {
       "short_about": {
         "heading": "UN POCO DE MÍ",
@@ -29,18 +47,18 @@
           "text": "Leer más a detalle"
         }
       },
-      "focus":{
+      "focus": {
         "heading": "Enfoques",
         "li_repeated": "<li>Priorizar el rendimiento</li><li>Aplicar diseños adaptables para diferentes dispositivos y plataformas.</li><li>Crear interfaces agradables y satisfactorias experiencias de usuario.</li>",
-        "1st_extlink":{
+        "1st_extlink": {
           "href": "https://webaccesible.xyz/navegacion/teclado/#:~:text=Para%20navegar%20con%20el%20teclado,seleccionar%20o%20activar%20un%20elemento",
           "a11y": "Link hacia una página que explica como navegar usando solo el teclado.",
           "text": "Adaptar elementos de accesibilidad para personas que navegan con <ExtLink>teclado</ExtLink>"
         },
-        "2nd_extlink":{
-          "href":"https://es.wikipedia.org/wiki/Lector_de_pantalla",
-          "a11y":"Link hacia una página que explica que son los lectores de pantalla.",
-          "text":" o utilicen <ExtLink>lectores de pantalla</ExtLink>."
+        "2nd_extlink": {
+          "href": "https://es.wikipedia.org/wiki/Lector_de_pantalla",
+          "a11y": "Link hacia una página que explica que son los lectores de pantalla.",
+          "text": " o utilicen <ExtLink>lectores de pantalla</ExtLink>."
         }
       }
     },

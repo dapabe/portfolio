@@ -1,7 +1,10 @@
 import { FilmIcon, CollectionIcon } from "@heroicons/react/outline";
+import { useTranslations } from "next-intl";
 
 export default function ListSwitchButton({ ...props }) {
   const { displayPing, switchCondition, cb, cb2 } = props;
+  const t = useTranslations("/.section_techs.btn_switch");
+
   return (
     <button
       type="button"
@@ -10,11 +13,8 @@ export default function ListSwitchButton({ ...props }) {
         cb();
         cb2();
       }}
-      title={
-        switchCondition
-          ? "Mostrar una lista de imagenes"
-          : "Mostrar una animación"
-      }
+      aria-labelledby={switchCondition ? t("img") : t("anim")}
+      title={switchCondition ? t("img") : t("anim")}
     >
       {switchCondition ? (
         <CollectionIcon className="w-6" />

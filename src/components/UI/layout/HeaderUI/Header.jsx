@@ -9,6 +9,7 @@ import MenuButton from "./MenuButton/MenuButton";
 import OverlayBars from "./OverlayBars";
 import Backdrop from "../Backdrop";
 import SocialLinks from "@ui/reusable/SocialLinks";
+import { useTranslations } from "next-intl";
 
 //  TODO: Toggle Light/Dark Theme,
 //  better keyboard navigation.
@@ -36,17 +37,22 @@ export default function Header() {
   );
 }
 
-const barChildren = (condition, callback) =>
-  Object.freeze({
+const barChildren = (condition, callback) => {
+  const t = useTranslations("global");
+
+  return {
     topBar: [
       <CustomLink
         linkProps={{ href: "/" }}
         className="ml-2 text-3xl tracking-wider"
-        onClick={condition && callback} 
+        onClick={condition && callback}
+        aria-labelledby={t("logo_a11y")}
+        title={t("logo_a11y")}
       >
         dpb
       </CustomLink>,
       <LangSwitch />,
     ],
     rightBar: !condition && <SocialLinks />,
-  });
+  };
+};
