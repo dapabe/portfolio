@@ -5,11 +5,13 @@ import { ChevronDoubleUpIcon } from "@heroicons/react/solid";
 import { useTranslations } from "next-intl";
 
 export default function GoTop() {
-  const { isMenuOpen } = useContext(GlobalContext);
+  const { isMenuOpen, isLangOptionsOpen } = useContext(GlobalContext);
   const { isOffset } = useElementOffset();
   const t = useTranslations("global");
 
-  const hasScrolled = isOffset && !isMenuOpen && true;
+  const hasScrolled = [isOffset, !isMenuOpen, !isLangOptionsOpen].every(
+    Boolean
+  );
   return (
     hasScrolled && (
       <a
