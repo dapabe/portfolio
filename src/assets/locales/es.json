@@ -1,6 +1,7 @@
 {
   "global": {
     "logo_a11y": "Ir a la página de inicio.",
+    "btn_menu_a11y":"Botón del Menu",
     "btn_lang_a11y": "Cambiar el idioma.",
     "btn_carousel": {
       "pause": "Pausar",

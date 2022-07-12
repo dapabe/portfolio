@@ -2,9 +2,8 @@ import { useMemo } from "react";
 
 import useToggle from "@hooks/useToggle";
 import useNoScroll from "@hooks/useNoScroll";
+import useKeyboard from "@hooks/useKeyboard";
 import { GlobalContext } from "@context/states";
-
-// import useKeyboard from "@hooks/useKeyboard";
 
 //  TODO:     Map each event case.
 //            Fix global bug on key
@@ -23,7 +22,7 @@ export default function GlobalState({ children }) {
   //  1.
   const lockScreenConditions = [isMenuOpen, isLangOptionsOpen].some(Boolean);
   useNoScroll(lockScreenConditions);
-  // useKeyboard({ key: "m", cb: handleMenu });
+  useKeyboard({ key: "m", cb: handleMenu });
 
   //=====================================================================
 
