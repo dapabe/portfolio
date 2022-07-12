@@ -9,20 +9,23 @@ import { GlobalContext } from "@context/states";
 //            Fix global bug on key
 //            interference with user input.
 
-//  1.On document load.
-//  2.Events.
+//  1.Conditions
+//  2.Listeners
 export default function GlobalState({ children }) {
   const [isMenuOpen, handleMenu] = useToggle(false);
   const [isLangOptionsOpen, handleLangOptions] = useToggle(false);
-  // const events = [
-  //   { key: "m", cb: handleMenu, condition: true },
-  //   { key: "Escape", cb: handleMenu, condition: isMenuOpen },
-  // ];
 
   //  1.
   const lockScreenConditions = [isMenuOpen, isLangOptionsOpen].some(Boolean);
+
+  //  2.
   useNoScroll(lockScreenConditions);
   useKeyboard({ key: "m", cb: handleMenu });
+  // useKeyboard({
+  //   key: "Escape",
+  //   cb: handleMenu,
+  //   condition: isMenuOpen === true,
+  // });
 
   //=====================================================================
 

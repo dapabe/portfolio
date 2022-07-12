@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 
 //  [NOTE]  Just 1 use case.
 //  [TODO] Search for a way to map parameters(Obj),
@@ -7,16 +7,18 @@ import { useEffect, useCallback } from "react";
 //  Parameters should be a spreaded object.
 
 export default function useKeyboard(keyOptions) {
-  const { element = globalThis, key, cb } = keyOptions;
+  const { element = globalThis, key, cb, condition = true } = keyOptions;
+  const [] = useState(null)
   const execGlobalFunc = useCallback(
     (event) => {
       event.key === key && cb();
+      console.log(event)
+      if (event)
     },
     [key]
   );
   useEffect(() => {
-    element.addEventListener("keydown", execGlobalFunc, false);
-
+    if (condition) element.addEventListener("keydown", execGlobalFunc, false);
     return () => element.removeEventListener("keydown", execGlobalFunc, false);
   }, []);
 }
