@@ -13,7 +13,8 @@ export default function useKeyboard(keyOptions) {
     (event) => {
       event.key === key && cb();
       console.log(event)
-      if (event)
+      //  mirar event.target si es un input
+      // if (event)
     },
     [key]
   );
