@@ -1,5 +1,9 @@
 {
   "global": {
+    "skipNav_a11y":{
+      "text": "Press the <kbd>M</kbd> key to open a menu whenever you want.",
+      "anchor_text":"Go to the main content"
+    },
     "logo_a11y": "Go to homepage.",
     "btn_menu_a11y":"Menu button",
     "btn_lang_a11y": "Change language.",
