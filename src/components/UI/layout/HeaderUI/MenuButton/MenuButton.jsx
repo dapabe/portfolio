@@ -1,14 +1,14 @@
 import { useContext, useEffect } from "react";
-import useFocus from "@hooks/useFocus";
 import { GlobalContext } from "@context/states";
 
 import MenuBars from "./MenuBars";
 import MenuText from "./MenuText";
+import { useTranslations } from "next-intl";
 
 export default function MenuButton() {
   const { isMenuOpen, handleMenu, isLangOptionsOpen } =
     useContext(GlobalContext);
-  const [MenuRef, setMenuRef] = useFocus();
+  const t = useTranslations("global");
 
   //  [BUG] "unstable_flushDiscreteUpdates: Cannot flush
   //        updates when React is already rendering"
@@ -16,16 +16,13 @@ export default function MenuButton() {
   //  useEffect causes it, wait till the component
   //  has rendered to apply focus.
 
-  useEffect(() => {
-    isMenuOpen && setMenuRef();
-  }, [isMenuOpen]);
-
   if (isLangOptionsOpen && !isMenuOpen) return null;
+
   return (
     <button
-      ref={MenuRef}
       type="button"
-      title="Menu"
+      title={t("btn_menu_a11y")}
+      aria-labelledby={t("btn_menu_a11y")}
       className={`menuButton group ${
         isMenuOpen
           ? "rounded-full bg-white"
