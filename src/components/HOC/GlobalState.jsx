@@ -5,9 +5,6 @@ import useNoScroll from "@hooks/useNoScroll";
 import useKeyboard from "@hooks/useKeyboard";
 import { GlobalContext } from "@context/states";
 
-//  TODO:     Map each event case.
-//            Fix global bug on key
-//            interference with user input.
 
 //  1.Conditions
 //  2.Listeners
@@ -21,11 +18,6 @@ export default function GlobalState({ children }) {
   //  2.
   useNoScroll(lockScreenConditions);
   useKeyboard({ key: "m", cb: handleMenu });
-  // useKeyboard({
-  //   key: "Escape",
-  //   cb: handleMenu,
-  //   condition: isMenuOpen === true,
-  // });
 
   //=====================================================================
 
