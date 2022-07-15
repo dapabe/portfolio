@@ -11,7 +11,7 @@ export default function SectionHero() {
   const target = useRef(null);
   const [elmOffset, handleOffset] = useToggle(false);
 
-  const checkScroll = (pixels = 1) => {
+  const checkScroll = ({ pixels = 1 }) => {
     const refOffset = target.current?.scrollTop;
     !elmOffset && refOffset > pixels && handleOffset();
     elmOffset && refOffset < pixels && handleOffset();
