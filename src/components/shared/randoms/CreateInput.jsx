@@ -4,9 +4,6 @@ export default function CreateInput(props) {
   const [focused, setFocused] = useState(false);
   const { node, id, label, onChange, errorMessage, ...attr } = props;
 
-  // const regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$";
-  // RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$")         Regexp keeps breaking
-
   const handleFocus = () => setFocused(true);
 
   // const lastInput = () => attrs.name === "message" && setFocused(true);  <-  good UX?
@@ -27,7 +24,6 @@ export default function CreateInput(props) {
         {
           ...attr,
           id: id,
-          // ...(attr.name.email && { pattern: regexp }),
           ...(attr.type === "message" && {
             className: attr.className + " resize-none", // tailwindcss resize class doesn't work properly
           }),

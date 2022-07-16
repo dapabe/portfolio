@@ -1,4 +1,4 @@
-import { ExtLink, AbbrLang } from "@utils/helpers_text";
+import { ExtLink, AbbrLang } from "@shared/decorations/sugarText";
 import { useTranslations } from "next-intl";
 export default function About() {
   const t = useTranslations("/about");

@@ -1,8 +1,5 @@
 import { lazy } from "react";
 
-const FORM = process.env.NEXT_PUBLIC_FORM_ID;
-const P_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY;
-
 //  Simulate IRL page loading.
 export const slowImport = (value, ms = 1000) =>
   lazy(
@@ -18,8 +15,6 @@ export const fakeImportComponent = (value, ms = 1000) =>
     setTimeout(() => resolve({ default: value }), ms);
   });
 
-export const sendEmail = async (body) =>
-  await emailjs.sendForm("default_service", FORM, body, P_KEY);
 
 //  ===============================================================================================
 //  Dinamically allow kbd focus.

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ContactDisplay } from "@context/states";
 
-import { notSelectable } from "@utils/reusable";
+import { notSelectable } from "@helpers/randoms";
 
 import { RefreshIcon } from "@heroicons/react/solid";
 

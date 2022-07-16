@@ -1,7 +1,6 @@
 import Head from "next/head";
 import AppLayout from "@src/components/AppLayout";
 import { NextIntlProvider } from "next-intl";
-
 import "styles/index.css";
 
 export default function MyApp({ Component, pageProps }) {
@@ -58,7 +57,7 @@ export default function MyApp({ Component, pageProps }) {
           />
           <meta
             property="og:description"
-            content="Tu página hecha realidad.."
+            content="Tu página web hecha realidad."
           />
           <meta property="og:site_name" content="dapabe" />
         </Head>

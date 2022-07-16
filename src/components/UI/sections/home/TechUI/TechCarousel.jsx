@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Carousel from "@ui/reusable/CarouselUI/Carousel";
+import Carousel from "@shared/carousel/Carousel";
 export default function TechCarousel({ data }) {
   return (
     <Carousel>

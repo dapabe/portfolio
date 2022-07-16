@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { GlobalContext } from "@context/states";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { sugarUnshift } from "@utils/reusable";
+import { sugarUnshift } from "@helpers/randoms";
 
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { useTranslations } from "next-intl";

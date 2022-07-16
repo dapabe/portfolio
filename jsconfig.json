@@ -4,9 +4,10 @@
     "paths": {
       "@src/*": ["src/*"],
       "@pages/*": ["src/pages/*"],
-      "@utils/*": ["src/utilities/*"],
-      "@ui/*": ["src/components/UI/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@ui/*": ["src/components/ui/*"],
       "@hooks/*": ["src/components/hooks/*"],
+      "@shared/*":["src/components/shared/*"],
       "@context/*": ["src/components/context/*"]
     }
   }

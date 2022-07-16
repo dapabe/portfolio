@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
-import { ExtLink } from "@utils/helpers_text";
-import CustomLink from "@ui/reusable/CustomLink";
+import { ExtLink } from "@shared/decorations/sugarText";
+import CustomLink from "@shared/randoms/CustomLink";
 
 export default function SectionIntro() {
   const t = useTranslations("/.section_intro");

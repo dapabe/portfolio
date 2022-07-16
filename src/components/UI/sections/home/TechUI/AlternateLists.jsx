@@ -8,7 +8,7 @@ import icons_data from "@src/assets/static/icons.json";
 import TechCarousel from "./TechCarousel";
 import TechList from "./TechList";
 
-import { arrayCompareAndRetrieve } from "@utils/reusable";
+import { arrayCompareAndRetrieve } from "@helpers/randoms";
 
 //  Handle visual effects;
 //    Display play btn icon the first time.

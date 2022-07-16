@@ -4,7 +4,7 @@ import useToggle from "@hooks/useToggle";
 import ListSwitchButton from "./TechUI/ListSwitchButton";
 import AlternateLists from "./TechUI/AlternateLists";
 
-import SVGWave1 from "@ui/reusable/decorations/SVGWave1";
+import SVGWave1 from "@shared/decorations/SVGWave1";
 import { useTranslations } from "next-intl";
 
 export default function SectionTechs() {

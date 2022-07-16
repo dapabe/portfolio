@@ -2,13 +2,13 @@ import { useContext } from "react";
 import { GlobalContext } from "@context/states";
 
 import SkipNav from "./SkipNav";
-import CustomLink from "@ui/reusable/CustomLink";
+import CustomLink from "@shared/randoms/CustomLink";
+import SocialLinks from "@shared/SocialLinks";
 import LangSwitch from "./LangSwitch";
 import MenuButton from "./MenuButton/MenuButton";
 
 import OverlayBars from "./OverlayBars";
 import Backdrop from "../Backdrop";
-import SocialLinks from "@ui/reusable/SocialLinks";
 import { useTranslations } from "next-intl";
 
 //  TODO: Toggle Light/Dark Theme,

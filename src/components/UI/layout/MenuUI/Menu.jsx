@@ -1,12 +1,12 @@
 import { useContext, useEffect } from "react";
 import { GlobalContext } from "@context/states";
-import { notSelectable } from "@utils/reusable";
+import { notSelectable } from "@helpers/randoms";
 import { useRouter } from "next/router";
 import useFocus from "@src/components/hooks/useFocus";
 
 import routesData from "@src/assets/routes.json";
-import CustomLink from "@ui/reusable/CustomLink";
-import SocialLinks from "@ui/reusable/SocialLinks";
+import CustomLink from "@shared/randoms/CustomLink";
+import SocialLinks from "@shared/SocialLinks";
 
 export default function Menu() {
   const { isMenuOpen, handleMenu } = useContext(GlobalContext);
