@@ -1,11 +1,11 @@
 {
   "global": {
-    "skipNav_a11y":{
+    "skipNav_a11y": {
       "text": "Presione la tecla <kbd>M</kbd> para abrir el menú cuando quieras.",
-      "anchor_text":"Ir al contenido principal"
+      "anchor_text": "Ir al contenido principal"
     },
     "logo_a11y": "Ir a la página de inicio.",
-    "btn_menu_a11y":"Botón del Menu",
+    "btn_menu_a11y": "Botón del Menu",
     "btn_lang_a11y": "Cambiar el idioma.",
     "btn_carousel": {
       "pause": "Pausar",
@@ -88,53 +88,34 @@
   },
   "/about": {
     "heading": "COMO EMPECE",
-    "1st_paragraph": "Mi interés por la programación proviene desde el primer contacto que tuve con una computadora, me pregunté como es que funcionaban las herramientas y programas en ella.",
-    "2nd_paragraph": "Gracias a mis estudios y al idioma Inglés pude comprender como eran posibles estas máquinas, ya que mucha de esa información existe en ese lenguaje.",
+    "1st_paragraph": "<p>Mi interés por la programación proviene desde el primer contacto que tuve con una computadora, me pregunté como es que funcionaban las herramientas y programas en ella.</p>",
+    "2nd_paragraph": "<p2>Gracias a mis estudios y al idioma Inglés pude comprender como eran posibles estas máquinas, ya que mucha de esa información existe en ese lenguaje.</p2>",
     "3rd_paragraph": {
-      "1st_text": "A mis 20 años tuve interés en crear modificaciones para juegos y así comprendí como funcionaba la ",
-      "1st_tag": {
-        "href": "https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos",
-        "title": "Ir a la definición de POO",
-        "inner_tag": {
-          "rich": "<abbr>POO</abbr>",
-          "title": "Programación orientada a objetos"
-        }
-      }
+      "rich": "<p3>A mis 20 años tuve interés en crear modificaciones para juegos y así comprendí como funcionaba la <ExtLink><abbr>POO</abbr></ExtLink>.</p3>",
+      "href": "https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos",
+      "1st_a11y": "Ir a la definicion de POO",
+      "2nd_a11y": "Programación orientada a objetos"
     },
     "2nd_heading": "AL DÍA DE HOY",
     "4th_paragraph": {
-      "1st_tag": {
-        "rich": "Deje a un lado mi <AbbrLang>hobby</AbbrLang> de crear ",
-        "title": "Afición u ocupación"
-      },
-      "2nd_tag": {
-        "rich": "<AbbrLang>mods</AbbrLang> para juegos y me especialice en el desarrollo web.",
-        "title": "Modificaciones"
-      }
+      "rich": "<p4>Deje a un lado mi <abbrlang1>hobby</abbrlang1> de crear <abbrlang2>mods</abbrlang2> para juegos y me especialice en el desarrollo web.</p4>",
+      "1st_a11y": "Afición u ocupación",
+      "2nd_a11y": "Modificaciones"
     },
     "5th_paragraph": {
-      "1st_tag": {
-        "rich": "Al dominar <abbr>HTML</abbr>, ",
-        "title": "Lenguaje de Texto Hiper Marcado"
+      "rich": "<p5>Al dominar <abbr>HTML</abbr>, <abbr2>CSS</abbr2> y JavaScript, decidí investigar que herramientas de desarrollo web, o <abbrlang>frameworks</abbrlang> y librerias eran las más utilizadas, así es como me enfoque en <extlink>React.JS</extlink> y <extlink2>NEXT.JS</extlink2>. <br></br> Ahora estoy en camino de dominar estos y aprender más lenguajes, y frameworks ampliando más mi conocimiento junto con otras herramientas de diseño.</p5>",
+      "1st_a11y": "Lenguaje de Texto Hiper Marcado",
+      "2nd_a11y": "Hojas de Estilo en Cascada",
+      "3rd_a11y": "Marcos de Trabajo",
+      "1st_link": {
+        "href": "https://es.reactjs.org/",
+        "a11y": "Ir a la página oficial de React.JS"
       },
-      "2nd_tag": {
-        "rich": "<abbr>CSS</abbr> y JavaScript, decidí investigar que herramientas de desarrollo web, o ",
-        "title": "Hojas de Estilo en Cascada"
-      },
-      "3rd_tag": {
-        "rich": "<AbbrLang>frameworks</AbbrLang> y librerias eran los más utilizados, así es como me enfoque en ",
-        "title": "Marcos de trabajo"
-      },
-      "4th_tag": {
-        "rich": "<ExtLink>React.JS</ExtLink> y ",
-        "href": "https://es.reactjs.org/"
-      },
-      "5th_tag": {
-        "rich": "<ExtLink>NEXT.JS</ExtLink>.",
-        "href": "https://nextjs.org/"
-      },
-      "1st_text": "Ahora estoy en camino de dominar estos y aprender más lenguajes, y frameworks ampliando más mi conocimiento junto con otras herramientas de diseño.",
-      "2nd_text": "Siguientes objetivos: React Native, TypeScript y .NET"
-    }
+      "2nd_link": {
+        "href": "https://nextjs.org/",
+        "a11y": "Ir a la página oficial de NEXT.JS"
+      }
+    },
+    "notes": "<span>Siguientes objetivos: React Native, TypeScript y .NET </span>"
   }
 }
