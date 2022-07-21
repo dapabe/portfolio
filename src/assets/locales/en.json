@@ -1,11 +1,11 @@
 {
   "global": {
-    "skipNav_a11y":{
+    "skipNav_a11y": {
       "text": "Press the <kbd>M</kbd> key to open a menu whenever you want.",
-      "anchor_text":"Go to the main content"
+      "anchor_text": "Go to the main content"
     },
     "logo_a11y": "Go to homepage.",
-    "btn_menu_a11y":"Menu button",
+    "btn_menu_a11y": "Menu button",
     "btn_lang_a11y": "Change language.",
     "btn_carousel": {
       "pause": "Pause",
@@ -87,53 +87,34 @@
   },
   "/about": {
     "heading": "HOW I STARTED",
-    "1st_paragraph": "My interest in programming comes from the first contact I had with a computer, I wondered how the tools worked and the programs in it.",
-    "2nd_paragraph": "Thanks to my studies and the English language I could understand how these machines were possible, since much of that information exists in that language.",
+    "1st_paragraph": "<p>My interest in programming comes from the first contact I had with a computer, I wondered how the tools worked and the programs in it.</p>",
+    "2nd_paragraph": "<p2>Thanks to my studies and the English language I could understand how these machines were possible, since much of that information exists in that language.</p2>",
     "3rd_paragraph": {
-      "1st_text": "At the age of 20 I had interest in creating modifications to games and thus I understood how the ",
-      "1st_tag": {
-        "href": "https://en.wikipedia.org/wiki/Object-oriented_programming",
-        "title": "Go to the definition of OOP",
-        "inner_tag": {
-          "rich": "<abbr>OOP</abbr>",
-          "title": "Object-oriented Programming"
-        }
-      }
+      "rich": "<p3>At the age of 20 I had interest in creating modifications to games and thus I understood how the <ExtLink><abbr>OOP</abbr></ExtLink> works.</p3>",
+      "href": "https://en.wikipedia.org/wiki/Object-oriented_programming",
+      "1st_a11y": "Go to the definition of OOP",
+      "2nd_a11y": "Object-oriented Programming"
     },
     "2nd_heading": "TODAY",
     "4th_paragraph": {
-      "1st_tag": {
-        "rich": "I put aside my <AbbrLang>hobby</AbbrLang> to create ",
-        "title": "Occupation"
-      },
-      "2nd_tag": {
-        "rich": "<AbbrLang>mods</AbbrLang> for games and specialized in web development.",
-        "title": "Modifications"
-      }
+      "rich": "<p4>I put aside my <abbrlang1>hobby</abbrlang1> to create <abbrlang2>mods</abbrlang2> for games and specialized in web development.</p4>",
+      "1st_a11y": "",
+      "2nd_a11y": "Modifications"
     },
     "5th_paragraph": {
-      "1st_tag": {
-        "rich": "When dominating <abbr>HTML</abbr>, ",
-        "title": "Hyper-Text Markup Language"
+      "rich": "<p5>When dominating <abbr>HTML</abbr>, <abbr2>CSS</abbr2> and JavaScript, I decided to investigate what web development tools or <abbrlang>frameworks</abbrlang> and libraries were the most used, this is how I focus on <extlink>React.JS</extlink> and <extlink2>NEXT.JS</extlink2>. <br></br> Now I am on the way to dominate these languages and learn more, frameworks and expanding more my knowledge along with other design tools.</p5>",
+      "1st_a11y": "Hyper-Text Markup Language",
+      "2nd_a11y": "Cascade Style Sheet",
+      "3rd_a11y": "",
+      "1st_link": {
+        "href": "https://en.reactjs.org/",
+        "a11y": "Go to the official React.JS page."
       },
-      "2nd_tag": {
-        "rich": "<abbr>CSS</abbr> and JavaScript, I decided to investigate what web development tools, or  ",
-        "title": "Cascade Style Sheet"
-      },
-      "3rd_tag": {
-        "rich": "<AbbrLang>frameworks</AbbrLang> and libraries were the most used, this is how I focus on ",
-        "title": ""
-      },
-      "4th_tag": {
-        "rich": "<ExtLink>React.JS</ExtLink> and ",
-        "href": "https://en.reactjs.org/"
-      },
-      "5th_tag": {
-        "rich": "<ExtLink>NEXT.JS</ExtLink>.",
-        "href": "https://nextjs.org/"
-      },
-      "1st_text": "Now I am on the way to dominate these and learn more languages, and frameworks expanding more my knowledge along with other design tools.",
-      "2nd_text": "Following objectives: React Native, TypeScript y .NET"
-    }
+      "2nd_link": {
+        "href": "https://nextjs.org/",
+        "a11y": "Go to the official NEXT.JS page."
+      }
+    },
+    "notes": "<span>Following objectives: React Native, TypeScript y .NET </span>"
   }
 }
