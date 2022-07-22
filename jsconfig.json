@@ -5,7 +5,7 @@
       "@src/*": ["src/*"],
       "@pages/*": ["src/pages/*"],
       "@helpers/*": ["src/helpers/*"],
-      "@ui/*": ["src/components/ui/*"],
+      "@ui/*": ["src/components/interface/*"],
       "@hooks/*": ["src/components/hooks/*"],
       "@shared/*":["src/components/shared/*"],
       "@context/*": ["src/components/context/*"]
