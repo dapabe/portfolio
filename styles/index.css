@@ -138,6 +138,7 @@
   .about h2 + p {
     @apply indent-4;
   }
+  
 }
 @layer utilities {
   .paragraphTitle {
