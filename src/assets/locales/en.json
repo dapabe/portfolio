@@ -44,7 +44,7 @@
     },
     "section_intro": {
       "short_about": {
-        "heading": "A LITTLE OF ME",
+        "heading": "A LITTLE OF ABOUT ME",
         "1st_paragraph": "I handle most of my time programming, on the other hand, I read articles or new content that I can add and implement to my projects.",
         "anchor_about": {
           "a11y": "Go to biography",
@@ -53,16 +53,14 @@
       },
       "focus": {
         "heading": "My Approaches",
-        "li_repeated": "<li>Prioritize performance.</li><li>Apply adaptable designs for different devices and platforms.</li><li>Create pleasant and satisfactory interfaces user experiences.</li>",
-        "1st_extlink": {
+        "list_items": "<li>Prioritize performance.</li><li>Apply adaptable designs for different devices and platforms.</li><li>Create pleasant and satisfactory interfaces user experiences.</li><li>Adapt accessibility elements for people who navigate with <extlink>keyboard</extlink> or use <extlink2>screen readers</extlink2>.</li>",
+        "1st_link": {
           "href": "https://help.gnome.org/users/gnome-help/stable/keyboard-nav.html.en",
-          "a11y": "Link towards a page that explains how to navigate using a keyboard.",
-          "text": "Adapt accessibility elements for people who navigate with <ExtLink>keyboard</ExtLink>"
+          "a11y": "Link towards a page that explains how to navigate using a keyboard."
         },
-        "2nd_extlink": {
+        "2nd_link": {
           "href": "https://en.wikipedia.org/wiki/Screen_reader",
-          "a11y": "Link towards a page that explains what are screen readers.",
-          "text": " or use <ExtLink>screen readers</ExtLink>."
+          "a11y": "Link towards a page that explains what are screen readers."
         }
       }
     },

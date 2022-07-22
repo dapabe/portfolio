@@ -105,9 +105,9 @@
     @apply bg-gradient-to-t from-vaporBlue to-vaporViolet;
   }
   .introSection {
-    @apply flex flex-col justify-around gap-4 bg-gradient-to-b from-vaporBlue to-vaporViolet lg:flex-row;
+    @apply  bg-gradient-to-b from-vaporBlue to-vaporViolet ;
   }
-  .introSection > section {
+  .introSection >div> section {
     @apply m-auto h-max max-w-md;
   }
   .intro_list {

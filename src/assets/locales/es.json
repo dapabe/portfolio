@@ -54,16 +54,14 @@
       },
       "focus": {
         "heading": "Enfoques",
-        "li_repeated": "<li>Priorizar el rendimiento</li><li>Aplicar diseños adaptables para diferentes dispositivos y plataformas.</li><li>Crear interfaces agradables y satisfactorias experiencias de usuario.</li>",
-        "1st_extlink": {
+        "list_items": "<li>Priorizar el rendimiento</li><li>Aplicar diseños adaptables para diferentes dispositivos y plataformas.</li><li>Crear interfaces agradables y satisfactorias experiencias de usuario.</li><li>Adaptar elementos de accesibilidad para personas que navegan con <extlink>teclado</extlink> o utilicen <extlink2>lecotores de pantalla</extlink2>.</li>",
+        "1st_link": {
           "href": "https://help.gnome.org/users/gnome-help/stable/keyboard-nav.html.es",
-          "a11y": "Link hacia una página que explica como navegar usando solo el teclado.",
-          "text": "Adaptar elementos de accesibilidad para personas que navegan con <ExtLink>teclado</ExtLink>"
+          "a11y": "Link hacia una página que explica como navegar usando solo el teclado."
         },
-        "2nd_extlink": {
+        "2nd_link": {
           "href": "https://es.wikipedia.org/wiki/Lector_de_pantalla",
-          "a11y": "Link hacia una página que explica que son los lectores de pantalla.",
-          "text": " o utilicen <ExtLink>lectores de pantalla</ExtLink>."
+          "a11y": "Link hacia una página que explica que son los lectores de pantalla."
         }
       }
     },
