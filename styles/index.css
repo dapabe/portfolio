@@ -135,7 +135,7 @@
   .about {
     @apply text-sutilBlack;
   }
-  .about p {
+  .about h2 + p {
     @apply indent-4;
   }
 }
