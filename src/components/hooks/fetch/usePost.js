@@ -1,6 +1,8 @@
 import { useState } from "react";
 import useToggle from "@hooks/useToggle";
-import { sendEmail, isEmpty, isEmail } from "@helpers/randoms";
+import { isEmpty, isEmail } from "@helpers/randoms";
+import { sendEmail } from "@src/services/contact";
+
 
 export default function usePost({
   url,
