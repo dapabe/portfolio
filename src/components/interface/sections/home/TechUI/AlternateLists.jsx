@@ -17,7 +17,7 @@ import { arrayCompareAndRetrieve } from "@helpers/randoms";
 //  for a loop animation.
 
 export default function AlternateLists({ displayCondition }) {
-  const [isPaused, handlePause] = useToggle(true);
+  const [isPaused, togglePause] = useToggle(true);
   const [firstWatch, setFirstWatch] = useState(true);
 
   const displaying_icons = arrayCompareAndRetrieve({
@@ -27,7 +27,7 @@ export default function AlternateLists({ displayCondition }) {
   });
 
   const memoValues = useMemo(
-    () => ({ firstWatch, setFirstWatch, isPaused, handlePause }),
+    () => ({ firstWatch, setFirstWatch, isPaused, togglePause }),
     [isPaused]
   );
   return (

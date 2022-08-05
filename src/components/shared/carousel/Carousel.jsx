@@ -1,50 +1,24 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useMemo, useRef } from "react";
 import { CarouselAnimation } from "@context/states";
 import { PlayIcon, StopIcon } from "@heroicons/react/solid";
 import { useTranslations } from "next-intl";
 
-const animationName = "autoSlide";
+
 
 export default function Carousel({ ...props }) {
-  const { invertDir = false, style = null, children } = props;
-
-  const { isPaused, firstWatch, setFirstWatch, handlePause } =
-    useContext(CarouselAnimation);
-  const animationRef = useRef(null);
-
-  const displayButton = `transition-opacity ${
-    !firstWatch && "opacity-0 group-hover:opacity-100 group-active:opacity-100"
-  }`;
-
+  const { children } = props;
   const t = useTranslations("global.btn_carousel");
+  const { isPaused, firstWatch, setFirstWatch, togglePause } =
+    useContext(CarouselAnimation);
 
-  useEffect(() => {
-    let styleSheet = document.styleSheets[0];
-    styleSheet.insertRule(
-      keyFrames(animationName, invertDir ? 160 : -160, children.length / 2),
-      styleSheet.cssRules.length
-    );
-  }, [invertDir]);
+  const displayButton = `transition-opacity ${!firstWatch && "opacity-0 group-hover:opacity-100 group-active:opacity-100"}`;
+
 
   return (
     <div className="relative w-full overflow-hidden">
       <ul
-        ref={animationRef}
-        style={{
-          whiteSpace: "nowrap",
-          animation: `${children.length}s linear 0s infinite normal none ${
-            isPaused ? "paused" : "running"
-          } ${animationName}`,
-          WebkitAnimation: `${
-            children.length
-          }s linear 0s infinite normal none ${
-            isPaused ? "paused" : "running"
-          } ${animationName}`,
-          MozAnimation: `${children.length}s linear 0s infinite normal none ${
-            isPaused ? "paused" : "running"
-          } ${animationName}`,
-          ...style,
-        }}
+        className="animate-slide whitespace-nowrap"
+        style={{ animationPlayState: isPaused ? "paused" : "running" }}
       >
         {children.map((child, idx) => (
           <li key={idx} style={{ display: "inline-block" }}>
@@ -59,7 +33,7 @@ export default function Carousel({ ...props }) {
         title={isPaused ? t("resume") : t("pause")}
         onClick={() => {
           setFirstWatch(false);
-          handlePause();
+          togglePause();
         }}
       >
         {isPaused ? (
@@ -75,18 +49,33 @@ export default function Carousel({ ...props }) {
     </div>
   );
 }
+// const animationName = "justa-anim-autoSlide";
+// const keyFramesHor = (animName, childWidth, quantity) => `
+//   @keyframes ${animName} {
+//     from {
+//       -webkit-transform: translateX(0);
+//       ms-transform: translateX(0);
+//       transform: translateX(0);
+//     }
+//     to {
+//       -webkit-transform: translateX(calc(${childWidth}px * ${quantity}));
+//       ms-transform: translateX(calc(${childWidth}px * ${quantity}));
+//       transform:  translateX(calc(${childWidth}px * ${quantity}));
+//     }
+//   }
+// `;
 
-const keyFrames = (animName, dir, quantity) => `
-  @keyframes ${animName} {
-    from {
-      -webkit-transform: translateX(0);
-      ms-transform: translateX(0);
-      transform: translateX(0);
-    }
-    to {
-      -webkit-transform: translateX(calc(${dir}px * ${quantity}));
-      ms-transform: translateX(calc(${dir}px * ${quantity}));
-      transform:  translateX(calc(${dir}px * ${quantity})); 
-    }
-  }
-`;
+// const keyFramesVert = (animName, childWidth, quantity) => `
+//   @keyframes ${animName} {
+//     from {
+//       -webkit-transform: translateX(calc(${childWidth}px * ${quantity}));
+//       ms-transform: translateX(calc(${childWidth}px * ${quantity}));
+//       transform:  translateX(calc(${childWidth}px * ${quantity}));
+//     }
+//     to {
+//       -webkit-transform: translateX(0);
+//       ms-transform: translateX(0);
+//       transform: translateX(0);
+//     }
+//   }
+// `
