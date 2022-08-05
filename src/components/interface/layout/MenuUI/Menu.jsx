@@ -26,7 +26,7 @@ export default function Menu() {
         <ul className="menuLinks">
           <NavRoutes onClick={handleMenu} {...notSelectable(!isMenuOpen)} />
         </ul>
-        <div className="mt-auto flex justify-evenly">
+        <div className="mt-auto mb-10 flex justify-evenly">
           <SocialLinks {...notSelectable(!isMenuOpen)} />
         </div>
       </nav>
@@ -47,7 +47,7 @@ const NavRoutes = ({ ...props }) => {
   return routesData.map(({ text, ...attr }) => (
     <li key={attr.href}>
       <CustomLink linkProps={{ ...attr }} {...props}>
-        {text[locale]}
+        {text?.[locale] ?? text}
       </CustomLink>
     </li>
   ));

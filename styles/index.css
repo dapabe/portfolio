@@ -76,7 +76,7 @@
     @apply before:btriangle-tl after:btriangle-tr pointer-events-auto relative flex h-2/3 max-w-xs flex-grow flex-col bg-orange-500 px-6 pt-10 text-3xl transition-transform before:absolute before:top-[95%] before:left-0 before:border-[6rem] before:border-orange-500 after:absolute after:top-[95%] after:right-0 after:border-[6rem] after:border-orange-500;
   }
   .menuLinks {
-    @apply mt-auto flex w-max flex-col gap-y-4 self-center;
+    @apply mt-auto flex w-max flex-col gap-y-4;
   }
   .menuButton {
     @apply left-4 bottom-2 z-30 flex -rotate-90 flex-col items-center md:left-0 md:bottom-1/2 md:translate-y-1/2;
@@ -99,15 +99,15 @@
     @apply h-screen overflow-x-hidden overflow-y-scroll scrollbar-hide;
   }
   .projectSection {
-    @apply text-sutilBlack relative;
+    @apply relative text-sutilBlack;
   }
   .techSection {
     @apply bg-gradient-to-t from-vaporBlue to-vaporViolet;
   }
   .introSection {
-    @apply  bg-gradient-to-b from-vaporBlue to-vaporViolet ;
+    @apply bg-gradient-to-b from-vaporBlue to-vaporViolet;
   }
-  .introSection >div> section {
+  .introSection > div > section {
     @apply m-auto h-max max-w-md;
   }
   .intro_list {
@@ -138,7 +138,6 @@
   .about h2 + p {
     @apply indent-4;
   }
-  
 }
 @layer utilities {
   .paragraphTitle {

@@ -14,6 +14,7 @@ import { useTranslations } from "next-intl";
 //  TODO: Toggle Light/Dark Theme,
 //  better keyboard navigation.
 export default function Header() {
+  const t = useTranslations("global");
   const {
     isMenuOpen,
     isLangOptionsOpen,
@@ -30,29 +31,23 @@ export default function Header() {
   return (
     <header>
       <SkipNav />
-      <OverlayBars {...barChildren(isMenuOpen, handleMenu)} />
+      <OverlayBars
+        topBar={[
+          <CustomLink
+            linkProps={{ href: "/" }}
+            className="ml-2 text-3xl tracking-wider"
+            onClick={isMenuOpen && handleMenu}
+            aria-labelledby={t("logo_a11y")}
+            title={t("logo_a11y")}
+          >
+            dpb
+          </CustomLink>,
+          <LangSwitch />,
+        ]}
+        rightBar={!isMenuOpen && <SocialLinks />} />
       {lockScreenConditions && <Backdrop onClick={backdropHandler} />}
       <MenuButton />
     </header>
   );
 }
 
-const barChildren = (condition, callback) => {
-  const t = useTranslations("global");
-
-  return {
-    topBar: [
-      <CustomLink
-        linkProps={{ href: "/" }}
-        className="ml-2 text-3xl tracking-wider"
-        onClick={condition && callback}
-        aria-labelledby={t("logo_a11y")}
-        title={t("logo_a11y")}
-      >
-        dpb
-      </CustomLink>,
-      <LangSwitch />,
-    ],
-    rightBar: !condition && <SocialLinks />,
-  };
-};

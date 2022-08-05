@@ -8,14 +8,14 @@ const bars = [
 ];
 
 export default function OverlayBars({ ...props }) {
-  const components = useMemo(() => props, []);
-
+  // const components = useMemo(() => props, []);
+  console.log(props)
   return bars.map((classes, idx) => (
     <div
       key={idx}
       className={`${classes} bg-sutilBlack transition-transform ease-in-out`}
     >
-      {placeBindedComponents(components, idx)}
+      {placeBindedComponents(props, idx)}
     </div>
   ));
 }
@@ -26,16 +26,14 @@ export default function OverlayBars({ ...props }) {
  *              content in that place, else place it.
  */
 
-const placeBindedComponents = (incomingObject, position) => {
-  return Object.values(incomingObject).map((obj, idx) => {
+const placeBindedComponents = (incomingObject, position) =>
+  Object.values(incomingObject).map((obj, idx) => {
     if (position === idx) return spreadObject(obj);
   });
-};
 
-const spreadObject = (value) => {
-  if (Array.isArray(value)) return value.map(createNode);
-  return createNode(value);
-};
+
+const spreadObject = (value) =>
+  Array.isArray(value) ? value.map(createNode) : createNode(value)
 
 const createNode = (node) =>
-  createElement(node.type, { ...node.props, key: node.type.name });
+  node ? createElement(node.type, { ...node.props, key: node.type.name }) : null
