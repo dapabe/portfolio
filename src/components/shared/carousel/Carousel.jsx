@@ -1,27 +1,28 @@
-import { useContext, useEffect, useMemo, useRef } from "react";
+import { useContext } from "react";
 import { CarouselAnimation } from "@context/states";
 import { PlayIcon, StopIcon } from "@heroicons/react/solid";
 import { useTranslations } from "next-intl";
 
 
 
-export default function Carousel({ ...props }) {
-  const { children } = props;
+export default function Carousel({ children }) {
   const t = useTranslations("global.btn_carousel");
   const { isPaused, firstWatch, setFirstWatch, togglePause } =
     useContext(CarouselAnimation);
 
   const displayButton = `transition-opacity ${!firstWatch && "opacity-0 group-hover:opacity-100 group-active:opacity-100"}`;
 
-
   return (
     <div className="relative w-full overflow-hidden">
       <ul
         className="animate-slide whitespace-nowrap"
-        style={{ animationPlayState: isPaused ? "paused" : "running" }}
+        style={{
+          animationPlayState: isPaused ? "paused" : "running",
+          animationDuration: `${children.length}s`
+        }}
       >
         {children.map((child, idx) => (
-          <li key={idx} style={{ display: "inline-block" }}>
+          <li key={idx} className="inline-block">
             {child}
           </li>
         ))}
