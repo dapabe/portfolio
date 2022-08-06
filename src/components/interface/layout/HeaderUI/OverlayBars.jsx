@@ -7,9 +7,7 @@ const bars = [
   "w-10 bottom-0 h-[calc(100%-2.5rem)] hidden md:block",
 ];
 
-export default function OverlayBars({ ...props }) {
-  // const components = useMemo(() => props, []);
-  console.log(props)
+export default function OverlayBars(props) {
   return bars.map((classes, idx) => (
     <div
       key={idx}
@@ -27,10 +25,7 @@ export default function OverlayBars({ ...props }) {
  */
 
 const placeBindedComponents = (incomingObject, position) =>
-  Object.values(incomingObject).map((obj, idx) => {
-    if (position === idx) return spreadObject(obj);
-  });
-
+  Object.values(incomingObject).map((obj, idx) => position === idx && spreadObject(obj));
 
 const spreadObject = (value) =>
   Array.isArray(value) ? value.map(createNode) : createNode(value)
