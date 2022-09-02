@@ -54,7 +54,7 @@
       },
       "focus": {
         "heading": "Enfoques",
-        "list_items": "<li>Priorizar el rendimiento</li><li>Aplicar diseños adaptables para diferentes dispositivos y plataformas.</li><li>Crear interfaces agradables y satisfactorias experiencias de usuario.</li><li>Adaptar elementos de accesibilidad para personas que navegan con <extlink>teclado</extlink> o utilicen <extlink2>lecotores de pantalla</extlink2>.</li>",
+        "list_items": "<li>Priorizar el rendimiento</li><li>Aplicar diseños adaptables para diferentes dispositivos y plataformas.</li><li>Crear interfaces agradables y satisfactorias experiencias de usuario.</li><li>Adaptar elementos de accesibilidad para personas que navegan con <extlink>teclado</extlink> o utilicen <extlink2>lectores de pantalla</extlink2>.</li>",
         "1st_link": {
           "href": "https://help.gnome.org/users/gnome-help/stable/keyboard-nav.html.es",
           "a11y": "Link hacia una página que explica como navegar usando solo el teclado."

@@ -1,11 +1,11 @@
 import Head from "next/head";
 
-import Hero from "@src/components/interface/sections/home/Hero";
-import Projects from "@src/components/interface/sections/home/Projects";
-import Techs from "@src/components/interface/sections/home/Technologies";
-import Intro from "@src/components/interface/sections/home/Introduction";
-import Inspiration from "@src/components/interface/sections/home/Inspiration";
-import Contact from "@src/components/interface/sections/home/Contact";
+import Hero from "@ui/sections/home/Hero";
+import Projects from "@ui/sections/home/Projects";
+import Techs from "@ui/sections/home/Technologies";
+import Intro from "@ui/sections/home/Introduction";
+import Inspiration from "@ui/sections/home/Inspiration";
+import Contact from "@ui/sections/home/Contact";
 
 export default function Home() {
   return (

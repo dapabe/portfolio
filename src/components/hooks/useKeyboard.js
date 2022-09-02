@@ -1,21 +1,29 @@
 import { useEffect, useCallback } from "react";
 
-//  [NOTE]  This function searches for a form element,
-//            if the element is focused then the callback
-//            function will not trigger.
-
-const isFocusingForm = (event) => ["TEXTAREA", "INPUT"].some(val => event.target.nodeName === val)
-
-export default function useKeyboard(keyOptions) {
-  const { element = globalThis, key, cb, condition = true } = keyOptions;
+const isFocusingInput = (event) =>
+  ["TEXTAREA", "INPUT"].some((val) => event.target.nodeName === val);
+/**
+ *  Trigger the callback function given the specified
+ *  key.
+ *
+ *  [acceptInput: false] Set to "true" if you want an action to occur while writing on inputs
+ * */
+export default function useKeyboard({
+  element = globalThis,
+  key,
+  cb,
+  condition = true,
+  acceptInput = false,
+}) {
   const execGlobalFunc = useCallback(
     (event) => {
-      if (!isFocusingForm(event)) event.key === key && cb();
+      if (acceptInput) event.key === key && cb();
+      else if (!isFocusingInput(event)) event.key === key && cb();
     },
     [key]
   );
   useEffect(() => {
     if (condition) element.addEventListener("keydown", execGlobalFunc, false);
     return () => element.removeEventListener("keydown", execGlobalFunc, false);
-  }, []);
+  }, [acceptInput]);
 }
