@@ -1,12 +1,9 @@
+import useToggle from "@src/components/hooks/useToggle";
 import { useState, createElement } from "react";
 
 export default function CreateInput(props) {
-  const [focused, setFocused] = useState(false);
+  const [focused, toggleFocus] = useToggle(false);
   const { node, id, label, onChange, errorMessage, ...attr } = props;
-
-  const handleFocus = () => setFocused(true);
-
-  // const lastInput = () => attrs.name === "message" && setFocused(true);  <-  good UX?
 
   //  Considering refactoring this.
   //  [NOTE] Input attributes/events:
@@ -23,12 +20,12 @@ export default function CreateInput(props) {
         node,
         {
           ...attr,
-          id: id,
+          id,
           ...(attr.type === "message" && {
-            className: attr.className + " resize-none", // tailwindcss resize class doesn't work properly
+            className: attr.className + " resize-none", // manual inject: tailwindcss resize class doesn't work properly
           }),
-          onChange: onChange,
-          onBlur: handleFocus,
+          onChange,
+          onBlur: toggleFocus,
           // onFocus: lastInput,
           focused: focused.toString(),
         },

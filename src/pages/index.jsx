@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 
 import Hero from "@ui/sections/home/Hero";
 import Projects from "@ui/sections/home/Projects";
@@ -11,11 +12,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <script
-          defer
-          type="module"
-          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-        ></script>
+        <Script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></Script>
       </Head>
       <Hero />
       <Projects />
