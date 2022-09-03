@@ -23,10 +23,8 @@ export default function MenuButton() {
       type="button"
       title={t("btn_menu_a11y")}
       aria-labelledby={t("btn_menu_a11y")}
-      className={`menuButton group ${
-        isMenuOpen
-          ? "rounded-full bg-white"
-          : "rounded-full bg-white md:bg-sutilBlack"
+      className={`group left-4 bottom-2 z-30 flex -rotate-90 flex-col items-center rounded-full bg-white md:left-0 md:bottom-1/2 md:translate-y-1/2 ${
+        isMenuOpen ? "" : " md:bg-sutilBlack"
       }`}
       onClick={handleMenu}
     >

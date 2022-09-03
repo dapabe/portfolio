@@ -1,10 +1,11 @@
 import { ExtLink, AbbrLang } from "@shared/decorations/sugarText";
 import { useTranslations } from "next-intl";
+
 export default function About() {
   const t = useTranslations("/about");
   return (
-    <section className="about noMaxWidth">
-      <div className="mx-auto mt-10 max-w-[75ch] space-y-6 px-4">
+    <section className="noMaxWidth text-sutilBlack">
+      <div className="mx-auto max-w-[75ch] space-y-6 px-4 [&>h2+p]:indent-4">
         <h2 className="paragraphTitle text-center underline underline-offset-4">
           {t("heading")}
         </h2>

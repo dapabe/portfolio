@@ -5,8 +5,8 @@ import CustomLink from "@shared/randoms/CustomLink";
 export default function SectionIntro() {
   const t = useTranslations("/.section_intro");
   return (
-    <section className="introSection noMaxWidth">
-      <div className="container mx-auto flex flex-col justify-around gap-4 lg:flex-row">
+    <section className="noMaxWidth bg-gradient-to-b from-vaporBlue to-vaporViolet">
+      <div className="[&>section]:m-auto [&>section]:h-max [&>section]:max-w-md container mx-auto flex flex-col justify-around gap-4 lg:flex-row">
         <ShortAbout t={t} />
         <FocusInfo t={t} />
       </div>
@@ -32,9 +32,9 @@ const ShortAbout = ({ t }) => {
 };
 const FocusInfo = ({ t }) => {
   return (
-    <section className="bg-sutilBlack p-8  text-base text-gray-400">
+    <section className="bg-sutilBlack p-8 text-base text-gray-400">
       <h2 className="mb-2 tracking-wider text-white">{t("focus.heading")}</h2>
-      <ul className="intro_list">
+      <ul className="[&>li]:list-disc space-y-2">
         {t.rich("focus.list_items", {
           li: (text) => <li>{text}</li>,
           extlink: (text) => (

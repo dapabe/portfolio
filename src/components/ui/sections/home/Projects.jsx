@@ -1,4 +1,3 @@
-
 import { useRouter } from "next/router";
 import { useTranslations } from "next-intl";
 import { ProjectData } from "@context/states";
@@ -12,10 +11,8 @@ export default function SectionProjects() {
   const t = useTranslations("/.section_projects");
 
   return (
-    <section className="projectSection noMaxWidth">
-      <h2 className="sectionTitle mb-4 text-center">
-        {t("heading")}
-      </h2>
+    <section className="noMaxWidth relative text-sutilBlack">
+      <h2 className="sectionTitle mb-4 text-center">{t("heading")}</h2>
       {/* <div className="flex h-full flex-wrap justify-center gap-10">
         {projects_data.map(
           ({ id, image, title, description, links, made_with }) => (

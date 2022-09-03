@@ -28,20 +28,28 @@ export default function FORM_Feedback({ displayCondition }) {
     ? "absolute flex inset-0 text-sutilBlack tracking-wide bg-white justify-center items-center scale-125"
     : "font-Raleway text-sm max-w-[25ch] text-red-600";
 
-  const showFeedback = displayCondition ? "opacity-100" : "opacity-0 -z-10";
   return (
-    <form onSubmit={formSubmit} className={`feedbackForm ${showFeedback}`}>
+    <form
+      onSubmit={formSubmit}
+      className={`mx-auto flex w-[440px] max-w-lg overflow-hidden rounded-md bg-white p-4 text-sutilBlack transition-opacity delay-300 ${
+        displayCondition ? "opacity-100" : "-z-10 opacity-0"
+      }`}
+    >
       <fieldset className="relative flex-grow space-y-2 overflow-hidden rounded-md border-2 border-sutilBlack px-4 pb-4 font-semibold">
         <legend className="flex w-max items-center justify-between text-lg tracking-widest">
           <h2 className="mr-2 uppercase">{t("heading")}</h2>
           <ChatAlt2Icon className="w-8 text-blue-600" />
         </legend>
-        <Inputs
-          inputData={inputData}
-          handleChange={handleChange}
-          displayCondition={displayCondition}
-          locale={locale}
-        />
+        {everyInput.map(({ translation, ...element }) => (
+          <CreateInput
+            key={element.id}
+            {...element}
+            {...translation[locale]}
+            onChange={handleChange}
+            value={inputData[element.name]}
+            {...notSelectable(!displayCondition)}
+          />
+        ))}
         <section className="flex">
           <span className={responseClass}>{postResponse}</span>
           <SubmitButton displayCondition={isLoading} t={t} />
@@ -52,14 +60,5 @@ export default function FORM_Feedback({ displayCondition }) {
 }
 
 const Inputs = ({ inputData, handleChange, displayCondition, locale }) => {
-  return everyInput.map(({ translation, ...element }) => (
-    <CreateInput
-      key={element.id}
-      {...element}
-      {...translation[locale]}
-      onChange={handleChange}
-      value={inputData[element.name]}
-      {...notSelectable(!displayCondition)}
-    />
-  ));
+  return;
 };

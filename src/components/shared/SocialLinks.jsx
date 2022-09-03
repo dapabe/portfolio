@@ -2,12 +2,11 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import social_icons from "@src/assets/static/social.json";
 
-
 export default function SocialLinks({ ...props }) {
-  const { locale } = useRouter()
+  const { locale } = useRouter();
 
   return social_icons.map(({ name, url, img, img_desc, fallback_img }) => (
-    <i className="social-icon" key={name}>
+    <i className="h-8 w-8 transition-transform hover:scale-110" key={name}>
       <a
         href={url}
         target="_blank"

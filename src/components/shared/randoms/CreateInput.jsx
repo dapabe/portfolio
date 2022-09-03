@@ -34,7 +34,9 @@ export default function CreateInput(props) {
         },
         null
       )}
-      <span className="inputError">{errorMessage}</span>
+      <span className="block select-none font-Raleway text-sm text-red-600 opacity-0 transition-opacity">
+        {errorMessage}
+      </span>
     </div>
   );
 }

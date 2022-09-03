@@ -25,13 +25,13 @@
     @apply bg-sutilBlack;
   } */
   header,
-  #menu-root {
+  #modal-root {
     @apply absolute w-full text-white;
   }
   header > * {
     @apply fixed z-20;
   }
-  #menu-root > * {
+  #modal-root > * {
     @apply fixed;
   }
   main {
@@ -61,82 +61,13 @@
   .inputContainer *:invalid[focused="true"] {
     @apply border-2 border-red-600;
   }
-  .inputContainer *:invalid[focused="true"] ~ .inputError {
+  .inputContainer *:invalid[focused="true"] ~ span {
     @apply select-text opacity-100;
   }
 }
 @layer components {
   .my-container {
     @apply mx-auto max-w-xs sm:max-w-[28rem] md:max-w-xl lg:max-w-3xl xl:max-w-5xl;
-  }
-  .menuContainer {
-    @apply pointer-events-none inset-0 flex justify-center sm:justify-start sm:px-24;
-  }
-  .menu {
-    @apply before:btriangle-tl after:btriangle-tr pointer-events-auto relative flex h-2/3 max-w-xs flex-grow flex-col bg-orange-500 px-6 pt-10 text-3xl transition-transform before:absolute before:top-[95%] before:left-0 before:border-[6rem] before:border-orange-500 after:absolute after:top-[95%] after:right-0 after:border-[6rem] after:border-orange-500;
-  }
-  .menuLinks {
-    @apply mt-auto flex w-max flex-col gap-y-4;
-  }
-  .menuButton {
-    @apply left-4 bottom-2 z-30 flex -rotate-90 flex-col items-center md:left-0 md:bottom-1/2 md:translate-y-1/2;
-  }
-  .menuBars {
-    @apply relative flex h-14 w-14 place-content-center gap-x-1 rounded-full border-2 border-sutilBlack;
-  }
-  .menuBars li {
-    @apply w-1 self-center rounded-full transition-[translate_opacity];
-  }
-  .menuText {
-    @apply absolute -bottom-6 w-14 justify-center gap-x-1 text-xs;
-  }
-  .social-icon {
-    @apply h-8 w-8 hover:scale-110;
-  }
-  /* Sections ====================================================================================== */
-
-  .heroSection {
-    @apply h-screen overflow-x-hidden overflow-y-scroll scrollbar-hide;
-  }
-  .projectSection {
-    @apply relative text-sutilBlack;
-  }
-  .techSection {
-    @apply bg-gradient-to-t from-vaporBlue to-vaporViolet;
-  }
-  .introSection {
-    @apply bg-gradient-to-b from-vaporBlue to-vaporViolet;
-  }
-  .introSection > div > section {
-    @apply m-auto h-max max-w-md;
-  }
-  .intro_list {
-    @apply space-y-2;
-  }
-  .intro_list > li {
-    @apply list-disc;
-  }
-  .inspirationSection {
-    @apply space-y-6 bg-red-500;
-  }
-  .contactSection {
-    @apply flex items-center justify-center bg-sutilBlack;
-  }
-  .feedbackBtn {
-    @apply analog-shadow-center active:inner-shadow-md absolute mx-auto flex h-40 max-w-xs items-center rounded-full bg-white py-3 px-2 transition-[opacity_box-shadow_transform] active:translate-y-2 active:shadow-gray-500;
-  }
-  .feedbackForm {
-    @apply mx-auto flex w-[440px] max-w-lg overflow-hidden rounded-md bg-white p-4 text-sutilBlack transition-opacity delay-300;
-  }
-  .inputError {
-    @apply block select-none font-Raleway text-sm text-red-600 opacity-0 transition-opacity;
-  }
-  /* About Page ====================================================================================== */
-  .about {
-    @apply text-sutilBlack;
-  }
-  .about h2 + p {
-    @apply indent-4;
   }
 }
 @layer utilities {

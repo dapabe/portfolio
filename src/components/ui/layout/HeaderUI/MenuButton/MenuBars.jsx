@@ -22,9 +22,14 @@ const Bars = [
 
 export default function MenuBars({ displayCondition }) {
   return (
-    <ul className="menuBars md:group-active:border-0">
+    <ul className="relative flex h-14 w-14 place-content-center gap-x-1 rounded-full border-2 border-sutilBlack md:group-active:border-0">
       {Bars.map(({ id, closed, open }) => (
-        <li key={id} className={displayCondition ? open : closed} />
+        <li
+          key={id}
+          className={`w-1 self-center rounded-full transition-[translate_opacity] ${
+            displayCondition ? open : closed
+          }`}
+        />
       ))}
     </ul>
   );

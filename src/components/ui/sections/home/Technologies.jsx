@@ -17,7 +17,7 @@ export default function SectionTechs() {
     : "after:bg-pink-700 after:animate-ping";
 
   return (
-    <section className="techSection noMaxWidth noPadding">
+    <section className="noMaxWidth noPadding bg-gradient-to-t from-vaporBlue to-vaporViolet">
       <SVGWave1 className="rotate-180" />
       <div className="my-container mx-auto my-3 mb-8 flex items-center justify-between">
         <h2 className="sectionTitle w-max">{t("heading")}</h2>

@@ -12,18 +12,26 @@ export default function Menu() {
   const { isMenuOpen, handleMenu } = useContext(GlobalContext);
   const [MenuRef, setMenuRef] = useFocus();
 
-  const isOpen = isMenuOpen
-    ? "z-20 delay-500 opacity-100"
-    : "-z-50 opacity-0 -translate-y-[200%]";
-
   useEffect(() => {
     isMenuOpen && setMenuRef();
   }, [isMenuOpen]);
 
   return (
-    <section className={`menuContainer ${isMenuOpen ? "z-20" : "-z-50"}`}>
-      <nav ref={MenuRef} className={`menu ${isOpen}`} aria-labelledby="modal">
-        <ul className="menuLinks">
+    <section
+      className={`pointer-events-none inset-0 flex justify-center sm:justify-start sm:px-24 ${
+        isMenuOpen ? "z-20" : "-z-50"
+      }`}
+    >
+      <nav
+        ref={MenuRef}
+        className={`before:btriangle-tl after:btriangle-tr pointer-events-auto relative flex h-2/3 max-w-xs flex-grow flex-col bg-orange-500 px-6 pt-10 text-3xl transition-transform before:absolute before:top-[95%] before:left-0 before:border-[6rem] before:border-orange-500 after:absolute after:top-[95%] after:right-0 after:border-[6rem] after:border-orange-500 ${
+          isMenuOpen
+            ? "z-20 opacity-100 delay-500"
+            : "-z-50 -translate-y-[200%] opacity-0"
+        }`}
+        aria-labelledby="modal"
+      >
+        <ul className="mt-auto flex w-max flex-col gap-y-4">
           <NavRoutes onClick={handleMenu} {...notSelectable(!isMenuOpen)} />
         </ul>
         <div className="mt-auto mb-10 flex justify-evenly">

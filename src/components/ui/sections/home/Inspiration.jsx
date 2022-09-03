@@ -6,7 +6,7 @@ import AllQuotes from "./InspirationUI/AllQuotes";
 export default function SectionInspire() {
   const t = useTranslations("/");
   return (
-    <section className="inspirationSection noMaxWidth noPadding">
+    <section className="noMaxWidth noPadding space-y-6 bg-red-500">
       <SVGWave2 className="rotate-180" fill="fill-vaporViolet" />
       <h2 className="sectionTitle text-center">
         {t("section_inspiration.heading")}
