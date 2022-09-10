@@ -46,6 +46,7 @@ const NavRoutes = ({ ...props }) => {
   const { locale, pathname, prefetch } = useRouter();
 
   //  Refactor this
+  //  This should be elsewhere
   useEffect(() => {
     routesData.forEach(({ href }) => {
       if (pathname !== href) return prefetch(href);

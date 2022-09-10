@@ -16,8 +16,8 @@
   "/": {
     "section_hero": {
       "logo": {
-        "title": "Logo de dapabe",
-        "alt": "Las primeras 2 iniciales del nombre DAniel PAtricio BEcerra"
+        "title": "Las iniciales del nombre del autor",
+        "alt": "Daniel Patricio Becerra"
       },
       "working_position": "Desarrollador Front-End.",
       "cta": {
