@@ -1,4 +1,4 @@
-import { FilmIcon, CollectionIcon } from "@heroicons/react/outline";
+import { FilmIcon, RectangleStackIcon } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
 
 export default function ListSwitchButton({ ...props }) {
@@ -17,7 +17,7 @@ export default function ListSwitchButton({ ...props }) {
       title={switchCondition ? t("img") : t("anim")}
     >
       {switchCondition ? (
-        <CollectionIcon className="w-6" />
+        <RectangleStackIcon className="w-6" />
       ) : (
         <FilmIcon className="w-6" />
       )}

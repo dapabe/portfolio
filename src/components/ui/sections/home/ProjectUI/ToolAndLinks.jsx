@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ProjectData } from "@context/states";
-import { LinkIcon } from "@heroicons/react/solid";
+import { LinkIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 

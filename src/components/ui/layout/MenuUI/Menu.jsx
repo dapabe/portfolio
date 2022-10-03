@@ -7,10 +7,12 @@ import useFocus from "@src/components/hooks/useFocus";
 import routesData from "@src/assets/routes.json";
 import CustomLink from "@shared/randoms/CustomLink";
 import SocialLinks from "@shared/SocialLinks";
+import useMount from "@src/components/hooks/useMount";
 
 export default function Menu() {
-  const { isMenuOpen, handleMenu } = useContext(GlobalContext);
+  const { isMenuOpen, toggleMenu } = useContext(GlobalContext);
   const [MenuRef, setMenuRef] = useFocus();
+  const { isMounted } = useMount();
 
   useEffect(() => {
     isMenuOpen && setMenuRef();
@@ -32,7 +34,7 @@ export default function Menu() {
         aria-labelledby="modal"
       >
         <ul className="mt-auto flex w-max flex-col gap-y-4">
-          <NavRoutes onClick={handleMenu} {...notSelectable(!isMenuOpen)} />
+          <NavRoutes onClick={toggleMenu} {...notSelectable(!isMenuOpen)} />
         </ul>
         <div className="mt-auto mb-10 flex justify-evenly">
           <SocialLinks {...notSelectable(!isMenuOpen)} />

@@ -4,12 +4,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { sugarUnshift } from "@helpers/randoms";
 
-import { ChevronDownIcon } from "@heroicons/react/solid";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 
 export default function LangSwitch() {
   const { locales, locale, pathname } = useRouter();
-  const { isLangOptionsOpen, handleLangOptions } = useContext(GlobalContext);
+  const { isLangOptionsOpen, toggleLangOptions } = useContext(GlobalContext);
   const t = useTranslations("global");
   const modifiedLocales = sugarUnshift(locales, locale);
 
@@ -19,7 +19,7 @@ export default function LangSwitch() {
       <button
         type="button"
         className="rounded-sm px-1 transition-colors hover:bg-red-500"
-        onClick={handleLangOptions}
+        onClick={toggleLangOptions}
         aria-labelledby={t("btn_lang_a11y")}
         title={t("btn_lang_a11y")}
       >
@@ -39,7 +39,7 @@ export default function LangSwitch() {
             className="px-3 py-2 text-black first:bg-red-500 first:text-white"
           >
             <Link href={pathname} locale={lang} scroll={false} prefetch={false}>
-              <a onClick={handleLangOptions}>{langTextSwitcher(lang)}</a>
+              <a onClick={toggleLangOptions}>{langTextSwitcher(lang)}</a>
             </Link>
           </li>
         ))}

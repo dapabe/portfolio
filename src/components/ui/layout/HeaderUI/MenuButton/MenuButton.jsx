@@ -6,7 +6,7 @@ import MenuText from "./MenuText";
 import { useTranslations } from "next-intl";
 
 export default function MenuButton() {
-  const { isMenuOpen, handleMenu, isLangOptionsOpen } =
+  const { isMenuOpen, toggleMenu, isLangOptionsOpen } =
     useContext(GlobalContext);
   const t = useTranslations("global");
 
@@ -26,7 +26,7 @@ export default function MenuButton() {
       className={`group left-4 bottom-2 z-30 flex -rotate-90 flex-col items-center rounded-full bg-white md:left-0 md:bottom-1/2 md:translate-y-1/2 ${
         isMenuOpen ? "" : " md:bg-sutilBlack"
       }`}
-      onClick={handleMenu}
+      onClick={toggleMenu}
     >
       <MenuBars displayCondition={isMenuOpen} />
       <MenuText displayCondition={isMenuOpen} />

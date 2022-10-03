@@ -1,7 +1,8 @@
-import { MailIcon } from "@heroicons/react/solid";
+import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 export default function Intro({ displayCondition }) {
   const t = useTranslations("/");
+
   const scrollIntoView = displayCondition
     ? "translate-y-0"
     : "translate-y-6 opacity-0";
@@ -27,7 +28,7 @@ export default function Intro({ displayCondition }) {
           title={t("section_hero.cta.title")}
         >
           {t("section_hero.cta.text")}{" "}
-          <MailIcon className="inline-block w-6 -translate-y-0.5" />
+          <EnvelopeIcon className="inline-block w-6 -translate-y-0.5" />
         </a>
       </h3>
     </section>

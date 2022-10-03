@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { GlobalContext } from "@context/states";
 import useElementOffset from "@hooks/useElementOffset";
-import { ChevronDoubleUpIcon } from "@heroicons/react/solid";
+import { ChevronDoubleUpIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 
 export default function GoTop() {

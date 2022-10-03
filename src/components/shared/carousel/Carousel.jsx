@@ -1,25 +1,24 @@
 import { useContext, useEffect, useRef } from "react";
 import { CarouselAnimation } from "@context/states";
-import { PlayIcon, StopIcon } from "@heroicons/react/solid";
+import { PlayIcon, StopIcon } from "@heroicons/react/24/solid";
 import { useTranslations } from "next-intl";
 
-
-
 export default function Carousel({ children }) {
-  const ref = useRef(null)
+  const ref = useRef(null);
   const t = useTranslations("global.btn_carousel");
   const { isPaused, firstWatch, setFirstWatch, togglePause } =
     useContext(CarouselAnimation);
 
-  const displayButton = `transition-opacity ${!firstWatch && "opacity-0 group-hover:opacity-100 group-active:opacity-100"}`;
+  const displayButton = `transition-opacity ${
+    !firstWatch && "opacity-0 group-hover:opacity-100 group-active:opacity-100"
+  }`;
   //Recordar el valor del transform en el que está y setearlo en esa posicion cuando se vuelva a renderizar el componente
   useEffect(() => {
     const val = globalThis
       .getComputedStyle(ref.current)
-      .getPropertyValue("transform")
-    console.log(val)
-
-  }, [])
+      .getPropertyValue("transform");
+    console.log(val);
+  }, []);
   return (
     <div className="relative w-full overflow-hidden">
       <ul
@@ -27,7 +26,7 @@ export default function Carousel({ children }) {
         className="animate-slide whitespace-nowrap"
         style={{
           animationPlayState: isPaused ? "paused" : "running",
-          animationDuration: `${children.length}s`
+          animationDuration: `${children.length}s`,
         }}
       >
         {children.map((child, idx) => (

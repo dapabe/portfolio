@@ -18,14 +18,14 @@ export default function Header() {
   const {
     isMenuOpen,
     isLangOptionsOpen,
-    handleMenu,
-    handleLangOptions,
+    toggleMenu,
+    toggleLangOptions,
     lockScreenConditions,
   } = useContext(GlobalContext);
 
   const backdropHandler = () => {
-    if (isMenuOpen) handleMenu();
-    if (isLangOptionsOpen) handleLangOptions();
+    if (isMenuOpen) toggleMenu();
+    if (isLangOptionsOpen) toggleLangOptions();
   };
 
   return (
@@ -36,7 +36,7 @@ export default function Header() {
           <CustomLink
             linkProps={{ href: "/" }}
             className="ml-2 text-3xl tracking-wider"
-            onClick={isMenuOpen && handleMenu}
+            onClick={isMenuOpen && toggleMenu}
             aria-labelledby={t("logo_a11y")}
             title={t("logo_a11y")}
           >
@@ -44,10 +44,10 @@ export default function Header() {
           </CustomLink>,
           <LangSwitch />,
         ]}
-        rightBar={!isMenuOpen && <SocialLinks />} />
+        rightBar={!isMenuOpen && <SocialLinks />}
+      />
       {lockScreenConditions && <Backdrop onClick={backdropHandler} />}
       <MenuButton />
     </header>
   );
 }
-

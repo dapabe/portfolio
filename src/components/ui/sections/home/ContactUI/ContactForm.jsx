@@ -5,16 +5,17 @@ import { notSelectable } from "@helpers/randoms";
 import usePost from "@hooks/fetch/usePost";
 import contact_form from "@src/assets/form_inputs.json";
 import CreateInput from "@shared/randoms/CreateInput";
-import { ChatAlt2Icon } from "@heroicons/react/solid";
 import SubmitButton from "./SubmitButton";
 import { useTranslations } from "next-intl";
+
+import { ChatBubbleOvalLeftIcon, XMarkIcon } from "@heroicons/react/24/solid";
 
 const everyInput = Object.freeze(contact_form.contact_form.inputs);
 
 const serverResponse = contact_form.contact_form.responses;
 const postValues = Object.seal({ user_email: "", message: "" });
 
-export default function FORM_Feedback({ displayCondition }) {
+export default function ContactForm({ displayCondition, handleCancel }) {
   const { locale } = useRouter();
   const t = useTranslations("/.section_contact");
   const { response, isLoading, inputData, handleChange, formSubmit } = usePost({
@@ -31,14 +32,21 @@ export default function FORM_Feedback({ displayCondition }) {
   return (
     <form
       onSubmit={formSubmit}
-      className={`mx-auto flex w-[440px] max-w-lg overflow-hidden rounded-md bg-white p-4 text-sutilBlack transition-opacity delay-300 ${
+      className={`relative flex w-[440px] overflow-hidden rounded-md bg-white p-4 text-sutilBlack transition-opacity delay-300 ${
         displayCondition ? "opacity-100" : "-z-10 opacity-0"
       }`}
     >
+      <button
+        type="button"
+        onClick={handleCancel}
+        className="absolute -top-5 -right-5 p-5"
+      >
+        <XMarkIcon />
+      </button>
       <fieldset className="relative flex-grow space-y-2 overflow-hidden rounded-md border-2 border-sutilBlack px-4 pb-4 font-semibold">
         <legend className="flex w-max items-center justify-between text-lg tracking-widest">
           <h2 className="mr-2 uppercase">{t("heading")}</h2>
-          <ChatAlt2Icon className="w-8 text-blue-600" />
+          <ChatBubbleOvalLeftIcon className="w-8 text-blue-600" />
         </legend>
         {everyInput.map(({ translation, ...element }) => (
           <CreateInput
@@ -58,7 +66,3 @@ export default function FORM_Feedback({ displayCondition }) {
     </form>
   );
 }
-
-const Inputs = ({ inputData, handleChange, displayCondition, locale }) => {
-  return;
-};

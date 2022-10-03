@@ -1,4 +1,4 @@
-import { ExternalLinkIcon } from "@heroicons/react/solid";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
 
 //  If the most important tag is not present then render only
 //    the content, this is to prevent rendering unnecesary
@@ -7,7 +7,7 @@ import { ExternalLinkIcon } from "@heroicons/react/solid";
 export const ExtLink = ({ href, children, ...props }) => (
   <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
     {children}
-    <ExternalLinkIcon className="inline w-4 -translate-y-0.5" />
+    <ArrowTopRightOnSquareIcon className="inline w-4 -translate-y-0.5" />
   </a>
 );
 

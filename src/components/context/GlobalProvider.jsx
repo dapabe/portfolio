@@ -5,28 +5,27 @@ import useNoScroll from "@hooks/useNoScroll";
 import useKeyboard from "@hooks/useKeyboard";
 import { GlobalContext } from "@context/states";
 
-
 //  1.Conditions
 //  2.Listeners
-export default function GlobalState({ children }) {
-  const [isMenuOpen, handleMenu] = useToggle(false);
-  const [isLangOptionsOpen, handleLangOptions] = useToggle(false);
+export default function GlobalProvider({ children }) {
+  const [isMenuOpen, toggleMenu] = useToggle();
+  const [isLangOptionsOpen, toggleLangOptions] = useToggle();
 
   //  1.
   const lockScreenConditions = [isMenuOpen, isLangOptionsOpen].some(Boolean);
 
   //  2.
   useNoScroll(lockScreenConditions);
-  useKeyboard({ key: "m", cb: handleMenu });
+  useKeyboard({ key: "m", cb: toggleMenu });
 
   //=====================================================================
 
   const memoValues = useMemo(
     () => ({
       isMenuOpen,
-      handleMenu,
+      toggleMenu,
       isLangOptionsOpen,
-      handleLangOptions,
+      toggleLangOptions,
       lockScreenConditions,
     }),
     [isMenuOpen, isLangOptionsOpen]

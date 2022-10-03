@@ -1,4 +1,4 @@
-import GlobalState from "./context/GlobalState";
+import GlobalProvider from "./context/GlobalProvider";
 import Portal from "./shared/Portal";
 
 import Header from "@ui/layout/HeaderUI/Header.jsx";
@@ -9,12 +9,10 @@ import Menu from "@ui/layout/MenuUI/Menu.jsx";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { GlobalContext } from "./context/states";
+import { Provider } from "jotai";
 
 export default function AppLayout({ children }) {
-  const {} = useContext(GlobalContext);
   const { pathname } = useRouter();
-
-  let conditionalModal = null;
 
   const exclusivePadding = () => {
     let p = "p-10";
@@ -27,20 +25,21 @@ export default function AppLayout({ children }) {
   };
 
   return (
-    <GlobalState>
-      <Header />
-      <main
-        id="main"
-        {...(exclusivePadding() && { className: exclusivePadding() })}
-      >
-        {children}
-      </main>
-      <Footer />
-      <Portal htmlId="modal-root">
-        <Menu />
-        {conditionalModal}
-      </Portal>
-      <GoTop />
-    </GlobalState>
+    <GlobalProvider>
+      <Provider>
+        <Header />
+        <main
+          id="main"
+          {...(exclusivePadding() && { className: exclusivePadding() })}
+        >
+          {children}
+        </main>
+        <Footer />
+        <Portal htmlId="modal-root">
+          <Menu />
+        </Portal>
+        <GoTop />
+      </Provider>
+    </GlobalProvider>
   );
 }
