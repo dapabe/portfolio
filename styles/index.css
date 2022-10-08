@@ -62,6 +62,9 @@
   .inputContainer *:invalid[focused="true"] ~ span {
     @apply select-text opacity-100;
   }
+  textarea {
+    resize: none;
+  }
 }
 @layer components {
   .my-container {

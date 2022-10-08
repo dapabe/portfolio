@@ -10,9 +10,12 @@ import { useRouter } from "next/router";
 import { useContext } from "react";
 import { GlobalContext } from "./context/states";
 import { Provider } from "jotai";
+import Modal from "./shared/Modal";
+import useToggle from "./hooks/useToggle";
 
 export default function AppLayout({ children }) {
   const { pathname } = useRouter();
+  const [isModalOpen, toggleModal] = useToggle();
 
   const exclusivePadding = () => {
     let p = "p-10";
@@ -37,6 +40,9 @@ export default function AppLayout({ children }) {
         <Footer />
         <Portal htmlId="modal-root">
           <Menu />
+          <Modal isOpen={isModalOpen} handleClose={toggleModal}>
+            {modalContent}
+          </Modal>
         </Portal>
         <GoTop />
       </Provider>

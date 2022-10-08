@@ -7,6 +7,7 @@ import Modal from "@src/components/shared/Modal";
 export default function SectionContact() {
   const [show, toggleShow] = useToggle();
   const t = useTranslations("/.section_contact");
+
   return (
     <section className="noMaxWidth flex items-center justify-center bg-sutilBlack">
       <button
@@ -20,8 +21,8 @@ export default function SectionContact() {
         </h2>
         <CursorArrowRaysIcon className="absolute left-[85%] top-[65%] w-20 text-pink-700" />
       </button>
-      <Modal isOpen={show}>
-        <ContactForm displayCondition={show} handleCancel={toggleShow} />
+      <Modal isOpen={show} handleClose={toggleShow}>
+        <ContactForm isModalOpen={show} handleCancel={toggleShow} />
       </Modal>
     </section>
   );

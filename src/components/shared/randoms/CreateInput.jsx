@@ -1,8 +1,8 @@
 import useToggle from "@src/components/hooks/useToggle";
-import { useState, createElement } from "react";
+import { createElement } from "react";
 
 export default function CreateInput(props) {
-  const [focused, toggleFocus] = useToggle(false);
+  const [isFocused, toggleFocus] = useToggle();
   const { node, id, label, onChange, errorMessage, ...attr } = props;
 
   //  Considering refactoring this.
@@ -21,13 +21,10 @@ export default function CreateInput(props) {
         {
           ...attr,
           id,
-          ...(attr.type === "message" && {
-            className: attr.className + " resize-none", // manual inject: tailwindcss resize class doesn't work properly
-          }),
           onChange,
           onBlur: toggleFocus,
           // onFocus: lastInput,
-          focused: focused.toString(),
+          focused: isFocused.toString(),
         },
         null
       )}

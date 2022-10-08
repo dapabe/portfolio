@@ -27,7 +27,7 @@
         "name": "message",
         "type": "message",
         "rows": 4,
-        "className": "w-full text-black rounded-md p-1 border-sutilBlack border-2 resize-none",
+        "className": "w-full text-black rounded-md p-1 border-sutilBlack border-2",
         "required": true,
         "translation": {
           "es": {

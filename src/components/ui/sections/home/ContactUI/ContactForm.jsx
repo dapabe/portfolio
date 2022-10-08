@@ -1,28 +1,30 @@
 const FORM_ENDPOINT = process.env.NEXT_PUBLIC_ENDPOINT_URL;
 import { useRouter } from "next/router";
 
-import { notSelectable } from "@helpers/randoms";
 import usePost from "@hooks/fetch/usePost";
 import contact_form from "@src/assets/form_inputs.json";
 import CreateInput from "@shared/randoms/CreateInput";
-import SubmitButton from "./SubmitButton";
 import { useTranslations } from "next-intl";
 
-import { ChatBubbleOvalLeftIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import {
+  ChatBubbleLeftRightIcon,
+  XMarkIcon,
+  ArrowPathIcon,
+} from "@heroicons/react/24/solid";
 
 const everyInput = Object.freeze(contact_form.contact_form.inputs);
 
 const serverResponse = contact_form.contact_form.responses;
 const postValues = Object.seal({ user_email: "", message: "" });
 
-export default function ContactForm({ displayCondition, handleCancel }) {
-  const { locale } = useRouter();
-  const t = useTranslations("/.section_contact");
+export default function ContactForm({ isModalOpen, handleCancel }) {
   const { response, isLoading, inputData, handleChange, formSubmit } = usePost({
     url: FORM_ENDPOINT,
     postResponses: serverResponse[locale],
     inputValues: postValues,
   });
+  const t = useTranslations("/.section_contact");
+  const { locale } = useRouter();
 
   const postResponse = response?.text || "";
   const responseClass = response?.isValid
@@ -32,21 +34,14 @@ export default function ContactForm({ displayCondition, handleCancel }) {
   return (
     <form
       onSubmit={formSubmit}
-      className={`relative flex w-[440px] overflow-hidden rounded-md bg-white p-4 text-sutilBlack transition-opacity delay-300 ${
-        displayCondition ? "opacity-100" : "-z-10 opacity-0"
+      className={`relative flex w-[440px] rounded-md bg-white p-4 text-sutilBlack transition-opacity delay-300 ${
+        isModalOpen ? "opacity-100" : "-z-10 opacity-0"
       }`}
     >
-      <button
-        type="button"
-        onClick={handleCancel}
-        className="absolute -top-5 -right-5 p-5"
-      >
-        <XMarkIcon />
-      </button>
       <fieldset className="relative flex-grow space-y-2 overflow-hidden rounded-md border-2 border-sutilBlack px-4 pb-4 font-semibold">
         <legend className="flex w-max items-center justify-between text-lg tracking-widest">
           <h2 className="mr-2 uppercase">{t("heading")}</h2>
-          <ChatBubbleOvalLeftIcon className="w-8 text-blue-600" />
+          <ChatBubbleLeftRightIcon className="w-8 text-blue-600" />
         </legend>
         {everyInput.map(({ translation, ...element }) => (
           <CreateInput
@@ -55,13 +50,30 @@ export default function ContactForm({ displayCondition, handleCancel }) {
             {...translation[locale]}
             onChange={handleChange}
             value={inputData[element.name]}
-            {...notSelectable(!displayCondition)}
           />
         ))}
         <section className="flex">
           <span className={responseClass}>{postResponse}</span>
-          <SubmitButton displayCondition={isLoading} t={t} />
+          <button
+            type="submit"
+            disabled={isLoading}
+            title={t("btn_submit.title")}
+            className="my-auto ml-auto h-max min-h-[2rem] min-w-[9ch] rounded-md bg-blue-600 px-3  py-1 text-white transition-colors disabled:cursor-not-allowed"
+          >
+            {isLoading ? (
+              <ArrowPathIcon className="mx-auto h-6 w-6 animate-spinBackwards" />
+            ) : (
+              t("btn_submit.text")
+            )}
+          </button>
         </section>
+        <button
+          type="button"
+          onClick={handleCancel}
+          className="absolute top-0 right-0 w-max rounded-md bg-sutilBlack"
+        >
+          <XMarkIcon className="w-8 text-white" />
+        </button>
       </fieldset>
     </form>
   );
