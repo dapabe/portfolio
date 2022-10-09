@@ -17,7 +17,7 @@ const everyInput = Object.freeze(contact_form.contact_form.inputs);
 const serverResponse = contact_form.contact_form.responses;
 const postValues = Object.seal({ user_email: "", message: "" });
 
-export default function ContactForm({ isModalOpen, handleCancel }) {
+export default function ContactForm({ isModalOpen, handleClose }) {
   const { response, isLoading, inputData, handleChange, formSubmit } = usePost({
     url: FORM_ENDPOINT,
     postResponses: serverResponse[locale],
@@ -69,7 +69,7 @@ export default function ContactForm({ isModalOpen, handleCancel }) {
         </section>
         <button
           type="button"
-          onClick={handleCancel}
+          onClick={handleClose}
           className="absolute top-0 right-0 w-max rounded-md bg-sutilBlack"
         >
           <XMarkIcon className="w-8 text-white" />

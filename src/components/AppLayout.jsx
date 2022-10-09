@@ -7,15 +7,11 @@ import GoTop from "@ui/layout/GoTop.jsx";
 import Menu from "@ui/layout/MenuUI/Menu.jsx";
 
 import { useRouter } from "next/router";
-import { useContext } from "react";
+import { createElement, useContext, useEffect } from "react";
 import { GlobalContext } from "./context/states";
-import { Provider } from "jotai";
-import Modal from "./shared/Modal";
-import useToggle from "./hooks/useToggle";
 
 export default function AppLayout({ children }) {
   const { pathname } = useRouter();
-  const [isModalOpen, toggleModal] = useToggle();
 
   const exclusivePadding = () => {
     let p = "p-10";
@@ -29,23 +25,18 @@ export default function AppLayout({ children }) {
 
   return (
     <GlobalProvider>
-      <Provider>
-        <Header />
-        <main
-          id="main"
-          {...(exclusivePadding() && { className: exclusivePadding() })}
-        >
-          {children}
-        </main>
-        <Footer />
-        <Portal htmlId="modal-root">
-          <Menu />
-          <Modal isOpen={isModalOpen} handleClose={toggleModal}>
-            {modalContent}
-          </Modal>
-        </Portal>
-        <GoTop />
-      </Provider>
+      <Header />
+      <main
+        id="main"
+        {...(exclusivePadding() && { className: exclusivePadding() })}
+      >
+        {children}
+      </main>
+      <Footer />
+      <Portal htmlId="modal-root">
+        <Menu />
+      </Portal>
+      <GoTop />
     </GlobalProvider>
   );
 }
