@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/utils/constants.mjs",
+    "src/utils/constants.ts",
     "next.config.mjs"
   ],
   "exclude": ["node_modules"]

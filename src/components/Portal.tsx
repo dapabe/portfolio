@@ -1,5 +1,7 @@
+"use client"
 import { ReactNode } from "react";
 import { createPortal } from "react-dom";
+import useMount from "$hooks/useMount";
 
 interface Props {
   htmlId: string;
@@ -7,7 +9,9 @@ interface Props {
 }
 
 export default function Portal({ htmlId, children }: Props) {
+  const { isMounted } = useMount();
 
-
-  return createPortal(children, document.getElementById(htmlId))
+  return isMounted
+    ? createPortal(children, document.getElementById(htmlId))
+    : null;
 }

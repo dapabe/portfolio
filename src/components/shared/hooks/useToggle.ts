@@ -1,6 +1,6 @@
 import { useState, useCallback, MouseEventHandler } from "react";
 
-type ReturnVoid = MouseEventHandler<HTMLButtonElement>
+
 
 /**
  * @param initBool Inicializado como `false`
@@ -13,7 +13,7 @@ type ReturnVoid = MouseEventHandler<HTMLButtonElement>
  *  isValid -> false;
  */
 
-export default function useToggle(initBool: boolean = false): [boolean, ReturnVoid] {
+export default function useToggle(initBool: boolean = false): [boolean, (() => void)] {
   const [bool, setBool] = useState(initBool);
 
   const toggler = useCallback(() => setBool((prev) => !prev), [initBool]);

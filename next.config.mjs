@@ -1,6 +1,12 @@
-/** @type {import('next').NextConfig} */
+/**
+ *  @type {import('next').NextConfig}
+ */
 
-import { LangsSupported } from "./src/utils/constants.mjs/index.js"
+//  Usar esto hasta que NextJS apruebe el `next.config.ts`
+import * as tsImport from "ts-import";
+const loadTS = (filePath) => tsImport.loadSync(filePath);
+
+const LangsSupported = loadTS("./src/utils/constants.ts").LangsSupported;
 
 export default {
   experimental: {
