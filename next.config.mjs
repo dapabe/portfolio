@@ -1,13 +1,12 @@
+//  Usar esto hasta que NextJS apruebe el `next.config.ts`
+import { loadSync } from "ts-import";
+const loadTS = (filePath) => loadSync(filePath);
+
+const LangsSupported = loadTS("./src/constants/random.ts").LangsSupported;
+
 /**
  *  @type {import('next').NextConfig}
  */
-
-//  Usar esto hasta que NextJS apruebe el `next.config.ts`
-import * as tsImport from "ts-import";
-const loadTS = (filePath) => tsImport.loadSync(filePath);
-
-const LangsSupported = loadTS("./src/utils/constants.ts").LangsSupported;
-
 export default {
   experimental: {
     appDir: true
@@ -23,5 +22,5 @@ export default {
     });
 
     return config;
-  },
+  }
 };

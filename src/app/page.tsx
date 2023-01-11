@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Script from "next/script";
 
-import LandingPage from "$components/screens/HomeScreen/LandingPage";
+import { LandingPage } from "$components/screens/HomeScreen/LandingPage";
 
 export default function Home() {
   return (

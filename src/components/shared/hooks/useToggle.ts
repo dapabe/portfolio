@@ -1,6 +1,4 @@
-import { useState, useCallback, MouseEventHandler } from "react";
-
-
+import { useState, useCallback } from "react";
 
 /**
  * @param initBool Inicializado como `false`
@@ -9,10 +7,7 @@ import { useState, useCallback, MouseEventHandler } from "react";
  *  isValid -> false;
  *  toggleValidation();
  *  isValid -> true;
- *  toggleValidation();
- *  isValid -> false;
  */
-
 export default function useToggle(initBool: boolean = false): [boolean, (() => void)] {
   const [bool, setBool] = useState(initBool);
 

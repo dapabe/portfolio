@@ -16,7 +16,6 @@ const RootLayout = ({ children }) => {
         <AppLayout>
           {children}
         </AppLayout>
-        <div id="modal-root"></div>
         {/* </LocaleLayout> */}
       </body>
     </html>

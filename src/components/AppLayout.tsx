@@ -15,11 +15,6 @@ const AppLayout = ({ children }: Props) => {
         {children}
       </main>
       <footer>footer</footer>
-      <Portal htmlId='modal-root'>
-        <dialog>
-          hola
-        </dialog>
-      </Portal>
     </Fragment>
   )
 }
@@ -27,19 +22,18 @@ const AppLayout = ({ children }: Props) => {
 
 const Header = () => {
   return (
-    <header>
-      <nav className='flex'>
-        <Link href="/">
-          <h1 className='font-medium leading-tight lett text-4xl indent-2 mt-1 font-Comfortaa'>dpb</h1>
-        </Link>
-        <ul className='inline-flex space-x-2 mr-2 items-center ml-auto'>
+    <header className='navbar bg-base-300'>
+      <Link href="/" className='navbar-start text-4xl'>
+        dpb
+      </Link>
+      <div className='navbar-end'>
+        <nav className='space-x-2 mr-2 items-center ml-auto'>
           {ROUTES.map(({ href, text }) => (
-            <li key={href} className="text-xl font-Comfortaa">
-              <Link href={href}>{text["es"]}</Link>
-            </li>
+            <Link key={href} href={href} className="text-xl font-Comfortaa">{text["es"]}</Link>
           ))}
-        </ul>
-      </nav>
+        </nav>
+
+      </div>
     </header>
   )
 }

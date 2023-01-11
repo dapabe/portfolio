@@ -1,7 +1,7 @@
 "use client"
 import useToggle from "$hooks/useToggle"
 
-const LandingPage = () => {
+export const LandingPage = () => {
   const [bool, toggle] = useToggle()
   return (
     <>
@@ -15,5 +15,3 @@ const LandingPage = () => {
     </>
   )
 }
-
-export default LandingPage

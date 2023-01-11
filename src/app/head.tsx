@@ -64,7 +64,6 @@ export default function Head() {
       />
       <meta property="og:site_name" content="dapabe" />
       {/* Scripts */}
-      <script async src="./TW-ELEMENTS-PATH/dist/js/index.min.js"></script>
     </>
   )
 }

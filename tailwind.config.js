@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
 module.exports = {
   content: [
     "./index.html",
@@ -56,7 +55,10 @@ module.exports = {
     },
   },
   plugins: [
-    require('tw-elements/dist/plugin'),
+    require('daisyui'),
     require("tailwind-scrollbar-hide"),
   ],
+  daisyui: {
+    themes: ["corporate", "black"]
+  }
 };
