@@ -1,7 +1,5 @@
-import { themes } from "./src/constants/client.tsx"
-
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -12,7 +10,7 @@ export default {
   plugins: [require("daisyui")],
   daisyui: {
     styled: true,
-    themes,
+    themes: ["corporate", "black"],
     base: true,
     utils: true,
     logs: true,

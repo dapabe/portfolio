@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
+import { useClientStore } from '../zustand/useClientStore'
 
-interface Props {
-  theme: string
-}
+export const useTheme = () => {
+  const { theme, getTheme, switchTheme } = useClientStore()
 
-export const useTheme = ({ theme }: Props) => {
+  useEffect(getTheme, [])
 
-  useEffect(() => {
-    const htmlTag = document.getElementsByTagName("html")
-
-  }, [])
-
-
+  return {
+    theme,
+    switchTheme
+  }
 }
