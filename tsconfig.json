@@ -10,7 +10,8 @@
       "@/pages/*": ["pages/*"],
       "@/lib/*": ["lib/*"],
       "@/styles/*": ["styles/*"],
-      "$hooks/*": ["src/hooks/*"]
+      "$hooks/*": ["src/hooks/*"],
+      "$icons/*": ["src/assets/icons/*"]
     },
     "strict": true,
     "forceConsistentCasingInFileNames": true,

@@ -1,10 +1,10 @@
 import Layout from "@/components/layout";
 
-export default function AboutPage() {
+export default function WorksPage() {
   return (
     <Layout
       meta={{
-        title: "Dapabe - Acerca de mi",
+        title: "Dapabe - Trabajos hasta la fecha.",
       }}
     >
       <h1>acerca</h1>
