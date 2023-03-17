@@ -1,13 +1,16 @@
 import Head from "next/head";
-import type { IMeta } from "src/types/random";
 
-const DOMAIN = "https://dapabe.com.ar";
+const DOMAIN = "https://precedent.dev";
 
 export default function Meta({
-  title = "Dapabe - Para programar tu siguiente proyecto.",
-  description = "Daniel P. Becerra, desarrollador de páginas, aplicaciones para web y mobile.",
+  title = "Precedent - Building blocks for your Next.js project",
+  description = "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
   image = `${DOMAIN}/api/og`,
-}: IMeta) {
+}: {
+  title?: string;
+  description?: string;
+  image?: string;
+}) {
   return (
     <Head>
       <title>{title}</title>
@@ -24,7 +27,7 @@ export default function Meta({
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@vercel" />
-      <meta name="twitter:creator" content="@_danzen" />
+      <meta name="twitter:creator" content="@steventey" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />

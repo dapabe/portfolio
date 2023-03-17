@@ -9,9 +9,7 @@
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/*"],
       "@/lib/*": ["lib/*"],
-      "@/styles/*": ["styles/*"],
-      "$hooks/*": ["src/hooks/*"],
-      "$icons/*": ["src/assets/icons/*"]
+      "@/styles/*": ["styles/*"]
     },
     "strict": true,
     "forceConsistentCasingInFileNames": true,
